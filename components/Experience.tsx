@@ -14,7 +14,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           id: 1,
           role: "SaaS 平台大客户总监",
           company: "上海合阔信息技术有限公司",
-          period: "2021 - 2025.07 (后期)",
+          period: "2023 - 2025.07 (后期)",
           description: "聚焦 SaaS 平台上线后大客户全生命周期运营。以客户价值为核心，构建系统化客户维护与增长体系。",
           achievements: [
             "制定分层客户维护策略，建立季度走访与月度复盘机制",
@@ -29,12 +29,12 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           id: 2,
           role: "SaaS 平台项目经理",
           company: "上海合阔信息技术有限公司",
-          period: "2018 - 2021 (中期)",
+          period: "2018 - 2023 (中期)",
           description: "核心项目交付负责人。统筹 SaaS 项目全生命周期管理，主导多个头部餐饮品牌数字化转型，累计覆盖超 5000 家门店。",
           achievements: [
-            "喜茶 (Heytea): 主导 2000+ 门店 BOH 供应链与 POS 打通，支撑日峰值订单 10万+ 笔；(其中BOM配方的设计研发曾申请专利)",
+            "喜茶 (Heytea): 2018-2020年常驻深圳，BOH与POS项目依次启动。主导 2000+ 门店系统打通，支撑日峰值 10万+ 订单；(BOM配方研发获专利)",
             "DQ/棒约翰: 覆盖 1000+ 门店，设计全流程解决方案，库存损耗率降低 2%",
-            "久久丫: 搭建集订单、库存、会员、财务于一体的业务中台，整合 1800+ 门店数据"
+            "久久丫 (2021-2022): 搭建集订单、库存、会员、财务于一体的业务中台，整合 1800+ 门店数据"
           ],
           tags: ["PMP", "项目交付", "高并发架构", "专利研发"],
           color: "border-blue-500 dark:border-gunpla-blue",
@@ -93,7 +93,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           id: 1,
           role: "Key Account Director (SaaS)",
           company: "Shanghai Hekuo Info Tech",
-          period: "2021 - 2025.07 (Late Stage)",
+          period: "2023 - 2025.07 (Late Stage)",
           description: "Focused on full lifecycle management of key accounts post-launch. Built a systematic customer maintenance and growth system centered on customer value.",
           achievements: [
             "Developed tiered customer maintenance strategies with quarterly visits and monthly reviews.",
@@ -108,12 +108,12 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           id: 2,
           role: "SaaS Project Manager",
           company: "Shanghai Hekuo Info Tech",
-          period: "2018 - 2021 (Mid Stage)",
+          period: "2018 - 2023 (Mid Stage)",
           description: "Head of core project delivery. Managed full SaaS project lifecycles, leading digital transformation for top catering brands covering 5000+ stores.",
           achievements: [
-            "Heytea: Integrated BOH Supply Chain & POS for 2000+ stores, supporting 100k+ daily orders. (Patented BOM recipe design)",
+            "Heytea: Stationed in Shenzhen (2018-2020). Launched BOH & POS projects sequentially. Integrated 2000+ stores, handling 100k+ daily orders; (Patented BOM recipe design)",
             "DQ/Papa John's: Covered 1000+ stores, designed full-process solutions, reducing inventory loss by 2%.",
-            "Juewei Duck: Built business middle-platform integrating orders, inventory, and finance for 1800+ stores."
+            "Juewei Duck (2021-2022): Built business middle-platform integrating orders, inventory, and finance for 1800+ stores."
           ],
           tags: ["PMP", "Delivery", "High Concurrency", "Patents"],
           color: "border-blue-500 dark:border-gunpla-blue",
