@@ -1,8 +1,5 @@
 import { GoogleGenAI } from "@google/genai";
 
-// Initialize Gemini client
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 export interface ChatMessage {
   role: 'user' | 'model';
   text: string;
@@ -59,6 +56,21 @@ const RESUME_CONTEXT = `
 
 export const sendMessageToGemini = async (history: ChatMessage[], newMessage: string, language: 'zh' | 'en' = 'zh'): Promise<string> => {
   try {
+    // LAZY INITIALIZATION FIX:
+    // Check for API Key availability at runtime inside the function, not at module level.
+    // This prevents the "Uncaught Error: An API Key must be set" crash on page load.
+    const apiKey = process.env.API_KEY;
+    
+    if (!apiKey || apiKey.trim() === '') {
+        console.warn("Gemini API Key is missing.");
+        return language === 'zh' 
+            ? "配置提示：未检测到 API Key。这通常意味着需要在 Vercel 的项目设置中添加环境变量 'API_KEY'。简历展示功能不受影响。" 
+            : "Configuration Note: API Key missing. Please set 'API_KEY' in your Vercel project environment variables. Resume viewing is unaffected.";
+    }
+
+    // Initialize Gemini client only when needed
+    const ai = new GoogleGenAI({ apiKey: apiKey });
+
     // Append a specific instruction based on the current UI language
     const langInstruction = language === 'zh' 
       ? "请用中文回答。" 
@@ -79,9 +91,9 @@ export const sendMessageToGemini = async (history: ChatMessage[], newMessage: st
       }
     });
 
-    return response.text || "抱歉，我现在无法生成回复，请稍后再试。";
+    return response.text || (language === 'zh' ? "抱歉，我现在无法生成回复，请稍后再试。" : "Sorry, I cannot generate a response right now.");
   } catch (error) {
     console.error("Gemini API Error:", error);
-    return "系统故障。请稍后再试。";
+    return language === 'zh' ? "AI 服务暂时不可用，请检查网络或配置。" : "AI Service temporarily unavailable. Please check network or config.";
   }
 };
