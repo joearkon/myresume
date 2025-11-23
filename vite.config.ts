@@ -9,6 +9,10 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react()],
+    build: {
+      outDir: 'dist', // Explicitly set output directory
+      emptyOutDir: true,
+    },
     define: {
       // This allows the app to access process.env.API_KEY in the client-side code
       // It replaces the string 'process.env.API_KEY' with the actual value during build
