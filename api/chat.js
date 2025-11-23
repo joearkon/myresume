@@ -36,8 +36,8 @@ export default async function handler(request) {
     const reqBody = await request.json();
     const { contents, systemInstruction } = reqBody;
 
-    // [修正] 使用精确版本号 gemini-1.5-flash-001，避免 404
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-001:generateContent?key=${API_KEY}`;
+    // [回调] 切回 gemini-2.5-flash，这是最初有效的版本，也是本次任务指定的模型
+    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
     
     const payload = {
       contents: contents,

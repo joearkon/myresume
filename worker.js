@@ -19,13 +19,9 @@ export default {
          return new Response("Method Not Allowed", { status: 405 });
       }
       
-      // [Cloudflare Key Check]
       if (!env.API_KEY) {
-        const availableKeys = env ? Object.keys(env).join(', ') : 'None';
         return new Response(JSON.stringify({ 
-          error: "Cloudflare 配置错误: 未检测到 API_KEY。",
-          tip: "请确保在后台 Variables 添加了 API_KEY，并且添加后执行了 'Retry deployment' (重新部署)。",
-          debug_keys: `当前环境可用变量: [${availableKeys}]`
+          error: "Cloudflare Config Error: API_KEY missing." 
         }), {
           status: 500,
           headers: { 'Content-Type': 'application/json' }
@@ -36,8 +32,8 @@ export default {
         const reqBody = await request.json();
         const { contents, systemInstruction } = reqBody;
 
-        // [修正] 使用精确版本号 gemini-1.5-flash-001
-        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-001:generateContent?key=${env.API_KEY}`;
+        // [回调] 切回 gemini-2.5-flash
+        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${env.API_KEY}`;
         
         const payload = {
           contents: contents,
