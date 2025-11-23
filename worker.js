@@ -2,7 +2,7 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    // 处理 CORS 预检
+    // CORS
     if (request.method === 'OPTIONS') {
       return new Response(null, {
         headers: {
@@ -13,21 +13,19 @@ export default {
       });
     }
 
-    // 1. 拦截 API 请求
+    // API 路由
     if (url.pathname === '/api/chat') {
       if (request.method !== 'POST') {
          return new Response("Method Not Allowed", { status: 405 });
       }
       
-      // [调试] 检查 API_KEY 是否存在
+      // [Cloudflare Key Check]
       if (!env.API_KEY) {
-        // 获取当前所有可用变量名，帮助排查是否注入成功
-        const availableKeys = env ? Object.keys(env).join(', ') : 'env is null';
-        
+        const availableKeys = env ? Object.keys(env).join(', ') : 'None';
         return new Response(JSON.stringify({ 
           error: "Cloudflare 配置错误: 未检测到 API_KEY。",
-          tip: "请确保在后台添加了变量，并重新部署(Retry Deployment)。",
-          debug_available_keys: `[${availableKeys}]` 
+          tip: "请确保在后台 Variables 添加了 API_KEY，并且添加后执行了 'Retry deployment' (重新部署) 以使变量生效。",
+          debug_keys: `当前环境可用变量: [${availableKeys}]`
         }), {
           status: 500,
           headers: { 'Content-Type': 'application/json' }
@@ -38,7 +36,8 @@ export default {
         const reqBody = await request.json();
         const { contents, systemInstruction } = reqBody;
 
-        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${env.API_KEY}`;
+        // 使用 gemini-1.5-flash-latest
+        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${env.API_KEY}`;
         
         const payload = {
           contents: contents,
@@ -69,15 +68,14 @@ export default {
         });
 
       } catch (error) {
-        return new Response(JSON.stringify({ error: `Worker Exception: ${error.message}` }), {
+        return new Response(JSON.stringify({ error: `Worker Error: ${error.message}` }), {
           status: 500,
           headers: { 'Content-Type': 'application/json' }
         });
       }
     }
 
-    // 2. 静态资源托管
-    // Cloudflare Workers with Assets 模式下，env.ASSETS 用于获取静态文件
+    // 静态资源托管
     if (env.ASSETS) {
       return env.ASSETS.fetch(request);
     } else {

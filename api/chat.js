@@ -5,6 +5,7 @@ export const config = {
 export default async function handler(request) {
   const url = new URL(request.url);
 
+  // CORS Preflight
   if (request.method === 'OPTIONS') {
     return new Response(null, {
       headers: {
@@ -15,6 +16,7 @@ export default async function handler(request) {
     });
   }
 
+  // Method Check
   if (request.method !== 'POST') {
     return new Response('Method Not Allowed', { status: 405 });
   }
@@ -23,7 +25,7 @@ export default async function handler(request) {
 
   if (!API_KEY) {
     return new Response(JSON.stringify({ 
-      error: "Vercel Configuration Error: API_KEY is missing in Environment Variables." 
+      error: "Vercel Config Error: API_KEY is missing in Environment Variables." 
     }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' }
@@ -34,7 +36,8 @@ export default async function handler(request) {
     const reqBody = await request.json();
     const { contents, systemInstruction } = reqBody;
 
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
+    // 使用 gemini-1.5-flash-latest 以确保最佳兼容性
+    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${API_KEY}`;
     
     const payload = {
       contents: contents,
@@ -65,7 +68,7 @@ export default async function handler(request) {
     });
 
   } catch (error) {
-    return new Response(JSON.stringify({ error: `Vercel Function Error: ${error.message}` }), {
+    return new Response(JSON.stringify({ error: `Vercel Error: ${error.message}` }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' }
     });
