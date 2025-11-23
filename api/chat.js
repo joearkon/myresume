@@ -36,8 +36,8 @@ export default async function handler(request) {
     const reqBody = await request.json();
     const { contents, systemInstruction } = reqBody;
 
-    // 使用 gemini-1.5-flash-latest 以确保最佳兼容性
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${API_KEY}`;
+    // [修正] 使用最标准的 gemini-1.5-flash
+    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
     
     const payload = {
       contents: contents,
