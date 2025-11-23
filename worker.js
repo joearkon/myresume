@@ -2,13 +2,32 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    // 1. 拦截 API 请求: /api/chat
-    if (url.pathname === '/api/chat' && request.method === 'POST') {
+    // 处理 CORS 预检
+    if (request.method === 'OPTIONS') {
+      return new Response(null, {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        },
+      });
+    }
+
+    // 1. 拦截 API 请求
+    if (url.pathname === '/api/chat') {
+      if (request.method !== 'POST') {
+         return new Response("Method Not Allowed", { status: 405 });
+      }
       
-      // 安全检查: 确保 API_KEY 已在 Cloudflare 后台配置
+      // [调试] 检查 API_KEY 是否存在
       if (!env.API_KEY) {
+        // 获取当前所有可用变量名，帮助排查是否注入成功
+        const availableKeys = env ? Object.keys(env).join(', ') : 'env is null';
+        
         return new Response(JSON.stringify({ 
-          error: "配置错误: Cloudflare 后台未检测到 API_KEY。请在 Settings -> Variables and Secrets 中添加。" 
+          error: "Cloudflare 配置错误: 未检测到 API_KEY。",
+          tip: "请确保在后台添加了变量，并重新部署(Retry Deployment)。",
+          debug_available_keys: `[${availableKeys}]` 
         }), {
           status: 500,
           headers: { 'Content-Type': 'application/json' }
@@ -19,16 +38,12 @@ export default {
         const reqBody = await request.json();
         const { contents, systemInstruction } = reqBody;
 
-        // [修改点] 使用 v1beta gemini-1.5-flash，这是目前最稳定、兼容性最好的模型版本
         const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${env.API_KEY}`;
         
         const payload = {
           contents: contents,
-          // 格式化 System Instruction
           systemInstruction: systemInstruction ? { parts: [{ text: systemInstruction }] } : undefined,
-          generationConfig: {
-            temperature: 0.7
-          }
+          generationConfig: { temperature: 0.7 }
         };
 
         const geminiResponse = await fetch(geminiUrl, {
@@ -37,20 +52,11 @@ export default {
           body: JSON.stringify(payload)
         });
 
-        // 如果 Google API 返回错误，读取详细信息并返回给前端
         if (!geminiResponse.ok) {
           const errorText = await geminiResponse.text();
-          let errorDetail = errorText;
-          try {
-            const jsonError = JSON.parse(errorText);
-            if (jsonError.error && jsonError.error.message) {
-              errorDetail = jsonError.error.message;
-            }
-          } catch (e) { /* ignore parse error */ }
-
           return new Response(JSON.stringify({ 
             error: `Gemini API Error (${geminiResponse.status})`, 
-            details: errorDetail
+            details: errorText 
           }), {
             status: geminiResponse.status,
             headers: { 'Content-Type': 'application/json' }
@@ -63,14 +69,19 @@ export default {
         });
 
       } catch (error) {
-        return new Response(JSON.stringify({ error: `Worker Internal Error: ${error.message}` }), {
+        return new Response(JSON.stringify({ error: `Worker Exception: ${error.message}` }), {
           status: 500,
           headers: { 'Content-Type': 'application/json' }
         });
       }
     }
 
-    // 2. 静态资源托管 (Cloudflare Assets)
-    return env.ASSETS.fetch(request);
+    // 2. 静态资源托管
+    // Cloudflare Workers with Assets 模式下，env.ASSETS 用于获取静态文件
+    if (env.ASSETS) {
+      return env.ASSETS.fetch(request);
+    } else {
+      return new Response("Static Assets Binding Not Found", { status: 500 });
+    }
   },
 };
