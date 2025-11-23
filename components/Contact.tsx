@@ -129,7 +129,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
         </div>
 
         <p className="text-xs text-slate-400 dark:text-gray-600 mt-16">
-          © {new Date().getFullYear()} 陈子卓野 (Joe Chen) | Shanghai
+          © {new Date().getFullYear()} 陈子卓野 (Joe Chen) | Shanghai | v1.3
         </p>
       </div>
     </footer>
