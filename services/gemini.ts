@@ -1,5 +1,3 @@
-import { GoogleGenAI } from "@google/genai";
-
 export interface ChatMessage {
   role: 'user' | 'model';
   text: string;
@@ -32,7 +30,7 @@ const RESUME_CONTEXT = `
        - **执行:** **BOH供应链项目与POS项目依次启动**。
        - **成果:** 主导2000+门店系统打通，支撑日峰值订单 10万+ 笔。
        - **关键成就:** BOM配方的设计研发曾经申请专利。
-     - **明星项目 - DQ/棒约翰:** 覆盖1000+门店，库存损耗率降低 2%。
+     - **明星项目 - DQ/棒约翰:** 覆盖1000+门店，设计全流程解决方案，库存损耗率降低 2%。
      - **明星项目 - 久久丫 (2021-2022):** 搭建业务中台，整合1800+门店数据。
    - **SaaS云平台高级软件开发工程师 (早期 2016.04-2018):**
      - **职责:** 初创核心成员，从0到1搭建平台。
@@ -65,28 +63,10 @@ const RESUME_CONTEXT = `
 
 export const sendMessageToGemini = async (history: ChatMessage[], newMessage: string, language: 'zh' | 'en' = 'zh'): Promise<string> => {
   try {
-    // LAZY INITIALIZATION FIX:
-    // Check for API Key availability at runtime inside the function, not at module level.
-    // This prevents the "Uncaught Error: An API Key must be set" crash on page load.
-    const apiKey = process.env.API_KEY;
+    const langInstruction = language === 'zh' ? "请用中文回答。" : "Please answer in English.";
     
-    if (!apiKey || apiKey.trim() === '') {
-        console.warn("Gemini API Key is missing.");
-        return language === 'zh' 
-            ? "配置提示：未检测到 API Key。这通常意味着需要在 Vercel 的项目设置中添加环境变量 'API_KEY'。简历展示功能不受影响。" 
-            : "Configuration Note: API Key missing. Please set 'API_KEY' in your Vercel project environment variables. Resume viewing is unaffected.";
-    }
-
-    // Initialize Gemini client only when needed
-    const ai = new GoogleGenAI({ apiKey: apiKey });
-
-    // Append a specific instruction based on the current UI language
-    const langInstruction = language === 'zh' 
-      ? "请用中文回答。" 
-      : "Please answer in English.";
-
-    const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
+    // 构造发送给后端 Worker 的数据负载
+    const payload = {
       contents: [
         ...history.map(msg => ({
           role: msg.role,
@@ -94,15 +74,38 @@ export const sendMessageToGemini = async (history: ChatMessage[], newMessage: st
         })),
         { role: 'user', parts: [{ text: newMessage + `\n\n(System Note: ${langInstruction})` }] }
       ],
-      config: {
-        systemInstruction: RESUME_CONTEXT,
-        temperature: 0.7,
-      }
+      systemInstruction: RESUME_CONTEXT
+    };
+
+    // 发送请求到我们自己的后端 API
+    // 这里使用的是相对路径，Cloudflare Worker 会拦截 /api/chat
+    const response = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
     });
 
-    return response.text || (language === 'zh' ? "抱歉，我现在无法生成回复，请稍后再试。" : "Sorry, I cannot generate a response right now.");
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      console.error("API Request Failed:", response.status, errorData);
+      throw new Error(`Server Error: ${response.status}`);
+    }
+
+    const data = await response.json();
+    
+    // 解析 Gemini API 的返回结构
+    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    
+    if (!text) {
+      throw new Error("AI did not return any text content.");
+    }
+
+    return text;
+
   } catch (error) {
-    console.error("Gemini API Error:", error);
-    return language === 'zh' ? "AI 服务暂时不可用，请检查网络或配置。" : "AI Service temporarily unavailable. Please check network or config.";
+    console.error("Chat Service Error:", error);
+    return language === 'zh' 
+      ? "抱歉，连接 AI 助手时出现问题。请稍后再试。" 
+      : "Sorry, connection to AI assistant failed. Please try again later.";
   }
 };
