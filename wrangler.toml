@@ -1,5 +1,7 @@
-name = "interactive-resume"
+# wrangler.toml
+name = 'myresume'
 compatibility_date = "2024-11-23"
 
 # 指定构建输出目录为 dist
 assets = { directory = "./dist" }
+
