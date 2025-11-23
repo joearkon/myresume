@@ -1,6 +1,8 @@
-name = "interactive-resume"
+# wrangler.toml
+name = 'myresume'
 compatibility_date = "2024-11-23"
 
 # 关键配置：指定静态资源目录
 # 这告诉 Cloudflare 构建后的文件位于 dist 文件夹中
 assets = { directory = "./dist" }
+
