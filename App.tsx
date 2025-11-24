@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
+import Education from './components/Education';
 import Hobbies from './components/Hobbies';
 import ChatWidget from './components/ChatWidget';
 import Contact from './components/Contact';
@@ -61,6 +62,7 @@ const App: React.FC = () => {
       <main>
         <Hero language={language} />
         <Experience language={language} />
+        <Education language={language} />
         <Hobbies language={language} />
       </main>
       <Contact language={language} />

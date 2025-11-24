@@ -17,9 +17,10 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           period: "2023 - 2025.07 (后期)",
           description: "聚焦 SaaS 平台上线后大客户全生命周期运营。以客户价值为核心，构建系统化客户维护与增长体系。",
           achievements: [
-            "制定分层客户维护策略，建立季度走访与月度复盘机制",
-            "0-1 搭建客户留存监控体系，大客户年度留存率稳定在 90% 以上",
-            "负责团队每年为公司贡献约 50% 的营收，通过挖掘需求推动价值提升"
+            "负责维护大客户平台产品运营，包括DQ，喜茶，乐乐茶，somethingfor，seesaw，T9，久久丫等品牌",
+            "制定分层客户维护策略，针对头部连锁品牌的个性化需求，提供定制化增值服务，建立季度走访、月度复盘机制",
+            "0-1 搭建客户留存监控体系，实时跟踪系统使用率，大客户年度留存率稳定在 90% 以上",
+            "牵头客户续约与增收工作，负责团队每年为公司贡献 50% 左右的营收"
           ],
           tags: ["客户增长", "CRM体系", "商业价值", "团队管理"],
           color: "border-red-500 dark:border-gunpla-red",
@@ -30,9 +31,9 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           role: "SaaS 平台项目经理",
           company: "上海合阔信息技术有限公司",
           period: "2018 - 2023 (中期)",
-          description: "核心项目交付负责人。统筹 SaaS 项目全生命周期管理，主导多个头部餐饮品牌数字化转型，累计覆盖超 5000 家门店。",
+          description: "核心项目交付负责人。统筹 SaaS 项目全生命周期管理，主导多个头部餐饮品牌数字化转型，累计覆盖超 5000 家连锁门店。",
           achievements: [
-            "喜茶 (Heytea): 2018-2020年常驻深圳，BOH与POS项目依次启动。主导 2000+ 门店系统打通，支撑日峰值 10万+ 订单；(BOM配方研发获专利)",
+            "喜茶 (Heytea): 2018-2020年常驻深圳，BOH与POS项目依次启动。主导 2000+ 门店系统打通，支撑日峰值 10万+ 订单；(BOM配方的设计研发曾经申请专利)",
             "DQ/棒约翰: 覆盖 1000+ 门店，设计全流程解决方案，库存损耗率降低 2%",
             "久久丫 (2021-2022): 搭建集订单、库存、会员、财务于一体的业务中台，整合 1800+ 门店数据"
           ],
@@ -47,9 +48,9 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           period: "2016.04 - 2018 (早期)",
           description: "初创阶段核心成员。牵头 SaaS 餐饮云平台从 0 到 1 的底层构建，奠定平台技术基石。",
           achievements: [
-            "主导微服务架构设计，支撑多租户隔离与高并发处理能力",
-            "聚焦订单 OMS 核心模块开发，设计标准化数据整合与清洗流程",
-            "打造统一数据接口体系，通过 ETL 工具优化数据处理效率"
+            "主导平台底层架构设计，采用微服务架构，支撑多租户隔离与高并发处理",
+            "聚焦订单 OMS 核心模块开发，设计标准化数据整合与清洗流程，解决订单来源分散痛点",
+            "打造统一数据接口体系，覆盖订单、库存、营收等核心业务维度"
           ],
           tags: ["微服务", "Java/Go", "ETL", "底层架构"],
           color: "border-yellow-500 dark:border-gunpla-yellow",
@@ -87,7 +88,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
         }
       ];
     } else {
-      // English Data
+      // English Data (Translated)
       return [
         {
           id: 1,
@@ -96,7 +97,8 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           period: "2023 - 2025.07 (Late Stage)",
           description: "Focused on full lifecycle management of key accounts post-launch. Built a systematic customer maintenance and growth system centered on customer value.",
           achievements: [
-            "Developed tiered customer maintenance strategies with quarterly visits and monthly reviews.",
+            "Managed platform operations for brands including DQ, Heytea, Lelecha, Something For, Seesaw, T9, Juewei Duck.",
+            "Developed tiered customer maintenance strategies and provided customized value-added services.",
             "Built customer retention monitoring system from 0-1, maintaining 90%+ retention for key accounts.",
             "Team contributed ~50% of company revenue annually by identifying needs and driving value."
           ],

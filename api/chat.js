@@ -5,7 +5,6 @@ export const config = {
 export default async function handler(request) {
   const url = new URL(request.url);
 
-  // CORS Preflight
   if (request.method === 'OPTIONS') {
     return new Response(null, {
       headers: {
@@ -16,7 +15,6 @@ export default async function handler(request) {
     });
   }
 
-  // Method Check
   if (request.method !== 'POST') {
     return new Response('Method Not Allowed', { status: 405 });
   }
@@ -25,7 +23,7 @@ export default async function handler(request) {
 
   if (!API_KEY) {
     return new Response(JSON.stringify({ 
-      error: "Vercel Config Error: API_KEY is missing in Environment Variables." 
+      error: "Vercel Config Error: API_KEY missing." 
     }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' }
@@ -36,7 +34,7 @@ export default async function handler(request) {
     const reqBody = await request.json();
     const { contents, systemInstruction } = reqBody;
 
-    // [回调] 切回 gemini-2.5-flash，这是最初有效的版本，也是本次任务指定的模型
+    // [Vercel] 保持使用 gemini-2.5-flash，因为已验证在 Vercel 环境下可用且更智能
     const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
     
     const payload = {

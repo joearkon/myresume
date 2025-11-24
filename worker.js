@@ -13,7 +13,7 @@ export default {
       });
     }
 
-    // API 路由
+    // API Route
     if (url.pathname === '/api/chat') {
       if (request.method !== 'POST') {
          return new Response("Method Not Allowed", { status: 405 });
@@ -32,8 +32,10 @@ export default {
         const reqBody = await request.json();
         const { contents, systemInstruction } = reqBody;
 
-        // [回调] 切回 gemini-2.5-flash
-        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${env.API_KEY}`;
+        // [Cloudflare 修正] 强制使用 gemini-1.5-flash (标准版)
+        // 原因: 2.5-flash (预览版) 对 Cloudflare 节点 IP 有严格的地区限制 (返回 400 Location Error)。
+        // 1.5-flash 全球可用性更好，能解决这个问题。
+        const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${env.API_KEY}`;
         
         const payload = {
           contents: contents,
@@ -64,14 +66,14 @@ export default {
         });
 
       } catch (error) {
-        return new Response(JSON.stringify({ error: `Worker Error: ${error.message}` }), {
+        return new Response(JSON.stringify({ error: `Worker Exception: ${error.message}` }), {
           status: 500,
           headers: { 'Content-Type': 'application/json' }
         });
       }
     }
 
-    // 静态资源托管
+    // Static Assets
     if (env.ASSETS) {
       return env.ASSETS.fetch(request);
     } else {

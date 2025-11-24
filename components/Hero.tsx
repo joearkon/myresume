@@ -13,14 +13,14 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       role1: '技术架构',
       role2: '项目交付',
       role3: '客户增长',
-      birth: '出生年月',
-      birthVal: '1986年 10月',
-      location: '籍贯 / 现居',
-      locationVal: '上海',
-      politics: '政治面貌',
-      politicsVal: '中共党员',
-      exp: '经验年限',
-      expVal: '10余年 +',
+      info1Title: '基本信息',
+      info1Val: '1986年10月 | 汉族',
+      info2Title: '现居 / 政治面貌',
+      info2Val: '上海 | 中共党员',
+      info3Title: '学历',
+      info3Val: '本科 (上海海事)',
+      info4Title: '经验年限',
+      info4Val: '10余年 +',
       desc: (
         <>
           从代码到底层架构，从单项目交付到大客户运营。我不仅懂技术实现，更懂如何将技术转化为商业价值。
@@ -36,14 +36,14 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       role1: 'Tech Arch',
       role2: 'Delivery',
       role3: 'Growth',
-      birth: 'Born In',
-      birthVal: 'Oct 1986',
-      location: 'Location',
-      locationVal: 'Shanghai',
-      politics: 'Status',
-      politicsVal: 'CPC Member',
-      exp: 'Experience',
-      expVal: '10 Years +',
+      info1Title: 'Basic Info',
+      info1Val: 'Oct 1986 | Han',
+      info2Title: 'Location / Status',
+      info2Val: 'Shanghai | Party Member',
+      info3Title: 'Education',
+      info3Val: 'Bachelor',
+      info4Title: 'Experience',
+      info4Val: '10 Years +',
       desc: (
         <>
           From coding to architecture, from project delivery to key account growth. 
@@ -104,20 +104,20 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
         {/* Personal Info Card */}
         <div className="max-w-4xl mx-auto mb-12 opacity-0 animate-fade-in-up grid grid-cols-2 md:grid-cols-4 gap-4 text-sm md:text-base" style={{ animationDelay: '0.5s' }}>
             <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg backdrop-blur-sm transition-colors duration-300 shadow-sm">
-                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1">{t.birth}</div>
-                <div className="text-slate-900 dark:text-white font-bold">{t.birthVal}</div>
+                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1">{t.info1Title}</div>
+                <div className="text-slate-900 dark:text-white font-bold">{t.info1Val}</div>
             </div>
             <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg backdrop-blur-sm transition-colors duration-300 shadow-sm">
-                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1">{t.location}</div>
-                <div className="text-slate-900 dark:text-white font-bold">{t.locationVal}</div>
+                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1">{t.info2Title}</div>
+                <div className="text-slate-900 dark:text-white font-bold">{t.info2Val}</div>
             </div>
             <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg backdrop-blur-sm transition-colors duration-300 shadow-sm">
-                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1">{t.politics}</div>
-                <div className="text-red-600 dark:text-gunpla-red font-bold">{t.politicsVal}</div>
+                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1">{t.info3Title}</div>
+                <div className="text-slate-900 dark:text-white font-bold">{t.info3Val}</div>
             </div>
             <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg backdrop-blur-sm transition-colors duration-300 shadow-sm">
-                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1">{t.exp}</div>
-                <div className="text-yellow-600 dark:text-gunpla-yellow font-bold">{t.expVal}</div>
+                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1">{t.info4Title}</div>
+                <div className="text-yellow-600 dark:text-gunpla-yellow font-bold">{t.info4Val}</div>
             </div>
         </div>
         
