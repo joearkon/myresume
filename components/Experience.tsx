@@ -17,10 +17,10 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           period: "2023 - 2025.07 (后期)",
           description: "聚焦 SaaS 平台上线后大客户全生命周期运营。以客户价值为核心，构建系统化客户维护与增长体系。",
           achievements: [
-            "负责维护大客户平台产品运营，包括DQ，喜茶，乐乐茶，somethingfor，seesaw，T9，久久丫等品牌",
+            "负责维护大客户平台产品运营，包括DQ，喜茶，乐乐茶，Something For，Seesaw，T9，久久丫等品牌",
             "制定分层客户维护策略，针对头部连锁品牌的个性化需求，提供定制化增值服务，建立季度走访、月度复盘机制",
             "0-1 搭建客户留存监控体系，实时跟踪系统使用率，大客户年度留存率稳定在 90% 以上",
-            "牵头客户续约与增收工作，负责团队每年为公司贡献 50% 左右的营收"
+            "牵头客户续约与增收工作，深度挖掘需求，负责团队每年为公司贡献 50% 左右的营收"
           ],
           tags: ["客户增长", "CRM体系", "商业价值", "团队管理"],
           color: "border-red-500 dark:border-gunpla-red",
@@ -88,7 +88,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
         }
       ];
     } else {
-      // English Data (Translated)
+      // English Data
       return [
         {
           id: 1,
@@ -100,7 +100,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
             "Managed platform operations for brands including DQ, Heytea, Lelecha, Something For, Seesaw, T9, Juewei Duck.",
             "Developed tiered customer maintenance strategies and provided customized value-added services.",
             "Built customer retention monitoring system from 0-1, maintaining 90%+ retention for key accounts.",
-            "Team contributed ~50% of company revenue annually by identifying needs and driving value."
+            "Led renewal and upselling, team contributed ~50% of company revenue annually."
           ],
           tags: ["Customer Growth", "CRM", "Business Value", "Management"],
           color: "border-red-500 dark:border-gunpla-red",

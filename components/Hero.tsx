@@ -18,7 +18,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info2Title: '现居 / 政治面貌',
       info2Val: '上海 | 中共党员',
       info3Title: '学历',
-      info3Val: '本科 (上海海事)',
+      info3Val: '本科',
       info4Title: '经验年限',
       info4Val: '10余年 +',
       desc: (
@@ -69,9 +69,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
         
         {/* Avatar Section */}
         <div className="mb-8 relative inline-block animate-fade-in-up">
-             {/* Glowing Effect */}
              <div className="absolute -inset-3 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-full blur-lg opacity-40 dark:opacity-60 animate-pulse-glow"></div>
-             {/* Avatar Container */}
              <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full p-1.5 bg-white dark:bg-slate-800 shadow-2xl">
                 <img 
                     src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEKY6tpIA8Tk6OK3QdiWsYI1WRZtPNRYAACiToAAlVBAVWDSr2SC4BhWjYE.jpg" 
@@ -125,7 +123,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           {t.desc}
         </p>
         
-        <div className="flex flex-wrap gap-4 justify-center opacity-0 animate-fade-in-up" style={{ animationDelay: '0.9s' }}>
+        <div className="flex flex-wrap gap-4 justify-center opacity-0 animate-fade-in-up items-center" style={{ animationDelay: '0.9s' }}>
           <a href="#experience" className="px-8 py-4 bg-gunpla-blue text-white font-bold rounded hover:bg-blue-600 transition-all hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] clip-path-slope">
             {t.btnResume}
           </a>

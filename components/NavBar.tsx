@@ -23,12 +23,14 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
     zh: {
       home: '首页',
       experience: '职业生涯',
+      education: '教育背景', // Added translation
       hobbies: '个人兴趣',
       contact: '联系我'
     },
     en: {
       home: 'Home',
       experience: 'Experience',
+      education: 'Education', // Added translation
       hobbies: 'Hobbies',
       contact: 'Contact'
     }
@@ -42,20 +44,21 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
         ? 'bg-white/80 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 py-4' 
         : 'bg-transparent py-6'
     }`}>
-      <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
         <div className="font-tech font-bold text-xl text-slate-800 dark:text-white tracking-wider transition-colors duration-300 flex items-center gap-3">
           <span>{language === 'zh' ? '陈' : 'Joe'}<span className="text-gunpla-blue">{language === 'zh' ? '子卓野' : '.Chen'}</span></span>
-          <span className="hidden sm:inline text-slate-300 dark:text-slate-700">|</span>
-          <span className="hidden sm:block text-lg text-slate-500 dark:text-slate-400 font-medium tracking-widest">
+          <span className="hidden lg:inline text-slate-300 dark:text-slate-700">|</span>
+          <span className="hidden lg:block text-lg text-slate-500 dark:text-slate-400 font-medium tracking-widest">
             {language === 'zh' ? 'Joe.Chen' : '陈子卓野'}
           </span>
         </div>
         
         <div className="flex items-center gap-4 md:gap-6">
-          <div className="hidden md:flex gap-8">
+          <div className="hidden md:flex gap-6 lg:gap-8">
             {[
               { name: t.home, link: '#home' },
               { name: t.experience, link: '#experience' },
+              { name: t.education, link: '#education' }, // Added Education link
               { name: t.hobbies, link: '#hobbies' },
               { name: t.contact, link: '#contact' }
             ].map((item) => (
