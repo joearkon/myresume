@@ -20,7 +20,8 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       actionMail: '发送邮件',
       actionCopy: '查看 ID',
       wechatId: 'Joe_povons',
-      douyinId: '68888371171'
+      douyinId: '68888371171',
+      icp: '沪ICP备xxxxxxxx号-x' // 预留备案号
     },
     en: {
       title: 'Contact',
@@ -35,7 +36,8 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       actionMail: 'Send Mail',
       actionCopy: 'View ID',
       wechatId: 'Joe_povons',
-      douyinId: '68888371171'
+      douyinId: '68888371171',
+      icp: 'ICP License No. xxxxxxxx'
     }
   };
 
@@ -141,10 +143,14 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 
         </div>
 
-        <div className="mt-24 pt-8 border-t border-slate-200 dark:border-slate-800 text-center">
+        <div className="mt-24 pt-8 border-t border-slate-200 dark:border-slate-800 text-center space-y-2">
            <p className="text-sm text-slate-400 dark:text-gray-600 font-mono">
-            © {new Date().getFullYear()} 陈子卓野 (Joe.Chen) | Shanghai | v5.0
+            © {new Date().getFullYear()} 陈子卓野 (Joe.Chen) | Shanghai | v5.1
           </p>
+          {/* ICP License Link Placeholder */}
+          <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-300 dark:text-gray-700 hover:text-slate-500 dark:hover:text-gray-500 transition-colors block">
+            {t.icp}
+          </a>
         </div>
 
       </div>
