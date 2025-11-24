@@ -14,31 +14,27 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
       skills: [
         {
           category: '核心能力',
-          items: [
-            { name: 'SaaS 架构设计', level: 95 },
-            { name: '项目交付管理', level: 90 },
-            { name: '大客户运营', level: 90 },
-            { name: '数字化转型咨询', level: 85 }
-          ]
+          icon: (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+          ),
+          description: '深耕SaaS领域10年，具备从0-1到1-100的全周期实战经验',
+          items: ['SaaS 架构设计', '项目交付管理', '大客户运营', '数字化转型咨询', '团队建设', '业务中台搭建']
         },
         {
           category: '技术栈',
-          items: [
-            { name: '微服务架构', level: 90 },
-            { name: 'Java / Go', level: 85 },
-            { name: 'ETL / 数据集成', level: 85 },
-            { name: '.NET / SharePoint', level: 80 },
-            { name: 'React / 前端基础', level: 70 }
-          ]
+          icon: (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+          ),
+          description: '扎实的技术底座，能够深入理解业务痛点并转化为技术方案',
+          items: ['微服务架构', 'Java / Go', 'ETL / 数据集成', '.NET / SharePoint', 'React / 前端基础', '高并发处理']
         },
         {
           category: '工具与方法论',
-          items: [
-            { name: 'PMP / Agile', level: 90 },
-            { name: 'CRM / JIRA', level: 95 },
-            { name: 'Power Automate', level: 85 },
-            { name: 'AI / LLM 应用', level: 80 }
-          ]
+          icon: (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+          ),
+          description: '熟练运用专业工具与管理方法，提升团队协作效率',
+          items: ['PMP / Agile', 'CRM / JIRA', 'Power Automate', 'AI / LLM 应用', 'Axure / 原型设计', 'DevOps']
         }
       ]
     },
@@ -49,31 +45,27 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
       skills: [
         {
           category: 'Core Competencies',
-          items: [
-            { name: 'SaaS Architecture', level: 95 },
-            { name: 'Project Delivery', level: 90 },
-            { name: 'KA Management', level: 90 },
-            { name: 'Digital Transformation', level: 85 }
-          ]
+          icon: (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+          ),
+          description: '10 years in SaaS, experienced in full lifecycle from 0-1 to 1-100',
+          items: ['SaaS Architecture', 'Project Delivery', 'KA Management', 'Digital Transformation', 'Team Building', 'Business Middle-Platform']
         },
         {
           category: 'Tech Stack',
-          items: [
-            { name: 'Microservices', level: 90 },
-            { name: 'Java / Go', level: 85 },
-            { name: 'ETL / Data Integration', level: 85 },
-            { name: '.NET / SharePoint', level: 80 },
-            { name: 'React / Frontend', level: 70 }
-          ]
+          icon: (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
+          ),
+          description: 'Solid technical foundation, translating business needs into technical solutions',
+          items: ['Microservices', 'Java / Go', 'ETL / Data Integration', '.NET / SharePoint', 'React / Frontend', 'High Concurrency']
         },
         {
           category: 'Tools & Methodologies',
-          items: [
-            { name: 'PMP / Agile', level: 90 },
-            { name: 'CRM / JIRA', level: 95 },
-            { name: 'Power Automate', level: 85 },
-            { name: 'AI / LLM Application', level: 80 }
-          ]
+          icon: (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>
+          ),
+          description: 'Proficient in tools and methodologies to enhance team efficiency',
+          items: ['PMP / Agile', 'CRM / JIRA', 'Power Automate', 'AI / LLM', 'Axure / Prototyping', 'DevOps']
         }
       ]
     }
@@ -91,26 +83,38 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
           <p className="text-slate-600 dark:text-gray-400">{t.subtitle}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {t.skills.map((category, index) => (
-            <div key={index} className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-gunpla-blue dark:hover:border-gunpla-blue transition-all duration-300 hover:shadow-lg">
-              <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-6 border-b-2 border-gunpla-blue pb-2 inline-block">
-                {category.category}
-              </h3>
-              <div className="space-y-6">
+            <div key={index} className="group bg-slate-50 dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-gunpla-blue dark:hover:border-gunpla-blue transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col">
+              
+              <div className="flex items-center gap-4 mb-6">
+                <div className="p-3 bg-white dark:bg-slate-800 rounded-xl text-gunpla-blue shadow-sm group-hover:scale-110 transition-transform duration-300">
+                  {category.icon}
+                </div>
+                <h3 className="text-xl font-bold text-slate-800 dark:text-white">
+                  {category.category}
+                </h3>
+              </div>
+
+              <p className="text-sm text-slate-500 dark:text-gray-400 mb-6 h-10 leading-relaxed">
+                {category.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mt-auto">
                 {category.items.map((item, idx) => (
-                  <div key={idx}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-sm font-medium text-slate-700 dark:text-gray-300">{item.name}</span>
-                      <span className="text-sm font-medium text-slate-500 dark:text-gray-500">{item.level}%</span>
-                    </div>
-                    <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2.5 overflow-hidden">
-                      <div 
-                        className="bg-gunpla-blue h-2.5 rounded-full transition-all duration-1000 ease-out" 
-                        style={{ width: `${item.level}%`, transitionDelay: `${idx * 100}ms` }}
-                      ></div>
-                    </div>
-                  </div>
+                  <span 
+                    key={idx} 
+                    className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors duration-300
+                      ${index === 0 
+                        ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800 hover:bg-blue-200 dark:hover:bg-blue-900/50' 
+                        : index === 1
+                          ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 border border-purple-200 dark:border-purple-800 hover:bg-purple-200 dark:hover:bg-purple-900/50 font-mono text-xs pt-2'
+                          : 'bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-600 hover:bg-slate-300 dark:hover:bg-slate-600'
+                      }
+                    `}
+                  >
+                    {item}
+                  </span>
                 ))}
               </div>
             </div>
