@@ -22,16 +22,18 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
   const translations = {
     zh: {
       home: '首页',
+      projects: '项目成就', // Added
       experience: '职业生涯',
-      skills: '专业技能', // Added translation
+      skills: '专业技能', // Added
       education: '教育背景',
       hobbies: '个人兴趣',
       contact: '联系我'
     },
     en: {
       home: 'Home',
+      projects: 'Projects', // Added
       experience: 'Experience',
-      skills: 'Skills', // Added translation
+      skills: 'Skills', // Added
       education: 'Education',
       hobbies: 'Hobbies',
       contact: 'Contact'
@@ -59,8 +61,9 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
           <div className="hidden md:flex gap-6 lg:gap-8">
             {[
               { name: t.home, link: '#home' },
+              { name: t.projects, link: '#projects' }, // Added
               { name: t.experience, link: '#experience' },
-              { name: t.skills, link: '#skills' }, // Added Skills link
+              { name: t.skills, link: '#skills' }, // Added
               { name: t.education, link: '#education' },
               { name: t.hobbies, link: '#hobbies' },
               { name: t.contact, link: '#contact' }

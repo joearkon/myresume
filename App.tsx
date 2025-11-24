@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
+import Projects from './components/Projects'; // Import Projects
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Skills from './components/Skills'; // Import Skills
@@ -63,6 +64,7 @@ const App: React.FC = () => {
       />
       <main>
         <Hero language={language} />
+        <Projects language={language} /> {/* Added Projects Section */}
         <Experience language={language} />
         <Skills language={language} /> {/* Added Skills Section */}
         <Education language={language} />
