@@ -23,14 +23,16 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
     zh: {
       home: '首页',
       experience: '职业生涯',
-      education: '教育背景', // Added translation
+      skills: '专业技能', // Added translation
+      education: '教育背景',
       hobbies: '个人兴趣',
       contact: '联系我'
     },
     en: {
       home: 'Home',
       experience: 'Experience',
-      education: 'Education', // Added translation
+      skills: 'Skills', // Added translation
+      education: 'Education',
       hobbies: 'Hobbies',
       contact: 'Contact'
     }
@@ -58,7 +60,8 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
             {[
               { name: t.home, link: '#home' },
               { name: t.experience, link: '#experience' },
-              { name: t.education, link: '#education' }, // Added Education link
+              { name: t.skills, link: '#skills' }, // Added Skills link
+              { name: t.education, link: '#education' },
               { name: t.hobbies, link: '#hobbies' },
               { name: t.contact, link: '#contact' }
             ].map((item) => (

@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
-import Education from './components/Education'; // Import Education
+import Education from './components/Education';
+import Skills from './components/Skills'; // Import Skills
 import Hobbies from './components/Hobbies';
 import ChatWidget from './components/ChatWidget';
 import Contact from './components/Contact';
+import ScrollToTop from './components/ScrollToTop'; // Import ScrollToTop
 
 export type Language = 'zh' | 'en';
 
@@ -62,11 +64,13 @@ const App: React.FC = () => {
       <main>
         <Hero language={language} />
         <Experience language={language} />
-        <Education language={language} /> {/* Added Education Section */}
+        <Skills language={language} /> {/* Added Skills Section */}
+        <Education language={language} />
         <Hobbies language={language} />
       </main>
       <Contact language={language} />
       <ChatWidget language={language} />
+      <ScrollToTop /> {/* Added ScrollToTop Button */}
     </div>
   );
 };

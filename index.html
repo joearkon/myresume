@@ -3,8 +3,28 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Updated Title to verify deployment -->
-    <title>陈子卓野 (Joe.Chen) - 互动简历 v1.4</title>
+    
+    <!-- Primary Meta Tags -->
+    <title>陈子卓野 (Joe.Chen) - 全链路数字化专家 | 互动简历</title>
+    <meta name="title" content="陈子卓野 (Joe.Chen) - 全链路数字化专家 | 互动简历" />
+    <meta name="description" content="10年+经验项目总监，懂技术、懂业务、懂客户。曾主导喜茶、DQ等头部餐饮品牌数字化转型。前合阔信息大客户总监。" />
+    <meta name="keywords" content="陈子卓野, Joe Chen, 项目经理, 产品经理, SaaS, 数字化转型, 喜茶, DQ, 简历" />
+    <meta name="author" content="Joe Chen" />
+
+    <!-- Open Graph / Facebook / WeChat -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://myresume.gdjustwuxia.workers.dev/" />
+    <meta property="og:title" content="陈子卓野 (Joe.Chen) - 全链路数字化专家" />
+    <meta property="og:description" content="10年+经验项目总监，懂技术、懂业务、懂客户。曾主导喜茶、DQ等头部餐饮品牌数字化转型。" />
+    <meta property="og:image" content="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEKY6tpIA8Tk6OK3QdiWsYI1WRZtPNRYAACiToAAlVBAVWDSr2SC4BhWjYE.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://myresume.gdjustwuxia.workers.dev/" />
+    <meta property="twitter:title" content="陈子卓野 (Joe.Chen) - 全链路数字化专家" />
+    <meta property="twitter:description" content="10年+经验项目总监，懂技术、懂业务、懂客户。曾主导喜茶、DQ等头部餐饮品牌数字化转型。" />
+    <meta property="twitter:image" content="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEKY6tpIA8Tk6OK3QdiWsYI1WRZtPNRYAACiToAAlVBAVWDSr2SC4BhWjYE.jpg" />
+
     <script>
       // Polyfill for process.env to prevent crash in browser environment
       window.process = window.process || { env: { API_KEY: '' } };
@@ -74,6 +94,63 @@
       /* Apply dark mode scrollbar track manually if needed, but usually transparent works */
       .dark ::-webkit-scrollbar-track {
          background: #0f172a;
+      }
+
+      /* Print Styles - Optimize for PDF export */
+      @media print {
+        /* Hide elements not needed for paper resume */
+        nav, 
+        #contact, 
+        .fixed, 
+        button, 
+        a[href^="#"],
+        [aria-label="Toggle Theme"],
+        [title="Switch to English"],
+        form,
+        .animate-float,
+        .animate-pulse-glow,
+        .absolute.inset-0 /* Hide background grids */
+        {
+          display: none !important;
+        }
+
+        body {
+          background: white !important;
+          color: black !important;
+          overflow: visible !important;
+        }
+
+        section {
+          padding: 20px 0 !important;
+          page-break-inside: avoid;
+          min-height: auto !important;
+        }
+
+        /* Ensure text is black for printing */
+        .text-slate-600, .text-slate-500, .dark\:text-gray-400, .dark\:text-gray-300 {
+          color: #333 !important;
+        }
+        
+        h1, h2, h3 {
+          color: #000 !important;
+        }
+
+        /* Expand containers */
+        .max-w-4xl, .max-w-5xl, .max-w-6xl, .max-w-7xl {
+          max-width: 100% !important;
+          padding: 0 !important;
+        }
+
+        /* Show links nicely */
+        a[href]:after {
+          content: " (" attr(href) ")";
+          font-size: 0.8em;
+          color: #666;
+        }
+        /* Don't show internal anchor links */
+        a[href^="#"]:after, a[href^="javascript"]:after, a[href^="/"]:after {
+          content: "";
+        }
       }
     </style>
   <script type="importmap">
