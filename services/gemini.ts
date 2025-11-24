@@ -43,7 +43,7 @@ const RESUME_CONTEXT = `
 // 客户端直连模式 (Fallback)
 // 当后端不可用时（如 EdgeOne 静态托管或 Cloudflare 报错），直接在浏览器端调用 Google API
 const callGoogleDirectly = async (history: ChatMessage[], newMessage: string, apiKey: string): Promise<string> => {
-  // 客户端直连使用 gemini-2.5-flash，因为用户自己的 IP 通常受限较少
+  // 客户端直连使用 gemini-2.5-flash
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
   
   const payload = {
@@ -94,8 +94,8 @@ export const sendMessageToGemini = async (history: ChatMessage[], newMessage: st
     });
 
     // 关键逻辑：
-    // 如果返回 404 (API 不存在) 或 405 (方法不允许，常见于 EdgeOne 静态托管)，
-    // 或者返回 500/400 等后端错误，我们都抛出异常，触发下方的 catch 块进入直连模式。
+    // 如果返回 404 (API 不存在), 405 (EdgeOne 静态拦截), 400 (地区限制), 500 (Key 丢失)
+    // 我们都抛出异常，触发下方的 catch 块进入直连模式。
     if (!response.ok) {
       const errorJson = await response.json().catch(() => ({}));
       throw new Error(errorJson.error || `Backend status ${response.status}`);
