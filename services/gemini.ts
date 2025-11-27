@@ -14,8 +14,13 @@ const RESUME_CONTEXT = `
   - **高中:** 上海市理工大学附属高中 (2007.09 - 2009.06)
 - **联系电话：** +86 13524252203
 - **电子邮箱：** 313455055@qq.com
+- **个人网站/AI实验室：** www.kunkun1023.xyz (展示个人AI探索项目)
 - **社交媒体：** 微信 Joe_povons | 抖音 68888371171
 - **核心定位：** 懂技术的资深项目与客户管理者。拥有“技术研发 -> 项目管理 -> 客户增长”的全链路职业进阶经验。
+
+**AI 探索与创新 (New!)：**
+- 正在运营个人 AI 实验室站点 **KunKun AI Labs** (www.kunkun1023.xyz)。
+- 积极探索 **Gemini Veo3** 等前沿大模型在视频生成和多模态领域的应用工具开发。
 
 **详细工作经历：**
 1. **上海合阔信息技术有限公司 (2016.04 - 2025.07)**
@@ -38,10 +43,10 @@ const RESUME_CONTEXT = `
 - 语气自信、专业且沉稳。
 - 强调在**喜茶、DQ、乐乐茶**等知名品牌的成功运营经验。
 - 突出**懂技术**（计算机本科背景+开发经历）对管理大客户和项目的独特价值。
+- 当被问及最近在做什么时，可以提及正在进行的 **AI 工具开发 (Gemini Veo3)** 和个人网站项目。
 `;
 
 // 客户端直连模式 (Fallback)
-// 当后端不可用时（如 EdgeOne 静态托管或 Cloudflare 报错），直接在浏览器端调用 Google API
 const callGoogleDirectly = async (history: ChatMessage[], newMessage: string, apiKey: string): Promise<string> => {
   // 客户端直连使用 gemini-2.5-flash
   const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
@@ -78,7 +83,7 @@ export const sendMessageToGemini = async (history: ChatMessage[], newMessage: st
   const finalMessage = newMessage + `\n\n(System Note: ${langInstruction})`;
 
   try {
-    // 1. 优先尝试后端代理 (适用于 Vercel/Cloudflare Worker)
+    // 1. 优先尝试后端代理
     const payload = {
       contents: [
         ...history.map(msg => ({ role: msg.role, parts: [{ text: msg.text }] })),
@@ -93,9 +98,6 @@ export const sendMessageToGemini = async (history: ChatMessage[], newMessage: st
       body: JSON.stringify(payload)
     });
 
-    // 关键逻辑：
-    // 如果返回 404 (API 不存在), 405 (EdgeOne 静态拦截), 400 (地区限制), 500 (Key 丢失)
-    // 我们都抛出异常，触发下方的 catch 块进入直连模式。
     if (!response.ok) {
       const errorJson = await response.json().catch(() => ({}));
       throw new Error(errorJson.error || `Backend status ${response.status}`);
@@ -107,10 +109,9 @@ export const sendMessageToGemini = async (history: ChatMessage[], newMessage: st
     return text;
 
   } catch (backendError: any) {
-    console.warn(`Backend attempt failed (${backendError.message}), switching to client-side fallback.`);
+    console.warn(`Backend failed (${backendError.message}), switching to client-side fallback.`);
 
-    // 2. 智能降级到客户端直连 (适用于 EdgeOne / Localhost / Cloudflare Failover)
-    // process.env.API_KEY 由 Vite 在构建时注入
+    // 2. 降级到客户端直连
     const apiKey = process.env.API_KEY;
     
     if (apiKey) {

@@ -43,6 +43,24 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
           tags: ['1800+ 门店', '数据整合', '业务中台'],
           highlight: '数据孤岛打通'
         }
+      ],
+      aiTitle: 'AI 创新实验室',
+      aiDesc: '探索 AIGC 前沿技术，构建个人 AI 工具箱。',
+      aiProjects: [
+        {
+          name: 'KunKun AI Labs',
+          desc: '个人 AI 技术探索与展示站点。',
+          link: 'https://www.kunkun1023.xyz',
+          tags: ['Personal Site', 'AI Showcase'],
+          icon: '🧪'
+        },
+        {
+          name: 'Gemini Veo3 Tools',
+          desc: '基于 Google Gemini 模型的 AI 视频/多模态生成工具开发。',
+          link: '#',
+          tags: ['Gemini API', 'GenAI', 'Video Generation'],
+          icon: '🤖'
+        }
       ]
     },
     en: {
@@ -81,17 +99,35 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
           tags: ['1800+ Stores', 'Data Integration', 'Middle Platform'],
           highlight: 'Data Silos Eliminated'
         }
+      ],
+      aiTitle: 'AI Innovation Lab',
+      aiDesc: 'Exploring frontier AIGC technologies and building personal AI tools.',
+      aiProjects: [
+        {
+          name: 'KunKun AI Labs',
+          desc: 'Personal AI technology exploration and showcase site.',
+          link: 'https://www.kunkun1023.xyz',
+          tags: ['Personal Site', 'AI Showcase'],
+          icon: '🧪'
+        },
+        {
+          name: 'Gemini Veo3 Tools',
+          desc: 'Developing AI video/multimodal generation tools based on Google Gemini models.',
+          link: '#',
+          tags: ['Gemini API', 'GenAI', 'Video Generation'],
+          icon: '🤖'
+        }
       ]
     }
   };
 
   const t = content[language];
 
-  // 品牌列表
+  // Brand list remains the same
   const brandList = [
     "喜茶 (HEYTEA)", "DQ (Dairy Queen)", "棒约翰 (Papa John's)", 
     "Peets (皮爷咖啡)", "T9 Tea", "Linlee (邻里)", 
-    "谭仔 (TamJai)", "Something For", "果呀呀", "久久丫", "Seesaw", "乐乐茶"
+    "谭仔 (TamJai)", "Something For", "果呀呀", "久久丫"
   ];
 
   return (
@@ -151,10 +187,10 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
 
                   {/* Nodes */}
                   <circle cx="100" cy="100" r="30" className="fill-white dark:fill-slate-800 stroke-gunpla-blue" strokeWidth="4" />
-                  <text x="100" y="105" textAnchor="middle" fontSize="10" className="fill-slate-600 dark:fill-slate-300 font-bold">Store</text>
+                  <text x="100" y="105" textAnchor="middle" fontSize="10" className="fill-slate-600 dark:fill-slate-300 font-bold">Store/POS</text>
 
                   <rect x="170" y="70" width="60" height="60" rx="8" className="fill-gunpla-blue stroke-white dark:stroke-slate-700" strokeWidth="2" />
-                  <text x="200" y="105" textAnchor="middle" fontSize="10" fill="white" fontWeight="bold">SaaS</text>
+                  <text x="200" y="105" textAnchor="middle" fontSize="10" fill="white" fontWeight="bold">SaaS Core</text>
 
                   <circle cx="300" cy="50" r="25" className="fill-white dark:fill-slate-800 stroke-gunpla-red" strokeWidth="3" />
                   <text x="300" y="54" textAnchor="middle" fontSize="9" className="fill-slate-600 dark:fill-slate-300">Supply</text>
@@ -212,6 +248,40 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                 </div>
                 </div>
             ))}
+            </div>
+        </div>
+
+        {/* 4. AI Innovation Lab (NEW) */}
+        <div className="bg-gradient-to-br from-slate-100 to-white dark:from-slate-800 dark:to-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 p-8 md:p-12">
+            <div className="text-center mb-8">
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">{t.aiTitle}</h3>
+                <p className="text-slate-600 dark:text-gray-400">{t.aiDesc}</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {t.aiProjects.map((proj, idx) => (
+                    <a 
+                        key={idx} 
+                        href={proj.link}
+                        target="_blank"
+                        className="bg-white dark:bg-slate-900/50 p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-purple-500 dark:hover:border-purple-500 transition-all hover:shadow-md group flex items-start gap-4"
+                    >
+                        <div className="text-3xl">{proj.icon}</div>
+                        <div>
+                            <h4 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-purple-500 transition-colors">
+                                {proj.name} 
+                                <span className="inline-block ml-2 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                            </h4>
+                            <p className="text-sm text-slate-600 dark:text-gray-400 mb-3">{proj.desc}</p>
+                            <div className="flex flex-wrap gap-2">
+                                {proj.tags.map((tag, i) => (
+                                    <span key={i} className="text-xs font-mono bg-purple-50 text-purple-600 dark:bg-purple-900/30 dark:text-purple-300 px-2 py-1 rounded">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </a>
+                ))}
             </div>
         </div>
 

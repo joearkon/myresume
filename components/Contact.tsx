@@ -16,12 +16,15 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       email: '邮箱',
       wechat: '微信',
       douyin: '抖音',
+      website: '个人网站',
       actionCall: '点击拨打',
       actionMail: '发送邮件',
       actionCopy: '查看 ID',
+      actionVisit: '访问站点',
       wechatId: 'Joe_povons',
       douyinId: '68888371171',
-      icp: '沪ICP备xxxxxxxx号-x' // 预留备案号
+      websiteUrl: 'www.kunkun1023.xyz',
+      icp: '沪ICP备xxxxxxxx号-x'
     },
     en: {
       title: 'Contact',
@@ -32,18 +35,20 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       email: 'Email',
       wechat: 'WeChat',
       douyin: 'Douyin',
+      website: 'Website',
       actionCall: 'Call Now',
       actionMail: 'Send Mail',
       actionCopy: 'View ID',
+      actionVisit: 'Visit',
       wechatId: 'Joe_povons',
       douyinId: '68888371171',
+      websiteUrl: 'www.kunkun1023.xyz',
       icp: 'ICP License No. xxxxxxxx'
     }
   };
 
   const t = content[language];
 
-  // Reusable Card Component
   const ContactCard = ({ 
     icon, 
     title, 
@@ -94,10 +99,9 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
           </p>
         </div>
 
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          
-          {/* Phone */}
+        {/* Grid Layout - Adjusted for 5 items if needed, but sticking to 4 key contacts for layout balance */}
+        {/* Added Personal Website Link in the center below grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <ContactCard 
             title={t.phone}
             value="+86 135 2425 2203"
@@ -107,8 +111,6 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
             hoverBorderClass="hover:border-blue-500/50"
             icon={<svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>}
           />
-
-          {/* Email */}
           <ContactCard 
             title={t.email}
             value="313455055@qq.com"
@@ -118,8 +120,6 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
             hoverBorderClass="hover:border-yellow-500/50"
             icon={<svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
           />
-
-          {/* WeChat */}
           <ContactCard 
             title={t.wechat}
             value={t.wechatId}
@@ -129,8 +129,6 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
             hoverBorderClass="hover:border-green-500/50"
             icon={<svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8.5,13.5A1.5,1.5 0 0,1 7,12A1.5,1.5 0 0,1 8.5,10.5A1.5,1.5 0 0,1 10,12A1.5,1.5 0 0,1 8.5,13.5M15.5,13.5A1.5,1.5 0 0,1 14,12A1.5,1.5 0 0,1 15.5,10.5A1.5,1.5 0 0,1 17,12A1.5,1.5 0 0,1 15.5,13.5M12,2C6.5,2 2,6 2,11C2,13.8 3.6,16.3 6,17.7C5.8,18.6 5.3,20.3 4.4,21.2C6.1,21.3 8.3,20.2 9.7,19.1C10.4,19.2 11.2,19.3 12,19.3C17.5,19.3 22,15.3 22,10.3C22,5.3 17.5,2 12,2Z" /></svg>}
           />
-
-          {/* Douyin */}
           <ContactCard 
             title={t.douyin}
             value={t.douyinId}
@@ -140,14 +138,20 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
             hoverBorderClass="hover:border-pink-500/50"
             icon={<svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M16.7 5.7C16.7 3.66 15.1 2 13.1 2h-1.8v10.6c0 2.6-2.1 4.7-4.7 4.7-2.6 0-4.7-2.1-4.7-4.7 0-2.6 2.1-4.7 4.7-4.7.3 0 .6 0 .9.1V4.3c-.3-.1-.6-.1-.9-.1-4.6 0-8.4 3.8-8.4 8.4s3.8 8.4 8.4 8.4 8.4-3.8 8.4-8.4V8.5c1.6 1.1 3.5 1.8 5.6 1.8v-3.7c-1.6 0-3.1-.4-4.5-1.3z"/></svg>}
           />
-
         </div>
 
-        <div className="mt-24 pt-8 border-t border-slate-200 dark:border-slate-800 text-center space-y-2">
+        {/* Personal Website Link (New) */}
+        <div className="flex justify-center mb-12">
+           <a href={`https://${t.websiteUrl}`} target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-bold shadow-lg hover:shadow-purple-500/30 hover:-translate-y-1 transition-all duration-300">
+              <span>🚀</span>
+              <span>{t.website}: {t.websiteUrl}</span>
+           </a>
+        </div>
+
+        <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-center space-y-2">
            <p className="text-sm text-slate-400 dark:text-gray-600 font-mono">
-            © {new Date().getFullYear()} 陈子卓野 (Joe.Chen) | Shanghai | v6.3
+            © {new Date().getFullYear()} 陈子卓野 (Joe.Chen) | Shanghai | v6.2
           </p>
-          {/* ICP License Link Placeholder */}
           <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-300 dark:text-gray-700 hover:text-slate-500 dark:hover:text-gray-500 transition-colors block">
             {t.icp}
           </a>
