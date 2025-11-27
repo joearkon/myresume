@@ -145,7 +145,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 
         <div className="mt-24 pt-8 border-t border-slate-200 dark:border-slate-800 text-center space-y-2">
            <p className="text-sm text-slate-400 dark:text-gray-600 font-mono">
-            © {new Date().getFullYear()} 陈子卓野 (Joe.Chen) | Shanghai | v5.2
+            © {new Date().getFullYear()} 陈子卓野 (Joe.Chen) | Shanghai | v6.3
           </p>
           {/* ICP License Link Placeholder */}
           <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-300 dark:text-gray-700 hover:text-slate-500 dark:hover:text-gray-500 transition-colors block">

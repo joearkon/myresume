@@ -22,18 +22,18 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
   const translations = {
     zh: {
       home: '首页',
-      projects: '项目成就', // Added
+      projects: '项目成就',
       experience: '职业生涯',
-      skills: '专业技能', // Added
+      skills: '专业技能',
       education: '教育背景',
       hobbies: '个人兴趣',
       contact: '联系我'
     },
     en: {
       home: 'Home',
-      projects: 'Projects', // Added
+      projects: 'Projects',
       experience: 'Experience',
-      skills: 'Skills', // Added
+      skills: 'Skills',
       education: 'Education',
       hobbies: 'Hobbies',
       contact: 'Contact'
@@ -61,9 +61,9 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
           <div className="hidden md:flex gap-6 lg:gap-8">
             {[
               { name: t.home, link: '#home' },
-              { name: t.projects, link: '#projects' }, // Added
+              { name: t.projects, link: '#projects' },
               { name: t.experience, link: '#experience' },
-              { name: t.skills, link: '#skills' }, // Added
+              { name: t.skills, link: '#skills' },
               { name: t.education, link: '#education' },
               { name: t.hobbies, link: '#hobbies' },
               { name: t.contact, link: '#contact' }
@@ -80,7 +80,6 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
           </div>
 
           <div className="flex items-center gap-3">
-            {/* Language Toggle - Segmented Control Style */}
             <button
               onClick={toggleLanguage}
               className="flex items-center bg-slate-100 dark:bg-slate-800 rounded-full p-1 border border-slate-200 dark:border-slate-700 cursor-pointer hover:border-gunpla-blue dark:hover:border-gunpla-blue transition-all"
@@ -94,17 +93,14 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
               </span>
             </button>
 
-            {/* Theme Toggle Button */}
             <button 
               onClick={toggleTheme}
               className="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-gunpla-yellow hover:scale-110 transition-all duration-300 shadow-sm border border-slate-200 dark:border-slate-700"
               aria-label="Toggle Theme"
             >
               {darkMode ? (
-                // Moon Icon (Dark Mode)
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
               ) : (
-                // Sun Icon (Light Mode)
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
               )}
             </button>

@@ -18,7 +18,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info2Title: '现居 / 政治面貌',
       info2Val: '上海 | 中共党员',
       info3Title: '学历',
-      info3Val: '本科',
+      info3Val: '本科 (上海海事)',
       info4Title: '经验年限',
       info4Val: '10余年 +',
       desc: (

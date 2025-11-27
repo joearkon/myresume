@@ -87,11 +87,11 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
 
   const t = content[language];
 
-  // 品牌列表：基于用户提供的文件夹资料
+  // 品牌列表
   const brandList = [
     "喜茶 (HEYTEA)", "DQ (Dairy Queen)", "棒约翰 (Papa John's)", 
     "Peets (皮爷咖啡)", "T9 Tea", "Linlee (邻里)", 
-    "谭仔 (TamJai)", "Something For", "果呀呀", "久久丫"
+    "谭仔 (TamJai)", "Something For", "果呀呀", "久久丫", "Seesaw", "乐乐茶"
   ];
 
   return (
@@ -150,19 +150,15 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                   </path>
 
                   {/* Nodes */}
-                  {/* Store Node */}
                   <circle cx="100" cy="100" r="30" className="fill-white dark:fill-slate-800 stroke-gunpla-blue" strokeWidth="4" />
-                  <text x="100" y="105" textAnchor="middle" fontSize="10" className="fill-slate-600 dark:fill-slate-300 font-bold">Store/POS</text>
+                  <text x="100" y="105" textAnchor="middle" fontSize="10" className="fill-slate-600 dark:fill-slate-300 font-bold">Store</text>
 
-                  {/* Middle Platform Node */}
                   <rect x="170" y="70" width="60" height="60" rx="8" className="fill-gunpla-blue stroke-white dark:stroke-slate-700" strokeWidth="2" />
-                  <text x="200" y="105" textAnchor="middle" fontSize="10" fill="white" fontWeight="bold">SaaS Core</text>
+                  <text x="200" y="105" textAnchor="middle" fontSize="10" fill="white" fontWeight="bold">SaaS</text>
 
-                  {/* Supply Chain Node */}
                   <circle cx="300" cy="50" r="25" className="fill-white dark:fill-slate-800 stroke-gunpla-red" strokeWidth="3" />
                   <text x="300" y="54" textAnchor="middle" fontSize="9" className="fill-slate-600 dark:fill-slate-300">Supply</text>
 
-                  {/* Finance Node */}
                   <circle cx="300" cy="150" r="25" className="fill-white dark:fill-slate-800 stroke-yellow-500" strokeWidth="3" />
                   <text x="300" y="154" textAnchor="middle" fontSize="9" className="fill-slate-600 dark:fill-slate-300">Finance</text>
                 </svg>
@@ -183,38 +179,40 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         </div>
 
         {/* 3. Case Study Cards */}
-        <h3 className="text-2xl font-bold text-center mb-8 text-slate-800 dark:text-white">{t.casesTitle}</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {t.cases.map((item, index) => (
-            <div key={index} className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 hover:border-gunpla-blue dark:hover:border-gunpla-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col group">
-              <div className="mb-4 flex justify-between items-start">
-                <div className="text-xl font-black font-tech text-slate-900 dark:text-white group-hover:text-gunpla-blue transition-colors">
-                  {item.brand}
+        <div className="mb-20">
+            <h3 className="text-2xl font-bold text-center mb-8 text-slate-800 dark:text-white">{t.casesTitle}</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {t.cases.map((item, index) => (
+                <div key={index} className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 hover:border-gunpla-blue dark:hover:border-gunpla-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col group">
+                <div className="mb-4 flex justify-between items-start">
+                    <div className="text-xl font-black font-tech text-slate-900 dark:text-white group-hover:text-gunpla-blue transition-colors">
+                    {item.brand}
+                    </div>
+                    {index === 0 && <span className="text-xs font-bold bg-red-100 text-red-600 px-2 py-1 rounded">HOT</span>}
                 </div>
-                {index === 0 && <span className="text-xs font-bold bg-red-100 text-red-600 px-2 py-1 rounded">HOT</span>}
-              </div>
-              
-              <div className="text-sm font-bold text-slate-500 dark:text-gray-400 mb-3 uppercase tracking-wider">
-                {item.role}
-              </div>
+                
+                <div className="text-sm font-bold text-slate-500 dark:text-gray-400 mb-3 uppercase tracking-wider">
+                    {item.role}
+                </div>
 
-              <p className="text-sm text-slate-600 dark:text-gray-300 mb-6 flex-grow leading-relaxed">
-                {item.desc}
-              </p>
+                <p className="text-sm text-slate-600 dark:text-gray-300 mb-6 flex-grow leading-relaxed">
+                    {item.desc}
+                </p>
 
-              <div className="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-3 mb-4 text-center">
-                 <span className="text-sm font-bold text-gunpla-blue">{item.highlight}</span>
-              </div>
+                <div className="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-3 mb-4 text-center">
+                    <span className="text-sm font-bold text-gunpla-blue">{item.highlight}</span>
+                </div>
 
-              <div className="flex flex-wrap gap-2">
-                {item.tags.map((tag, i) => (
-                  <span key={i} className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded border border-slate-200 dark:border-slate-600">
-                    {tag}
-                  </span>
-                ))}
-              </div>
+                <div className="flex flex-wrap gap-2">
+                    {item.tags.map((tag, i) => (
+                    <span key={i} className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-1 rounded border border-slate-200 dark:border-slate-600">
+                        {tag}
+                    </span>
+                    ))}
+                </div>
+                </div>
+            ))}
             </div>
-          ))}
         </div>
 
       </div>
