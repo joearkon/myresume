@@ -29,7 +29,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       ),
       btnResume: '查看完整履历',
       btnContact: '联系方式',
-      btnDownload: '下载简历 (PDF)'
+      btnExport: '导出 PDF 简历'
     },
     en: {
       tagline: 'Digital Transformation Expert',
@@ -54,13 +54,15 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       ),
       btnResume: 'View Experience',
       btnContact: 'Contact Me',
-      btnDownload: 'Download Resume (PDF)'
+      btnExport: 'Export to PDF'
     }
   };
 
   const t = content[language];
 
-  const handleDownload = () => {
+  // Function to trigger browser print dialog
+  const handlePrint = (e: React.MouseEvent) => {
+    e.preventDefault();
     window.print();
   };
 
@@ -105,7 +107,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           <span>{t.role3}</span>
         </h2>
 
-        {/* Personal Info Card */}
+        {/* Personal Info Card - Optimized for Print */}
         <div className="max-w-4xl mx-auto mb-12 opacity-0 animate-fade-in-up grid grid-cols-2 md:grid-cols-4 gap-4 text-sm md:text-base print:opacity-100 print:grid-cols-2 print:gap-2 print:mb-6 print:animate-none print:text-left" style={{ animationDelay: '0.5s' }}>
             <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg backdrop-blur-sm transition-colors duration-300 shadow-sm print:border-none print:shadow-none print:p-0 print:bg-transparent">
                 <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 print:text-gray-500">{t.info1Title}</div>
@@ -133,13 +135,14 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           <a href="#experience" className="px-8 py-4 bg-gunpla-blue text-white font-bold rounded hover:bg-blue-600 transition-all hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] clip-path-slope">
             {t.btnResume}
           </a>
-          
+
+          {/* Export PDF Button - Triggers Print */}
           <button 
-            onClick={handleDownload}
-            className="px-8 py-4 bg-slate-800 dark:bg-slate-700 text-white font-bold rounded hover:bg-slate-700 dark:hover:bg-slate-600 transition-all flex items-center gap-2 shadow-lg hover:-translate-y-1"
+            onClick={handlePrint}
+            className="px-8 py-4 bg-slate-800 dark:bg-slate-700 text-white font-bold rounded hover:bg-slate-700 dark:hover:bg-slate-600 transition-all flex items-center gap-2 shadow-lg hover:-translate-y-1 cursor-pointer"
           >
              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-             {t.btnDownload}
+             {t.btnExport}
           </button>
 
           <a href="#contact" className="px-8 py-4 border border-slate-300 dark:border-gray-600 text-slate-600 dark:text-gray-300 font-bold rounded hover:border-gunpla-yellow hover:text-yellow-600 dark:hover:text-gunpla-yellow transition-all">

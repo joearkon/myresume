@@ -123,7 +123,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
 
   const t = content[language];
 
-  // Brand list remains the same
+  // Brand list
   const brandList = [
     "喜茶 (HEYTEA)", "DQ (Dairy Queen)", "棒约翰 (Papa John's)", 
     "Peets (皮爷咖啡)", "T9 Tea", "Linlee (邻里)", 

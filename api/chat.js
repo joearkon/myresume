@@ -34,7 +34,7 @@ export default async function handler(request) {
     const reqBody = await request.json();
     const { contents, systemInstruction } = reqBody;
 
-    // [Vercel] 保持使用 gemini-2.5-flash
+    // [Vercel] 使用 gemini-2.5-flash (您确认过此版本在 Vercel 可用)
     const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
     
     const payload = {

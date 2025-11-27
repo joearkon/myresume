@@ -71,7 +71,6 @@
     <style>
       body {
         font-family: 'Noto Sans SC', sans-serif;
-        /* Removed hardcoded bg and color to allow Tailwind classes to control theme */
         overflow-x: hidden;
       }
       h1, h2, h3, .font-tech {
@@ -91,66 +90,144 @@
       ::-webkit-scrollbar-thumb:hover {
         background: #2563eb;
       }
-      /* Apply dark mode scrollbar track manually if needed, but usually transparent works */
       .dark ::-webkit-scrollbar-track {
          background: #0f172a;
       }
 
-      /* Print Styles - Optimize for PDF export */
+      /* === 打印样式优化 (Print / PDF Export) === */
       @media print {
-        /* Hide elements not needed for paper resume */
+        /* 1. 隐藏所有无关元素 */
         nav, 
-        #contact, 
-        .fixed, 
-        button, 
-        a[href^="#"],
+        #contact, /* 隐藏底部大块联系区域，联系方式通常在头部 */
+        #hobbies, /* 简历通常聚焦职业技能，兴趣可隐藏节省空间 */
+        .fixed,   /* 隐藏聊天框、回到顶部按钮 */
+        button,   /* 隐藏操作按钮 */
         [aria-label="Toggle Theme"],
         [title="Switch to English"],
         form,
         .animate-float,
         .animate-pulse-glow,
-        .absolute.inset-0 /* Hide background grids */
+        .absolute.inset-0, /* 隐藏背景网格 */
+        svg.absolute /* 隐藏装饰性 SVG */
         {
           display: none !important;
+        }
+
+        /* 2. 页面基础设置 */
+        @page {
+          margin: 1.5cm 1.5cm; /* 标准 A4 页边距 */
+          size: A4;
         }
 
         body {
           background: white !important;
           color: black !important;
+          font-size: 10pt; /* 适合打印的正文字号 */
+          line-height: 1.5;
+          -webkit-print-color-adjust: exact; 
+          print-color-adjust: exact;
           overflow: visible !important;
         }
 
+        /* 3. 布局重构：板块间距压缩 */
         section {
-          padding: 20px 0 !important;
-          page-break-inside: avoid;
-          min-height: auto !important;
-        }
-
-        /* Ensure text is black for printing */
-        .text-slate-600, .text-slate-500, .dark\:text-gray-400, .dark\:text-gray-300 {
-          color: #333 !important;
+          padding: 10px 0 !important;
+          margin: 0 !important;
+          page-break-inside: auto;
+          display: block !important;
+          border: none !important; /* 去除可能的板块分割线 */
         }
         
-        h1, h2, h3 {
-          color: #000 !important;
-        }
-
-        /* Expand containers */
         .max-w-4xl, .max-w-5xl, .max-w-6xl, .max-w-7xl {
           max-width: 100% !important;
           padding: 0 !important;
+          margin: 0 !important;
         }
 
-        /* Show links nicely */
-        a[href]:after {
-          content: " (" attr(href) ")";
-          font-size: 0.8em;
-          color: #666;
+        /* 4. 字体与颜色修正 */
+        h1 { font-size: 24pt !important; font-weight: 900 !important; margin-bottom: 5px !important; color: #000 !important; }
+        h2 { font-size: 16pt !important; font-weight: 700 !important; margin-top: 20px !important; margin-bottom: 10px !important; color: #000 !important; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        h3 { font-size: 12pt !important; font-weight: 700 !important; color: #333 !important; }
+        
+        .text-slate-600, .text-slate-500, .dark\:text-gray-400, .dark\:text-gray-300, .dark\:text-white, .text-slate-900 {
+          color: #000 !important;
         }
-        /* Don't show internal anchor links */
-        a[href^="#"]:after, a[href^="javascript"]:after, a[href^="/"]:after {
-          content: "";
+        
+        /* 关键指标颜色转黑 */
+        .text-blue-500, .text-green-500, .text-purple-500, .text-yellow-500, .text-gunpla-blue, .text-gunpla-red {
+          color: #000 !important;
         }
+
+        /* 5. 容器去样式：变回白纸黑字 */
+        .bg-white, .bg-slate-50, .dark\:bg-slate-900, .dark\:bg-slate-800 {
+          background: transparent !important;
+          box-shadow: none !important;
+          border: none !important;
+        }
+        .rounded-xl, .rounded-2xl, .rounded-3xl {
+          border-radius: 0 !important;
+        }
+
+        /* 6. Hero 区域 (页眉) 改造 */
+        #home {
+          min-height: auto !important;
+          padding-top: 0 !important;
+          padding-bottom: 10px !important;
+          display: block !important; /* 取消 flex 居中，改为自然流 */
+          text-align: left !important;
+          border-bottom: 2px solid #000;
+          margin-bottom: 20px !important;
+        }
+        /* 隐藏 Hero 下方的按钮组 */
+        #home .flex.justify-center {
+            display: none !important;
+        }
+        /* 个人信息：强制一行或两行显示 */
+        #home .grid {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 20px !important;
+            margin-top: 10px !important;
+            margin-bottom: 10px !important;
+        }
+        #home .grid > div {
+            border: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            width: auto !important;
+        }
+        /* 头像处理：放在右上角或隐藏 */
+        #home img {
+            display: none !important; /* 打印简历通常不放这种大头贴，节省空间 */
+        }
+
+        /* 7. 列表与卡片的分页保护 */
+        /* 强制主要条目不跨页 */
+        .group, 
+        #experience .relative.flex, 
+        #projects .grid > div,
+        #skills .group 
+        {
+          page-break-inside: avoid !important;
+          break-inside: avoid !important;
+          border-bottom: 1px dotted #ddd !important; /* 增加分隔线 */
+          padding-bottom: 10px !important;
+          margin-bottom: 10px !important;
+        }
+
+        /* 技能标签 */
+        #skills span {
+            border: 1px solid #000 !important;
+            background: #fff !important;
+            color: #000 !important;
+            padding: 2px 6px !important;
+        }
+        
+        /* 8. 链接处理 */
+        a { text-decoration: none !important; color: #000 !important; }
+        /* 打印时显示链接地址，方便 HR 查看作品集 */
+        a[href^="http"]:after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+        a[href^="#"]:after, a[href^="javascript"]:after { content: ""; }
       }
     </style>
   <script type="importmap">

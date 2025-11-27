@@ -2,7 +2,6 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
 
-    // CORS
     if (request.method === 'OPTIONS') {
       return new Response(null, {
         headers: {
@@ -13,7 +12,6 @@ export default {
       });
     }
 
-    // API Route
     if (url.pathname === '/api/chat') {
       if (request.method !== 'POST') {
          return new Response("Method Not Allowed", { status: 405 });
@@ -32,7 +30,7 @@ export default {
         const reqBody = await request.json();
         const { contents, systemInstruction } = reqBody;
 
-        // [Cloudflare 修正] 使用 gemini-1.5-flash (标准版)
+        // [Cloudflare 修正] 强制使用 gemini-1.5-flash
         // 原因: 2.5-flash (预览版) 对 Cloudflare 节点 IP 有严格的地区限制 (返回 400 Location Error)。
         // 1.5-flash 全球可用性更好，能解决这个问题。
         const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${env.API_KEY}`;
@@ -66,14 +64,13 @@ export default {
         });
 
       } catch (error) {
-        return new Response(JSON.stringify({ error: `Worker Exception: ${error.message}` }), {
+        return new Response(JSON.stringify({ error: `Worker Error: ${error.message}` }), {
           status: 500,
           headers: { 'Content-Type': 'application/json' }
         });
       }
     }
 
-    // Static Assets
     if (env.ASSETS) {
       return env.ASSETS.fetch(request);
     } else {
