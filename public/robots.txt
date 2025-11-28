@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://myresume.gdjustwuxia.workers.dev/sitemap.xml

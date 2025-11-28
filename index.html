@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3b82f6" />
+    <link rel="manifest" href="/manifest.json" />
     
     <!-- Primary Meta Tags -->
     <title>陈子卓野 (Joe.Chen) - 全链路数字化专家 | 互动简历</title>
@@ -96,7 +98,7 @@
 
       /* === 打印样式优化 (Print / PDF Export) === */
       @media print {
-        /* 1. 隐藏所有无关元素 */
+        /* 1. 隐藏非核心元素 */
         nav, 
         #contact, /* 隐藏底部大块联系区域，联系方式通常在头部 */
         #hobbies, /* 简历通常聚焦职业技能，兴趣可隐藏节省空间 */
@@ -108,7 +110,9 @@
         .animate-float,
         .animate-pulse-glow,
         .absolute.inset-0, /* 隐藏背景网格 */
-        svg.absolute /* 隐藏装饰性 SVG */
+        svg.absolute,
+        iframe,
+        footer /* 隐藏页脚版权信息 */
         {
           display: none !important;
         }

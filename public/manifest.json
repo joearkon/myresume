@@ -1,0 +1,21 @@
+{
+  "name": "陈子卓野 - 互动简历",
+  "short_name": "Joe's Resume",
+  "description": "资深项目总监/全链路数字化专家 - 互动简历",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEKY6tpIA8Tk6OK3QdiWsYI1WRZtPNRYAACiToAAlVBAVWDSr2SC4BhWjYE.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEKY6tpIA8Tk6OK3QdiWsYI1WRZtPNRYAACiToAAlVBAVWDSr2SC4BhWjYE.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
