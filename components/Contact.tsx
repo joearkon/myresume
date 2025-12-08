@@ -23,8 +23,8 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       actionVisit: '访问站点',
       wechatId: 'Joe_povons',
       douyinId: '68888371171',
-      websiteUrl: 'www.kunkun1023.xyz',
-      icp: '沪ICP备xxxxxxxx号-x' // 预留备案号
+      websiteUrl: 'home.kunkun1023.xyz',
+      icp: '沪ICP备2025153381号-1' 
     },
     en: {
       title: 'Contact',
@@ -42,8 +42,8 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       actionVisit: 'Visit',
       wechatId: 'Joe_povons',
       douyinId: '68888371171',
-      websiteUrl: 'www.kunkun1023.xyz',
-      icp: 'ICP License No. xxxxxxxx'
+      websiteUrl: 'home.kunkun1023.xyz',
+      icp: 'ICP License No. 沪ICP备2025153381号'
     }
   };
 
