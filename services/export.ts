@@ -429,7 +429,19 @@ export const generateWord = async (language: Language) => {
           // Profile
           createSectionTitle(isZh ? "个人简介" : "Profile"),
           new Paragraph({
-            text: hero.desc,
+            children: isZh ? [
+              new TextRun({ text: "从代码到底层架构，从单项目交付到大客户运营。我不仅懂技术实现，更懂如何将技术转化为商业价值。曾主导 " }),
+              new TextRun({ text: "喜茶、DQ、棒约翰", bold: true }),
+              new TextRun({ text: " 等头部品牌的数字化落地。目前正全面拥抱 AI 时代，" }),
+              new TextRun({ text: "深耕 AIGC 与新媒体运营", bold: true, color: "9333ea" }),
+              new TextRun({ text: "。由对游戏动漫的热爱驱动，探索利用 AI 工具进行内容二创与剪辑。通过构建标准化的 AI 内容产出工作流，在抖音、小红书成功打造个人账号与高粘性 IP 矩阵，并独立开发了基于大模型的量化交易助手。" }),
+            ] : [
+              new TextRun({ text: "From coding to architecture, from project delivery to key account growth. I bridge the gap between technical implementation and business value. Led digital transformation for top brands like " }),
+              new TextRun({ text: "Heytea, DQ, and Papa John's", bold: true }),
+              new TextRun({ text: ". Currently fully embracing the AI era, " }),
+              new TextRun({ text: "deeply engaged in AIGC and social media operations", bold: true, color: "9333ea" }),
+              new TextRun({ text: ". Driven by a passion for gaming and anime, exploring AI-powered secondary creation and video editing. By building standardized AI content production workflows, successfully established personal accounts and high-engagement IP matrices on Douyin and Xiaohongshu, alongside developing LLM-based quantitative trading assistants." }),
+            ],
             spacing: { after: 200 },
           }),
 
