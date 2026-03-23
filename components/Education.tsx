@@ -33,7 +33,7 @@ const Education: React.FC<EducationProps> = ({ language }) => {
       edu: [
         {
           school: 'Shanghai Maritime University',
-          degree: 'Bachelor | Computer Science & Tech',
+          degree: 'Bachelor',
           date: '2006.09 - 2009.06',
           desc: 'Mastered fundamentals of computer software and hardware, developing strong programming skills and logical thinking.'
         },

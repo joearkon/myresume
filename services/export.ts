@@ -416,49 +416,6 @@ export const generateWord = async (language: Language) => {
             spacing: { after: 200 },
           }),
 
-          // Career Path
-          createSectionTitle(isZh ? "职业生涯 • Career Path" : "Career Path"),
-          new Paragraph({
-            children: [
-              new TextRun({
-                text: isZh ? "十年磨一剑 • 从技术底层到商业顶层的全链路进阶" : "10+ Years • From Technical Foundation to Business Leadership",
-                italics: true,
-                bold: true,
-                color: "333333",
-                size: 22,
-              }),
-            ],
-            spacing: { after: 200 },
-          }),
-
-          // Experience
-          ...experience.flatMap((exp) => [
-            new Paragraph({
-              children: [
-                new TextRun({ text: `${exp.role} | ${exp.company}`, bold: true, size: 24 }),
-              ],
-              spacing: { before: 200 },
-            }),
-            new Paragraph({
-              children: [
-                new TextRun({ text: exp.period, italics: true, color: "666666" }),
-              ],
-              spacing: { after: 100 },
-            }),
-            new Paragraph({
-              text: exp.description,
-              spacing: { after: 100 },
-            }),
-            ...exp.achievements.map(
-              (ach) =>
-                new Paragraph({
-                  text: ach,
-                  bullet: { level: 0 },
-                  spacing: { after: 50 },
-                })
-            ),
-          ]),
-
           // Projects / Star Cases
           createSectionTitle(isZh ? "明星案例与项目成就" : "Star Cases & Project Achievements"),
           
@@ -562,6 +519,49 @@ export const generateWord = async (language: Language) => {
               ],
               spacing: { after: 200 },
             }),
+          ]),
+
+          // Career Path
+          createSectionTitle(isZh ? "职业生涯 • Career Path" : "Career Path"),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: isZh ? "十年磨一剑 • 从技术底层到商业顶层的全链路进阶" : "10+ Years • From Technical Foundation to Business Leadership",
+                italics: true,
+                bold: true,
+                color: "333333",
+                size: 22,
+              }),
+            ],
+            spacing: { after: 200 },
+          }),
+
+          // Experience
+          ...experience.flatMap((exp) => [
+            new Paragraph({
+              children: [
+                new TextRun({ text: `${exp.role} | ${exp.company}`, bold: true, size: 24 }),
+              ],
+              spacing: { before: 200 },
+            }),
+            new Paragraph({
+              children: [
+                new TextRun({ text: exp.period, italics: true, color: "666666" }),
+              ],
+              spacing: { after: 100 },
+            }),
+            new Paragraph({
+              text: exp.description,
+              spacing: { after: 100 },
+            }),
+            ...exp.achievements.map(
+              (ach) =>
+                new Paragraph({
+                  text: ach,
+                  bullet: { level: 0 },
+                  spacing: { after: 50 },
+                })
+            ),
           ]),
 
           // Skills
