@@ -13,8 +13,7 @@ import {
   VerticalAlign,
   HeightRule,
   ImageRun,
-  ShadingType,
-  ExternalHyperlink
+  ShadingType
 } from 'docx';
 import { saveAs } from 'file-saver';
 import { Language } from '../App';
@@ -297,18 +296,16 @@ export const generateWord = async (language: Language) => {
     phone: '电话: +86 135 2425 2203',
     email: '邮箱: 313455055@qq.com',
     wechat: '微信: Joe_povons',
-    social: '抖音: 6888zy1023 | 小红书: 566860318',
-    douyinUrl: 'https://v.douyin.com/9rcj4rkPCEg/',
-    xiaohongshuUrl: 'https://www.xiaohongshu.com/user/profile/5c0213aa6b58b724ed0a49ce',
+    douyin: '抖音: 6888zy1023',
+    xiaohongshu: '小红书: 566860318',
     website: '网站: home.kunkun1023.xyz'
   } : {
     title: 'Contact Me',
     phone: 'Phone: +86 135 2425 2203',
     email: 'Email: 313455055@qq.com',
     wechat: 'WeChat: Joe_povons',
-    social: 'Douyin: 6888zy1023 | Xiaohongshu: 566860318',
-    douyinUrl: 'https://v.douyin.com/9rcj4rkPCEg/',
-    xiaohongshuUrl: 'https://www.xiaohongshu.com/user/profile/5c0213aa6b58b724ed0a49ce',
+    douyin: 'Douyin: 6888zy1023',
+    xiaohongshu: 'Xiaohongshu: 566860318',
     website: 'Web: home.kunkun1023.xyz'
   };
 
@@ -612,31 +609,32 @@ export const generateWord = async (language: Language) => {
 
           // Hobbies
           createSectionTitle(isZh ? "个人兴趣" : "Hobbies"),
-          new Paragraph({
-            children: hobbies.flatMap((hobby, index) => [
-              new TextRun({ text: `${hobby.title}: `, bold: true, size: 20 }),
-              new TextRun({ text: hobby.desc, size: 18 }),
-              ...(index < hobbies.length - 1 ? [new TextRun({ text: "", break: 1 })] : [])
-            ]),
-            spacing: { before: 100, after: 200 },
-          }),
+          ...hobbies.map(
+            (hobby) =>
+              new Paragraph({
+                alignment: AlignmentType.LEFT,
+                children: [
+                  new TextRun({ text: `${hobby.title}: `, bold: true, size: 20 }),
+                  new TextRun({ text: hobby.desc, size: 18 }),
+                ],
+                spacing: { after: 100 },
+              })
+          ),
 
           // Contact Me Section
           createSectionTitle(contactMe.title),
           new Paragraph({
+            alignment: AlignmentType.LEFT,
             children: [
-              new TextRun({ text: `${contactMe.phone}  |  ${contactMe.email}`, size: 18 }),
+              new TextRun({ text: contactMe.phone, size: 18 }),
               new TextRun({ text: "", break: 1 }),
-              new TextRun({ text: `${contactMe.wechat}  |  `, size: 18 }),
-              new ExternalHyperlink({
-                children: [new TextRun({ text: isZh ? '抖音' : 'Douyin', size: 18, color: "0000FF", underline: {} })],
-                link: contactMe.douyinUrl,
-              }),
-              new TextRun({ text: "  |  ", size: 18 }),
-              new ExternalHyperlink({
-                children: [new TextRun({ text: isZh ? '小红书' : 'Xiaohongshu', size: 18, color: "0000FF", underline: {} })],
-                link: contactMe.xiaohongshuUrl,
-              }),
+              new TextRun({ text: contactMe.email, size: 18 }),
+              new TextRun({ text: "", break: 1 }),
+              new TextRun({ text: contactMe.wechat, size: 18 }),
+              new TextRun({ text: "", break: 1 }),
+              new TextRun({ text: contactMe.douyin, size: 18 }),
+              new TextRun({ text: "", break: 1 }),
+              new TextRun({ text: contactMe.xiaohongshu, size: 18 }),
               new TextRun({ text: "", break: 1 }),
               new TextRun({ text: contactMe.website, size: 18 }),
             ],
