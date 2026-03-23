@@ -1,6 +1,6 @@
 import React from 'react';
 import { Language } from '../App';
-import { generateMarkdown, downloadFile, generateWord } from '../services/export';
+import { generateWord } from '../services/export';
 
 interface HeroProps {
   language: Language;
@@ -20,7 +20,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info2Title: '现居 / 政治面貌',
       info2Val: '上海 | 中共党员',
       info3Title: '学历',
-      info3Val: '本科 (上海海事)',
+      info3Val: '本科',
       info4Title: '经验年限',
       info4Val: '10余年 +',
       desc: (
@@ -33,7 +33,6 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       btnResume: '查看完整履历',
       btnContact: '联系方式',
       btnExport: '导出 PDF 简历',
-      btnDownloadMd: '下载 MD 简历',
       btnDownloadWord: '下载 Word 简历'
     },
     en: {
@@ -62,7 +61,6 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       btnResume: 'View Experience',
       btnContact: 'Contact Me',
       btnExport: 'Export to PDF',
-      btnDownloadMd: 'Download MD',
       btnDownloadWord: 'Download Word'
     }
   };
@@ -73,14 +71,6 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
   const handlePrint = (e: React.MouseEvent) => {
     e.preventDefault();
     window.print();
-  };
-
-  // Function to handle MD download
-  const handleDownloadMd = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const md = generateMarkdown(language);
-    const fileName = language === 'zh' ? '陈子卓野_简历.md' : 'Joe_Chen_Resume.md';
-    downloadFile(md, fileName, 'text/markdown');
   };
 
   // Function to handle Word download
@@ -166,15 +156,6 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           >
              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
              {t.btnExport}
-          </button>
-
-          {/* Download MD Button */}
-          <button 
-            onClick={handleDownloadMd}
-            className="px-6 py-2.5 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-medium rounded-md border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all flex items-center gap-2 shadow-sm cursor-pointer"
-          >
-             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-             {t.btnDownloadMd}
           </button>
 
           {/* Download Word Button */}

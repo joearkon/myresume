@@ -14,7 +14,7 @@ const Education: React.FC<EducationProps> = ({ language }) => {
       edu: [
         {
           school: '上海海事大学',
-          degree: '本科 | 计算机科学与技术',
+          degree: '本科',
           date: '2006.09 - 2009.06',
           desc: '系统掌握计算机软硬件基础知识，具备扎实的编程能力与逻辑思维。'
         },
