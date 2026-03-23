@@ -27,14 +27,14 @@ export const generateWord = async (language: Language) => {
     name: '陈子卓野',
     title: '全链路数字化专家 | AIGC 新媒体运营',
     roles: ['技术架构', '项目交付', '客户增长'],
-    contact: '男 | 32岁 | 135 2425 2203 | 313455055@qq.com',
+    contact: '男 | 32岁 | 135 2425 2203 | 313455055@qq.com | 抖音: 6888zy1023 | 小红书: 566860318',
     info: '10年经验 | 期望城市: 上海 | 正在寻找机会 | 本科',
     desc: '从代码到底层架构，从单项目交付到大客户运营。我不仅懂技术实现，更懂如何将技术转化为商业价值。曾主导喜茶、DQ、棒约翰等头部品牌的数字化落地。目前正全面拥抱 AI 时代，深耕 AIGC 与新媒体运营。由对游戏动漫的热爱驱动，探索利用 AI 工具进行内容二创与剪辑。通过构建标准化的 AI 内容产出工作流，在抖音、小红书成功打造个人账号与高粘性 IP 矩阵，并独立开发了基于大模型的量化交易助手。'
   } : {
     name: 'Joe.Chen',
     title: 'Digital Transformation Expert | AIGC Social Media',
     roles: ['Tech Arch', 'Delivery', 'Growth'],
-    contact: 'Male | 32 Years Old | +86 135 2425 2203 | 313455055@qq.com',
+    contact: 'Male | 32 Years Old | +86 135 2425 2203 | 313455055@qq.com | Douyin: 6888zy1023 | Xiaohongshu: 566860318',
     info: '10 Years Exp | City: Shanghai | Actively Seeking Opportunities | Bachelor',
     desc: 'From coding to architecture, from project delivery to key account growth. I bridge the gap between technical implementation and business value. Led digital transformation for top brands like Heytea, DQ, and Papa John\'s. Currently fully embracing the AI era, deeply engaged in AIGC and social media operations. Driven by a passion for gaming and anime, exploring AI-powered secondary creation and video editing. By building standardized AI content production workflows, successfully established personal accounts and high-engagement IP matrices on Douyin and Xiaohongshu, alongside developing LLM-based quantitative trading assistants.'
   };
@@ -296,12 +296,14 @@ export const generateWord = async (language: Language) => {
     phone: '电话: +86 135 2425 2203',
     email: '邮箱: 313455055@qq.com',
     wechat: '微信: Joe_povons',
+    social: '抖音: 6888zy1023 | 小红书: 566860318',
     website: '网站: home.kunkun1023.xyz'
   } : {
     title: 'Contact Me',
     phone: 'Phone: +86 135 2425 2203',
     email: 'Email: 313455055@qq.com',
     wechat: 'WeChat: Joe_povons',
+    social: 'Douyin: 6888zy1023 | Xiaohongshu: 566860318',
     website: 'Web: home.kunkun1023.xyz'
   };
 
@@ -310,7 +312,7 @@ export const generateWord = async (language: Language) => {
     return new Paragraph({
       text: text,
       heading: HeadingLevel.HEADING_2,
-      spacing: { before: 400, after: 200 },
+      spacing: { before: 300, after: 150 },
       border: {
         bottom: {
           color: "333333",
@@ -605,23 +607,27 @@ export const generateWord = async (language: Language) => {
 
           // Hobbies
           createSectionTitle(isZh ? "个人兴趣" : "Hobbies"),
-          ...hobbies.map(
-            (hobby) =>
-              new Paragraph({
-                children: [
-                  new TextRun({ text: `${hobby.title}: `, bold: true }),
-                  new TextRun({ text: hobby.desc }),
-                ],
-                spacing: { after: 100 },
-              })
-          ),
+          new Paragraph({
+            children: hobbies.flatMap((hobby, index) => [
+              new TextRun({ text: `${hobby.title}: `, bold: true, size: 20 }),
+              new TextRun({ text: hobby.desc, size: 18 }),
+              ...(index < hobbies.length - 1 ? [new TextRun({ text: "", break: 1 })] : [])
+            ]),
+            spacing: { before: 100, after: 200 },
+          }),
 
           // Contact Me Section
           createSectionTitle(contactMe.title),
-          new Paragraph({ text: contactMe.phone, spacing: { after: 50 } }),
-          new Paragraph({ text: contactMe.email, spacing: { after: 50 } }),
-          new Paragraph({ text: contactMe.wechat, spacing: { after: 50 } }),
-          new Paragraph({ text: contactMe.website, spacing: { after: 50 } }),
+          new Paragraph({
+            children: [
+              new TextRun({ text: `${contactMe.phone}  |  ${contactMe.email}`, size: 18 }),
+              new TextRun({ text: "", break: 1 }),
+              new TextRun({ text: `${contactMe.wechat}  |  ${contactMe.social}`, size: 18 }),
+              new TextRun({ text: "", break: 1 }),
+              new TextRun({ text: contactMe.website, size: 18 }),
+            ],
+            spacing: { before: 100, after: 200 },
+          }),
         ],
       },
     ],
