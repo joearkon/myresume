@@ -26,8 +26,12 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       actionCopy: '查看 ID',
       actionVisit: '查看主页',
       wechatId: 'Joe_povons',
-      douyinId: '68888371171',
-      xiaohongshuId: 'AIGC 创作者',
+      douyinId: '6888zy1023',
+      xiaohongshuId: '566860318',
+      douyinUrl: 'https://v.douyin.com/9rcj4rkPCEg/',
+      xiaohongshuUrl: 'https://www.xiaohongshu.com/user/profile/5c0213aa6b58b724ed0a49ce',
+      douyinIcon: 'https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESDT5pwOX3h-ANyfNunXBev2ljsYmikwACOSAAAiLeCFa2iyU9tqlaKzoE.jpeg',
+      xiaohongshuIcon: 'https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESDTppwOXnhyUsAYV6Ogbl2cry7umimQACNCAAAiLeCFadCG0l4xGJXjoE.jpeg',
       websiteUrl: 'home.kunkun1023.xyz',
       icp: '沪ICP备2025153381号-1' 
     },
@@ -50,8 +54,12 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       actionCopy: 'View ID',
       actionVisit: 'Visit Profile',
       wechatId: 'Joe_povons',
-      douyinId: '68888371171',
-      xiaohongshuId: 'AIGC Creator',
+      douyinId: '6888zy1023',
+      xiaohongshuId: '566860318',
+      douyinUrl: 'https://v.douyin.com/9rcj4rkPCEg/',
+      xiaohongshuUrl: 'https://www.xiaohongshu.com/user/profile/5c0213aa6b58b724ed0a49ce',
+      douyinIcon: 'https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESDT5pwOX3h-ANyfNunXBev2ljsYmikwACOSAAAiLeCFa2iyU9tqlaKzoE.jpeg',
+      xiaohongshuIcon: 'https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESDTppwOXnhyUsAYV6Ogbl2cry7umimQACNCAAAiLeCFadCG0l4xGJXjoE.jpeg',
       websiteUrl: 'home.kunkun1023.xyz',
       icp: 'ICP License No. 沪ICP备2025153381号'
     }
@@ -87,24 +95,37 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
     title, 
     imageUrl, 
     colorClass,
-    icon
+    icon,
+    id,
+    url
   }: any) => (
-    <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+    <a 
+      href={url} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 flex flex-col items-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group cursor-pointer"
+    >
       <div className="flex items-center gap-2 mb-3 w-full justify-center">
-        <div className={`w-6 h-6 rounded-full flex items-center justify-center text-white ${colorClass}`}>
-          {icon}
+        <div className={`w-6 h-6 rounded-full flex items-center justify-center text-white overflow-hidden ${colorClass}`}>
+          {typeof icon === 'string' ? (
+            <img src={icon} alt="" className="w-full h-full object-cover" />
+          ) : icon}
         </div>
         <span className="text-sm font-bold text-slate-700 dark:text-gray-300">{title}</span>
       </div>
       
-      <div className="w-full aspect-square bg-slate-50 dark:bg-slate-800 rounded-xl overflow-hidden p-1 border border-slate-100 dark:border-slate-700">
+      <div className="w-full aspect-square bg-slate-50 dark:bg-slate-800 rounded-xl overflow-hidden p-1 border border-slate-100 dark:border-slate-700 mb-3">
         <img 
           src={imageUrl} 
           alt={title} 
           className="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500" 
         />
       </div>
-    </div>
+      
+      <div className="text-xs font-mono text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 px-2 py-1 rounded border border-slate-100 dark:border-slate-700">
+        ID: {id}
+      </div>
+    </a>
   );
 
   return (
@@ -178,6 +199,18 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                   />
                 </div>
               </div>
+
+              {/* Douyin (Print Only) */}
+              <div className="hidden print:flex print:flex-col">
+                <span className="print:text-[10px] print:text-gray-500 print:font-bold print:uppercase">{t.douyin}</span>
+                <span className="print:text-xs print:font-bold">{t.douyinId}</span>
+              </div>
+
+              {/* Xiaohongshu (Print Only) */}
+              <div className="hidden print:flex print:flex-col">
+                <span className="print:text-[10px] print:text-gray-500 print:font-bold print:uppercase">{t.xiaohongshu}</span>
+                <span className="print:text-xs print:font-bold">{t.xiaohongshuId}</span>
+              </div>
             </div>
           </div>
 
@@ -194,7 +227,9 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                 title={t.douyin}
                 imageUrl="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESCrhpwLeELrZFMnDXtQ8kEjtwyHr28gACLDMAAiLeAAFWgo1ZblI4BCI6BA.jpg"
                 colorClass="bg-slate-900 dark:bg-slate-700"
-                icon={<svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M16.7 5.7C16.7 3.66 15.1 2 13.1 2h-1.8v10.6c0 2.6-2.1 4.7-4.7 4.7-2.6 0-4.7-2.1-4.7-4.7 0-2.6 2.1-4.7 4.7-4.7.3 0 .6 0 .9.1V4.3c-.3-.1-.6-.1-.9-.1-4.6 0-8.4 3.8-8.4 8.4s3.8 8.4 8.4 8.4 8.4-3.8 8.4-8.4V8.5c1.6 1.1 3.5 1.8 5.6 1.8v-3.7c-1.6 0-3.1-.4-4.5-1.3z"/></svg>}
+                icon={t.douyinIcon}
+                id={t.douyinId}
+                url={t.douyinUrl}
               />
 
               {/* Xiaohongshu */}
@@ -202,7 +237,9 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                 title={t.xiaohongshu}
                 imageUrl="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESCrNpwLdKPrgdzL0kYqSjablqJdOA2gACJzMAAiLeAAFWnrru3SNoyqg6BA.jpg"
                 colorClass="bg-red-500"
-                icon={<span className="font-bold text-xs italic">小</span>}
+                icon={t.xiaohongshuIcon}
+                id={t.xiaohongshuId}
+                url={t.xiaohongshuUrl}
               />
             </div>
           </div>
