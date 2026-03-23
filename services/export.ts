@@ -12,7 +12,8 @@ import {
   WidthType,
   VerticalAlign,
   HeightRule,
-  ImageRun
+  ImageRun,
+  ShadingType
 } from 'docx';
 import { saveAs } from 'file-saver';
 import { Language } from '../App';
@@ -26,13 +27,15 @@ export const generateWord = async (language: Language) => {
     name: '陈子卓野',
     title: '全链路数字化专家 | AIGC 新媒体运营',
     roles: ['技术架构', '项目交付', '客户增长'],
-    contact: '电话: +86 135 2425 2203 | 邮箱: 313455055@qq.com | 网站: home.kunkun1023.xyz',
+    contact: '男 | 32岁 | 135 2425 2203 | 313455055@qq.com',
+    info: '10年经验 | 期望城市: 上海 | 离职-随时到岗 | 本科',
     desc: '从代码到底层架构，从单项目交付到大客户运营。我不仅懂技术实现，更懂如何将技术转化为商业价值。曾主导喜茶、DQ、棒约翰等头部品牌的数字化落地。目前正全面拥抱 AI 时代，深度探索 AIGC 与新媒体运营。熟练运用 Gemini、Nano Banana、ComfyUI 等前沿 AI 工具进行图文创作与短视频剪辑，在小红书和抖音打造高粘性个人 IP 矩阵，并独立开发了基于大模型的量化交易助手。'
   } : {
     name: 'Joe.Chen',
     title: 'Digital Transformation Expert | AIGC Social Media',
     roles: ['Tech Arch', 'Delivery', 'Growth'],
-    contact: 'Phone: +86 135 2425 2203 | Email: 313455055@qq.com | Web: home.kunkun1023.xyz',
+    contact: 'Male | 32 Years Old | +86 135 2425 2203 | 313455055@qq.com',
+    info: '10 Years Exp | City: Shanghai | Available | Bachelor',
     desc: 'From coding to architecture, from project delivery to key account growth. I bridge the gap between technical implementation and business value. Led digital transformation for top brands like Heytea, DQ, and Papa John\'s. Currently fully embracing the AI era, deeply exploring AIGC and social media operations. Proficient in cutting-edge AI tools like Gemini, Nano Banana, and ComfyUI for content creation and short video editing, building a highly engaging personal IP matrix on Xiaohongshu and Douyin, alongside developing LLM-based quantitative trading assistants.'
   };
 
@@ -346,63 +349,73 @@ export const generateWord = async (language: Language) => {
               insideVertical: { style: BorderStyle.NONE },
             },
             rows: [
+              // Content Row
               new TableRow({
                 children: [
                   new TableCell({
-                    width: { size: 75, type: WidthType.PERCENTAGE },
                     children: [
+                      // Avatar (Centered)
                       new Paragraph({
-                        text: hero.name,
-                        heading: HeadingLevel.HEADING_1,
+                        alignment: AlignmentType.CENTER,
+                        children: avatarImage ? [
+                          new ImageRun({
+                            data: avatarImage,
+                            transformation: { width: 80, height: 80 },
+                            type: "jpg",
+                          }),
+                        ] : [],
                       }),
+                      // Name
                       new Paragraph({
+                        alignment: AlignmentType.CENTER,
+                        children: [
+                          new TextRun({
+                            text: hero.name,
+                            bold: true,
+                            size: 36,
+                            color: "000000",
+                          }),
+                        ],
+                        spacing: { before: 100 },
+                      }),
+                      // Title
+                      new Paragraph({
+                        alignment: AlignmentType.CENTER,
                         children: [
                           new TextRun({
                             text: hero.title,
                             bold: true,
                             color: "666666",
-                            size: 24,
-                          }),
-                        ],
-                        spacing: { after: 100 },
-                      }),
-                      new Paragraph({
-                        children: [
-                          new TextRun({
-                            text: hero.roles.join(" | "),
-                            bold: true,
-                            color: "3b82f6", // Blue color
                             size: 20,
                           }),
                         ],
-                        spacing: { after: 100 },
+                        spacing: { after: 50 },
                       }),
+                      // Contact Info
                       new Paragraph({
+                        alignment: AlignmentType.CENTER,
                         children: [
                           new TextRun({
                             text: hero.contact,
-                            size: 18,
+                            size: 16,
                             color: "333333",
                           }),
                         ],
+                        spacing: { after: 50 },
                       }),
-                    ],
-                  }),
-                  new TableCell({
-                    width: { size: 25, type: WidthType.PERCENTAGE },
-                    verticalAlign: VerticalAlign.CENTER,
-                    children: avatarImage ? [
+                      // Additional Info
                       new Paragraph({
-                        alignment: AlignmentType.RIGHT,
+                        alignment: AlignmentType.CENTER,
                         children: [
-                          new ImageRun({
-                            data: avatarImage,
-                            transformation: { width: 100, height: 100 },
-                            type: "jpg",
+                          new TextRun({
+                            text: hero.info,
+                            size: 16,
+                            color: "666666",
                           }),
                         ],
+                        spacing: { after: 200 },
                       }),
-                    ] : [],
+                    ],
                   }),
                 ],
               }),

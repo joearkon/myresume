@@ -81,27 +81,68 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
 
   return (
     <section id="home" className="min-h-screen flex flex-col justify-center items-start relative overflow-hidden px-4 pt-28 pb-12 md:pt-20 transition-colors duration-500 print:min-h-0 print:py-0 print:block">
-      <div className="z-10 max-w-5xl w-full mx-auto print:text-left">
+      <div className="z-10 max-w-5xl w-full mx-auto print:text-center">
         
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 mb-12">
+        {/* Header for Print - Compact Centered Layout */}
+        <div className="hidden print:block relative mb-6">
+          {/* Centered Content */}
+          <div className="flex flex-col items-center relative z-10 px-8">
+             {/* Circular Avatar */}
+             <div className="w-24 h-24 rounded-full border border-gray-200 overflow-hidden bg-white mb-3">
+                <img 
+                    src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESCqxpwLYLP8Jhn6EnyGll64FUqPbl9gACHjMAAiLeAAFWZRBcwlspcNM6BA.jpg" 
+                    alt="陈子卓野 (Joe Chen)" 
+                    className="w-full h-full object-cover"
+                />
+             </div>
+             
+             <h1 className="text-3xl font-bold text-black mb-1">
+               {t.name}
+             </h1>
+             
+             <div className="text-sm font-medium text-gray-500 mb-2 flex items-center gap-2">
+                <span>{language === 'zh' ? '男' : 'Male'}</span>
+                <span className="text-gray-300">|</span>
+                <span>{language === 'zh' ? '32岁' : '32 Years Old'}</span>
+                <span className="text-gray-300">|</span>
+                <div className="flex items-center gap-1"><svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg> 135 2425 2203</div>
+                <span className="text-gray-300">|</span>
+                <div className="flex items-center gap-1"><svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg> 313455055@qq.com</div>
+             </div>
+
+             <div className="text-sm text-gray-600 flex items-center gap-2 mb-2">
+                <span>{t.info1Val}</span>
+                <span className="text-gray-300">|</span>
+                <span>{t.info2Val}</span>
+                <span className="text-gray-300">|</span>
+                <span>{t.info3Val}</span>
+                <span className="text-gray-300">|</span>
+                <span>{t.info4Val}</span>
+             </div>
+          </div>
+          <div className="border-b border-gray-100 w-full mt-2"></div>
+        </div>
+
+        {/* Web View Header (Unchanged) */}
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 mb-12 print:hidden">
           {/* Text Content */}
           <div className="flex-1 text-center md:text-left">
-            <h1 className="text-4xl md:text-6xl font-bold mb-2 tracking-tight text-slate-900 dark:text-white transition-all duration-500 print:text-black print:text-4xl print:mb-2">
+            <h1 className="text-4xl md:text-6xl font-bold mb-2 tracking-tight text-slate-900 dark:text-white transition-all duration-500">
               {t.name}
             </h1>
             
-            <div className="text-xl md:text-2xl font-medium text-slate-500 dark:text-slate-400 mb-6 tracking-wide uppercase print:text-xl print:text-gray-600 print:mb-4">
+            <div className="text-xl md:text-2xl font-medium text-slate-500 dark:text-slate-400 mb-6 tracking-wide uppercase">
               {language === 'zh' ? 'Joe.Chen' : '陈子卓野'}
             </div>
             
-            <h2 className="text-lg md:text-xl font-normal text-slate-600 dark:text-gray-300 mb-6 flex flex-wrap justify-center md:justify-start items-center gap-2 md:gap-4 transition-colors duration-300 print:text-lg print:text-black print:justify-start print:mb-4">
-              <span>{t.role1}</span> <span className="hidden md:inline text-slate-300 dark:text-slate-600 print:text-black">|</span>
-              <span>{t.role2}</span> <span className="hidden md:inline text-slate-300 dark:text-slate-600 print:text-black">|</span>
+            <h2 className="text-lg md:text-xl font-normal text-slate-600 dark:text-gray-300 mb-6 flex flex-wrap justify-center md:justify-start items-center gap-2 md:gap-4 transition-colors duration-300">
+              <span>{t.role1}</span> <span className="hidden md:inline text-slate-300 dark:text-slate-600">|</span>
+              <span>{t.role2}</span> <span className="hidden md:inline text-slate-300 dark:text-slate-600">|</span>
               <span>{t.role3}</span>
             </h2>
 
             {/* Contact Info */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-sm text-slate-600 dark:text-slate-400 mb-6 font-medium print:text-black">
+            <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-sm text-slate-600 dark:text-slate-400 mb-6 font-medium">
                 <div className="flex items-center gap-1"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg> +86 135 2425 2203</div>
                 <div className="flex items-center gap-1"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg> 313455055@qq.com</div>
                 <div className="flex items-center gap-1"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg> home.kunkun1023.xyz</div>
@@ -109,34 +150,34 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           </div>
 
           {/* Avatar Section */}
-          <div className="relative shrink-0 print:float-right print:w-32 print:mb-0">
-             <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-lg p-1 bg-white dark:bg-slate-800 shadow-md border border-slate-200 dark:border-slate-700 print:shadow-none print:p-0 print:w-32 print:h-32 print:border-none">
+          <div className="relative shrink-0">
+             <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-lg p-1 bg-white dark:bg-slate-800 shadow-md border border-slate-200 dark:border-slate-700">
                 <img 
                     src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESCqxpwLYLP8Jhn6EnyGll64FUqPbl9gACHjMAAiLeAAFWZRBcwlspcNM6BA.jpg" 
                     alt="陈子卓野 (Joe Chen)" 
-                    className="w-full h-full rounded-md object-cover print:border-none print:rounded-md"
+                    className="w-full h-full rounded-md object-cover"
                 />
              </div>
           </div>
         </div>
 
-        {/* Personal Info Card - Optimized for Print */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm md:text-base mb-8 print:grid-cols-2 print:gap-2 print:mb-6 print:text-left">
-            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 rounded-lg transition-colors duration-300 print:border-none print:shadow-none print:p-0 print:bg-transparent">
-                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 print:text-gray-500 uppercase tracking-wider">{t.info1Title}</div>
-                <div className="text-slate-900 dark:text-white font-medium print:text-black">{t.info1Val}</div>
+        {/* Personal Info Card - Web View (Unchanged) */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm md:text-base mb-8 print:hidden">
+            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 rounded-lg transition-colors duration-300">
+                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 uppercase tracking-wider">{t.info1Title}</div>
+                <div className="text-slate-900 dark:text-white font-medium">{t.info1Val}</div>
             </div>
-            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 rounded-lg transition-colors duration-300 print:border-none print:shadow-none print:p-0 print:bg-transparent">
-                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 print:text-gray-500 uppercase tracking-wider">{t.info2Title}</div>
-                <div className="text-slate-900 dark:text-white font-medium print:text-black">{t.info2Val}</div>
+            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 rounded-lg transition-colors duration-300">
+                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 uppercase tracking-wider">{t.info2Title}</div>
+                <div className="text-slate-900 dark:text-white font-medium">{t.info2Val}</div>
             </div>
-            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 rounded-lg transition-colors duration-300 print:border-none print:shadow-none print:p-0 print:bg-transparent">
-                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 print:text-gray-500 uppercase tracking-wider">{t.info3Title}</div>
-                <div className="text-slate-900 dark:text-white font-medium print:text-black">{t.info3Val}</div>
+            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 rounded-lg transition-colors duration-300">
+                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 uppercase tracking-wider">{t.info3Title}</div>
+                <div className="text-slate-900 dark:text-white font-medium">{t.info3Val}</div>
             </div>
-            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 rounded-lg transition-colors duration-300 print:border-none print:shadow-none print:p-0 print:bg-transparent">
-                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 print:text-gray-500 uppercase tracking-wider">{t.info4Title}</div>
-                <div className="text-slate-900 dark:text-white font-medium print:text-black">{t.info4Val}</div>
+            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 rounded-lg transition-colors duration-300">
+                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 uppercase tracking-wider">{t.info4Title}</div>
+                <div className="text-slate-900 dark:text-white font-medium">{t.info4Val}</div>
             </div>
         </div>
         
