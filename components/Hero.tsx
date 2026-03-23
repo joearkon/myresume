@@ -15,6 +15,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       role1: '技术架构',
       role2: '项目交付',
       role3: '客户增长',
+      role4: 'AI 自媒体创作',
       info1Title: '基本信息',
       info1Val: '1986年10月 | 汉族',
       info2Title: '现居 / 政治面貌',
@@ -42,6 +43,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       role1: 'Tech Arch',
       role2: 'Delivery',
       role3: 'Growth',
+      role4: 'AI Social Media',
       info1Title: 'Basic Info',
       info1Val: 'Oct 1986 | Han',
       info2Title: 'Location / Status',
@@ -99,6 +101,13 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
              <h1 className="text-3xl font-bold text-black mb-1">
                {t.name}
              </h1>
+
+             <div className="text-sm font-semibold text-slate-700 mb-1 flex justify-center gap-2">
+                <span>{t.role1}</span> <span>|</span>
+                <span>{t.role2}</span> <span>|</span>
+                <span>{t.role3}</span> <span>|</span>
+                <span>{t.role4}</span>
+             </div>
              
              <div className="text-sm font-medium text-gray-500 mb-2 flex flex-wrap justify-center items-center gap-x-2 gap-y-1">
                 <span>{language === 'zh' ? '男' : 'Male'}</span>
@@ -138,7 +147,8 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
             <h2 className="text-lg md:text-xl font-normal text-slate-600 dark:text-gray-300 mb-6 flex flex-wrap justify-center md:justify-start items-center gap-2 md:gap-4 transition-colors duration-300">
               <span>{t.role1}</span> <span className="hidden md:inline text-slate-300 dark:text-slate-600">|</span>
               <span>{t.role2}</span> <span className="hidden md:inline text-slate-300 dark:text-slate-600">|</span>
-              <span>{t.role3}</span>
+              <span>{t.role3}</span> <span className="hidden md:inline text-slate-300 dark:text-slate-600">|</span>
+              <span>{t.role4}</span>
             </h2>
 
             {/* Contact Info */}
