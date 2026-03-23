@@ -9,6 +9,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
   const content = {
     zh: {
       tagline: '全链路数字化专家',
+      tagline2: 'AIGC 新媒体运营',
       name: '陈子卓野',
       role1: '技术架构',
       role2: '项目交付',
@@ -25,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
         <>
           从代码到底层架构，从单项目交付到大客户运营。我不仅懂技术实现，更懂如何将技术转化为商业价值。
           曾主导 <span className="text-slate-900 dark:text-white font-bold">喜茶、DQ、棒约翰</span> 等头部品牌的数字化落地。<br className="hidden md:block mt-2" />
-          目前正全面拥抱 AI 时代，探索 <span className="text-purple-600 dark:text-purple-400 font-bold">AIGC 与新媒体运营</span>，在小红书和抖音打造个人账号 IP，并独立开发了基于大模型的量化交易助手。
+          目前正全面拥抱 AI 时代，深度探索 <span className="text-purple-600 dark:text-purple-400 font-bold">AIGC 与新媒体运营</span>。熟练运用 Gemini、Nano Banana、ComfyUI 等前沿 AI 工具进行图文创作与短视频剪辑，在小红书和抖音打造高粘性个人 IP 矩阵，并独立开发了基于大模型的量化交易助手。
         </>
       ),
       btnResume: '查看完整履历',
@@ -34,6 +35,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
     },
     en: {
       tagline: 'Digital Transformation Expert',
+      tagline2: 'AIGC Social Media',
       name: 'Joe.Chen',
       role1: 'Tech Arch',
       role2: 'Delivery',
@@ -51,7 +53,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           From coding to architecture, from project delivery to key account growth. 
           I bridge the gap between technical implementation and business value.
           Led digital transformation for top brands like <span className="text-slate-900 dark:text-white font-bold">Heytea, DQ, and Papa John's</span>.<br className="hidden md:block mt-2" />
-          Currently embracing the AI era, exploring <span className="text-purple-600 dark:text-purple-400 font-bold">AIGC and social media operations</span>, building a personal account IP on Xiaohongshu and Douyin, and developing LLM-based quantitative trading assistants.
+          Currently fully embracing the AI era, deeply exploring <span className="text-purple-600 dark:text-purple-400 font-bold">AIGC and social media operations</span>. Proficient in cutting-edge AI tools like Gemini, Nano Banana, and ComfyUI for content creation and short video editing, building a highly engaging personal IP matrix on Xiaohongshu and Douyin, alongside developing LLM-based quantitative trading assistants.
         </>
       ),
       btnResume: 'View Experience',
@@ -89,9 +91,12 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
              </div>
         </div>
 
-        <div className="mb-6 inline-block animate-float print:hidden" style={{ animationDelay: '0.1s' }}>
+        <div className="mb-6 flex flex-wrap justify-center gap-3 animate-float print:hidden" style={{ animationDelay: '0.1s' }}>
             <span className="bg-blue-50/80 dark:bg-gunpla-blue/20 text-blue-600 dark:text-gunpla-blue border border-blue-200 dark:border-gunpla-blue px-4 py-1 rounded-full text-sm font-tech tracking-widest uppercase backdrop-blur-sm shadow-[0_0_15px_rgba(59,130,246,0.2)] dark:shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-colors duration-300">
               {t.tagline}
+            </span>
+            <span className="bg-purple-50/80 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-500/50 px-4 py-1 rounded-full text-sm font-tech tracking-widest uppercase backdrop-blur-sm shadow-[0_0_15px_rgba(168,85,247,0.2)] dark:shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-colors duration-300">
+              {t.tagline2}
             </span>
         </div>
         
