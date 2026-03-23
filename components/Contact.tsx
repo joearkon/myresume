@@ -108,61 +108,81 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
   );
 
   return (
-    <footer className="bg-white dark:bg-slate-950 py-24 border-t border-slate-200 dark:border-slate-800 relative overflow-hidden" id="contact">
+    <footer className="bg-white dark:bg-slate-950 py-24 border-t border-slate-200 dark:border-slate-800 relative overflow-hidden print:py-4 print:border-gray-200" id="contact">
       
       <div className="max-w-5xl mx-auto px-4 relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+        <div className="text-center mb-16 max-w-3xl mx-auto print:mb-4 print:text-left print:max-w-none">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 print:text-xl print:mb-1">
             {t.title} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
-          <div className="w-16 h-1 bg-yellow-600 dark:bg-yellow-500 mx-auto mb-8"></div>
-          <p className="text-slate-600 dark:text-gray-400 text-lg leading-relaxed">
+          <div className="w-16 h-1 bg-yellow-600 dark:bg-yellow-500 mx-auto mb-8 print:hidden"></div>
+          <p className="text-slate-600 dark:text-gray-400 text-lg leading-relaxed print:text-xs print:leading-normal">
             {t.desc}
           </p>
         </div>
 
         {/* Split Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-16 print:mb-4 print:grid-cols-1 print:gap-2">
           
           {/* Left: Direct Contact */}
-          <div className="md:col-span-5 flex flex-col justify-center space-y-4">
-            <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2 flex items-center gap-2">
-              <span className="w-2 h-6 bg-blue-800 dark:bg-blue-400 rounded-full"></span>
+          <div className="md:col-span-5 flex flex-col justify-center space-y-4 print:md:col-span-12 print:space-y-1">
+            <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2 flex items-center gap-2 print:text-sm print:mb-1">
+              <span className="w-2 h-6 bg-blue-800 dark:bg-blue-400 rounded-full print:hidden"></span>
               {t.directContact}
             </h3>
             
-            {/* Phone */}
-            <CompactContactCard 
-              title={t.phone}
-              value="+86 135 2425 2203"
-              href="tel:+8613524252203"
-              colorClass="bg-blue-600"
-              icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>}
-            />
+            <div className="print:grid print:grid-cols-3 print:gap-4">
+              {/* Phone */}
+              <div className="print:flex print:flex-col">
+                <span className="hidden print:block print:text-[10px] print:text-gray-500 print:font-bold print:uppercase">{t.phone}</span>
+                <span className="hidden print:block print:text-xs print:font-bold">+86 135 2425 2203</span>
+                <div className="print:hidden">
+                  <CompactContactCard 
+                    title={t.phone}
+                    value="+86 135 2425 2203"
+                    href="tel:+8613524252203"
+                    colorClass="bg-blue-600"
+                    icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>}
+                  />
+                </div>
+              </div>
 
-            {/* Email */}
-            <CompactContactCard 
-              title={t.email}
-              value="313455055@qq.com"
-              href="mailto:313455055@qq.com"
-              colorClass="bg-yellow-500"
-              icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
-            />
+              {/* Email */}
+              <div className="print:flex print:flex-col">
+                <span className="hidden print:block print:text-[10px] print:text-gray-500 print:font-bold print:uppercase">{t.email}</span>
+                <span className="hidden print:block print:text-xs print:font-bold">313455055@qq.com</span>
+                <div className="print:hidden">
+                  <CompactContactCard 
+                    title={t.email}
+                    value="313455055@qq.com"
+                    href="mailto:313455055@qq.com"
+                    colorClass="bg-yellow-500"
+                    icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
+                  />
+                </div>
+              </div>
 
-            {/* WeChat */}
-            <CompactContactCard 
-              title={t.wechat}
-              value={t.wechatId}
-              href="#"
-              colorClass="bg-green-500"
-              icon={<svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.5,13.5A1.5,1.5 0 0,1 7,12A1.5,1.5 0 0,1 8.5,10.5A1.5,1.5 0 0,1 10,12A1.5,1.5 0 0,1 8.5,13.5M15.5,13.5A1.5,1.5 0 0,1 14,12A1.5,1.5 0 0,1 15.5,10.5A1.5,1.5 0 0,1 17,12A1.5,1.5 0 0,1 15.5,13.5M12,2C6.5,2 2,6 2,11C2,13.8 3.6,16.3 6,17.7C5.8,18.6 5.3,20.3 4.4,21.2C6.1,21.3 8.3,20.2 9.7,19.1C10.4,19.2 11.2,19.3 12,19.3C17.5,19.3 22,15.3 22,10.3C22,5.3 17.5,2 12,2Z" /></svg>}
-            />
+              {/* WeChat */}
+              <div className="print:flex print:flex-col">
+                <span className="hidden print:block print:text-[10px] print:text-gray-500 print:font-bold print:uppercase">{t.wechat}</span>
+                <span className="hidden print:block print:text-xs print:font-bold">{t.wechatId}</span>
+                <div className="print:hidden">
+                  <CompactContactCard 
+                    title={t.wechat}
+                    value={t.wechatId}
+                    href="#"
+                    colorClass="bg-green-500"
+                    icon={<svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.5,13.5A1.5,1.5 0 0,1 7,12A1.5,1.5 0 0,1 8.5,10.5A1.5,1.5 0 0,1 10,12A1.5,1.5 0 0,1 8.5,13.5M15.5,13.5A1.5,1.5 0 0,1 14,12A1.5,1.5 0 0,1 15.5,10.5A1.5,1.5 0 0,1 17,12A1.5,1.5 0 0,1 15.5,13.5M12,2C6.5,2 2,6 2,11C2,13.8 3.6,16.3 6,17.7C5.8,18.6 5.3,20.3 4.4,21.2C6.1,21.3 8.3,20.2 9.7,19.1C10.4,19.2 11.2,19.3 12,19.3C17.5,19.3 22,15.3 22,10.3C22,5.3 17.5,2 12,2Z" /></svg>}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Right: Social Media QR Codes */}
-          <div className="md:col-span-7 flex flex-col justify-center">
+          {/* Right: Social Media QR Codes - Hidden in Print */}
+          <div className="md:col-span-7 flex flex-col justify-center print:hidden">
             <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-6 flex items-center gap-2">
               <span className="w-2 h-6 bg-red-800 dark:bg-red-400 rounded-full"></span>
               {t.socialMedia}
@@ -190,19 +210,19 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
         </div>
 
         {/* Personal Website Link */}
-        <div className="flex justify-center mb-12">
-           <a href={`https://${t.websiteUrl}`} target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-              <span className="text-xl">🚀</span>
-              <span>{t.website}: <span className="font-mono underline underline-offset-4 decoration-white/50 dark:decoration-slate-900/50 group-hover:decoration-white dark:group-hover:decoration-slate-900 transition-all">{t.websiteUrl}</span></span>
+        <div className="flex justify-center mb-12 print:mb-4 print:justify-start">
+           <a href={`https://${t.websiteUrl}`} target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group print:p-0 print:bg-transparent print:text-slate-900 print:shadow-none print:font-medium print:text-xs">
+              <span className="text-xl print:hidden">🚀</span>
+              <span>{t.website}: <span className="font-mono underline underline-offset-4 decoration-white/50 dark:decoration-slate-900/50 group-hover:decoration-white dark:group-hover:decoration-slate-900 transition-all print:no-underline">{t.websiteUrl}</span></span>
            </a>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-center space-y-3">
-           <p className="text-sm text-slate-400 dark:text-gray-600 font-mono">
+        <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-center space-y-3 print:mt-4 print:pt-2 print:border-gray-100 print:text-left print:space-y-1">
+           <p className="text-sm text-slate-400 dark:text-gray-600 font-mono print:text-[10px]">
             © {new Date().getFullYear()} 陈子卓野 (Joe.Chen) | Shanghai | v7.0
           </p>
           {/* ICP License */}
-          <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-300 dark:text-gray-700 hover:text-slate-500 dark:hover:text-gray-500 transition-colors block">
+          <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="text-xs text-slate-300 dark:text-gray-700 hover:text-slate-500 dark:hover:text-gray-500 transition-colors block print:hidden">
             {t.icp}
           </a>
         </div>

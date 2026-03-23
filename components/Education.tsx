@@ -50,33 +50,33 @@ const Education: React.FC<EducationProps> = ({ language }) => {
   const t = content[language];
 
   return (
-    <section id="education" className="py-20 bg-white dark:bg-slate-950 relative transition-colors duration-500">
+    <section id="education" className="py-20 bg-white dark:bg-slate-950 relative transition-colors duration-500 print:py-4">
       <div className="max-w-4xl mx-auto px-4">
-        <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300">
+        <div className="mb-16 text-center print:mb-4 print:text-left">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-1">
             {t.title} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
-          <p className="text-slate-600 dark:text-gray-400">{t.subtitle}</p>
+          <p className="text-slate-600 dark:text-gray-400 print:text-xs print:text-gray-500">{t.subtitle}</p>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-6 print:space-y-2">
           {t.edu.map((item, index) => (
-            <div key={index} className="group relative bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-800 dark:hover:border-blue-400 transition-all duration-300 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div key={index} className="group relative bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-800 dark:hover:border-blue-400 transition-all duration-300 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 print:p-0 print:border-0 print:flex-row print:justify-between print:items-baseline print:break-inside-avoid">
               
               <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
-                   <div className="w-2 h-8 bg-blue-800 dark:bg-blue-400 rounded-full"></div>
-                   <h3 className="text-2xl font-bold text-slate-800 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors">{item.school}</h3>
+                <div className="flex items-center gap-3 mb-2 print:mb-0.5">
+                   <div className="w-2 h-8 bg-blue-800 dark:bg-blue-400 rounded-full print:hidden"></div>
+                   <h3 className="text-2xl font-bold text-slate-800 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-sm">{item.school}</h3>
                 </div>
-                <div className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-2 ml-5">
+                <div className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-2 ml-5 print:text-xs print:ml-0 print:mb-0.5">
                   {item.degree}
                 </div>
-                <p className="text-slate-500 dark:text-gray-400 text-sm ml-5 leading-relaxed">
+                <p className="text-slate-500 dark:text-gray-400 text-sm ml-5 leading-relaxed print:text-xs print:ml-0 print:leading-normal">
                   {item.desc}
                 </p>
               </div>
 
-              <div className="flex-shrink-0 bg-white dark:bg-slate-800 px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-sm font-bold group-hover:bg-blue-800 dark:group-hover:bg-blue-400 group-hover:text-white dark:group-hover:text-slate-900 transition-all">
+              <div className="flex-shrink-0 bg-white dark:bg-slate-800 px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-sm font-bold group-hover:bg-blue-800 dark:group-hover:bg-blue-400 group-hover:text-white dark:group-hover:text-slate-900 transition-all print:p-0 print:bg-transparent print:border-0 print:text-xs print:font-medium">
                 {item.date}
               </div>
 

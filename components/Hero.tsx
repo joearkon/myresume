@@ -27,7 +27,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
         <>
           从代码到底层架构，从单项目交付到大客户运营。我不仅懂技术实现，更懂如何将技术转化为商业价值。
           曾主导 <span className="text-slate-900 dark:text-white font-bold">喜茶、DQ、棒约翰</span> 等头部品牌的数字化落地。<br className="hidden md:block mt-2" />
-          目前正全面拥抱 AI 时代，深度探索 <span className="text-purple-600 dark:text-purple-400 font-bold">AIGC 与新媒体运营</span>。熟练运用 Gemini、Nano Banana、ComfyUI 等前沿 AI 工具进行图文创作与短视频剪辑，在小红书和抖音打造高粘性个人 IP 矩阵，并独立开发了基于大模型的量化交易助手。
+          目前正全面拥抱 AI 时代，<span className="text-purple-600 dark:text-purple-400 font-bold">深耕 AIGC 与新媒体运营</span>。由对游戏动漫的热爱驱动，探索利用 AI 工具进行内容二创与剪辑。通过构建标准化的 AI 内容产出工作流，在抖音、小红书成功打造个人账号与高粘性 IP 矩阵，并独立开发了基于大模型的量化交易助手。
         </>
       ),
       btnResume: '查看完整履历',
@@ -55,7 +55,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           From coding to architecture, from project delivery to key account growth. 
           I bridge the gap between technical implementation and business value.
           Led digital transformation for top brands like <span className="text-slate-900 dark:text-white font-bold">Heytea, DQ, and Papa John's</span>.<br className="hidden md:block mt-2" />
-          Currently fully embracing the AI era, deeply exploring <span className="text-purple-600 dark:text-purple-400 font-bold">AIGC and social media operations</span>. Proficient in cutting-edge AI tools like Gemini, Nano Banana, and ComfyUI for content creation and short video editing, building a highly engaging personal IP matrix on Xiaohongshu and Douyin, alongside developing LLM-based quantitative trading assistants.
+          Currently fully embracing the AI era, <span className="text-purple-600 dark:text-purple-400 font-bold">deeply engaged in AIGC and social media operations</span>. Driven by a passion for gaming and anime, exploring AI-powered secondary creation and video editing. By building standardized AI content production workflows, successfully established personal accounts and high-engagement IP matrices on Douyin and Xiaohongshu, alongside developing LLM-based quantitative trading assistants.
         </>
       ),
       btnResume: 'View Experience',
@@ -80,11 +80,11 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center items-start relative overflow-hidden px-4 pt-28 pb-12 md:pt-20 transition-colors duration-500 print:min-h-0 print:py-0 print:block">
+    <section id="home" className="min-h-screen flex flex-col justify-center items-start relative overflow-hidden px-4 pt-28 pb-12 md:pt-20 transition-colors duration-500 print:min-h-0 print:py-4 print:block">
       <div className="z-10 max-w-5xl w-full mx-auto print:text-center">
         
         {/* Header for Print - Compact Centered Layout */}
-        <div className="hidden print:block relative mb-6">
+        <div className="hidden print:block relative mb-4">
           {/* Centered Content */}
           <div className="flex flex-col items-center relative z-10 px-8">
              {/* Circular Avatar */}
@@ -110,7 +110,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                 <div className="flex items-center gap-1"><svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg> 313455055@qq.com</div>
              </div>
 
-             <div className="text-sm text-gray-600 flex items-center gap-2 mb-2">
+             <div className="text-sm text-gray-600 flex items-center gap-2 mb-1">
                 <span>{t.info1Val}</span>
                 <span className="text-gray-300">|</span>
                 <span>{t.info2Val}</span>
@@ -120,7 +120,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                 <span>{t.info4Val}</span>
              </div>
           </div>
-          <div className="border-b border-gray-100 w-full mt-2"></div>
+          <div className="border-b border-gray-100 w-full mt-1"></div>
         </div>
 
         {/* Web View Header (Unchanged) */}
@@ -181,7 +181,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
             </div>
         </div>
         
-        <p className="text-base md:text-lg text-slate-700 dark:text-gray-300 mb-12 leading-relaxed transition-colors duration-300 print:text-sm print:text-black print:text-left print:mb-6">
+        <p className="text-base md:text-lg text-slate-700 dark:text-gray-300 mb-12 leading-relaxed transition-colors duration-300 print:text-xs print:text-black print:text-left print:mb-4 print:leading-normal">
           {t.desc}
         </p>
         

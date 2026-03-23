@@ -74,37 +74,37 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
   const t = content[language];
 
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-slate-950 relative transition-colors duration-500">
+    <section id="skills" className="py-20 bg-white dark:bg-slate-950 relative transition-colors duration-500 print:py-4">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300">
+        <div className="mb-16 text-center print:mb-4 print:text-left">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-1">
             {t.title} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
-          <p className="text-slate-600 dark:text-gray-400">{t.subtitle}</p>
+          <p className="text-slate-600 dark:text-gray-400 print:text-xs print:text-gray-500">{t.subtitle}</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 print:grid-cols-1 print:gap-4">
           {t.skills.map((category, index) => (
-            <div key={index} className="group bg-white dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-800 dark:hover:border-blue-400 transition-all duration-300 flex flex-col">
+            <div key={index} className="group bg-white dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-800 dark:hover:border-blue-400 transition-all duration-300 flex flex-col print:p-0 print:border-0 print:break-inside-avoid">
               
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 bg-white dark:bg-slate-800 rounded-xl text-blue-800 dark:text-blue-400 shadow-sm group-hover:scale-110 transition-transform duration-300">
+              <div className="flex items-center gap-4 mb-6 print:mb-1">
+                <div className="p-3 bg-white dark:bg-slate-800 rounded-xl text-blue-800 dark:text-blue-400 shadow-sm group-hover:scale-110 transition-transform duration-300 print:hidden">
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-bold text-slate-800 dark:text-white">
+                <h3 className="text-xl font-bold text-slate-800 dark:text-white print:text-base">
                   {category.category}
                 </h3>
               </div>
 
-              <p className="text-sm text-slate-500 dark:text-gray-400 mb-6 h-10 leading-relaxed">
+              <p className="text-sm text-slate-500 dark:text-gray-400 mb-6 h-10 leading-relaxed print:text-xs print:mb-2 print:h-auto print:leading-normal">
                 {category.description}
               </p>
 
-              <div className="flex flex-wrap gap-2 mt-auto">
+              <div className="flex flex-wrap gap-2 mt-auto print:mt-0 print:gap-1">
                 {category.items.map((item, idx) => (
                   <span 
                     key={idx} 
-                    className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors duration-300
+                    className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors duration-300 print:px-2 print:py-0.5 print:text-[10px] print:bg-transparent print:border-gray-200
                       ${index === 0 
                         ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800 hover:bg-blue-200 dark:hover:bg-blue-900/50' 
                         : index === 1

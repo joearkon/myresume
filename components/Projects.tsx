@@ -46,7 +46,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         {
           brand: '自媒体 IP 矩阵',
           role: '内容主理人',
-          desc: '将对动漫与游戏的热爱与大客户运营经验相结合，借助 AI 工具赋能创意想法，在小红书与抖音等平台打造高粘性自媒体 IP 矩阵，实现从兴趣到商业价值的高效转化。',
+          desc: '深耕 AIGC 与新媒体运营。由对游戏动漫的热爱驱动，探索利用 AI 工具进行内容二创与剪辑。通过构建标准化的 AI 内容产出工作流，在抖音、小红书平台成功打造个人账号，并形成高粘性的 IP 矩阵。',
           tags: ['小红书', '抖音', 'AIGC'],
           highlight: '5000+ 高粘性粉丝'
         }
@@ -106,7 +106,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         {
           brand: 'Social Media IP',
           role: 'Content Creator',
-          desc: 'Combining a passion for anime and games with key account operation experience, I leverage AI tools to empower creative ideas and build high-engagement social media IP matrices on platforms like Xiaohongshu and Douyin, achieving efficient conversion from personal interest to business value.',
+          desc: 'Deeply engaged in AIGC and social media operations. Driven by a passion for gaming and anime, exploring AI-powered secondary creation and video editing. By building standardized AI content production workflows, successfully established personal accounts and high-engagement IP matrices on Douyin and Xiaohongshu.',
           tags: ['Xiaohongshu', 'Douyin', 'AIGC'],
           highlight: '5000+ Active Followers'
         }
@@ -139,25 +139,25 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-slate-900 relative transition-colors duration-500">
+    <section id="projects" className="py-20 bg-white dark:bg-slate-900 relative transition-colors duration-500 print:py-4">
       <div className="max-w-4xl mx-auto px-4">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300">
+        <div className="text-center mb-16 print:mb-4 print:text-left">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-1">
             {t.title} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
-          <p className="text-slate-600 dark:text-gray-400">{t.subtitle}</p>
+          <p className="text-slate-600 dark:text-gray-400 print:text-xs print:text-gray-500">{t.subtitle}</p>
         </div>
 
         {/* 1. Key Metrics Bar - Simplified */}
-        <div className="border-y border-slate-100 dark:border-slate-800 py-8 mb-16 flex flex-wrap justify-between items-center gap-8">
+        <div className="border-y border-slate-100 dark:border-slate-800 py-8 mb-16 flex flex-wrap justify-between items-center gap-8 print:py-2 print:mb-4 print:gap-2 print:border-gray-200">
           {t.metrics.map((metric, idx) => (
-            <div key={idx} className="flex-1 min-w-[120px] text-center">
-              <div className={`text-3xl font-bold mb-1 ${metric.color.replace('text-', 'text-slate-900 dark:text-white')}`}>
+            <div key={idx} className="flex-1 min-w-[120px] text-center print:min-w-0 print:text-left">
+              <div className={`text-3xl font-bold mb-1 ${metric.color.replace('text-', 'text-slate-900 dark:text-white')} print:text-sm print:mb-0`}>
                 {metric.value}
               </div>
-              <div className="text-xs text-slate-500 dark:text-gray-400 font-medium uppercase tracking-wider">
+              <div className="text-xs text-slate-500 dark:text-gray-400 font-medium uppercase tracking-wider print:text-[8px] print:tracking-normal">
                 {metric.label}
               </div>
             </div>
@@ -165,12 +165,12 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         </div>
 
         {/* 2. Abstract Architecture Visualization - Simplified */}
-        <div className="mb-16 text-center">
-           <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">{t.archTitle}</h3>
-           <p className="text-slate-600 dark:text-gray-400 leading-relaxed mb-6 max-w-2xl mx-auto">{t.archDesc}</p>
-           <div className="flex flex-wrap justify-center gap-2">
+        <div className="mb-16 text-center print:mb-4 print:text-left">
+           <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 print:text-sm print:mb-1">{t.archTitle}</h3>
+           <p className="text-slate-600 dark:text-gray-400 leading-relaxed mb-6 max-w-2xl mx-auto print:text-xs print:mb-2 print:mx-0 print:max-w-none">{t.archDesc}</p>
+           <div className="flex flex-wrap justify-center gap-2 print:justify-start print:gap-1">
               {['POS', 'BOH', 'CRM', 'OMS', 'ERP'].map(tag => (
-                <span key={tag} className="px-3 py-1 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-gray-300 text-xs font-medium rounded border border-slate-200 dark:border-slate-700">
+                <span key={tag} className="px-3 py-1 bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-gray-300 text-xs font-medium rounded border border-slate-200 dark:border-slate-700 print:px-1.5 print:py-0 print:text-[10px] print:bg-transparent print:border-gray-200">
                   {tag}
                 </span>
               ))}
@@ -178,11 +178,11 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         </div>
 
         {/* 2.5 Brand Wall - Simplified */}
-        <div className="mb-16">
-            <h3 className="text-sm font-bold text-center mb-6 text-slate-400 dark:text-gray-500 uppercase tracking-widest">{t.brandsTitle}</h3>
-            <div className="flex flex-wrap justify-center gap-3">
+        <div className="mb-16 print:mb-4">
+            <h3 className="text-sm font-bold text-center mb-6 text-slate-400 dark:text-gray-500 uppercase tracking-widest print:text-[10px] print:mb-2 print:text-left print:tracking-normal">{t.brandsTitle}</h3>
+            <div className="flex flex-wrap justify-center gap-3 print:justify-start print:gap-1.5">
                 {brandList.map((brand, idx) => (
-                    <span key={idx} className="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded text-slate-600 dark:text-gray-300 text-xs font-medium hover:border-blue-800 dark:hover:border-blue-400 hover:text-blue-800 dark:hover:text-blue-400 transition-all cursor-default">
+                    <span key={idx} className="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded text-slate-600 dark:text-gray-300 text-xs font-medium hover:border-blue-800 dark:hover:border-blue-400 hover:text-blue-800 dark:hover:border-blue-400 transition-all cursor-default print:px-2 print:py-0.5 print:text-[10px] print:border-gray-200">
                         {brand}
                     </span>
                 ))}
@@ -190,31 +190,31 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         </div>
 
         {/* 3. Case Study Cards - Simplified to List Style */}
-        <div className="mb-16">
-            <h3 className="text-2xl font-bold text-center mb-10 text-slate-800 dark:text-white">{t.casesTitle}</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+        <div className="mb-16 print:mb-4">
+            <h3 className="text-2xl font-bold text-center mb-10 text-slate-800 dark:text-white print:text-lg print:mb-2 print:text-left">{t.casesTitle}</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10 print:grid-cols-1 print:gap-y-4">
             {t.cases.map((item, index) => (
-                <div key={index} className="group border-b border-slate-100 dark:border-slate-800 pb-8 last:border-0 md:last:border-b">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors">
+                <div key={index} className="group border-b border-slate-100 dark:border-slate-800 pb-8 last:border-0 md:last:border-b print:pb-2 print:border-gray-100 print:break-inside-avoid">
+                  <div className="flex justify-between items-start mb-2 print:mb-0.5">
+                    <h4 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-sm">
                       {item.brand}
                     </h4>
-                    <span className="text-[10px] font-bold text-blue-800 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-1.5 py-0.5 rounded uppercase">
+                    <span className="text-[10px] font-bold text-blue-800 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-1.5 py-0.5 rounded uppercase print:bg-transparent print:border print:border-blue-100 print:text-[8px]">
                       {item.highlight}
                     </span>
                   </div>
                   
-                  <div className="text-[11px] font-bold text-slate-400 dark:text-gray-500 mb-2 uppercase tracking-wider">
+                  <div className="text-[11px] font-bold text-slate-400 dark:text-gray-500 mb-2 uppercase tracking-wider print:text-[9px] print:mb-0.5 print:tracking-normal">
                       {item.role}
                   </div>
 
-                  <p className="text-sm text-slate-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all">
+                  <p className="text-sm text-slate-600 dark:text-gray-300 mb-4 leading-relaxed line-clamp-3 group-hover:line-clamp-none transition-all print:text-xs print:mb-1 print:leading-normal print:line-clamp-none">
                       {item.desc}
                   </p>
 
-                  <div className="flex flex-wrap gap-1.5">
+                  <div className="flex flex-wrap gap-1.5 print:gap-1">
                       {item.tags.map((tag, i) => (
-                      <span key={i} className="text-[10px] bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-gray-400 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700">
+                      <span key={i} className="text-[10px] bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-gray-400 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700 print:bg-transparent print:border-gray-200 print:text-[8px] print:px-1 print:py-0">
                           {tag}
                       </span>
                       ))}
@@ -225,30 +225,30 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         </div>
 
         {/* 4. AI Innovation Lab - Simplified */}
-        <div className="pt-16 border-t border-slate-100 dark:border-slate-800">
-            <div className="text-center mb-10">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">{t.aiTitle}</h3>
-                <p className="text-slate-600 dark:text-gray-400">{t.aiDesc}</p>
+        <div className="pt-16 border-t border-slate-100 dark:border-slate-800 print:pt-4 print:border-gray-200">
+            <div className="text-center mb-10 print:mb-2 print:text-left">
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 print:text-lg print:mb-0.5">{t.aiTitle}</h3>
+                <p className="text-slate-600 dark:text-gray-400 print:text-xs print:text-gray-500">{t.aiDesc}</p>
             </div>
-            <div className="space-y-6">
+            <div className="space-y-6 print:space-y-2">
                 {t.aiProjects.map((proj, idx) => (
                     <a 
                         key={idx} 
                         href={proj.link}
                         target="_blank"
-                        className="block p-6 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-blue-800 dark:hover:border-blue-400 transition-all group"
+                        className="block p-6 bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-blue-800 dark:hover:border-blue-400 transition-all group print:p-0 print:bg-transparent print:border-0 print:break-inside-avoid"
                     >
-                        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-                          <div className="shrink-0 grayscale group-hover:grayscale-0 transition-all">{proj.icon}</div>
-                          <div className="text-center sm:text-left">
-                              <h4 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors mb-2">
+                        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 print:flex-row print:gap-2">
+                          <div className="shrink-0 grayscale group-hover:grayscale-0 transition-all print:hidden">{proj.icon}</div>
+                          <div className="text-center sm:text-left print:text-left">
+                              <h4 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors mb-2 print:text-sm print:mb-0.5">
                                   {proj.name} 
-                                  <span className="inline-block ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
+                                  <span className="inline-block ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all print:hidden">→</span>
                               </h4>
-                              <p className="text-sm text-slate-600 dark:text-gray-400 mb-4 leading-relaxed">{proj.desc}</p>
-                              <div className="flex flex-wrap justify-center sm:justify-start gap-2">
+                              <p className="text-sm text-slate-600 dark:text-gray-400 mb-4 leading-relaxed print:text-xs print:mb-1 print:leading-normal">{proj.desc}</p>
+                              <div className="flex flex-wrap justify-center sm:justify-start gap-2 print:gap-1">
                                   {proj.tags.map((tag, i) => (
-                                      <span key={i} className="text-xs font-mono bg-white dark:bg-slate-800 text-slate-500 dark:text-gray-400 px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700">
+                                      <span key={i} className="text-xs font-mono bg-white dark:bg-slate-800 text-slate-500 dark:text-gray-400 px-3 py-1 rounded-full border border-slate-200 dark:border-slate-700 print:bg-transparent print:border-gray-200 print:text-[8px] print:px-1.5 print:py-0">
                                           {tag}
                                       </span>
                                   ))}

@@ -28,15 +28,15 @@ export const generateWord = async (language: Language) => {
     title: '全链路数字化专家 | AIGC 新媒体运营',
     roles: ['技术架构', '项目交付', '客户增长'],
     contact: '男 | 32岁 | 135 2425 2203 | 313455055@qq.com',
-    info: '10年经验 | 期望城市: 上海 | 离职-随时到岗 | 本科',
-    desc: '从代码到底层架构，从单项目交付到大客户运营。我不仅懂技术实现，更懂如何将技术转化为商业价值。曾主导喜茶、DQ、棒约翰等头部品牌的数字化落地。目前正全面拥抱 AI 时代，深度探索 AIGC 与新媒体运营。熟练运用 Gemini、Nano Banana、ComfyUI 等前沿 AI 工具进行图文创作与短视频剪辑，在小红书和抖音打造高粘性个人 IP 矩阵，并独立开发了基于大模型的量化交易助手。'
+    info: '10年经验 | 期望城市: 上海 | 正在寻找机会 | 本科',
+    desc: '从代码到底层架构，从单项目交付到大客户运营。我不仅懂技术实现，更懂如何将技术转化为商业价值。曾主导喜茶、DQ、棒约翰等头部品牌的数字化落地。目前正全面拥抱 AI 时代，深耕 AIGC 与新媒体运营。由对游戏动漫的热爱驱动，探索利用 AI 工具进行内容二创与剪辑。通过构建标准化的 AI 内容产出工作流，在抖音、小红书成功打造个人账号与高粘性 IP 矩阵，并独立开发了基于大模型的量化交易助手。'
   } : {
     name: 'Joe.Chen',
     title: 'Digital Transformation Expert | AIGC Social Media',
     roles: ['Tech Arch', 'Delivery', 'Growth'],
     contact: 'Male | 32 Years Old | +86 135 2425 2203 | 313455055@qq.com',
-    info: '10 Years Exp | City: Shanghai | Available | Bachelor',
-    desc: 'From coding to architecture, from project delivery to key account growth. I bridge the gap between technical implementation and business value. Led digital transformation for top brands like Heytea, DQ, and Papa John\'s. Currently fully embracing the AI era, deeply exploring AIGC and social media operations. Proficient in cutting-edge AI tools like Gemini, Nano Banana, and ComfyUI for content creation and short video editing, building a highly engaging personal IP matrix on Xiaohongshu and Douyin, alongside developing LLM-based quantitative trading assistants.'
+    info: '10 Years Exp | City: Shanghai | Actively Seeking Opportunities | Bachelor',
+    desc: 'From coding to architecture, from project delivery to key account growth. I bridge the gap between technical implementation and business value. Led digital transformation for top brands like Heytea, DQ, and Papa John\'s. Currently fully embracing the AI era, deeply engaged in AIGC and social media operations. Driven by a passion for gaming and anime, exploring AI-powered secondary creation and video editing. By building standardized AI content production workflows, successfully established personal accounts and high-engagement IP matrices on Douyin and Xiaohongshu, alongside developing LLM-based quantitative trading assistants.'
   };
 
   const experience = isZh ? [
@@ -207,7 +207,7 @@ export const generateWord = async (language: Language) => {
       {
         brand: '自媒体 IP 矩阵',
         role: '内容主理人',
-        desc: '将对动漫与游戏的热爱与大客户运营经验相结合，借助 AI 工具赋能创意想法，在小红书与抖音等平台打造高粘性自媒体 IP 矩阵，实现从兴趣到商业价值的高效转化。',
+        desc: '深耕 AIGC 与新媒体运营。由对游戏动漫的热爱驱动，探索利用 AI 工具进行内容二创与剪辑。通过构建标准化的 AI 内容产出工作流，在抖音、小红书平台成功打造个人账号，并形成高粘性的 IP 矩阵。',
         highlight: '5000+ 高粘性粉丝'
       }
     ],
@@ -249,7 +249,7 @@ export const generateWord = async (language: Language) => {
       {
         brand: 'Social Media IP',
         role: 'Content Creator',
-        desc: 'Combining a passion for anime and games with key account operation experience, I leverage AI tools to empower creative ideas and build high-engagement social media IP matrices on platforms like Xiaohongshu and Douyin, achieving efficient conversion from personal interest to business value.',
+        desc: 'Deeply engaged in AIGC and social media operations. Driven by a passion for gaming and anime, exploring AI-powered secondary creation and video editing. By building standardized AI content production workflows, successfully established personal accounts and high-engagement IP matrices on Douyin and Xiaohongshu.',
         highlight: '5000+ Active Followers'
       }
     ],
