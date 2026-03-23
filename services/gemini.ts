@@ -20,7 +20,10 @@ const RESUME_CONTEXT = `
 
 **AI 探索与创新 (New!)：**
 - 正在运营个人 AI 实验室站点 **KunKun AI Labs** (www.kunkun1023.xyz)。
-- 积极探索 **Gemini Veo3** 等前沿大模型在视频生成和多模态领域的应用工具开发。
+- **核心 AI 技能：** 熟练掌握 **LLM 大模型应用**、**Gemini / GPT 提示词工程 (Prompt Engineering)**、**AIGC 流程自动化**。
+- **多模态工具：** 深入应用 **ComfyUI / Stable Diffusion** 进行内容创作，开发 **AI 智能体 (AI Agents)**。
+- 积极探索 **Gemini Veo3** 等前沿大模型在视频生成领域的应用。
+- **自媒体 IP 运营：** 热爱动漫与游戏，通过 AI 能力赋能创意想法，在小红书与抖音打造高粘性自媒体 IP 矩阵。
 
 **详细工作经历：**
 1. **上海合阔信息技术有限公司 (2016.04 - 2025.07)**
