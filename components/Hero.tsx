@@ -71,98 +71,88 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center items-center relative overflow-hidden px-4 pt-28 pb-12 md:pt-20 transition-colors duration-500 print:min-h-0 print:py-0 print:block">
-      {/* Background Grid Animation - Hide on Print */}
-      <div className="absolute inset-0 opacity-10 dark:opacity-20 pointer-events-none transition-opacity duration-500 print:hidden">
-         <div className="absolute inset-0 bg-[linear-gradient(to_right,#3b82f6_1px,transparent_1px),linear-gradient(to_bottom,#3b82f6_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-      </div>
-
-      <div className="z-10 text-center max-w-5xl w-full print:text-left">
+    <section id="home" className="min-h-screen flex flex-col justify-center items-start relative overflow-hidden px-4 pt-28 pb-12 md:pt-20 transition-colors duration-500 print:min-h-0 print:py-0 print:block">
+      <div className="z-10 max-w-5xl w-full mx-auto print:text-left">
         
-        {/* Avatar Section - Simplified for Print */}
-        <div className="mb-8 relative inline-block animate-fade-in-up print:float-right print:w-32 print:mb-0 print:animate-none">
-             <div className="absolute -inset-3 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-full blur-lg opacity-40 dark:opacity-60 animate-pulse-glow print:hidden"></div>
-             <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full p-1.5 bg-white dark:bg-slate-800 shadow-2xl print:shadow-none print:p-0 print:w-32 print:h-32 print:border-none">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 mb-12">
+          {/* Text Content */}
+          <div className="flex-1 text-center md:text-left">
+            <h1 className="text-4xl md:text-6xl font-bold mb-2 tracking-tight text-slate-900 dark:text-white transition-all duration-500 print:text-black print:text-4xl print:mb-2">
+              {t.name}
+            </h1>
+            
+            <div className="text-xl md:text-2xl font-medium text-slate-500 dark:text-slate-400 mb-6 tracking-wide uppercase print:text-xl print:text-gray-600 print:mb-4">
+              {language === 'zh' ? 'Joe.Chen' : '陈子卓野'}
+            </div>
+            
+            <h2 className="text-lg md:text-xl font-normal text-slate-600 dark:text-gray-300 mb-6 flex flex-wrap justify-center md:justify-start items-center gap-2 md:gap-4 transition-colors duration-300 print:text-lg print:text-black print:justify-start print:mb-4">
+              <span>{t.role1}</span> <span className="hidden md:inline text-slate-300 dark:text-slate-600 print:text-black">|</span>
+              <span>{t.role2}</span> <span className="hidden md:inline text-slate-300 dark:text-slate-600 print:text-black">|</span>
+              <span>{t.role3}</span>
+            </h2>
+
+            {/* Contact Info */}
+            <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-sm text-slate-600 dark:text-slate-400 mb-6 font-medium print:text-black">
+                <div className="flex items-center gap-1"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg> +86 135 2425 2203</div>
+                <div className="flex items-center gap-1"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg> 313455055@qq.com</div>
+                <div className="flex items-center gap-1"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg> home.kunkun1023.xyz</div>
+            </div>
+          </div>
+
+          {/* Avatar Section */}
+          <div className="relative shrink-0 print:float-right print:w-32 print:mb-0">
+             <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-lg p-1 bg-white dark:bg-slate-800 shadow-md border border-slate-200 dark:border-slate-700 print:shadow-none print:p-0 print:w-32 print:h-32 print:border-none">
                 <img 
                     src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESCqxpwLYLP8Jhn6EnyGll64FUqPbl9gACHjMAAiLeAAFWZRBcwlspcNM6BA.jpg" 
                     alt="陈子卓野 (Joe Chen)" 
-                    className="w-full h-full rounded-full object-cover border-2 border-slate-100 dark:border-slate-700 hover:scale-105 transition-transform duration-500 print:border-none print:rounded-md"
+                    className="w-full h-full rounded-md object-cover print:border-none print:rounded-md"
                 />
              </div>
+          </div>
         </div>
-
-        <div className="mb-6 flex flex-wrap justify-center gap-3 animate-float print:hidden" style={{ animationDelay: '0.1s' }}>
-            <span className="bg-blue-50/80 dark:bg-gunpla-blue/20 text-blue-600 dark:text-gunpla-blue border border-blue-200 dark:border-gunpla-blue px-4 py-1 rounded-full text-sm font-tech tracking-widest uppercase backdrop-blur-sm shadow-[0_0_15px_rgba(59,130,246,0.2)] dark:shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-colors duration-300">
-              {t.tagline}
-            </span>
-            <span className="bg-purple-50/80 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-500/50 px-4 py-1 rounded-full text-sm font-tech tracking-widest uppercase backdrop-blur-sm shadow-[0_0_15px_rgba(168,85,247,0.2)] dark:shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-colors duration-300">
-              {t.tagline2}
-            </span>
-        </div>
-        
-        <h1 className="text-5xl md:text-8xl font-black mb-4 tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-slate-800 via-blue-600 to-slate-800 dark:from-gunpla-white dark:via-gunpla-blue dark:to-gunpla-white animate-fade-in-up transition-all duration-500 print:text-black print:text-4xl print:mb-2 print:bg-none print:text-transparent-0" style={{ animationDelay: '0.2s' }}>
-          {t.name}
-        </h1>
-        
-        <div className="text-2xl md:text-4xl font-tech font-bold text-slate-400 dark:text-slate-600 mb-8 tracking-[0.3em] uppercase animate-fade-in-up opacity-0 print:opacity-100 print:text-xl print:text-gray-600 print:mb-4 print:animate-none" style={{ animationDelay: '0.3s' }}>
-          {language === 'zh' ? 'Joe.Chen' : '陈子卓野'}
-        </div>
-        
-        <h2 className="text-xl md:text-3xl font-light text-slate-600 dark:text-gray-300 mb-10 opacity-0 animate-fade-in-up flex flex-col md:flex-row justify-center items-center gap-2 md:gap-4 transition-colors duration-300 print:opacity-100 print:text-lg print:text-black print:justify-start print:mb-4 print:animate-none" style={{ animationDelay: '0.4s' }}>
-          <span>{t.role1}</span> <span className="hidden md:inline text-gunpla-blue print:text-black">/</span>
-          <span>{t.role2}</span> <span className="hidden md:inline text-gunpla-red print:text-black">/</span>
-          <span>{t.role3}</span>
-        </h2>
 
         {/* Personal Info Card - Optimized for Print */}
-        <div className="max-w-4xl mx-auto mb-12 opacity-0 animate-fade-in-up grid grid-cols-2 md:grid-cols-4 gap-4 text-sm md:text-base print:opacity-100 print:grid-cols-2 print:gap-2 print:mb-6 print:animate-none print:text-left" style={{ animationDelay: '0.5s' }}>
-            <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg backdrop-blur-sm transition-colors duration-300 shadow-sm print:border-none print:shadow-none print:p-0 print:bg-transparent">
-                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 print:text-gray-500">{t.info1Title}</div>
-                <div className="text-slate-900 dark:text-white font-bold print:text-black">{t.info1Val}</div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm md:text-base mb-8 print:grid-cols-2 print:gap-2 print:mb-6 print:text-left">
+            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 rounded-lg transition-colors duration-300 print:border-none print:shadow-none print:p-0 print:bg-transparent">
+                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 print:text-gray-500 uppercase tracking-wider">{t.info1Title}</div>
+                <div className="text-slate-900 dark:text-white font-medium print:text-black">{t.info1Val}</div>
             </div>
-            <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg backdrop-blur-sm transition-colors duration-300 shadow-sm print:border-none print:shadow-none print:p-0 print:bg-transparent">
-                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 print:text-gray-500">{t.info2Title}</div>
-                <div className="text-slate-900 dark:text-white font-bold print:text-black">{t.info2Val}</div>
+            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 rounded-lg transition-colors duration-300 print:border-none print:shadow-none print:p-0 print:bg-transparent">
+                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 print:text-gray-500 uppercase tracking-wider">{t.info2Title}</div>
+                <div className="text-slate-900 dark:text-white font-medium print:text-black">{t.info2Val}</div>
             </div>
-            <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg backdrop-blur-sm transition-colors duration-300 shadow-sm print:border-none print:shadow-none print:p-0 print:bg-transparent">
-                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 print:text-gray-500">{t.info3Title}</div>
-                <div className="text-slate-900 dark:text-white font-bold print:text-black">{t.info3Val}</div>
+            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 rounded-lg transition-colors duration-300 print:border-none print:shadow-none print:p-0 print:bg-transparent">
+                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 print:text-gray-500 uppercase tracking-wider">{t.info3Title}</div>
+                <div className="text-slate-900 dark:text-white font-medium print:text-black">{t.info3Val}</div>
             </div>
-            <div className="bg-white/80 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg backdrop-blur-sm transition-colors duration-300 shadow-sm print:border-none print:shadow-none print:p-0 print:bg-transparent">
-                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 print:text-gray-500">{t.info4Title}</div>
-                <div className="text-yellow-600 dark:text-gunpla-yellow font-bold print:text-black">{t.info4Val}</div>
+            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 rounded-lg transition-colors duration-300 print:border-none print:shadow-none print:p-0 print:bg-transparent">
+                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 print:text-gray-500 uppercase tracking-wider">{t.info4Title}</div>
+                <div className="text-slate-900 dark:text-white font-medium print:text-black">{t.info4Val}</div>
             </div>
         </div>
         
-        <p className="text-lg md:text-xl text-slate-600 dark:text-gray-400 max-w-3xl mx-auto mb-12 opacity-0 animate-fade-in-up leading-relaxed transition-colors duration-300 print:opacity-100 print:text-sm print:text-black print:text-left print:mb-6 print:animate-none" style={{ animationDelay: '0.7s' }}>
+        <p className="text-base md:text-lg text-slate-700 dark:text-gray-300 mb-12 leading-relaxed transition-colors duration-300 print:text-sm print:text-black print:text-left print:mb-6">
           {t.desc}
         </p>
         
-        <div className="flex flex-wrap gap-4 justify-center opacity-0 animate-fade-in-up items-center print:hidden" style={{ animationDelay: '0.9s' }}>
-          <a href="#experience" className="px-8 py-4 bg-gunpla-blue text-white font-bold rounded hover:bg-blue-600 transition-all hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] clip-path-slope">
+        <div className="flex flex-wrap gap-4 justify-center md:justify-start items-center print:hidden">
+          <a href="#experience" className="px-6 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-medium rounded-md hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow-sm">
             {t.btnResume}
           </a>
 
           {/* Export PDF Button - Triggers Print */}
           <button 
             onClick={handlePrint}
-            className="px-8 py-4 bg-slate-800 dark:bg-slate-700 text-white font-bold rounded hover:bg-slate-700 dark:hover:bg-slate-600 transition-all flex items-center gap-2 shadow-lg hover:-translate-y-1 cursor-pointer"
+            className="px-6 py-2.5 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-medium rounded-md border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all flex items-center gap-2 shadow-sm cursor-pointer"
           >
-             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
              {t.btnExport}
           </button>
 
-          <a href="#contact" className="px-8 py-4 border border-slate-300 dark:border-gray-600 text-slate-600 dark:text-gray-300 font-bold rounded hover:border-gunpla-yellow hover:text-yellow-600 dark:hover:text-gunpla-yellow transition-all">
+          <a href="#contact" className="px-6 py-2.5 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-medium rounded-md border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm">
             {t.btnContact}
           </a>
         </div>
-      </div>
-
-      {/* Decorative Elements - Hide on Print */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce print:hidden">
-        <svg className="w-6 h-6 text-slate-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
       </div>
     </section>
   );

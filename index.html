@@ -37,19 +37,11 @@
         darkMode: 'class',
         theme: {
           extend: {
-            colors: {
-              gunpla: {
-                dark: '#0f172a',
-                blue: '#3b82f6',
-                red: '#ef4444',
-                yellow: '#eab308',
-                white: '#f8fafc'
-              }
-            },
             animation: {
               'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
               'float': 'float 3s ease-in-out infinite',
               'pulse-glow': 'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'blob': 'blob 7s infinite',
             },
             keyframes: {
               fadeInUp: {
@@ -63,20 +55,32 @@
               pulseGlow: {
                 '0%, 100%': { opacity: '1', boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)' },
                 '50%': { opacity: '.8', boxShadow: '0 0 10px rgba(59, 130, 246, 0.2)' },
+              },
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
               }
             }
           },
         },
       }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
       body {
         font-family: 'Noto Sans SC', sans-serif;
         overflow-x: hidden;
       }
       h1, h2, h3, .font-tech {
-        font-family: 'Orbitron', 'Noto Sans SC', sans-serif;
+        font-family: 'Noto Sans SC', sans-serif;
+      }
+      .animation-delay-2000 {
+        animation-delay: 2s;
+      }
+      .animation-delay-4000 {
+        animation-delay: 4s;
       }
       /* Custom Scrollbar */
       ::-webkit-scrollbar {
@@ -142,6 +146,13 @@
           border: none !important; /* 去除可能的板块分割线 */
         }
         
+        /* 移除大间距 */
+        .mb-20, .mb-16, .mb-12, .py-20 {
+            margin-bottom: 15px !important;
+            padding-top: 10px !important;
+            padding-bottom: 10px !important;
+        }
+        
         .max-w-4xl, .max-w-5xl, .max-w-6xl, .max-w-7xl {
           max-width: 100% !important;
           padding: 0 !important;
@@ -153,20 +164,31 @@
         h2 { font-size: 16pt !important; font-weight: 700 !important; margin-top: 20px !important; margin-bottom: 10px !important; color: #000 !important; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
         h3 { font-size: 12pt !important; font-weight: 700 !important; color: #333 !important; }
         
-        .text-slate-600, .text-slate-500, .dark\:text-gray-400, .dark\:text-gray-300, .dark\:text-white, .text-slate-900 {
+        .text-slate-600, .text-slate-500, .text-slate-400, .text-slate-300, .dark\:text-gray-400, .dark\:text-gray-300, .dark\:text-white, .text-slate-900 {
           color: #000 !important;
         }
         
         /* 关键指标颜色转黑 */
-        .text-blue-500, .text-green-500, .text-purple-500, .text-yellow-500, .text-gunpla-blue, .text-gunpla-red {
+        .text-blue-500, .text-green-500, .text-purple-500, .text-yellow-500, .text-blue-800, .text-red-800 {
           color: #000 !important;
         }
 
+        /* SVG 颜色修正 */
+        .fill-slate-600, .dark\:fill-slate-300 {
+            fill: #000 !important;
+        }
+        .stroke-blue-800, .dark\:stroke-blue-400, .stroke-red-500, .stroke-yellow-500 {
+            stroke: #000 !important;
+        }
+
         /* 5. 容器去样式：变回白纸黑字 */
-        .bg-white, .bg-slate-50, .dark\:bg-slate-900, .dark\:bg-slate-800 {
+        .bg-white, .bg-slate-50, .bg-slate-100, .bg-gradient-to-br, .dark\:bg-slate-900, .dark\:bg-slate-800 {
           background: transparent !important;
           box-shadow: none !important;
-          border: none !important;
+        }
+        /* 移除大块容器边框，但保留标签和卡片的边框 */
+        section > div > .bg-white, section > div > .bg-slate-50 {
+            border: none !important;
         }
         .rounded-xl, .rounded-2xl, .rounded-3xl {
           border-radius: 0 !important;
@@ -207,16 +229,44 @@
 
         /* 7. 列表与卡片的分页保护 */
         /* 强制主要条目不跨页 */
-        .group, 
-        #experience .relative.flex, 
-        #projects .grid > div,
-        #skills .group 
+        .group
         {
           page-break-inside: avoid !important;
           break-inside: avoid !important;
           border-bottom: 1px dotted #ddd !important; /* 增加分隔线 */
           padding-bottom: 10px !important;
           margin-bottom: 10px !important;
+          padding: 10px !important;
+        }
+
+        /* 隐藏时间轴线和圆点 */
+        #experience .absolute.w-0\.5,
+        #experience .absolute.w-4.h-4 {
+            display: none !important;
+        }
+        
+        /* 经验卡片全宽排版 */
+        #experience .md\:w-1\/2 {
+            width: 100% !important;
+            margin-left: 0 !important;
+            padding: 0 !important;
+        }
+        
+        #experience .group {
+            border-left: none !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+        }
+
+        /* 项目指标横向排列 */
+        #projects .flex-col.md\:flex-row {
+            flex-direction: row !important;
+        }
+        #projects .md\:w-1\/4 {
+            width: 25% !important;
+            border: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
         }
 
         /* 技能标签 */

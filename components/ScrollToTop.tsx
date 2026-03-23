@@ -35,7 +35,7 @@ const ScrollToTop: React.FC = () => {
       {/* Reading Progress Bar (Fixed Top) */}
       <div className="fixed top-0 left-0 w-full h-1 z-50 bg-transparent print:hidden">
         <div 
-          className="h-full bg-gunpla-blue dark:bg-gunpla-blue shadow-[0_0_10px_rgba(59,130,246,0.7)] transition-all duration-150 ease-out"
+          className="h-full bg-blue-800 dark:bg-blue-400 shadow-[0_0_10px_rgba(30,58,138,0.7)] dark:shadow-[0_0_10px_rgba(96,165,250,0.7)] transition-all duration-150 ease-out"
           style={{ width: `${scrollProgress}%` }}
         ></div>
       </div>
@@ -45,7 +45,7 @@ const ScrollToTop: React.FC = () => {
         {isVisible && (
           <button
             onClick={scrollToTop}
-            className="p-3 rounded-full bg-slate-800 dark:bg-white text-white dark:text-slate-900 shadow-lg hover:bg-gunpla-blue dark:hover:bg-gunpla-blue dark:hover:text-white transition-all duration-300 transform hover:-translate-y-1"
+            className="p-3 rounded-full bg-slate-800 dark:bg-white text-white dark:text-slate-900 shadow-lg hover:bg-blue-800 dark:hover:bg-blue-400 dark:hover:text-white transition-all duration-300 transform hover:-translate-y-1"
             aria-label="Scroll to top"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

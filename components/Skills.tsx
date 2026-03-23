@@ -77,18 +77,18 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
     <section id="skills" className="py-20 bg-white dark:bg-slate-950 relative transition-colors duration-500">
       <div className="max-w-6xl mx-auto px-4">
         <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-tech font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300">
-            {t.title} <span className="text-gunpla-blue">{t.titleHighlight}</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300">
+            {t.title} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
           <p className="text-slate-600 dark:text-gray-400">{t.subtitle}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {t.skills.map((category, index) => (
-            <div key={index} className="group bg-slate-50 dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-gunpla-blue dark:hover:border-gunpla-blue transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col">
+            <div key={index} className="group bg-white dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-800 dark:hover:border-blue-400 transition-all duration-300 flex flex-col">
               
               <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 bg-white dark:bg-slate-800 rounded-xl text-gunpla-blue shadow-sm group-hover:scale-110 transition-transform duration-300">
+                <div className="p-3 bg-white dark:bg-slate-800 rounded-xl text-blue-800 dark:text-blue-400 shadow-sm group-hover:scale-110 transition-transform duration-300">
                   {category.icon}
                 </div>
                 <h3 className="text-xl font-bold text-slate-800 dark:text-white">
@@ -108,7 +108,7 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
                       ${index === 0 
                         ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800 hover:bg-blue-200 dark:hover:bg-blue-900/50' 
                         : index === 1
-                          ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 border border-purple-200 dark:border-purple-800 hover:bg-purple-200 dark:hover:bg-purple-900/50 font-mono text-xs pt-2'
+                          ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 border border-purple-200 dark:border-purple-800 hover:bg-purple-200 dark:hover:bg-purple-900/50 text-xs pt-2'
                           : 'bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-600 hover:bg-slate-300 dark:hover:bg-slate-600'
                       }
                     `}

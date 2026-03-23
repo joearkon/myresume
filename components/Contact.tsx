@@ -108,22 +108,16 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
   );
 
   return (
-    <footer className="bg-slate-50 dark:bg-slate-950 py-24 border-t border-slate-200 dark:border-slate-800 relative overflow-hidden" id="contact">
+    <footer className="bg-white dark:bg-slate-950 py-24 border-t border-slate-200 dark:border-slate-800 relative overflow-hidden" id="contact">
       
-      {/* Background Decoration */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none">
-          <div className="absolute top-20 left-20 w-72 h-72 bg-gunpla-blue/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-72 h-72 bg-gunpla-red/5 rounded-full blur-3xl"></div>
-      </div>
-
       <div className="max-w-5xl mx-auto px-4 relative z-10">
         
         {/* Header */}
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-tech font-bold text-slate-900 dark:text-white mb-6">
-            {t.title} <span className="text-gunpla-blue">{t.titleHighlight}</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">
+            {t.title} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
-          <div className="w-16 h-1 bg-gunpla-yellow mx-auto mb-8"></div>
+          <div className="w-16 h-1 bg-yellow-600 dark:bg-yellow-500 mx-auto mb-8"></div>
           <p className="text-slate-600 dark:text-gray-400 text-lg leading-relaxed">
             {t.desc}
           </p>
@@ -135,7 +129,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
           {/* Left: Direct Contact */}
           <div className="md:col-span-5 flex flex-col justify-center space-y-4">
             <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2 flex items-center gap-2">
-              <span className="w-2 h-6 bg-gunpla-blue rounded-full"></span>
+              <span className="w-2 h-6 bg-blue-800 dark:bg-blue-400 rounded-full"></span>
               {t.directContact}
             </h3>
             
@@ -170,7 +164,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
           {/* Right: Social Media QR Codes */}
           <div className="md:col-span-7 flex flex-col justify-center">
             <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-6 flex items-center gap-2">
-              <span className="w-2 h-6 bg-gunpla-red rounded-full"></span>
+              <span className="w-2 h-6 bg-red-800 dark:bg-red-400 rounded-full"></span>
               {t.socialMedia}
             </h3>
             
@@ -197,9 +191,9 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 
         {/* Personal Website Link */}
         <div className="flex justify-center mb-12">
-           <a href={`https://${t.websiteUrl}`} target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-bold shadow-lg hover:shadow-purple-500/30 hover:-translate-y-1 transition-all duration-300 group">
+           <a href={`https://${t.websiteUrl}`} target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
               <span className="text-xl">🚀</span>
-              <span>{t.website}: <span className="font-mono underline underline-offset-4 decoration-white/50 group-hover:decoration-white transition-all">{t.websiteUrl}</span></span>
+              <span>{t.website}: <span className="font-mono underline underline-offset-4 decoration-white/50 dark:decoration-slate-900/50 group-hover:decoration-white dark:group-hover:decoration-slate-900 transition-all">{t.websiteUrl}</span></span>
            </a>
         </div>
 

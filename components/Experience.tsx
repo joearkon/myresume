@@ -38,7 +38,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
             "牵头客户续约与增收工作，深度挖掘需求，负责团队每年为公司贡献 50% 左右的营收"
           ],
           tags: ["客户增长", "CRM体系", "商业价值", "团队管理"],
-          color: "border-red-500 dark:border-gunpla-red",
+          color: "border-red-500 dark:border-red-400",
           isPromoted: true
         },
         {
@@ -53,7 +53,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
             "久久丫 (2021-2022): 搭建集订单、库存、会员、财务于一体的业务中台，整合 1800+ 门店数据"
           ],
           tags: ["PMP", "项目交付", "高并发架构", "专利研发"],
-          color: "border-blue-500 dark:border-gunpla-blue",
+          color: "border-blue-500 dark:border-blue-400",
           isPromoted: true
         },
         {
@@ -68,7 +68,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
             "打造统一数据接口体系，覆盖订单、库存、营收等核心业务维度"
           ],
           tags: ["微服务", "Java/Go", "ETL", "底层架构"],
-          color: "border-yellow-500 dark:border-gunpla-yellow",
+          color: "border-yellow-500 dark:border-yellow-400",
           isPromoted: false
         },
         {
@@ -133,7 +133,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
             "Led renewal and upselling, team contributed ~50% of company revenue annually."
           ],
           tags: ["Customer Growth", "CRM", "Business Value", "Management"],
-          color: "border-red-500 dark:border-gunpla-red",
+          color: "border-red-500 dark:border-red-400",
           isPromoted: true
         },
         {
@@ -148,7 +148,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
             "Juewei Duck (2021-2022): Built business middle-platform integrating orders, inventory, and finance for 1800+ stores."
           ],
           tags: ["PMP", "Delivery", "High Concurrency", "Patents"],
-          color: "border-blue-500 dark:border-gunpla-blue",
+          color: "border-blue-500 dark:border-blue-400",
           isPromoted: true
         },
         {
@@ -163,7 +163,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
             "Built unified data interfaces and optimized data processing efficiency via ETL tools."
           ],
           tags: ["Microservices", "Java/Go", "ETL", "Architecture"],
-          color: "border-yellow-500 dark:border-gunpla-yellow",
+          color: "border-yellow-500 dark:border-yellow-400",
           isPromoted: false
         },
         {
@@ -203,13 +203,12 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
   const experiences = getExperiences(language);
 
   return (
-    <section id="experience" className="py-20 bg-slate-100 dark:bg-slate-900/50 relative transition-colors duration-500">
-      <div className="max-w-6xl mx-auto px-4">
+    <section id="experience" className="py-20 bg-white dark:bg-slate-900/50 relative transition-colors duration-500">
+      <div className="max-w-4xl mx-auto px-4">
         <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-tech font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300">
-            <span className="text-gunpla-blue">{language === 'zh' ? '职业' : 'Work'}</span> {language === 'zh' ? '生涯' : 'Experience'}
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300">
+            <span className="text-blue-800 dark:text-blue-400">{language === 'zh' ? '职业' : 'Work'}</span> {language === 'zh' ? '生涯' : 'Experience'}
           </h2>
-          <div className="w-24 h-1 bg-gunpla-red mx-auto"></div>
           <p className="mt-4 text-slate-600 dark:text-gray-400 transition-colors duration-300">
             {language === 'zh' 
               ? '十年磨一剑 • 从技术底层到商业顶层的全链路进阶'
@@ -217,61 +216,49 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           </p>
         </div>
 
-        <div className="relative space-y-8">
-          {/* Vertical Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-slate-300 dark:bg-gray-700 transform md:-translate-x-1/2 transition-colors duration-300"></div>
-
-          {experiences.map((exp, index) => (
-            <div key={exp.id} className={`relative flex flex-col md:flex-row items-stretch ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+        <div className="space-y-12">
+          {experiences.map((exp) => (
+            <div key={exp.id} className="group relative border-b border-slate-200 dark:border-slate-800 pb-12 last:border-0 last:pb-0">
               
-              {/* Dot on timeline */}
-              <div className={`absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-white dark:bg-gray-900 border-2 transform -translate-x-1/2 z-10 mt-6 ${exp.color.replace('border', 'border')} transition-colors duration-300`}></div>
-
-              {/* Content Wrapper */}
-              <div className="ml-12 md:ml-0 md:w-1/2 p-4">
-                 <div className={`group relative bg-white dark:bg-slate-800 p-6 rounded-lg border-l-4 ${exp.color} shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 h-full`}>
-                    
-                    {/* Connecting logic for promoted roles at same company */}
-                    {exp.isPromoted && (
-                      <div className="absolute -top-3 right-4 bg-slate-100 dark:bg-slate-700 text-xs text-slate-500 dark:text-gray-300 px-2 py-1 rounded border border-slate-200 dark:border-slate-600 transition-colors duration-300">
-                        {language === 'zh' ? `${exp.company} - 内部晋升` : `Promoted Internally`}
-                      </div>
-                    )}
-
-                    <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-1 group-hover:text-gunpla-blue transition-colors">{exp.role}</h3>
-                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-2">
-                      <span className="text-lg text-slate-600 dark:text-gray-400 font-tech transition-colors">{exp.company}</span>
-                      <span className="text-sm text-slate-500 dark:text-gray-500 bg-slate-50 dark:bg-slate-900 px-2 py-1 rounded border border-slate-200 dark:border-gray-700 w-fit transition-colors">{exp.period}</span>
-                    </div>
-                    
-                    <p className="text-slate-600 dark:text-gray-300 mb-4 leading-relaxed text-justify text-sm transition-colors">
-                      {exp.description}
-                    </p>
-
-                    {/* Achievements List */}
-                    {exp.achievements && (
-                      <ul className="mb-4 space-y-2">
-                        {exp.achievements.map((ach, i) => (
-                          <li key={i} className="flex items-start text-sm text-slate-600 dark:text-gray-400 transition-colors">
-                            <span className="mr-2 text-gunpla-blue mt-1">▹</span>
-                            <span>{ach}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-
-                    <div className="flex flex-wrap gap-2 mt-auto">
-                      {exp.tags.map(tag => (
-                        <span key={tag} className="text-xs font-semibold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-gray-300 px-3 py-1 rounded-full border border-slate-200 dark:border-slate-600 transition-colors">
-                          #{tag}
-                        </span>
-                      ))}
-                    </div>
-                 </div>
+              <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2">
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors">
+                  {exp.role}
+                </h3>
+                <span className="text-sm font-medium text-slate-500 dark:text-gray-400 whitespace-nowrap">
+                  {exp.period}
+                </span>
               </div>
               
-              {/* Empty side for spacing */}
-              <div className="hidden md:block md:w-1/2"></div>
+              <div className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-4">
+                {exp.company}
+                {exp.isPromoted && (
+                  <span className="ml-3 text-xs font-normal bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-gray-400 px-2 py-1 rounded">
+                    {language === 'zh' ? '内部晋升' : 'Promoted Internally'}
+                  </span>
+                )}
+              </div>
+              
+              <p className="text-slate-600 dark:text-gray-300 mb-4 leading-relaxed text-justify">
+                {exp.description}
+              </p>
+
+              {exp.achievements && (
+                <ul className="mb-6 space-y-2 list-disc list-inside text-slate-600 dark:text-gray-400 marker:text-blue-800 dark:marker:text-blue-400">
+                  {exp.achievements.map((ach, i) => (
+                    <li key={i} className="leading-relaxed">
+                      <span className="-ml-2">{ach}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <div className="flex flex-wrap gap-2">
+                {exp.tags.map(tag => (
+                  <span key={tag} className="text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-gray-400 px-3 py-1 rounded border border-slate-200 dark:border-slate-700">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>

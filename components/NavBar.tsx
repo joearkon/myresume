@@ -49,8 +49,8 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
         : 'bg-transparent py-6'
     }`}>
       <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-        <div className="font-tech font-bold text-xl text-slate-800 dark:text-white tracking-wider transition-colors duration-300 flex items-center gap-3">
-          <span>{language === 'zh' ? '陈' : 'Joe'}<span className="text-gunpla-blue">{language === 'zh' ? '子卓野' : '.Chen'}</span></span>
+        <div className="font-bold text-xl text-slate-800 dark:text-white tracking-wider transition-colors duration-300 flex items-center gap-3">
+          <span>{language === 'zh' ? '陈' : 'Joe'}<span className="text-blue-800 dark:text-blue-400">{language === 'zh' ? '子卓野' : '.Chen'}</span></span>
           <span className="hidden lg:inline text-slate-300 dark:text-slate-700">|</span>
           <span className="hidden lg:block text-lg text-slate-500 dark:text-slate-400 font-medium tracking-widest">
             {language === 'zh' ? 'Joe.Chen' : '陈子卓野'}
@@ -71,10 +71,10 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
               <a 
                 key={item.name} 
                 href={item.link} 
-                className="text-sm text-slate-600 dark:text-gray-400 hover:text-gunpla-blue dark:hover:text-gunpla-blue font-medium tracking-wide transition-colors relative group"
+                className="text-sm text-slate-600 dark:text-gray-400 hover:text-blue-800 dark:hover:text-blue-400 font-medium tracking-wide transition-colors relative group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gunpla-blue group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-800 dark:bg-blue-400 group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
           </div>
@@ -82,20 +82,20 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
           <div className="flex items-center gap-3">
             <button
               onClick={toggleLanguage}
-              className="flex items-center bg-slate-100 dark:bg-slate-800 rounded-full p-1 border border-slate-200 dark:border-slate-700 cursor-pointer hover:border-gunpla-blue dark:hover:border-gunpla-blue transition-all"
+              className="flex items-center bg-slate-100 dark:bg-slate-800 rounded-full p-1 border border-slate-200 dark:border-slate-700 cursor-pointer hover:border-blue-800 dark:hover:border-blue-400 transition-all"
               title={language === 'zh' ? 'Switch to English' : '切换到中文'}
             >
-              <span className={`px-2 py-1 rounded-full text-xs font-bold transition-all min-w-[32px] text-center ${language === 'zh' ? 'bg-white dark:bg-slate-600 shadow-sm text-gunpla-blue dark:text-white' : 'text-slate-400 dark:text-slate-500'}`}>
+              <span className={`px-2 py-1 rounded-full text-xs font-bold transition-all min-w-[32px] text-center ${language === 'zh' ? 'bg-white dark:bg-slate-600 shadow-sm text-blue-800 dark:text-white' : 'text-slate-400 dark:text-slate-500'}`}>
                 中
               </span>
-              <span className={`px-2 py-1 rounded-full text-xs font-bold transition-all min-w-[32px] text-center ${language === 'en' ? 'bg-white dark:bg-slate-600 shadow-sm text-gunpla-blue dark:text-white' : 'text-slate-400 dark:text-slate-500'}`}>
+              <span className={`px-2 py-1 rounded-full text-xs font-bold transition-all min-w-[32px] text-center ${language === 'en' ? 'bg-white dark:bg-slate-600 shadow-sm text-blue-800 dark:text-white' : 'text-slate-400 dark:text-slate-500'}`}>
                 En
               </span>
             </button>
 
             <button 
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-gunpla-yellow hover:scale-110 transition-all duration-300 shadow-sm border border-slate-200 dark:border-slate-700"
+              className="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 hover:scale-110 transition-all duration-300 shadow-sm border border-slate-200 dark:border-slate-700"
               aria-label="Toggle Theme"
             >
               {darkMode ? (

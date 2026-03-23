@@ -13,8 +13,8 @@ import ScrollToTop from './components/ScrollToTop';
 export type Language = 'zh' | 'en';
 
 const App: React.FC = () => {
-  // Initialize with true (Dark Mode) by default
-  const [darkMode, setDarkMode] = useState(true);
+  // Initialize with false (Light Mode) by default for a clean traditional look
+  const [darkMode, setDarkMode] = useState(false);
   // Initialize Language state
   const [language, setLanguage] = useState<Language>('zh');
 
@@ -23,9 +23,8 @@ const App: React.FC = () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       setDarkMode(savedTheme === 'dark');
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setDarkMode(true);
     }
+    // Removed the prefers-color-scheme check to enforce light mode by default unless explicitly saved as dark
 
     // Check saved language
     const savedLang = localStorage.getItem('language') as Language;
@@ -55,24 +54,27 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-gray-100 transition-colors duration-500 selection:bg-gunpla-blue selection:text-white">
-      <NavBar 
-        darkMode={darkMode} 
-        toggleTheme={toggleTheme} 
-        language={language} 
-        toggleLanguage={toggleLanguage} 
-      />
-      <main>
-        <Hero language={language} />
-        <Projects language={language} />
-        <Experience language={language} />
-        <Skills language={language} />
-        <Education language={language} />
-        <Hobbies language={language} />
-      </main>
-      <Contact language={language} />
-      <ChatWidget language={language} />
-      <ScrollToTop />
+    <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-800 dark:text-gray-100 transition-colors duration-500 selection:bg-blue-900 selection:text-white relative overflow-hidden">
+      
+      <div className="relative z-10">
+        <NavBar 
+          darkMode={darkMode} 
+          toggleTheme={toggleTheme} 
+          language={language} 
+          toggleLanguage={toggleLanguage} 
+        />
+        <main>
+          <Hero language={language} />
+          <Projects language={language} />
+          <Experience language={language} />
+          <Skills language={language} />
+          <Education language={language} />
+          <Hobbies language={language} />
+        </main>
+        <Contact language={language} />
+        <ChatWidget language={language} />
+        <ScrollToTop />
+      </div>
     </div>
   );
 };

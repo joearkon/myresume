@@ -139,13 +139,13 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-slate-50 dark:bg-slate-900 relative transition-colors duration-500">
+    <section id="projects" className="py-20 bg-white dark:bg-slate-900 relative transition-colors duration-500">
       <div className="max-w-6xl mx-auto px-4">
         
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-tech font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300">
-            {t.title} <span className="text-gunpla-red">{t.titleHighlight}</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300">
+            {t.title} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
           <p className="text-slate-600 dark:text-gray-400">{t.subtitle}</p>
         </div>
@@ -154,7 +154,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 md:p-8 mb-20 flex flex-col md:flex-row justify-between items-center divide-y md:divide-y-0 md:divide-x divide-slate-100 dark:divide-slate-700">
           {t.metrics.map((metric, idx) => (
             <div key={idx} className="w-full md:w-1/4 py-4 md:py-0 px-4 text-center group">
-              <div className={`text-3xl md:text-4xl font-black font-mono mb-1 ${metric.color} group-hover:scale-105 transition-transform`}>
+              <div className={`text-3xl md:text-4xl font-black mb-1 ${metric.color} group-hover:scale-105 transition-transform`}>
                 {metric.value}
               </div>
               <div className="text-xs md:text-sm text-slate-500 dark:text-gray-400 font-medium uppercase tracking-wider">
@@ -165,47 +165,16 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         </div>
 
         {/* 2. Abstract Architecture Visualization */}
-        <div className="mb-20 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-8 md:p-12 shadow-lg relative overflow-hidden group">
-           <div className="absolute top-0 right-0 w-64 h-64 bg-gunpla-blue/5 rounded-full blur-3xl group-hover:bg-gunpla-blue/10 transition-colors"></div>
-           
-           <div className="relative z-10 flex flex-col md:flex-row items-center gap-12">
-              {/* Left: Text Info */}
-              <div className="flex-1 text-center md:text-left">
-                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{t.archTitle}</h3>
-                 <p className="text-slate-600 dark:text-gray-300 leading-relaxed mb-6">{t.archDesc}</p>
-                 <div className="flex flex-wrap justify-center md:justify-start gap-2">
-                    {['POS', 'BOH', 'CRM', 'OMS', 'ERP'].map(tag => (
-                      <span key={tag} className="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-mono rounded-md border border-slate-200 dark:border-slate-600">
-                        {tag}
-                      </span>
-                    ))}
-                 </div>
-              </div>
-
-              {/* Right: Abstract Diagram (SVG) */}
-              <div className="flex-1 w-full max-w-md">
-                <svg viewBox="0 0 400 200" className="w-full h-auto drop-shadow-xl">
-                  {/* Connecting Lines (Animated) */}
-                  <path d="M100 100 L200 100 L300 50" stroke="currentColor" className="text-slate-300 dark:text-slate-600" strokeWidth="2" fill="none" strokeDasharray="5,5">
-                    <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite" />
-                  </path>
-                  <path d="M100 100 L200 100 L300 150" stroke="currentColor" className="text-slate-300 dark:text-slate-600" strokeWidth="2" fill="none" strokeDasharray="5,5">
-                    <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite" begin="1.5s"/>
-                  </path>
-
-                  {/* Nodes */}
-                  <circle cx="100" cy="100" r="30" className="fill-white dark:fill-slate-800 stroke-gunpla-blue" strokeWidth="4" />
-                  <text x="100" y="105" textAnchor="middle" fontSize="10" className="fill-slate-600 dark:fill-slate-300 font-bold">Store/POS</text>
-
-                  <rect x="170" y="70" width="60" height="60" rx="8" className="fill-gunpla-blue stroke-white dark:stroke-slate-700" strokeWidth="2" />
-                  <text x="200" y="105" textAnchor="middle" fontSize="10" fill="white" fontWeight="bold">SaaS Core</text>
-
-                  <circle cx="300" cy="50" r="25" className="fill-white dark:fill-slate-800 stroke-gunpla-red" strokeWidth="3" />
-                  <text x="300" y="54" textAnchor="middle" fontSize="9" className="fill-slate-600 dark:fill-slate-300">Supply</text>
-
-                  <circle cx="300" cy="150" r="25" className="fill-white dark:fill-slate-800 stroke-yellow-500" strokeWidth="3" />
-                  <text x="300" y="154" textAnchor="middle" fontSize="9" className="fill-slate-600 dark:fill-slate-300">Finance</text>
-                </svg>
+        <div className="mb-20 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 md:p-12 shadow-sm relative overflow-hidden">
+           <div className="relative z-10 flex flex-col items-center text-center max-w-3xl mx-auto">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">{t.archTitle}</h3>
+              <p className="text-slate-600 dark:text-gray-300 leading-relaxed mb-8 text-lg">{t.archDesc}</p>
+              <div className="flex flex-wrap justify-center gap-3">
+                 {['POS', 'BOH', 'CRM', 'OMS', 'ERP'].map(tag => (
+                   <span key={tag} className="px-4 py-2 bg-slate-50 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium rounded-md border border-slate-200 dark:border-slate-600 shadow-sm">
+                     {tag}
+                   </span>
+                 ))}
               </div>
            </div>
         </div>
@@ -215,7 +184,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             <h3 className="text-xl font-bold text-center mb-8 text-slate-500 dark:text-gray-400 uppercase tracking-widest">{t.brandsTitle}</h3>
             <div className="flex flex-wrap justify-center gap-4">
                 {brandList.map((brand, idx) => (
-                    <span key={idx} className="px-6 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-slate-600 dark:text-gray-300 font-medium hover:border-gunpla-blue dark:hover:border-gunpla-blue hover:text-gunpla-blue dark:hover:text-gunpla-blue transition-all cursor-default shadow-sm">
+                    <span key={idx} className="px-6 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-slate-600 dark:text-gray-300 font-medium hover:border-blue-800 dark:hover:border-blue-400 hover:text-blue-800 dark:hover:text-blue-400 transition-all cursor-default shadow-sm">
                         {brand}
                     </span>
                 ))}
@@ -227,9 +196,9 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             <h3 className="text-2xl font-bold text-center mb-8 text-slate-800 dark:text-white">{t.casesTitle}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {t.cases.map((item, index) => (
-                <div key={index} className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 hover:border-gunpla-blue dark:hover:border-gunpla-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col group">
+                <div key={index} className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 hover:border-blue-800 dark:hover:border-blue-400 transition-all duration-300 hover:shadow-md hover:-translate-y-1 flex flex-col group">
                 <div className="mb-4 flex justify-between items-start">
-                    <div className="text-xl font-black font-tech text-slate-900 dark:text-white group-hover:text-gunpla-blue transition-colors">
+                    <div className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors">
                     {item.brand}
                     </div>
                     {index === 0 && <span className="text-xs font-bold bg-red-100 text-red-600 px-2 py-1 rounded">HOT</span>}
@@ -244,7 +213,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                 </p>
 
                 <div className="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-3 mb-4 text-center">
-                    <span className="text-sm font-bold text-gunpla-blue">{item.highlight}</span>
+                    <span className="text-sm font-bold text-blue-800 dark:text-blue-400">{item.highlight}</span>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
@@ -260,7 +229,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         </div>
 
         {/* 4. AI Innovation Lab (NEW) */}
-        <div className="bg-gradient-to-br from-slate-100 to-white dark:from-slate-800 dark:to-slate-900 rounded-3xl border border-slate-200 dark:border-slate-700 p-8 md:p-12">
+        <div className="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 p-8 md:p-12">
             <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">{t.aiTitle}</h3>
                 <p className="text-slate-600 dark:text-gray-400">{t.aiDesc}</p>
