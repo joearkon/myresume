@@ -11,6 +11,21 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
     if (lang === 'zh') {
       return [
         {
+          id: 0,
+          role: "AIGC 独立开发者 / 新媒体运营专家",
+          company: "独立项目 / 自由职业",
+          period: "2025.08 - 至今",
+          description: "全面拥抱 AI 时代，探索 AIGC 技术在新媒体内容创作与商业变现中的应用，构建高效的自动化工作流。",
+          achievements: [
+            "基于 Gemini AI 进行剧本创作与分镜设计，结合 ComfyUI 构建图像与视频生成工作流，实现内容产出的标准化与自动化",
+            "专注于游戏与动漫 IP 的二创内容矩阵运营，单月内在小红书与抖音双平台实现从 0 到 1 的突破，累计精准粉丝 5000+",
+            "深入研究 AI 提示词工程（Prompt Engineering）与工作流编排，大幅降低内容制作成本，提升产出效率"
+          ],
+          tags: ["AIGC", "ComfyUI", "Gemini AI", "新媒体运营"],
+          color: "border-purple-500 dark:border-purple-400",
+          isPromoted: false
+        },
+        {
           id: 1,
           role: "SaaS 平台大客户总监",
           company: "上海合阔信息技术有限公司",
@@ -90,6 +105,21 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
     } else {
       // English Data
       return [
+        {
+          id: 0,
+          role: "AIGC Independent Developer / Social Media Expert",
+          company: "Independent Project / Freelance",
+          period: "2025.08 - Present",
+          description: "Fully embraced the AI era, exploring the application of AIGC technologies in social media content creation and commercial monetization, building highly efficient automated workflows.",
+          achievements: [
+            "Leveraged Gemini AI for scriptwriting and storyboarding, combined with ComfyUI to build image and video generation workflows, achieving standardized and automated content production.",
+            "Focused on secondary creation of game and anime IPs. Reached 5000+ targeted followers on Xiaohongshu and Douyin within a single month from scratch.",
+            "Deeply researched AI Prompt Engineering and workflow orchestration, significantly reducing content production costs and improving output efficiency."
+          ],
+          tags: ["AIGC", "ComfyUI", "Gemini AI", "Social Media"],
+          color: "border-purple-500 dark:border-purple-400",
+          isPromoted: false
+        },
         {
           id: 1,
           role: "Key Account Director (SaaS)",

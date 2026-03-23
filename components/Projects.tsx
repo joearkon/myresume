@@ -42,24 +42,28 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
           desc: '搭建集订单、会员、财务于一体的业务中台，整合全国门店数据，支持精细化运营。',
           tags: ['1800+ 门店', '数据整合', '业务中台'],
           highlight: '数据孤岛打通'
+        },
+        {
+          brand: '自媒体 IP 矩阵',
+          role: '内容主理人',
+          desc: '沉淀头部品牌数字化落地与大客户运营经验，以数据导向思维操盘个人 IP。借助 AI 工具赋能内容创作，将个人热爱与兴趣转化为小红书与抖音的高粘性矩阵，实现从 0 到 1 的高效起号。',
+          tags: ['小红书', '抖音', 'AIGC'],
+          highlight: '5000+ 高粘性粉丝'
         }
       ],
       aiTitle: 'AI 创新实验室',
       aiDesc: '探索 AIGC 前沿技术，构建个人 AI 工具箱。',
       aiProjects: [
         {
-          name: 'KunKun AI Labs',
-          desc: '个人 AI 技术探索与展示站点。',
-          link: 'https://www.kunkun1023.xyz',
-          tags: ['Personal Site', 'AI Showcase'],
-          icon: '🧪'
-        },
-        {
-          name: 'Gemini Veo3 Tools',
-          desc: '基于 Google Gemini 模型的 AI 视频/多模态生成工具开发。',
-          link: '#',
-          tags: ['Gemini API', 'GenAI', 'Video Generation'],
-          icon: '🤖'
+          name: 'StockMind 股票量化助手',
+          desc: '基于 AI 大模型的智能股票量化分析与辅助决策系统，提供实时数据洞察与策略回测。',
+          link: 'https://stock-mind.kunkun1023.xyz/',
+          tags: ['AI Quant', 'Stock Analysis', 'LLM', 'Data Visualization'],
+          icon: (
+            <div className="relative w-14 h-14 flex items-center justify-center bg-gradient-to-br from-emerald-400 to-teal-600 rounded-2xl shadow-lg transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-300">
+              <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+            </div>
+          )
         }
       ]
     },
@@ -98,24 +102,28 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
           desc: 'Built a business middle platform integrating orders, membership, and finance.',
           tags: ['1800+ Stores', 'Data Integration', 'Middle Platform'],
           highlight: 'Data Silos Eliminated'
+        },
+        {
+          brand: 'Social Media IP',
+          role: 'Content Creator',
+          desc: 'Leveraging enterprise digital transformation experience, I applied a data-driven approach to personal IP building. Empowered by AI, I transformed personal passions into a high-stickiness content matrix on Xiaohongshu and Douyin, achieving rapid growth from zero.',
+          tags: ['Xiaohongshu', 'Douyin', 'AIGC'],
+          highlight: '5000+ Active Followers'
         }
       ],
       aiTitle: 'AI Innovation Lab',
       aiDesc: 'Exploring frontier AIGC technologies and building personal AI tools.',
       aiProjects: [
         {
-          name: 'KunKun AI Labs',
-          desc: 'Personal AI technology exploration and showcase site.',
-          link: 'https://www.kunkun1023.xyz',
-          tags: ['Personal Site', 'AI Showcase'],
-          icon: '🧪'
-        },
-        {
-          name: 'Gemini Veo3 Tools',
-          desc: 'Developing AI video/multimodal generation tools based on Google Gemini models.',
-          link: '#',
-          tags: ['Gemini API', 'GenAI', 'Video Generation'],
-          icon: '🤖'
+          name: 'StockMind Quant Assistant',
+          desc: 'An intelligent stock quantitative analysis and decision-support system based on LLMs, providing real-time data insights and strategy backtesting.',
+          link: 'https://stock-mind.kunkun1023.xyz/',
+          tags: ['AI Quant', 'Stock Analysis', 'LLM', 'Data Visualization'],
+          icon: (
+            <div className="relative w-14 h-14 flex items-center justify-center bg-gradient-to-br from-emerald-400 to-teal-600 rounded-2xl shadow-lg transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-300">
+              <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+            </div>
+          )
         }
       ]
     }
@@ -143,13 +151,13 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         </div>
 
         {/* 1. Key Metrics Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+        <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 md:p-8 mb-20 flex flex-col md:flex-row justify-between items-center divide-y md:divide-y-0 md:divide-x divide-slate-100 dark:divide-slate-700">
           {t.metrics.map((metric, idx) => (
-            <div key={idx} className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 text-center group hover:-translate-y-1 transition-all duration-300">
-              <div className={`text-3xl md:text-4xl font-black font-mono mb-2 ${metric.color} group-hover:scale-110 transition-transform`}>
+            <div key={idx} className="w-full md:w-1/4 py-4 md:py-0 px-4 text-center group">
+              <div className={`text-3xl md:text-4xl font-black font-mono mb-1 ${metric.color} group-hover:scale-105 transition-transform`}>
                 {metric.value}
               </div>
-              <div className="text-sm text-slate-500 dark:text-gray-400 font-medium">
+              <div className="text-xs md:text-sm text-slate-500 dark:text-gray-400 font-medium uppercase tracking-wider">
                 {metric.label}
               </div>
             </div>
@@ -217,7 +225,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         {/* 3. Case Study Cards */}
         <div className="mb-20">
             <h3 className="text-2xl font-bold text-center mb-8 text-slate-800 dark:text-white">{t.casesTitle}</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {t.cases.map((item, index) => (
                 <div key={index} className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 hover:border-gunpla-blue dark:hover:border-gunpla-blue transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col group">
                 <div className="mb-4 flex justify-between items-start">
@@ -257,24 +265,24 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">{t.aiTitle}</h3>
                 <p className="text-slate-600 dark:text-gray-400">{t.aiDesc}</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 max-w-3xl mx-auto gap-6">
                 {t.aiProjects.map((proj, idx) => (
                     <a 
                         key={idx} 
                         href={proj.link}
                         target="_blank"
-                        className="bg-white dark:bg-slate-900/50 p-6 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-purple-500 dark:hover:border-purple-500 transition-all hover:shadow-md group flex items-start gap-4"
+                        className="bg-white dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all hover:shadow-xl hover:-translate-y-1 group flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left"
                     >
-                        <div className="text-3xl">{proj.icon}</div>
+                        <div className="shrink-0">{proj.icon}</div>
                         <div>
-                            <h4 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-purple-500 transition-colors">
+                            <h4 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors mb-2">
                                 {proj.name} 
-                                <span className="inline-block ml-2 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                                <span className="inline-block ml-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
                             </h4>
-                            <p className="text-sm text-slate-600 dark:text-gray-400 mb-3">{proj.desc}</p>
-                            <div className="flex flex-wrap gap-2">
+                            <p className="text-sm text-slate-600 dark:text-gray-400 mb-4 leading-relaxed">{proj.desc}</p>
+                            <div className="flex flex-wrap justify-center sm:justify-start gap-2">
                                 {proj.tags.map((tag, i) => (
-                                    <span key={i} className="text-xs font-mono bg-purple-50 text-purple-600 dark:bg-purple-900/30 dark:text-purple-300 px-2 py-1 rounded">
+                                    <span key={i} className="text-xs font-mono bg-emerald-50 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400 px-3 py-1 rounded-full border border-emerald-100 dark:border-emerald-800/50">
                                         {tag}
                                     </span>
                                 ))}

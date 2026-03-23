@@ -24,7 +24,8 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       desc: (
         <>
           从代码到底层架构，从单项目交付到大客户运营。我不仅懂技术实现，更懂如何将技术转化为商业价值。
-          曾主导 <span className="text-slate-900 dark:text-white font-bold">喜茶、DQ、棒约翰</span> 等头部品牌的数字化落地。
+          曾主导 <span className="text-slate-900 dark:text-white font-bold">喜茶、DQ、棒约翰</span> 等头部品牌的数字化落地。<br className="hidden md:block mt-2" />
+          目前正全面拥抱 AI 时代，探索 <span className="text-purple-600 dark:text-purple-400 font-bold">AIGC 与新媒体运营</span>，在小红书和抖音打造个人账号 IP，并独立开发了基于大模型的量化交易助手。
         </>
       ),
       btnResume: '查看完整履历',
@@ -49,7 +50,8 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
         <>
           From coding to architecture, from project delivery to key account growth. 
           I bridge the gap between technical implementation and business value.
-          Led digital transformation for top brands like <span className="text-slate-900 dark:text-white font-bold">Heytea, DQ, and Papa John's</span>.
+          Led digital transformation for top brands like <span className="text-slate-900 dark:text-white font-bold">Heytea, DQ, and Papa John's</span>.<br className="hidden md:block mt-2" />
+          Currently embracing the AI era, exploring <span className="text-purple-600 dark:text-purple-400 font-bold">AIGC and social media operations</span>, building a personal account IP on Xiaohongshu and Douyin, and developing LLM-based quantitative trading assistants.
         </>
       ),
       btnResume: 'View Experience',
@@ -80,7 +82,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
              <div className="absolute -inset-3 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-full blur-lg opacity-40 dark:opacity-60 animate-pulse-glow print:hidden"></div>
              <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full p-1.5 bg-white dark:bg-slate-800 shadow-2xl print:shadow-none print:p-0 print:w-32 print:h-32 print:border-none">
                 <img 
-                    src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAEKY6tpIA8Tk6OK3QdiWsYI1WRZtPNRYAACiToAAlVBAVWDSr2SC4BhWjYE.jpg" 
+                    src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESCqxpwLYLP8Jhn6EnyGll64FUqPbl9gACHjMAAiLeAAFWZRBcwlspcNM6BA.jpg" 
                     alt="陈子卓野 (Joe Chen)" 
                     className="w-full h-full rounded-full object-cover border-2 border-slate-100 dark:border-slate-700 hover:scale-105 transition-transform duration-500 print:border-none print:rounded-md"
                 />
