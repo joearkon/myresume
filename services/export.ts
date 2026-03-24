@@ -15,6 +15,7 @@ import {
   ImageRun,
   ShadingType
 } from 'docx';
+import { saveAs } from 'file-saver';
 import { Language } from '../App';
 
 export const generateWord = async (language: Language, avatarUrl?: string) => {
@@ -23,27 +24,34 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
 
   // Fetch avatar image
   let avatarImage: Uint8Array | null = null;
+  let imageType: "jpg" | "png" = "jpg";
+
   if (avatarUrl) {
     try {
-      // If it's a local path, fetch directly using absolute URL.
-      // If it's an external URL, use a proxy.
       const isExternal = avatarUrl.startsWith('http');
       const fetchUrl = isExternal 
         ? `https://api.allorigins.win/raw?url=${encodeURIComponent(avatarUrl)}`
-        : (avatarUrl.startsWith('/') ? window.location.origin + avatarUrl : avatarUrl);
+        : avatarUrl;
 
-      console.log("Fetching avatar from:", fetchUrl);
+      console.log("Word Export: Fetching avatar from:", fetchUrl);
       const response = await fetch(fetchUrl);
       if (response.ok) {
         const buffer = await response.arrayBuffer();
-        // Convert to Uint8Array for better compatibility with docx library
         avatarImage = new Uint8Array(buffer);
-        console.log("Avatar image fetched successfully, size:", avatarImage.length);
+        
+        // Detect image type from magic numbers
+        if (avatarImage[0] === 0x89 && avatarImage[1] === 0x50 && avatarImage[2] === 0x4E && avatarImage[3] === 0x47) {
+          imageType = "png";
+        } else {
+          imageType = "jpg";
+        }
+        
+        console.log(`Word Export: Avatar fetched, size: ${avatarImage.length}, detected type: ${imageType}`);
       } else {
-        console.warn(`Failed to fetch avatar image from ${fetchUrl}: ${response.status} ${response.statusText}`);
+        console.warn(`Word Export: Failed to fetch avatar: ${response.status} ${response.statusText}`);
       }
     } catch (e) {
-      console.error("Failed to fetch avatar image", e);
+      console.error("Word Export: Error fetching avatar:", e);
     }
   }
 
@@ -496,7 +504,7 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
                           new ImageRun({
                             data: avatarImage,
                             transformation: { width: 100, height: 100 },
-                            type: "jpg",
+                            type: imageType,
                           }),
                         ] : [],
                       }),
@@ -744,23 +752,27 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
   });
 
   try {
-    console.log("Generating Word blob...");
+    console.log("Word Export: Packing document to blob...");
     const blob = await Packer.toBlob(doc);
-    console.log("Word blob generated, triggering download...");
+    console.log("Word Export: Blob generated successfully. Size:", blob.size);
     
-    // Manual download method as a fallback/alternative to saveAs
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = fileName;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    // Manual download implementation for better iframe compatibility
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
     
-    console.log("Word download triggered successfully.");
+    // Cleanup
+    setTimeout(() => {
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+      console.log("Word Export: Download triggered and cleanup done.");
+    }, 100);
+
   } catch (error) {
-    console.error("Error generating Word document:", error);
+    console.error("Word Export Error during document generation or download:", error);
     throw error;
   }
 };
