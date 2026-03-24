@@ -92,7 +92,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
              {/* Circular Avatar */}
              <div className="w-24 h-24 rounded-full border border-gray-200 overflow-hidden bg-white mb-3">
                 <img 
-                    src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESCqxpwLYLP8Jhn6EnyGll64FUqPbl9gACHjMAAiLeAAFWZRBcwlspcNM6BA.jpg" 
+                    src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESHMxpwjvhhDC6PAjXwWdxj19fXQOTOgACUSYAApbxEFbJ6jGpt4MkijoE.jpg" 
                     alt="陈子卓野 (Joe Chen)" 
                     className="w-full h-full object-cover"
                 />
@@ -163,7 +163,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           <div className="relative shrink-0">
              <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-lg p-1 bg-white dark:bg-slate-800 shadow-md border border-slate-200 dark:border-slate-700">
                 <img 
-                    src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESCqxpwLYLP8Jhn6EnyGll64FUqPbl9gACHjMAAiLeAAFWZRBcwlspcNM6BA.jpg" 
+                    src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESHMxpwjvhhDC6PAjXwWdxj19fXQOTOgACUSYAApbxEFbJ6jGpt4MkijoE.jpg" 
                     alt="陈子卓野 (Joe Chen)" 
                     className="w-full h-full rounded-md object-cover"
                 />

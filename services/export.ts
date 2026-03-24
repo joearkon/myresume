@@ -329,7 +329,7 @@ export const generateWord = async (language: Language) => {
   // Fetch avatar image
   let avatarImage;
   try {
-    const response = await fetch("https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESCqxpwLYLP8Jhn6EnyGll64FUqPbl9gACHjMAAiLeAAFWZRBcwlspcNM6BA.jpg");
+    const response = await fetch("https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESHMxpwjvhhDC6PAjXwWdxj19fXQOTOgACUSYAApbxEFbJ6jGpt4MkijoE.jpg");
     const buffer = await response.arrayBuffer();
     avatarImage = buffer;
   } catch (e) {
