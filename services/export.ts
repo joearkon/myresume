@@ -18,9 +18,21 @@ import {
 import { saveAs } from 'file-saver';
 import { Language } from '../App';
 
-export const generateWord = async (language: Language) => {
+export const generateWord = async (language: Language, avatarUrl?: string) => {
   const isZh = language === 'zh';
   const fileName = isZh ? '陈子卓野_简历.docx' : 'Joe_Chen_Resume.docx';
+
+  // Fetch avatar image
+  let avatarImage = null;
+  if (avatarUrl) {
+    try {
+      const response = await fetch(avatarUrl);
+      const buffer = await response.arrayBuffer();
+      avatarImage = buffer;
+    } catch (e) {
+      console.error("Failed to fetch avatar image", e);
+    }
+  }
 
   // Data
   const hero = isZh ? {
@@ -406,8 +418,6 @@ export const generateWord = async (language: Language) => {
       },
     });
   };
-
-  const avatarImage = null; // Placeholder for avatar if needed
 
   const doc = new Document({
     sections: [

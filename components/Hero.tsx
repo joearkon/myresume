@@ -1,6 +1,7 @@
 import React from 'react';
 import { Language } from '../App';
 import { generateWord } from '../services/export';
+import avatarImg from '../assets/avatar.jpg';
 
 interface HeroProps {
   language: Language;
@@ -81,7 +82,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
   // Function to handle Word download
   const handleDownloadWord = (e: React.MouseEvent) => {
     e.preventDefault();
-    generateWord(language);
+    generateWord(language, avatarImg);
   };
 
   return (
@@ -130,7 +131,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           <div className="relative shrink-0 ml-6">
              <div className="relative w-28 h-28 rounded-lg p-1 bg-white shadow-sm border border-slate-200">
                 <img 
-                    src="/avatar.jpg" 
+                    src={avatarImg} 
                     alt="陈子卓野 (Joe Chen)" 
                     className="w-full h-full rounded-md object-cover"
                 />
@@ -169,7 +170,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           <div className="relative shrink-0">
              <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-lg p-1 bg-white dark:bg-slate-800 shadow-md border border-slate-200 dark:border-slate-700">
                 <img 
-                    src="/avatar.jpg" 
+                    src={avatarImg} 
                     alt="陈子卓野 (Joe Chen)" 
                     className="w-full h-full rounded-md object-cover"
                 />
