@@ -15,7 +15,6 @@ import {
   ImageRun,
   ShadingType
 } from 'docx';
-import { saveAs } from 'file-saver';
 import { Language } from '../App';
 
 export const generateWord = async (language: Language, avatarUrl?: string) => {
@@ -23,14 +22,26 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
   const fileName = isZh ? '陈子卓野_简历.docx' : 'Joe_Chen_Resume.docx';
 
   // Fetch avatar image
-  let avatarImage = null;
+  let avatarImage: Uint8Array | null = null;
   if (avatarUrl) {
     try {
-      // Use a CORS proxy to bypass potential restrictions in the browser environment
-      const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(avatarUrl)}`;
-      const response = await fetch(proxyUrl);
-      const buffer = await response.arrayBuffer();
-      avatarImage = buffer;
+      // If it's a local path, fetch directly using absolute URL.
+      // If it's an external URL, use a proxy.
+      const isExternal = avatarUrl.startsWith('http');
+      const fetchUrl = isExternal 
+        ? `https://api.allorigins.win/raw?url=${encodeURIComponent(avatarUrl)}`
+        : (avatarUrl.startsWith('/') ? window.location.origin + avatarUrl : avatarUrl);
+
+      console.log("Fetching avatar from:", fetchUrl);
+      const response = await fetch(fetchUrl);
+      if (response.ok) {
+        const buffer = await response.arrayBuffer();
+        // Convert to Uint8Array for better compatibility with docx library
+        avatarImage = new Uint8Array(buffer);
+        console.log("Avatar image fetched successfully, size:", avatarImage.length);
+      } else {
+        console.warn(`Failed to fetch avatar image from ${fetchUrl}: ${response.status} ${response.statusText}`);
+      }
     } catch (e) {
       console.error("Failed to fetch avatar image", e);
     }
@@ -732,8 +743,26 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
     ],
   });
 
-  const blob = await Packer.toBlob(doc);
-  saveAs(blob, fileName);
+  try {
+    console.log("Generating Word blob...");
+    const blob = await Packer.toBlob(doc);
+    console.log("Word blob generated, triggering download...");
+    
+    // Manual download method as a fallback/alternative to saveAs
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = fileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    console.log("Word download triggered successfully.");
+  } catch (error) {
+    console.error("Error generating Word document:", error);
+    throw error;
+  }
 };
 
 export const downloadFile = (content: string, fileName: string, contentType: string) => {

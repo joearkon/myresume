@@ -79,9 +79,14 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
   };
 
   // Function to handle Word download
-  const handleDownloadWord = (e: React.MouseEvent) => {
+  const handleDownloadWord = async (e: React.MouseEvent) => {
     e.preventDefault();
-    generateWord(language, "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESCqxpwLYLP8Jhn6EnyGll64FUqPbl9gACHjMAAiLeAAFWZRBcwlspcNM6BA.jpg");
+    try {
+      // Use local avatar path which is more reliable and avoids CORS issues
+      await generateWord(language, "/avatar.jpg");
+    } catch (error) {
+      console.error("Word download failed:", error);
+    }
   };
 
   return (
