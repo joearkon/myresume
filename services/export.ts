@@ -64,7 +64,7 @@ export const generateWord = async (language: Language) => {
       ]
     },
     {
-      role: "SaaS 平台项目经理",
+      role: "SaaS 项目经理",
       company: "上海合阔信息技术有限公司",
       period: "2018 - 2023",
       description: "核心项目交付负责人。统筹 SaaS 项目全生命周期管理，从需求对接、方案设计到落地上线、验收交付，主导多个头部餐饮品牌数字化转型项目，累计覆盖超 5000 家连锁门店。",
@@ -145,43 +145,42 @@ export const generateWord = async (language: Language) => {
       ]
     },
     {
-      role: "Senior Software Engineer (SaaS)",
+      role: "Senior Software Developer (SaaS Cloud)",
       company: "Shanghai Hekuo Info Tech",
       period: "2016.04 - 2018",
-      description: "Core founding member. Led the 0-to-1 underlying architecture construction of the SaaS Cloud Platform.",
+      description: "Core member during the startup phase. Led the 0-to-1 construction of the SaaS catering cloud platform.",
       achievements: [
-        "Led microservices architecture design, supporting multi-tenancy and high concurrency.",
-        "Focused on Order Management System (OMS) and standardized data integration/cleaning processes.",
-        "Built unified data interfaces and optimized data processing efficiency via ETL tools."
+        "Led platform architecture design using microservices to support multi-tenant isolation and high concurrency.",
+        "Focused on OMS core module development, designing standardized data integration and cleaning processes.",
+        "Built a unified data interface system covering core business dimensions like orders, inventory, and revenue."
       ]
     },
     {
       role: "SharePoint Engineer",
-      company: "PwC Shanghai",
+      company: "PwC Shanghai Technology",
       period: "2014.01 - 2016.04",
-      description: "Focused on improving enterprise digital collaboration. Led SharePoint platform design, deployment, and optimization.",
+      description: "Focused on improving enterprise digital collaboration efficiency. Led the design, deployment, and optimization of the SharePoint platform.",
       achievements: [
-        "Responsible for internal SharePoint platform development and maintenance.",
-        "Customized Web Parts and process automation; integrated Microsoft 365.",
-        "Used Power Automate to simplify cross-department approvals and improve efficiency."
+        "Responsible for the development and maintenance of internal SharePoint software.",
+        "Customized Web Parts and workflow automation, integrating with Microsoft 365.",
+        "Used Power Automate to simplify cross-departmental approval processes."
       ]
     },
     {
-      role: "Microsoft Web / SharePoint Engineer",
+      role: "Microsoft Web Tech / SharePoint Engineer",
       company: "Cognizant Technology Solutions",
       period: "2011.12 - 2013.12",
-      description: "Member of the tech team for digital transformation projects, covering development and IT operations for financial/medical clients.",
+      description: "Member of the technical team for enterprise digital transformation projects, serving clients in finance and healthcare.",
       achievements: [
-        "Developed custom components using SharePoint Framework (SPFx) for automation.",
-        "Built scenario-based solutions like internal approval flows and document portals.",
-        "Managed IT operation tickets, established review mechanisms, and drove platform iterations."
+        "Developed custom components using SharePoint Framework (SPFx) to automate business processes.",
+        "Built scenario-based solutions such as internal approval flows and document collaboration portals.",
+        "Responsible for technical maintenance ticket handling and analysis reports for platform iteration."
       ]
     }
   ];
 
-  const projects = isZh ? {
+  const projects = {
     metrics: [
-      { value: '5000+', label: '连锁门店落地' },
       { value: '90%', label: '大客户年度留存' },
       { value: '10W+', label: '日处理订单峰值' },
       { value: '50%', label: '团队营收贡献' }
@@ -192,122 +191,214 @@ export const generateWord = async (language: Language) => {
         brand: 'HEYTEA 喜茶',
         role: '项目负责人 (2018 - 2020 | 常驻深圳)',
         desc: '全渠道数字化转型标杆项目。打通线上小程序与线下门店，HiPOS 系统覆盖全国 500+ 门店（2020年数据，2024年已突破 2000 家），实现“下单-履约-结算”全链路闭环。',
-        highlight: '日订单峰值 10万+'
+        highlight: '日订单峰值 10万+',
+        coreWork: [
+          {
+            title: '大客户全生命周期项目管理',
+            items: [
+              '作为喜茶核心项目对接人，负责 HiPOS 系统从 0 到 1 落地、需求沟通、进度管控、验收全流程。',
+              '主导需求评审、SOW 签署、费用确认、账单核对，管理月度 CR 需求与项目款项，确保回款与验收闭环。',
+              '分阶段上线推广：制定月度上线排期表，统筹全国门店上线，覆盖一线城市核心店→二线城市→下沉市场。'
+            ]
+          },
+          {
+            title: '连锁门店数字化系统落地',
+            items: [
+              '负责POS 点单、支付、小票、杯贴、日结、外卖接单全流程功能落地，提升门店点单效率。',
+              '推动闪结、一键重印、订单备注、渠道区分等效率功能上线，降低门店操作失误。'
+            ]
+          },
+          {
+            title: '跨系统全域对接与数据打通',
+            items: [
+              '负责HiPOS 与小程序、会员系统、支付系统、BOH 后厨、EHR 人事、电子发票、物业全接口对接。',
+              '统一订单、商品、会员、支付、日结数据口径，支撑财务对账与运营分析。'
+            ]
+          },
+          {
+            title: 'BOH 供应链运营中台全流程管理',
+            items: [
+              '负责 BOH 供应链项目交付。对接全国 1000+ 门店需求，设计库存管理、采购补货、物流追踪全流程解决方案。',
+              '完成 BOH 供应链与全渠道 POS 系统打通，支撑 2000+ 门店及线上多渠道订单一体化处理。',
+              '实现“下单-履约-结算”全链路数字化，峰值订单处理能力达 10万+ 笔/日。'
+            ]
+          },
+          {
+            title: '核心功能研发与专利贡献',
+            items: [
+              '主导 BOM 配方设计与研发，该项技术曾获得相关专利。',
+              '负责核心 OMS 模块开发，设计标准化数据整合与清洗流程，解决订单来源分散痛点。'
+            ]
+          },
+          {
+            title: '大客户运营与持续优化',
+            items: [
+              '监控门店收银成功率、订单处理效率、系统稳定性、异常订单占比；建立日报/周报/月报机制，输出运营数据、问题分析、优化建议；制定异常处理流程（小票异常、支付失败、订单卡顿等问题 10 分钟响应、2 小时闭环）。',
+              '门店报修与问题闭环：建立全国门店报修体系，接收门店报修需求，分类分级处理；输出《喜茶 HIPOS 门店报修汇总表》，跟踪问题处理进度、解决率、满意度；定期复盘高频问题，推动研发优化，降低重复报修率。',
+              '客户拜访与需求收集：定期拜访喜茶总部营运、财务、IT 部门，沟通系统使用情况、运营痛点、优化需求；实地走访一线门店，了解店长/收银员操作体验，收集改进建议；输出《客户拜访报告》，推动需求落地，提升客户满意度。'
+            ]
+          },
+          {
+            title: '项目验收与回款跟进',
+            items: [
+              '多阶段验收推进：按月度完成需求验收、功能验收、上线验收、运维验收；整理验收材料（测试报告、上线清单、运营数据、用户反馈），完成签字确认。',
+              '回款全流程跟进：对接喜茶财务部门，按合同节点推进阶段性回款；解决回款过程中的疑问（验收证明、发票开具、流程审批），确保款项按期到账。'
+            ]
+          }
+        ]
       },
       {
         brand: '久久丫 / 留夫鸭',
         role: '业务中台负责人 (2021 - 2022 | 常驻上海)',
         desc: '我全程主导久久丫、留夫鸭数字化中台一期从 0 到 1 落地，覆盖需求调研→蓝图设计→系统对接→功能落地→培训赋能→上线验收→全国推广全流程。',
-        highlight: '从0到1全流程主导'
+        highlight: '从0到1全流程主导',
+        coreWork: [
+          {
+            title: '项目全流程主导（从 0 到 1 总负责）',
+            items: [
+              '前期调研与蓝图规划：牵头门店、营运、财务、新零售、IT 多部门调研，梳理 13 个核心业务流程；输出业务现状分析、系统蓝图方案、接口集成方案，完成蓝图汇报与确认；制定项目实施计划、里程碑节点、风险管控方案，确保方向一致。',
+              '系统落地与功能实现：主导商品、库存、订单、价格、对账、账号六大核心模块落地；完成 HiPOS 收银、BOH 库存、全渠道交易、移动大掌柜四大系统上线；负责需求评审、功能验收、UAT 测试、问题闭环，保障系统符合业务实际。',
+              '上线验收与交付：制定上线切换方案、应急预案、数据迁移方案；完成 5 家试点门店上线验证、首次月结、系统终验；输出操作手册、培训文档、验收报告，完成项目正式交付。',
+              '全国规模化推广：搭建总部→分部→门店三级推广组织，制定 6 批次全国推广计划；统筹五大区域，覆盖 3000+ 门店；建立推广评审机制、周复盘机制、问题快速响应机制，保障推广效率。'
+            ]
+          },
+          {
+            title: '核心系统对接落地',
+            items: [
+              '外卖平台对接落地：负责美团、饿了么全渠道对接，完成门店、商品、团单映射；实现订单自动接单、语音播报、小票自动打印、渠道统一管理；落地外卖菜单中台统一管控、价格同步、库存共享、自动沽清。',
+              '第三方系统集成对接：对接 SAP ERP（商品、库存、订货、退货、盘点、营收数据双向同步）；对接云徙会员（会员认证、优惠券核销、积分/储值支付）；对接自研小程序（菜单、库存、订单、支付、履约一体化）；对接聚合支付、物流配送、电子发票，实现全链路自动化。',
+              '数据与报表对接：搭建全渠道数据口径，实现 POS、外卖、小程序数据统一；落地门店实时报表、营收报表、库存报表、对账报表自动化；完成异常电子小票修复机制，保障数据准确可追溯。'
+            ]
+          },
+          {
+            title: '关键业务功能落地',
+            items: [
+              '全渠道商品 & 价格体系落地：建立统一商品库、多规格管理、BOM 配方、套餐组合标准化；落地价格中心、渠道价、门店价、菜单分组、新门店快速复制；实现美团/饿了么/POS/小程序商品通、价格通、库存通。',
+              '智能库存 & 订货体系落地：落地订货→收货→退货→报废→调拨→盘点全流程闭环；实现日盘/月盘、移动盘点、库存实时扣减、自动预警；搭建建议订货量模型，按销量、库存、损耗自动计算订货量。',
+              '全渠道交易 & 履约落地：统一堂食、外卖、自提、小程序订单，实现一站式收银；落地促销引擎、满减、折扣、会员价、平台券统一核销；实现自动日结、财务自动对账、加盟商分账自动化。'
+            ]
+          },
+          {
+            title: '培训方案与赋能落地',
+            items: [
+              '分层培训体系设计：制定总部→分部→门店三级培训方案，覆盖运维、运营、店长、收银员；输出操作手册、培训 PPT、教学视频、FAQ 全套资料；设计场景化培训（收银操作、外卖接单、库存管理、日结合规）。',
+              '培训执行与赋能：组织集中培训、现场带教、远程指导，确保全员会用；建立考核机制、答疑群、紧急支持通道，降低上线阻力；知识转移给分部团队，实现区域自主运维、自主培训。'
+            ]
+          },
+          {
+            title: '项目管理与跨部门协同',
+            items: [
+              '项目管控：主导周例会、进度跟踪、风险预警、问题闭环、里程碑验收；协调顶誉营运、财务、新零售、IT、加盟商与合阔产研、实施团队；管控需求范围、变更流程、交付质量、上线节奏。',
+              '运营规则落地：制定门店运营 SOP、权限管理、业务流程、审批规则；建立异常处理机制、数据核对机制、月结机制；保障系统上线后可运行、可管理、可迭代。'
+            ]
+          },
+          {
+            title: '上线后运营拜访与客户成功（大客户运营能力）',
+            items: [
+              '总部/区域定期拜访：主动上门拜访顶誉总部、区域负责人，沟通系统使用情况；收集需求、反馈体验、协调优化、提升满意度。',
+              '门店实地巡检与辅导：下门店看实操、查流程、纠错误、提效率；解决订货不准、盘点复杂、对账麻烦、操作繁琐等真实痛点。',
+              '运营指标复盘：定期输出订货准确率、盘点完成率、库存差异率、问题关闭率；用数据证明系统价值，强化客户认可。'
+            ]
+          },
+          {
+            title: '验收与回款跟进（商务 + 项目闭环能力）',
+            items: [
+              '项目验收材料准备：整理实施报告、测试报告、培训记录、上线清单、功能清单；协助完成验收流程、签字盖章、阶段验收。',
+              '回款全流程跟进：按合同节点对接财务、销管、总部管理层；推动验收确认→开票→回款全闭环；确保项目款项按期到账，无拖欠、无争议。',
+              '售后与续费基础：建立良好客户关系，为后续二期增补、三期拓展、续费打下基础。'
+            ]
+          }
+        ]
       },
       {
         brand: '自媒体 IP 矩阵',
         role: '内容主理人',
         desc: '独立搭建抖音 + 小红书双平台二次元动漫 IP 矩阵，依托 AIGC 实现1 个月高效涨粉 5000 + 高粘性垂直粉丝，构建从角色原创设计、剧本分镜到 AI 视频生成的全链路标准化工作流，实现内容规模化、低成本、高效率持续产出。',
-        highlight: '1个月涨粉5000+'
+        highlight: '1个月涨粉5000+',
+        coreWork: [
+          {
+            title: 'IP 视觉全案设计',
+            items: [
+              '独立完成角色人设、三视图、道具、场景、表情体系设计，形成统一可复用的原创视觉资产。'
+            ]
+          },
+          {
+            title: '内容体系搭建',
+            items: [
+              '自主策划动漫小剧场、剧情脚本、分镜设计、连载系列化内容，保障内容稳定输出与爆款潜力。'
+            ]
+          },
+          {
+            title: 'AIGC 全流程工作流搭建',
+            items: [
+              '熟练运用 Gemini、ComfyUI、Seedance、可灵 等 AI 工具，打通 “剧本→分镜→角色→画面→视频→剪辑” 自动化生产闭环，内容产出效率提升 80%。'
+            ]
+          },
+          {
+            title: '账号冷启动与增长',
+            items: [
+              '通过精准定位、系列化内容、高频互动完成账号冷启动，单月涨粉 5000+，粉丝粘性、互动率显著高于行业平均。'
+            ]
+          }
+        ]
       }
     ],
     aiProjects: [
       {
-        name: 'StockMind 股票量化助手',
-        desc: '基于 AI 大模型的智能股票量化分析与辅助决策系统，提供实时数据洞察与策略回测。',
-        link: 'https://stock-mind.kunkun1023.xyz/',
-        tags: ['AI Quant', 'Stock Analysis', 'LLM', 'Data Visualization']
-      }
-    ]
-  } : {
-    metrics: [
-      { value: '5000+', label: 'Stores Deployed' },
-      { value: '90%', label: 'Key Account Retention' },
-      { value: '100k+', label: 'Peak Daily Orders' },
-      { value: '50%', label: 'Revenue Contribution' }
-    ],
-    brands: ["HEYTEA", "Juewei Duck / Liufu Duck", "DQ", "Peets", "T9 Tea", "Linlee", "TamJai", "Something For", "Guoyaya"],
-    cases: [
-      {
-        brand: 'HEYTEA',
-        role: 'Project Lead (2018 - 2020 | Shenzhen)',
-        desc: 'Benchmark project for omni-channel transformation. Integrated online mini-apps with offline stores, HiPOS system covers 500+ stores (as of 2020, exceeding 2000 stores by 2024).',
-        highlight: '100k+ Peak Daily Orders'
+        name: "AIGC 动漫 IP 矩阵",
+        desc: "基于 AIGC 技术的二次元动漫内容生产与运营，实现月度涨粉 5000+。",
+        tags: ["ComfyUI", "Seedance", "Kling", "CapCut"],
+        link: "Douyin / Xiaohongshu"
       },
       {
-        brand: 'Juewei Duck / Liufu Duck',
-        role: 'Middle Platform Lead (2021 - 2022 | Shanghai)',
-        desc: 'Fully led the 0-to-1 implementation of the Phase I digital middle-platform for Juewei Duck and Liufu Duck, covering the entire process from requirement research to national rollout.',
-        highlight: '0 to 1 Full Process Lead'
-      },
-      {
-        brand: 'Social Media IP Matrix',
-        role: 'Content Creator',
-        desc: 'Independently built a 2D anime IP matrix across Douyin and Xiaohongshu. Leveraged AIGC to efficiently gain 5000+ highly engaged vertical followers in one month. Constructed a full-link standardized workflow from original character design, script, and storyboard to AI video generation, achieving scalable, low-cost, and high-efficiency continuous content production.',
-        highlight: '5000+ Followers in 1 Month'
-      }
-    ],
-    aiProjects: [
-      {
-        name: 'StockMind Quant Assistant',
-        desc: 'An intelligent stock quantitative analysis and decision-support system based on LLMs, providing real-time data insights and strategy backtesting.',
-        link: 'https://stock-mind.kunkun1023.xyz/',
-        tags: ['AI Quant', 'Stock Analysis', 'LLM', 'Data Visualization']
+        name: "LLM 量化交易助手",
+        desc: "基于大语言模型的量化交易辅助系统，提供市场情绪分析与策略建议。",
+        tags: ["Python", "LLM", "Quant"],
+        link: "Private Project"
       }
     ]
   };
 
-  const skills = isZh ? [
-    { category: '核心能力', items: ['SaaS 架构设计', '项目交付管理', '大客户运营', '数字化转型咨询', '团队建设', '业务中台搭建'] },
-    { category: '技术栈', items: ['微服务架构', 'Java / Go', 'ETL / 数据集成', '.NET / SharePoint', 'React / 前端基础', '高并发处理'] },
-    { category: 'AI 与 数字化工具', items: ['LLM 大模型应用', 'Gemini / GPT', '提示词工程 (Prompt)', 'AIGC 自动化', 'ComfyUI / SD', 'AI 智能体开发'] }
-  ] : [
-    { category: 'Core Competencies', items: ['SaaS Architecture', 'Project Delivery', 'KA Management', 'Digital Transformation', 'Team Building', 'Business Middle-Platform'] },
-    { category: 'Tech Stack', items: ['Microservices', 'Java / Go', 'ETL / Data Integration', '.NET / SharePoint', 'React / Frontend', 'High Concurrency'] },
-    { category: 'AI & Digital Tools', items: ['LLM Application', 'Gemini / GPT', 'Prompt Engineering', 'AIGC Automation', 'ComfyUI / SD', 'AI Agent Dev'] }
+  const skills = [
+    { category: isZh ? "核心能力" : "Core Competencies", items: isZh ? ["SaaS 项目管理", "大客户运营", "数字化转型", "AIGC 应用", "全生命周期交付"] : ["SaaS Project Management", "Key Account Operations", "Digital Transformation", "AIGC Application", "Full Lifecycle Delivery"] },
+    { category: isZh ? "技术栈" : "Tech Stack", items: ["Microservices", "OMS/POS Systems", "SharePoint", "Microsoft 365", "Python", "Prompt Engineering"] },
+    { category: isZh ? "工具" : "Tools", items: ["ComfyUI", "Gemini", "Seedance", "Kling", "Power Automate", "Jira", "Confluence"] }
   ];
 
-  const education = isZh ? [
-    { school: '上海海事大学', degree: '本科', date: '2006.09 - 2009.06' },
-    { school: '上海市理工大学附属高中', degree: '高中', date: '2007.09 - 2009.06' }
-  ] : [
-    { school: 'Shanghai Maritime University', degree: 'Bachelor', date: '2006.09 - 2009.06' },
-    { school: 'High School Affiliated to USST', degree: 'High School', date: '2007.09 - 2009.06' }
+  const education = [
+    { school: isZh ? "上海大学" : "Shanghai University", degree: isZh ? "学士学位" : "Bachelor's Degree", date: "2007 - 2011" }
   ];
 
-  const hobbies = isZh ? [
-    { title: '高达模型 (Gunpla)', desc: '精密工程的艺术。拼装复杂的机械结构需要极大的耐心和专注，看着数百个零件最终组合成一个整体，能极大锻炼我的细节把控能力。' },
-    { title: '足球', desc: '动态的战略博弈。无论是在球场上还是项目管理中，理解团队协作、即时调整战术以及为了共同目标冲刺，都是胜利的关键。' },
-    { title: '短视频制作', desc: '视觉化的叙事艺术。捕捉瞬间并将其剪辑成引人入胜的故事，这保持了我的创造力，也锻炼了我用最简练的语言传达核心信息的能力。' }
-  ] : [
-    { title: 'Gunpla Model', desc: 'The art of precision engineering. Assembling complex mechanical structures requires immense patience and focus. It hones my attention to detail and systemic thinking.' },
-    { title: 'Football', desc: 'Strategic teamwork in motion. Whether on the pitch or in project management, understanding collaboration, tactical adjustments, and sprinting for a common goal is key to victory.' },
-    { title: 'Short Video Creation', desc: 'Visual storytelling. Capturing moments and editing them into compelling stories keeps my creativity sharp and trains me to convey core messages concisely.' }
+  const hobbies = [
+    { title: isZh ? "游戏与动漫" : "Gaming & Anime", desc: isZh ? "资深玩家与动漫爱好者，关注二次元文化与 AI 创作。" : "Hardcore gamer and anime fan, focusing on ACG culture and AI creation." },
+    { title: isZh ? "量化交易" : "Quant Trading", desc: isZh ? "探索 AI 在金融领域的应用，开发量化辅助工具。" : "Exploring AI applications in finance, developing quantitative tools." }
   ];
 
-  const contactMe = isZh ? {
-    title: '联系我',
-    phone: '电话: +86 135 2425 2203',
-    email: '邮箱: 313455055@qq.com',
-    wechat: '微信: Joe_povons',
-    douyin: '抖音: 6888zy1023',
-    xiaohongshu: '小红书: 566860318',
-    website: '网站: home.kunkun1023.xyz'
-  } : {
-    title: 'Contact Me',
-    phone: 'Phone: +86 135 2425 2203',
-    email: 'Email: 313455055@qq.com',
-    wechat: 'WeChat: Joe_povons',
-    douyin: 'Douyin: 6888zy1023',
-    xiaohongshu: 'Xiaohongshu: 566860318',
-    website: 'Web: home.kunkun1023.xyz'
+  const contactMe = {
+    title: isZh ? "联系我" : "Contact Me",
+    phone: "Phone: +86 135 2425 2203",
+    email: "Email: 313455055@qq.com",
+    wechat: "WeChat: kunkun1023",
+    douyin: "Douyin: AI 动漫 IP (AIGC)",
+    xiaohongshu: "Xiaohongshu: AI 动漫 IP (AIGC)",
+    website: "Website: home.kunkun1023.xyz"
   };
 
-  // Helper to create a section title with a border bottom
   const createSectionTitle = (text: string) => {
     return new Paragraph({
-      text: text,
-      heading: HeadingLevel.HEADING_2,
-      spacing: { before: 300, after: 150 },
+      children: [
+        new TextRun({
+          text: text,
+          bold: true,
+          size: 28,
+          color: "2563eb",
+        }),
+      ],
+      heading: HeadingLevel.HEADING_1,
+      spacing: { before: 400, after: 200 },
       border: {
         bottom: {
-          color: "333333",
+          color: "2563eb",
           space: 1,
           style: BorderStyle.SINGLE,
           size: 6,
@@ -316,22 +407,14 @@ export const generateWord = async (language: Language) => {
     });
   };
 
-  // Fetch avatar image
-  let avatarImage;
-  try {
-    const response = await fetch("/avatar.jpg");
-    const buffer = await response.arrayBuffer();
-    avatarImage = buffer;
-  } catch (e) {
-    console.error("Failed to fetch avatar image", e);
-  }
+  const avatarImage = null; // Placeholder for avatar if needed
 
   const doc = new Document({
     sections: [
       {
         properties: {},
         children: [
-          // Header with Table for Layout (Text left, Avatar right)
+          // Header
           new Table({
             width: { size: 100, type: WidthType.PERCENTAGE },
             borders: {
@@ -343,79 +426,35 @@ export const generateWord = async (language: Language) => {
               insideVertical: { style: BorderStyle.NONE },
             },
             rows: [
-              // Content Row
               new TableRow({
                 children: [
                   new TableCell({
-                    width: { size: 80, type: WidthType.PERCENTAGE },
-                    borders: {
-                      top: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
-                      bottom: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
-                      left: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
-                      right: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
-                    },
-                    verticalAlign: VerticalAlign.CENTER,
+                    width: { size: 70, type: WidthType.PERCENTAGE },
                     children: [
-                      // Name
                       new Paragraph({
-                        alignment: AlignmentType.LEFT,
                         children: [
-                          new TextRun({
-                            text: hero.name,
-                            bold: true,
-                            size: 48,
-                            color: "000000",
-                          }),
+                          new TextRun({ text: hero.name, bold: true, size: 48 }),
                         ],
-                        spacing: { before: 100 },
                       }),
-                      // Title
                       new Paragraph({
-                        alignment: AlignmentType.LEFT,
                         children: [
-                          new TextRun({
-                            text: hero.title,
-                            bold: true,
-                            color: "666666",
-                            size: 20,
-                          }),
+                          new TextRun({ text: hero.title, size: 24, color: "666666" }),
                         ],
-                        spacing: { after: 50 },
                       }),
-                      // Contact Info
                       new Paragraph({
-                        alignment: AlignmentType.LEFT,
                         children: [
-                          new TextRun({
-                            text: hero.contact,
-                            size: 16,
-                            color: "333333",
-                          }),
+                          new TextRun({ text: hero.contact, size: 18, color: "666666" }),
                         ],
-                        spacing: { after: 50 },
                       }),
-                      // Additional Info
                       new Paragraph({
-                        alignment: AlignmentType.LEFT,
                         children: [
-                          new TextRun({
-                            text: hero.info,
-                            size: 16,
-                            color: "666666",
-                          }),
+                          new TextRun({ text: hero.info, size: 18, color: "666666" }),
                         ],
-                        spacing: { after: 200 },
                       }),
                     ],
                   }),
                   new TableCell({
-                    width: { size: 20, type: WidthType.PERCENTAGE },
-                    borders: {
-                      top: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
-                      bottom: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
-                      left: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
-                      right: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
-                    },
+                    width: { size: 30, type: WidthType.PERCENTAGE },
                     verticalAlign: VerticalAlign.CENTER,
                     children: [
                       // Avatar
@@ -439,18 +478,8 @@ export const generateWord = async (language: Language) => {
           // Profile
           createSectionTitle(isZh ? "个人简介" : "Profile"),
           new Paragraph({
-            children: isZh ? [
-              new TextRun({ text: "从代码到底层架构，从单项目交付到大客户运营。我不仅懂技术实现，更懂如何将技术转化为商业价值。曾主导 " }),
-              new TextRun({ text: "喜茶、DQ、棒约翰", bold: true }),
-              new TextRun({ text: " 等头部品牌的数字化落地。目前正全面拥抱 AI 时代，" }),
-              new TextRun({ text: "深耕 AIGC 与新媒体运营", bold: true, color: "9333ea" }),
-              new TextRun({ text: "。由对游戏动漫的热爱驱动，探索利用 AI 工具进行内容二创与剪辑。通过构建标准化的 AI 内容产出工作流，在抖音、小红书成功打造个人账号与高粘性 IP 矩阵，并独立开发了基于大模型的量化交易助手。" }),
-            ] : [
-              new TextRun({ text: "From coding to architecture, from project delivery to key account growth. I bridge the gap between technical implementation and business value. Led digital transformation for top brands like " }),
-              new TextRun({ text: "Heytea, DQ, and Papa John's", bold: true }),
-              new TextRun({ text: ". Currently fully embracing the AI era, " }),
-              new TextRun({ text: "deeply engaged in AIGC and social media operations", bold: true, color: "9333ea" }),
-              new TextRun({ text: ". Driven by a passion for gaming and anime, exploring AI-powered secondary creation and video editing. By building standardized AI content production workflows, successfully established personal accounts and high-engagement IP matrices on Douyin and Xiaohongshu, alongside developing LLM-based quantitative trading assistants." }),
+            children: [
+              new TextRun({ text: hero.desc }),
             ],
             spacing: { after: 200 },
           }),
@@ -500,7 +529,7 @@ export const generateWord = async (language: Language) => {
             spacing: { before: 200, after: 200 },
           }),
 
-          ...projects.cases.flatMap((c) => [
+          ...projects.cases.flatMap((c: any) => [
             new Paragraph({
               children: [
                 new TextRun({ text: `${c.brand} | ${c.role}`, bold: true, size: 22 }),
@@ -522,6 +551,21 @@ export const generateWord = async (language: Language) => {
               text: c.desc,
               spacing: { after: 100 },
             }),
+            ...(c.coreWork ? c.coreWork.flatMap((work: any) => [
+              new Paragraph({
+                children: [
+                  new TextRun({ text: work.title, bold: true, size: 20, color: "333333" }),
+                ],
+                spacing: { before: 100, after: 50 },
+              }),
+              ...work.items.map((item: string) => 
+                new Paragraph({
+                  text: item,
+                  bullet: { level: 0 },
+                  spacing: { after: 50 },
+                })
+              )
+            ]) : [])
           ]),
 
           // AI Innovation Lab in Word
