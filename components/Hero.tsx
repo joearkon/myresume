@@ -26,9 +26,11 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info4Val: '10余年 +',
       desc: (
         <>
-          从代码到底层架构，从单项目交付到大客户运营。我不仅懂技术实现，更懂如何将技术转化为商业价值。
-          曾主导 <span className="text-slate-900 dark:text-white font-bold">喜茶、DQ、棒约翰</span> 等头部品牌的数字化落地。<br className="hidden md:block mt-2" />
-          目前正全面拥抱 AI 时代，<span className="text-purple-600 dark:text-purple-400 font-bold">深耕 AIGC 与新媒体运营</span>。由对游戏动漫的热爱驱动，探索利用 AI 工具进行内容二创与剪辑。通过构建标准化的 AI 内容产出工作流，在抖音、小红书成功打造个人账号与高粘性 IP 矩阵，并独立开发了基于大模型的量化交易助手。
+          拥有 <span className="text-slate-900 dark:text-white font-bold">10余年</span> 数字化转型与大客户运营经验，曾主导 <span className="text-slate-900 dark:text-white font-bold">喜茶、乐乐茶、久久丫</span> 等千万级头部餐饮品牌项目落地。
+          <br className="hidden md:block mt-2" />
+          从代码到底层架构，从单项目交付到大客户运营，<span className="text-slate-900 dark:text-white font-bold">我不仅懂技术实现，更懂如何将技术转化为商业价值。</span>
+          <br className="hidden md:block mt-2" />
+          目前正全面拥抱 AI 时代，<span className="text-purple-600 dark:text-purple-400 font-bold">深耕 AIGC 与新媒体运营</span>。通过构建标准化的 AI 内容产出工作流，在抖音、小红书成功打造高粘性 IP 矩阵，并独立开发了基于大模型的量化交易助手，致力于将前沿技术转化为实际生产力。
         </>
       ),
       btnResume: '查看完整履历',
@@ -54,10 +56,11 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info4Val: '10 Years +',
       desc: (
         <>
-          From coding to architecture, from project delivery to key account growth. 
-          I bridge the gap between technical implementation and business value.
-          Led digital transformation for top brands like <span className="text-slate-900 dark:text-white font-bold">Heytea, DQ, and Papa John's</span>.<br className="hidden md:block mt-2" />
-          Currently fully embracing the AI era, <span className="text-purple-600 dark:text-purple-400 font-bold">deeply engaged in AIGC and social media operations</span>. Driven by a passion for gaming and anime, exploring AI-powered secondary creation and video editing. By building standardized AI content production workflows, successfully established personal accounts and high-engagement IP matrices on Douyin and Xiaohongshu, alongside developing LLM-based quantitative trading assistants.
+          With <span className="text-slate-900 dark:text-white font-bold">10+ years</span> of experience in digital transformation and key account operations, I have led enterprise-level projects for top brands like <span className="text-slate-900 dark:text-white font-bold">Heytea, Lelecha, and Jiujiuya</span>.
+          <br className="hidden md:block mt-2" />
+          From coding to architecture, from project delivery to key account growth, <span className="text-slate-900 dark:text-white font-bold">I bridge the gap between technical implementation and business value.</span>
+          <br className="hidden md:block mt-2" />
+          Currently fully embracing the AI era, <span className="text-purple-600 dark:text-purple-400 font-bold">deeply engaged in AIGC and social media operations</span>. By building standardized AI content production workflows, I have successfully established high-engagement IP matrices on Douyin and Xiaohongshu, and independently developed an LLM-based quantitative trading assistant, dedicating to turning cutting-edge tech into real productivity.
         </>
       ),
       btnResume: 'View Experience',

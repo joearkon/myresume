@@ -41,14 +41,14 @@ export const generateWord = async (language: Language) => {
 
   const experience = isZh ? [
     {
-      role: "AIGC 独立开发者 / 新媒体运营专家",
+      role: "AIGC 独立开发者 / 运营者",
       company: "独立项目 / 自由职业",
       period: "2025.08 - 至今",
-      description: "全面拥抱 AI 时代，探索 AIGC 技术在新媒体内容创作与商业变现中的应用，构建高效的自动化工作流。",
+      description: "全面拥抱 AI 时代，探索 AIGC 技术在内容创作与商业变现中的应用，构建高效的自动化工作流。",
       achievements: [
-        "基于 Gemini AI 进行剧本创作与分镜设计，结合 ComfyUI 构建图像与视频生成工作流，实现内容产出的标准化与自动化",
-        "专注于游戏与动漫 IP 的二创内容矩阵运营，单月内在小红书与抖音双平台实现从 0 到 1 的突破，累计精准粉丝 5000+",
-        "深入研究 AI 提示词工程（Prompt Engineering）与工作流编排，大幅降低内容制作成本，提升产出效率"
+        "独立搭建抖音 + 小红书双平台二次元动漫 IP 矩阵，依托 AIGC 实现 1 个月高效涨粉 5000 + 高粘性垂直粉丝",
+        "构建从角色原创设计、剧本分镜到 AI 视频生成的全链路标准化工作流，实现内容规模化、低成本、高效率产出",
+        "深入研究 AI 提示词工程（Prompt Engineering）与 ComfyUI 工作流编排，内容生产效率提升 80%"
       ]
     },
     {
@@ -57,7 +57,7 @@ export const generateWord = async (language: Language) => {
       period: "2023 - 2025.07",
       description: "聚焦 SaaS 平台上线后大客户全生命周期运营。以客户价值为核心，构建系统化客户维护与增长体系。",
       achievements: [
-        "负责维护大客户平台产品运营，包括DQ，喜茶，乐乐茶，Something For，Seesaw，T9，久久丫等品牌",
+        "负责维护大客户平台产品运营，包括 DQ，喜茶，乐乐茶，Something For，Seesaw，T9，久久丫等品牌",
         "制定分层客户维护策略，针对头部连锁品牌的个性化需求，提供定制化增值服务，建立季度走访、月度复盘机制",
         "0-1 搭建客户留存监控体系，实时跟踪系统使用率，大客户年度留存率稳定在 90% 以上",
         "牵头客户续约与增收工作，深度挖掘需求，负责团队每年为公司贡献 50% 左右的营收"
@@ -67,11 +67,12 @@ export const generateWord = async (language: Language) => {
       role: "SaaS 平台项目经理",
       company: "上海合阔信息技术有限公司",
       period: "2018 - 2023",
-      description: "核心项目交付负责人。统筹 SaaS 项目全生命周期管理，主导多个头部餐饮品牌数字化转型，累计覆盖超 5000 家连锁门店。",
+      description: "核心项目交付负责人。统筹 SaaS 项目全生命周期管理，从需求对接、方案设计到落地上线、验收交付，主导多个头部餐饮品牌数字化转型项目，累计覆盖超 5000 家连锁门店。",
       achievements: [
-        "喜茶 (Heytea): 2018-2020年常驻深圳，BOH与POS项目依次启动。主导 2000+ 门店系统打通，支撑日峰值 10万+ 订单；(BOM配方的设计研发曾经申请专利)",
-        "DQ/棒约翰: 覆盖 1000+ 门店，设计全流程解决方案，库存损耗率降低 2%",
-        "久久丫 (2021-2022): 搭建集订单、库存、会员、财务于一体的业务中台，整合 1800+ 门店数据"
+        "上海适达餐饮集团 (DQ 冰雪皇后、PPJ 棒约翰): 负责 BOH 门店供应链项目交付。对接全国 1000+ 门店需求，设计库存管理、采购补货、物流追踪全流程解决方案，上线后供应链周转效率明显提升，库存损耗率降低 2%。",
+        "深圳喜茶 (HEYTEA): 2018-2020年常驻深圳总部，主导核心项目交付。完成 BOH 供应链与全渠道 POS 系统打通，支撑 2000+ 门店及线上多渠道订单一体化处理，实现“下单-履约-结算”全链路数字化，峰值订单处理能力达 10万+ 笔/日；(BOM配方设计研发曾获专利)",
+        "浙江久久丫食品: 2021-2022年常驻客户现场，负责业务中台项目。搭建集订单、库存、会员、财务于一体的业务中台，整合全国 1800+ 门店数据，打破数据孤岛，为品牌精细化运营与业务经营决策提供有力支撑。",
+        "交付管理：统筹 SaaS 项目全生命周期管理，负责进度、风险及质量控制，确保多个大型项目按期保质交付，获得客户高度认可。"
       ]
     },
     {
@@ -109,14 +110,14 @@ export const generateWord = async (language: Language) => {
     }
   ] : [
     {
-      role: "AIGC Independent Developer / Social Media Expert",
+      role: "AIGC Independent Developer / Operator",
       company: "Independent Project / Freelance",
       period: "2025.08 - Present",
-      description: "Fully embraced the AI era, exploring the application of AIGC technologies in social media content creation and commercial monetization, building highly efficient automated workflows.",
+      description: "Fully embraced the AI era, exploring the application of AIGC technologies in content creation and commercial monetization, building highly efficient automated workflows.",
       achievements: [
-        "Leveraged Gemini AI for scriptwriting and storyboarding, combined with ComfyUI to build image and video generation workflows, achieving standardized and automated content production.",
-        "Focused on secondary creation of game and anime IPs. Reached 5000+ targeted followers on Xiaohongshu and Douyin within a single month from scratch.",
-        "Deeply researched AI Prompt Engineering and workflow orchestration, significantly reducing content production costs and improving output efficiency."
+        "Independently built a 2D anime IP matrix across Douyin and Xiaohongshu, gaining 5000+ vertical followers in 1 month via AIGC.",
+        "Constructed a full-link standardized workflow from original character design and script to AI video generation, achieving scalable and efficient output.",
+        "Deeply researched AI Prompt Engineering and ComfyUI workflow orchestration, increasing content production efficiency by 80%."
       ]
     },
     {
@@ -135,11 +136,12 @@ export const generateWord = async (language: Language) => {
       role: "SaaS Project Manager",
       company: "Shanghai Hekuo Info Tech",
       period: "2018 - 2023",
-      description: "Head of core project delivery. Managed full SaaS project lifecycles, leading digital transformation for top catering brands covering 5000+ stores.",
+      description: "Head of core project delivery. Managed full SaaS project lifecycles, from requirement alignment and solution design to go-live and acceptance, leading digital transformation for top catering brands covering 5000+ stores.",
       achievements: [
-        "Heytea: Integrated 2000+ stores, handling 100k+ daily orders; (Patented BOM recipe design)",
-        "DQ/Papa John's: Covered 1000+ stores, designed full-process solutions, reducing inventory loss by 2%.",
-        "Juewei Duck: Built business middle-platform integrating orders, inventory, and finance for 1800+ stores."
+        "Shanghai Shida Catering Group (DQ, Papa John's): Responsible for BOH store supply chain project delivery. Aligned requirements for 1000+ stores nationwide, designed full-process solutions for inventory, procurement, and logistics, reducing inventory loss by 2%.",
+        "Shenzhen HEYTEA: Stationed in Shenzhen HQ (2018-2020), led core project delivery. Integrated BOH supply chain with omni-channel POS, supporting integrated order processing for 2000+ stores and online channels, with peak daily capacity of 100k+ orders; (Patented BOM recipe design).",
+        "Zhejiang Juewei Duck: Stationed on-site (2021-2022), responsible for business middle-platform project. Built an integrated platform for orders, inventory, membership, and finance, consolidating data for 1800+ stores to support refined operations and business decisions.",
+        "Delivery Management: Managed full SaaS project lifecycles, responsible for schedule, risk, and quality control, ensuring on-time and high-quality delivery of multiple large-scale projects."
       ]
     },
     {
@@ -184,31 +186,25 @@ export const generateWord = async (language: Language) => {
       { value: '10W+', label: '日处理订单峰值' },
       { value: '50%', label: '团队营收贡献' }
     ],
-    brands: ["喜茶 (HEYTEA)", "DQ (Dairy Queen)", "棒约翰 (Papa John's)", "Peets (皮爷咖啡)", "T9 Tea", "Linlee (邻里)", "谭仔 (TamJai)", "Something For", "果呀呀", "久久丫"],
+    brands: ["喜茶 (HEYTEA)", "久久丫 / 留夫鸭", "DQ (Dairy Queen)", "Peets (皮爷咖啡)", "T9 Tea", "Linlee (邻里)", "谭仔 (TamJai)", "Something For", "果呀呀"],
     cases: [
       {
         brand: 'HEYTEA 喜茶',
-        role: '项目负责人 (常驻深圳)',
-        desc: '全渠道数字化转型标杆项目。打通线上小程序与线下门店，实现“下单-履约-结算”全链路闭环。',
+        role: '项目负责人 (2018 - 2020 | 常驻深圳)',
+        desc: '全渠道数字化转型标杆项目。打通线上小程序与线下门店，HiPOS 系统覆盖全国 500+ 门店（2020年数据，2024年已突破 2000 家），实现“下单-履约-结算”全链路闭环。',
         highlight: '日订单峰值 10万+'
       },
       {
-        brand: 'DQ / 棒约翰',
-        role: '供应链项目经理',
-        desc: '构建 BOH 门店供应链系统，覆盖采购、库存、物流全流程，显著提升周转效率。',
-        highlight: '库存损耗率 ↓2%'
-      },
-      {
-        brand: '久久丫',
-        role: '业务中台负责人',
-        desc: '搭建集订单、会员、财务于一体的业务中台，整合全国门店数据，支持精细化运营。',
-        highlight: '数据孤岛打通'
+        brand: '久久丫 / 留夫鸭',
+        role: '业务中台负责人 (2021 - 2022 | 常驻上海)',
+        desc: '我全程主导久久丫、留夫鸭数字化中台一期从 0 到 1 落地，覆盖需求调研→蓝图设计→系统对接→功能落地→培训赋能→上线验收→全国推广全流程。',
+        highlight: '从0到1全流程主导'
       },
       {
         brand: '自媒体 IP 矩阵',
         role: '内容主理人',
-        desc: '深耕 AIGC 与新媒体运营。由对游戏动漫的热爱驱动，探索利用 AI 工具进行内容二创与剪辑。通过构建标准化的 AI 内容产出工作流，在抖音、小红书平台成功打造个人账号，并形成高粘性的 IP 矩阵。',
-        highlight: '5000+ 高粘性粉丝'
+        desc: '独立搭建抖音 + 小红书双平台二次元动漫 IP 矩阵，依托 AIGC 实现1 个月高效涨粉 5000 + 高粘性垂直粉丝，构建从角色原创设计、剧本分镜到 AI 视频生成的全链路标准化工作流，实现内容规模化、低成本、高效率持续产出。',
+        highlight: '1个月涨粉5000+'
       }
     ],
     aiProjects: [
@@ -226,31 +222,25 @@ export const generateWord = async (language: Language) => {
       { value: '100k+', label: 'Peak Daily Orders' },
       { value: '50%', label: 'Revenue Contribution' }
     ],
-    brands: ["HEYTEA", "DQ", "Papa John's", "Peets", "T9 Tea", "Linlee", "TamJai", "Something For", "Guoyaya", "Juewei Duck"],
+    brands: ["HEYTEA", "Juewei Duck / Liufu Duck", "DQ", "Peets", "T9 Tea", "Linlee", "TamJai", "Something For", "Guoyaya"],
     cases: [
       {
         brand: 'HEYTEA',
-        role: 'Project Lead (Shenzhen)',
-        desc: 'Benchmark project for omni-channel transformation. Integrated online mini-apps with offline stores.',
+        role: 'Project Lead (2018 - 2020 | Shenzhen)',
+        desc: 'Benchmark project for omni-channel transformation. Integrated online mini-apps with offline stores, HiPOS system covers 500+ stores (as of 2020, exceeding 2000 stores by 2024).',
         highlight: '100k+ Peak Daily Orders'
       },
       {
-        brand: 'DQ / Papa John\'s',
-        role: 'Supply Chain PM',
-        desc: 'Built BOH supply chain system covering procurement, inventory, and logistics.',
-        highlight: 'Inventory Loss ↓2%'
+        brand: 'Juewei Duck / Liufu Duck',
+        role: 'Middle Platform Lead (2021 - 2022 | Shanghai)',
+        desc: 'Fully led the 0-to-1 implementation of the Phase I digital middle-platform for Juewei Duck and Liufu Duck, covering the entire process from requirement research to national rollout.',
+        highlight: '0 to 1 Full Process Lead'
       },
       {
-        brand: 'Juewei Duck',
-        role: 'Middle Platform Lead',
-        desc: 'Built a business middle platform integrating orders, membership, and finance.',
-        highlight: 'Data Silos Eliminated'
-      },
-      {
-        brand: 'Social Media IP',
+        brand: 'Social Media IP Matrix',
         role: 'Content Creator',
-        desc: 'Deeply engaged in AIGC and social media operations. Driven by a passion for gaming and anime, exploring AI-powered secondary creation and video editing. By building standardized AI content production workflows, successfully established personal accounts and high-engagement IP matrices on Douyin and Xiaohongshu.',
-        highlight: '5000+ Active Followers'
+        desc: 'Independently built a 2D anime IP matrix across Douyin and Xiaohongshu. Leveraged AIGC to efficiently gain 5000+ highly engaged vertical followers in one month. Constructed a full-link standardized workflow from original character design, script, and storyboard to AI video generation, achieving scalable, low-cost, and high-efficiency continuous content production.',
+        highlight: '5000+ Followers in 1 Month'
       }
     ],
     aiProjects: [
