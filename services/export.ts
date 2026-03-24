@@ -26,7 +26,9 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
   let avatarImage = null;
   if (avatarUrl) {
     try {
-      const response = await fetch(avatarUrl);
+      // Use a CORS proxy to bypass potential restrictions in the browser environment
+      const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(avatarUrl)}`;
+      const response = await fetch(proxyUrl);
       const buffer = await response.arrayBuffer();
       avatarImage = buffer;
     } catch (e) {
