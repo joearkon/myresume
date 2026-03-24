@@ -1,7 +1,6 @@
 import React from 'react';
 import { Language } from '../App';
 import { generateWord } from '../services/export';
-import avatarImg from '../assets/avatar.jpg';
 
 interface HeroProps {
   language: Language;
@@ -82,7 +81,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
   // Function to handle Word download
   const handleDownloadWord = (e: React.MouseEvent) => {
     e.preventDefault();
-    generateWord(language, avatarImg);
+    generateWord(language, "https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESCqxpwLYLP8Jhn6EnyGll64FUqPbl9gACHjMAAiLeAAFWZRBcwlspcNM6BA.jpg");
   };
 
   return (
@@ -129,11 +128,12 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
 
           {/* Avatar Section */}
           <div className="relative shrink-0 ml-6">
-             <div className="relative w-28 h-28 rounded-lg p-1 bg-white shadow-sm border border-slate-200">
+             <div className="relative w-28 h-28 rounded-full p-1 bg-white shadow-sm border border-slate-200 overflow-hidden">
                 <img 
-                    src={avatarImg} 
+                    src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESCqxpwLYLP8Jhn6EnyGll64FUqPbl9gACHjMAAiLeAAFWZRBcwlspcNM6BA.jpg" 
                     alt="陈子卓野 (Joe Chen)" 
-                    className="w-full h-full rounded-md object-cover"
+                    className="w-full h-full rounded-full object-cover"
+                    referrerPolicy="no-referrer"
                 />
              </div>
           </div>
@@ -168,11 +168,12 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
 
           {/* Avatar Section */}
           <div className="relative shrink-0">
-             <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-lg p-1 bg-white dark:bg-slate-800 shadow-md border border-slate-200 dark:border-slate-700">
+             <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-white dark:bg-slate-800 shadow-md border border-slate-200 dark:border-slate-700 overflow-hidden">
                 <img 
-                    src={avatarImg} 
+                    src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESCqxpwLYLP8Jhn6EnyGll64FUqPbl9gACHjMAAiLeAAFWZRBcwlspcNM6BA.jpg" 
                     alt="陈子卓野 (Joe Chen)" 
-                    className="w-full h-full rounded-md object-cover"
+                    className="w-full h-full rounded-full object-cover"
+                    referrerPolicy="no-referrer"
                 />
              </div>
           </div>

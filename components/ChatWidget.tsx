@@ -22,6 +22,21 @@ const ChatWidget: React.FC<ChatWidgetProps> = ({ language }) => {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  const suggestedQuestions = {
+    zh: [
+      "陈子卓野在喜茶负责什么？",
+      "他有哪些 AI 相关的项目？",
+      "他的技术背景如何？",
+      "如何联系他？"
+    ],
+    en: [
+      "What did Joe do at Heytea?",
+      "What are his AI projects?",
+      "What is his tech background?",
+      "How to contact him?"
+    ]
+  };
+
   // Clear history when language changes (optional, but cleaner UI)
   useEffect(() => {
     setMessages([initialMessages[language] as ChatMessage]);
@@ -37,12 +52,10 @@ const ChatWidget: React.FC<ChatWidgetProps> = ({ language }) => {
     scrollToBottom();
   }, [messages, isOpen]);
 
-  const handleSend = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim() || isLoading) return;
+  const processMessage = async (text: string) => {
+    if (!text.trim() || isLoading) return;
 
-    const userMsg = input.trim();
-    setInput('');
+    const userMsg = text.trim();
     setIsLoading(true);
 
     // Optimistic update
@@ -56,9 +69,20 @@ const ChatWidget: React.FC<ChatWidgetProps> = ({ language }) => {
     setIsLoading(false);
   };
 
+  const handleSend = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const text = input;
+    setInput('');
+    await processMessage(text);
+  };
+
+  const handleQuickAsk = (question: string) => {
+    processMessage(question);
+  };
+
   const uiText = {
-    zh: { title: 'AI 智能助手', placeholder: '询问关于陈子卓野...', sending: '发送' },
-    en: { title: 'AI Assistant', placeholder: 'Ask about Joe Chen...', sending: 'Send' }
+    zh: { title: 'AI 智能助手', placeholder: '询问关于陈子卓野...', sending: '发送', quickAsk: '猜你想问：' },
+    en: { title: 'AI Assistant', placeholder: 'Ask about Joe Chen...', sending: 'Send', quickAsk: 'Suggested:' }
   };
 
   const t = uiText[language];
@@ -93,6 +117,25 @@ const ChatWidget: React.FC<ChatWidgetProps> = ({ language }) => {
                 </div>
               </div>
             ))}
+            
+            {/* Suggested Questions (Only show when history is short) */}
+            {messages.length <= 1 && !isLoading && (
+              <div className="pt-2 animate-fade-in-up">
+                <p className="text-xs text-slate-500 dark:text-gray-400 mb-2 ml-1">{t.quickAsk}</p>
+                <div className="flex flex-wrap gap-2">
+                  {suggestedQuestions[language].map((q, i) => (
+                    <button
+                      key={i}
+                      onClick={() => handleQuickAsk(q)}
+                      className="text-xs bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-blue-800 dark:text-blue-400 px-3 py-1.5 rounded-full hover:bg-blue-50 dark:hover:bg-slate-700 transition-all text-left shadow-sm"
+                    >
+                      {q}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {isLoading && (
               <div className="flex justify-start">
                 <div className="bg-white dark:bg-slate-700 p-3 rounded-lg rounded-bl-none flex gap-1 border border-slate-100 dark:border-slate-600 shadow-sm">

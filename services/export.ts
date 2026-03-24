@@ -378,7 +378,16 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
   ];
 
   const education = [
-    { school: isZh ? "上海大学" : "Shanghai University", degree: isZh ? "学士学位" : "Bachelor's Degree", date: "2007 - 2011" }
+    { 
+      school: isZh ? "上海海事大学" : "Shanghai Maritime University", 
+      degree: isZh ? "本科" : "Bachelor", 
+      date: "2006.09 - 2009.06" 
+    },
+    { 
+      school: isZh ? "上海市理工大学附属高中" : "High School Affiliated to USST", 
+      degree: isZh ? "高中" : "High School", 
+      date: "2007.09 - 2009.06" 
+    }
   ];
 
   const hobbies = [
