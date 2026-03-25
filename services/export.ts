@@ -248,7 +248,7 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       },
       {
         brand: '久久丫 / 留夫鸭',
-        role: '业务中台负责人 (2021 - 2022 | 常驻上海)',
+        role: '业务中台负责人 (2022 - 2024 | 常驻上海-嘉善)',
         desc: '全程主导久久丫、留夫鸭数字化中台一期从 0 到 1 落地，覆盖需求调研→蓝图设计→系统对接→功能落地→培训赋能→上线验收→全国推广全流程。',
         highlight: '从0到1全流程主导',
         coreWork: [
@@ -272,7 +272,7 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       },
       {
         brand: '自媒体 IP 矩阵',
-        role: '内容主理人',
+        role: '内容主理人 (2025)',
         desc: '独立搭建抖音 + 小红书双平台二次元动漫 IP 矩阵，依托 AIGC 实现1 个月高效涨粉 5000 + 高粘性垂直粉丝，构建从角色原创设计、剧本分镜到 AI 视频生成的全链路标准化工作流。',
         highlight: '1个月涨粉5000+',
         coreWork: [
@@ -348,7 +348,7 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       },
       {
         brand: 'Juewei Duck / Liufu Duck',
-        role: 'Middle Platform Lead (2021 - 2022 | Shanghai)',
+        role: 'Middle Platform Lead (2022 - 2024 | Shanghai-Jiashan)',
         desc: 'Fully led the 0-to-1 implementation of the Phase I digital middle-platform, covering the entire process from requirement research to national rollout.',
         highlight: '0 to 1 Full Process Lead',
         coreWork: [
@@ -372,7 +372,7 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       },
       {
         brand: 'Social Media IP Matrix',
-        role: 'Content Creator',
+        role: 'Content Creator (2025)',
         desc: 'Independently built a 2D anime IP matrix. Leveraged AIGC to gain 5000+ followers in one month. Constructed a full-link standardized workflow.',
         highlight: '5000+ Followers in 1 Month',
         coreWork: [

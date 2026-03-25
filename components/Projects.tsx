@@ -88,7 +88,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         },
         {
           brand: '自媒体 IP 矩阵',
-          role: '内容主理人',
+          role: '内容主理人 (2025)',
           colSpan: true,
           background: '独立搭建抖音 + 小红书双平台二次元动漫 IP 矩阵，依托 AIGC 实现1 个月高效涨粉 5000 + 高粘性垂直粉丝，构建从角色原创设计、剧本分镜到 AI 视频生成的全链路标准化工作流，实现内容规模化、低成本、高效率持续产出。',
           coreWork: [
@@ -223,7 +223,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         },
         {
           brand: 'Social Media IP Matrix',
-          role: 'Content Creator',
+          role: 'Content Creator (2025)',
           colSpan: true,
           background: 'Independently built a 2D anime IP matrix across Douyin and Xiaohongshu. Leveraged AIGC to efficiently gain 5000+ highly engaged vertical followers in one month. Constructed a full-link standardized workflow from original character design, script, and storyboard to AI video generation, achieving scalable, low-cost, and high-efficiency continuous content production.',
           coreWork: [
