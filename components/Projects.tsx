@@ -453,13 +453,13 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         </div>
 
         {/* 1. Key Metrics Bar - Simplified */}
-        <div className="border-y border-slate-100 dark:border-slate-800 py-8 mb-16 flex flex-wrap justify-between items-center gap-8 print:py-2 print:mb-4 print:gap-2 print:border-gray-200">
+        <div className="border-y border-slate-100 dark:border-slate-800 py-8 mb-16 flex flex-wrap justify-between items-center gap-8 print:py-4 print:mb-8 print:gap-4 print:border-gray-200 print:bg-slate-50/50 print:rounded-xl">
           {t.metrics.map((metric, idx) => (
-            <div key={idx} className="flex-1 min-w-[120px] text-center print:min-w-0 print:text-left">
-              <div className={`text-3xl font-bold mb-1 ${metric.color.replace('text-', 'text-slate-900 dark:text-white')} print:text-sm print:mb-0`}>
+            <div key={idx} className="flex-1 min-w-[120px] text-center print:min-w-0 print:text-center">
+              <div className={`text-3xl font-bold mb-1 ${metric.color.replace('text-', 'text-slate-900 dark:text-white')} print:text-base print:mb-0`}>
                 {metric.value}
               </div>
-              <div className="text-xs text-slate-500 dark:text-gray-400 font-medium uppercase tracking-wider print:text-[8px] print:tracking-normal">
+              <div className="text-xs text-slate-500 dark:text-gray-400 font-medium uppercase tracking-wider print:text-[9px] print:tracking-normal">
                 {metric.label}
               </div>
             </div>
@@ -467,11 +467,11 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         </div>
 
         {/* 2.5 Brand Wall - Simplified */}
-        <div className="mb-16 print:mb-4">
-            <h3 className="text-sm font-bold text-center mb-6 text-slate-400 dark:text-gray-500 uppercase tracking-widest print:text-[10px] print:mb-2 print:text-left print:tracking-normal">{t.brandsTitle}</h3>
-            <div className="flex flex-wrap justify-center gap-3 print:justify-start print:gap-1.5">
+        <div className="mb-16 print:mb-8 print:bg-white print:p-4 print:border print:border-gray-100 print:rounded-xl">
+            <h3 className="text-sm font-bold text-center mb-6 text-slate-400 dark:text-gray-500 uppercase tracking-widest print:text-[10px] print:mb-3 print:text-center print:tracking-normal">{t.brandsTitle}</h3>
+            <div className="flex flex-wrap justify-center gap-3 print:justify-center print:gap-2">
                 {brandList.map((brand, idx) => (
-                    <span key={idx} className="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded text-slate-600 dark:text-gray-300 text-xs font-medium hover:border-blue-800 dark:hover:border-blue-400 hover:text-blue-800 dark:hover:border-blue-400 transition-all cursor-default print:px-2 print:py-0.5 print:text-[10px] print:border-gray-200">
+                    <span key={idx} className="px-3 py-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded text-slate-600 dark:text-gray-300 text-xs font-medium hover:border-blue-800 dark:hover:border-blue-400 hover:text-blue-800 dark:hover:border-blue-400 transition-all cursor-default print:px-2 print:py-1 print:text-[10px] print:border-gray-200 print:bg-gray-50">
                         {brand}
                     </span>
                 ))}

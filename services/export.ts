@@ -531,8 +531,8 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
           new Table({
             width: { size: 100, type: WidthType.PERCENTAGE },
             borders: {
-              top: { style: BorderStyle.NONE },
-              bottom: { style: BorderStyle.NONE },
+              top: { style: BorderStyle.SINGLE, size: 4, color: "e2e8f0" },
+              bottom: { style: BorderStyle.SINGLE, size: 4, color: "e2e8f0" },
               left: { style: BorderStyle.NONE },
               right: { style: BorderStyle.NONE },
               insideHorizontal: { style: BorderStyle.NONE },
@@ -541,32 +541,63 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
             rows: [
               new TableRow({
                 children: projects.metrics.map(m => new TableCell({
+                  shading: { fill: "f8fafc" },
+                  verticalAlign: VerticalAlign.CENTER,
                   children: [
                     new Paragraph({
                       alignment: AlignmentType.CENTER,
                       children: [
-                        new TextRun({ text: m.value, bold: true, size: 28, color: "3b82f6" }),
-                      ]
+                        new TextRun({ text: m.value, bold: true, size: 28, color: "1e40af" }),
+                      ],
+                      spacing: { before: 120 }
                     }),
                     new Paragraph({
                       alignment: AlignmentType.CENTER,
                       children: [
-                        new TextRun({ text: m.label, size: 16, color: "666666" }),
-                      ]
+                        new TextRun({ text: m.label, size: 16, color: "64748b" }),
+                      ],
+                      spacing: { after: 120 }
                     })
                   ]
                 }))
               })
-            ]
+            ],
           }),
 
           // Brand Wall in Word
-          new Paragraph({
-            children: [
-              new TextRun({ text: isZh ? "合作客户: " : "Cooperated Brands: ", bold: true, size: 18, color: "666666" }),
-              new TextRun({ text: projects.brands.join(" | "), size: 18, color: "666666" }),
+          new Table({
+            width: { size: 100, type: WidthType.PERCENTAGE },
+            borders: {
+              top: { style: BorderStyle.SINGLE, size: 2, color: "f1f5f9" },
+              bottom: { style: BorderStyle.SINGLE, size: 2, color: "f1f5f9" },
+              left: { style: BorderStyle.SINGLE, size: 2, color: "f1f5f9" },
+              right: { style: BorderStyle.SINGLE, size: 2, color: "f1f5f9" },
+            },
+            rows: [
+              new TableRow({
+                children: [
+                  new TableCell({
+                    shading: { fill: "ffffff" },
+                    children: [
+                      new Paragraph({
+                        children: [
+                          new TextRun({ text: isZh ? "合作客户" : "Cooperated Brands", bold: true, size: 18, color: "94a3b8" }),
+                        ],
+                        alignment: AlignmentType.CENTER,
+                        spacing: { before: 100, after: 100 },
+                      }),
+                      new Paragraph({
+                        children: [
+                          new TextRun({ text: projects.brands.join("  •  "), size: 18, color: "475569" }),
+                        ],
+                        alignment: AlignmentType.CENTER,
+                        spacing: { before: 100, after: 200 },
+                      }),
+                    ]
+                  })
+                ]
+              })
             ],
-            spacing: { before: 200, after: 200 },
           }),
 
           ...projects.cases.flatMap((c: any) => [
