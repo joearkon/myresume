@@ -207,45 +207,45 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
   return (
     <section id="experience" className="py-20 bg-white dark:bg-slate-900/50 relative transition-colors duration-500 print:py-4">
       <div className="max-w-4xl mx-auto px-4">
-        <div className="mb-16 text-center print:mb-4 print:text-left">
+        <div className="mb-16 text-center print:mb-6 print:text-left">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-1">
             <span className="text-blue-800 dark:text-blue-400">{language === 'zh' ? '职业' : 'Work'}</span> {language === 'zh' ? '生涯' : 'Experience'}
           </h2>
-          <p className="mt-4 text-slate-600 dark:text-gray-400 transition-colors duration-300 print:mt-0 print:text-xs print:text-gray-500">
+          <p className="mt-4 text-slate-600 dark:text-gray-400 transition-colors duration-300 print:mt-0 print:text-[10px] print:text-slate-500">
             {language === 'zh' 
               ? '十年磨一剑 • 从技术底层到商业顶层的全链路进阶'
               : '10+ Years • From Technical Foundation to Business Leadership'}
           </p>
         </div>
 
-        <div className="space-y-12 print:space-y-4">
+        <div className="space-y-12 print:space-y-6">
           {experiences.map((exp) => (
-            <div key={exp.id} className="group relative border-b border-slate-200 dark:border-slate-800 pb-12 last:border-0 last:pb-0 print:pb-4 print:break-inside-avoid">
+            <div key={exp.id} className="group relative border-b border-slate-200 dark:border-slate-800 pb-12 last:border-0 last:pb-0 print:pb-6 print:break-inside-avoid">
               
               <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2 print:mb-1">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-lg">
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base">
                   {exp.role}
                 </h3>
-                <span className="text-sm font-medium text-slate-500 dark:text-gray-400 whitespace-nowrap print:text-xs">
+                <span className="text-sm font-medium text-slate-500 dark:text-gray-400 whitespace-nowrap print:text-[10px]">
                   {exp.period}
                 </span>
               </div>
               
-              <div className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-4 print:text-sm print:mb-1">
+              <div className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-4 print:text-xs print:mb-1">
                 {exp.company}
                 {exp.isPromoted && (
-                  <span className="ml-3 text-xs font-normal bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-gray-400 px-2 py-1 rounded print:bg-transparent print:border print:border-gray-200">
+                  <span className="ml-3 text-xs font-normal bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-gray-400 px-2 py-1 rounded print:px-1.5 print:py-0.5 print:text-[9px]">
                     {language === 'zh' ? '内部晋升' : 'Promoted Internally'}
                   </span>
                 )}
               </div>
               
-              <p className="text-slate-600 dark:text-gray-300 mb-4 leading-relaxed text-justify print:text-xs print:mb-2 print:leading-normal">
+              <p className="text-slate-600 dark:text-gray-300 mb-4 leading-relaxed text-justify print:text-[10px] print:mb-2 print:leading-normal">
                 {exp.description}
               </p>
 
               {exp.achievements && (
-                <ul className="mb-6 space-y-2 list-disc list-inside text-slate-600 dark:text-gray-400 marker:text-blue-800 dark:marker:text-blue-400 print:mb-2 print:space-y-1 print:text-xs">
+                <ul className="mb-6 space-y-2 list-disc list-inside text-slate-600 dark:text-gray-400 marker:text-blue-800 dark:marker:text-blue-400 print:mb-3 print:space-y-1 print:text-[10px]">
                   {exp.achievements.map((ach, i) => (
                     <li key={i} className="leading-relaxed print:leading-normal">
                       <span className="-ml-2">{ach}</span>
@@ -254,9 +254,9 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
                 </ul>
               )}
 
-              <div className="flex flex-wrap gap-2 print:gap-1">
+              <div className="flex flex-wrap gap-2 print:gap-1.5">
                 {exp.tags.map(tag => (
-                  <span key={tag} className="text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-gray-400 px-3 py-1 rounded border border-slate-200 dark:border-slate-700 print:px-2 print:py-0.5 print:text-[10px]">
+                  <span key={tag} className="text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-gray-400 px-3 py-1 rounded border border-slate-200 dark:border-slate-700 print:px-2 print:py-0.5 print:text-[9px]">
                     {tag}
                   </span>
                 ))}

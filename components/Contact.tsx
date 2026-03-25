@@ -134,22 +134,22 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       <div className="max-w-5xl mx-auto px-4 relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-16 max-w-3xl mx-auto print:mb-4 print:text-left print:max-w-none">
+        <div className="text-center mb-16 max-w-3xl mx-auto print:mb-6 print:text-left print:max-w-none">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 print:text-xl print:mb-1">
             {t.title} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
           <div className="w-16 h-1 bg-yellow-600 dark:bg-yellow-500 mx-auto mb-8 print:hidden"></div>
-          <p className="text-slate-600 dark:text-gray-400 text-lg leading-relaxed print:text-xs print:leading-normal">
+          <p className="text-slate-600 dark:text-gray-400 text-lg leading-relaxed print:text-[10px] print:leading-normal print:text-slate-500">
             {t.desc}
           </p>
         </div>
 
         {/* Split Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-16 print:mb-4 print:grid-cols-1 print:gap-2">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-16 print:mb-6 print:grid-cols-1 print:gap-4">
           
           {/* Left: Direct Contact */}
-          <div className="md:col-span-5 flex flex-col justify-center space-y-4 print:md:col-span-12 print:space-y-1">
-            <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2 flex items-center gap-2 print:text-sm print:mb-1">
+          <div className="md:col-span-5 flex flex-col justify-center space-y-4 print:md:col-span-12 print:space-y-3">
+            <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2 flex items-center gap-2 print:text-base print:mb-1">
               <span className="w-2 h-6 bg-blue-800 dark:bg-blue-400 rounded-full print:hidden"></span>
               {t.directContact}
             </h3>
@@ -157,8 +157,8 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
             <div className="print:grid print:grid-cols-3 print:gap-4">
               {/* Phone */}
               <div className="print:flex print:flex-col">
-                <span className="hidden print:block print:text-[10px] print:text-gray-500 print:font-bold print:uppercase">{t.phone}</span>
-                <span className="hidden print:block print:text-xs print:font-bold">+86 135 2425 2203</span>
+                <span className="hidden print:block print:text-[8px] print:text-gray-500 print:font-bold print:uppercase">{t.phone}</span>
+                <span className="hidden print:block print:text-[10px] print:font-bold">+86 135 2425 2203</span>
                 <div className="print:hidden">
                   <CompactContactCard 
                     title={t.phone}
@@ -172,8 +172,8 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 
               {/* Email */}
               <div className="print:flex print:flex-col">
-                <span className="hidden print:block print:text-[10px] print:text-gray-500 print:font-bold print:uppercase">{t.email}</span>
-                <span className="hidden print:block print:text-xs print:font-bold">313455055@qq.com</span>
+                <span className="hidden print:block print:text-[8px] print:text-gray-500 print:font-bold print:uppercase">{t.email}</span>
+                <span className="hidden print:block print:text-[10px] print:font-bold">313455055@qq.com</span>
                 <div className="print:hidden">
                   <CompactContactCard 
                     title={t.email}
@@ -187,8 +187,8 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 
               {/* WeChat */}
               <div className="print:flex print:flex-col">
-                <span className="hidden print:block print:text-[10px] print:text-gray-500 print:font-bold print:uppercase">{t.wechat}</span>
-                <span className="hidden print:block print:text-xs print:font-bold">{t.wechatId}</span>
+                <span className="hidden print:block print:text-[8px] print:text-gray-500 print:font-bold print:uppercase">{t.wechat}</span>
+                <span className="hidden print:block print:text-[10px] print:font-bold">{t.wechatId}</span>
                 <div className="print:hidden">
                   <CompactContactCard 
                     title={t.wechat}
@@ -202,14 +202,14 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 
               {/* Douyin (Print Only) */}
               <div className="hidden print:flex print:flex-col">
-                <span className="print:text-[10px] print:text-gray-500 print:font-bold print:uppercase">{t.douyin}</span>
-                <span className="print:text-xs print:font-bold">{t.douyinId}</span>
+                <span className="print:text-[8px] print:text-gray-500 print:font-bold print:uppercase">{t.douyin}</span>
+                <span className="print:text-[10px] print:font-bold">{t.douyinId}</span>
               </div>
 
               {/* Xiaohongshu (Print Only) */}
               <div className="hidden print:flex print:flex-col">
-                <span className="print:text-[10px] print:text-gray-500 print:font-bold print:uppercase">{t.xiaohongshu}</span>
-                <span className="print:text-xs print:font-bold">{t.xiaohongshuId}</span>
+                <span className="print:text-[8px] print:text-gray-500 print:font-bold print:uppercase">{t.xiaohongshu}</span>
+                <span className="print:text-[10px] print:font-bold">{t.xiaohongshuId}</span>
               </div>
             </div>
           </div>
@@ -247,8 +247,8 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
         </div>
 
         {/* Personal Website Link */}
-        <div className="flex justify-center mb-12 print:mb-4 print:justify-start">
-           <a href={`https://${t.websiteUrl}`} target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group print:p-0 print:bg-transparent print:text-slate-900 print:shadow-none print:font-medium print:text-xs">
+        <div className="flex justify-center mb-12 print:mb-6 print:justify-start">
+           <a href={`https://${t.websiteUrl}`} target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-full font-bold shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group print:p-0 print:bg-transparent print:text-slate-900 print:shadow-none print:font-medium print:text-[10px]">
               <span className="text-xl print:hidden">🚀</span>
               <span>{t.website}: <span className="font-mono underline underline-offset-4 decoration-white/50 dark:decoration-slate-900/50 group-hover:decoration-white dark:group-hover:decoration-slate-900 transition-all print:no-underline">{t.websiteUrl}</span></span>
            </a>

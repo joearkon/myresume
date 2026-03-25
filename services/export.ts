@@ -212,70 +212,35 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
     }
   ];
 
-  const projects = {
+  const projects = isZh ? {
     metrics: [
+      { value: '5000+', label: '连锁门店落地' },
       { value: '90%', label: '大客户年度留存' },
-      { value: '10W+', label: '日处理订单峰值' },
-      { value: '50%', label: '团队营收贡献' }
+      { value: '50%', label: '团队营收贡献' },
+      { value: '5000+', label: 'AIGC 账号单月涨粉' }
     ],
     brands: ["喜茶 (HEYTEA)", "久久丫 / 留夫鸭", "DQ (Dairy Queen)", "Peets (皮爷咖啡)", "T9 Tea", "Linlee (邻里)", "谭仔 (TamJai)", "Something For", "果呀呀"],
     cases: [
       {
         brand: 'HEYTEA 喜茶',
         role: '项目负责人 (2018 - 2020 | 常驻深圳)',
-        desc: '全渠道数字化转型标杆项目。打通线上小程序与线下门店，HiPOS 系统覆盖全国 500+ 门店（2020年数据，2024年已突破 2000 家），实现“下单-履约-结算”全链路闭环。',
+        desc: '全渠道数字化转型标杆项目。HiPOS 系统覆盖全国 500+ 门店（2020年数据，2024年已突破 2000 家），支撑喜茶直营 + 海外门店规模化运营。',
         highlight: '日订单峰值 10万+',
         coreWork: [
           {
-            title: '大客户全生命周期项目管理',
+            title: '一、项目管理与数字化落地',
             items: [
-              '作为喜茶核心项目对接人，负责 HiPOS 系统从 0 到 1 落地、需求沟通、进度管控、验收全流程。',
-              '主导需求评审、SOW 签署、费用确认、账单核对，管理月度 CR 需求与项目款项，确保回款与验收闭环。',
-              '分阶段上线推广：制定月度上线排期表，统筹全国门店上线，覆盖一线城市核心店→二线城市→下沉市场。'
+              '主导 HiPOS 系统从 0 到 1 落地与全国 2000+ 门店规模化推广，负责从需求评审、SOW 签署、UAT 验收、试点验证到全国分阶段上线的全生命周期管理。',
+              '统筹跨系统全域对接（小程序、支付、BOH、EHR 人事等），统一订单与商品口径，支撑日峰值 10万+ 订单的高并发业务场景。',
+              '实现 BOH 供应链与 POS 全渠道打通，落地智能拆解与建议订货量自动计算，保障 500+ 门店高效、低成本运营。'
             ]
           },
           {
-            title: '连锁门店数字化系统落地',
+            title: '二、客户成功与运营',
             items: [
-              '负责POS 点单、支付、小票、杯贴、日结、外卖接单全流程功能落地，提升门店点单效率。',
-              '推动闪结、一键重印、订单备注、渠道区分等效率功能上线，降低门店操作失误。'
-            ]
-          },
-          {
-            title: '跨系统全域对接与数据打通',
-            items: [
-              '负责HiPOS 与小程序、会员系统、支付系统、BOH 后厨、EHR 人事、电子发票、物业全接口对接。',
-              '统一订单、商品、会员、支付、日结数据口径，支撑财务对账与运营分析。'
-            ]
-          },
-          {
-            title: 'BOH 供应链运营中台全流程管理',
-            items: [
-              '负责 BOH 供应链项目交付。对接全国 1000+ 门店需求，设计库存管理、采购补货、物流追踪全流程解决方案。',
-              '完成 BOH 供应链与全渠道 POS 系统打通，支撑 2000+ 门店及线上多渠道订单一体化处理。',
-              '实现“下单-履约-结算”全链路数字化，峰值订单处理能力达 10万+ 笔/日。'
-            ]
-          },
-          {
-            title: '核心功能研发与专利贡献',
-            items: [
-              '主导 BOM 配方设计与研发，该项技术曾获得相关专利。',
-              '负责核心 OMS 模块开发，设计标准化数据整合与清洗流程，解决订单来源分散痛点。'
-            ]
-          },
-          {
-            title: '大客户运营与持续优化',
-            items: [
-              '监控门店收银成功率、订单处理效率、系统稳定性、异常订单占比；建立日报/周报/月报机制，输出运营数据、问题分析、优化建议；制定异常处理流程（小票异常、支付失败、订单卡顿等问题 10 分钟响应、2 小时闭环）。',
-              '门店报修与问题闭环：建立全国门店报修体系，接收门店报修需求，分类分级处理；输出《喜茶 HIPOS 门店报修汇总表》，跟踪问题处理进度、解决率、满意度；定期复盘高频问题，推动研发优化，降低重复报修率。',
-              '客户拜访与需求收集：定期拜访喜茶总部营运、财务、IT 部门，沟通系统使用情况、运营痛点、优化需求；实地走访一线门店，了解店长/收银员操作体验，收集改进建议；输出《客户拜访报告》，推动需求落地，提升客户满意度。'
-            ]
-          },
-          {
-            title: '项目验收与回款跟进',
-            items: [
-              '多阶段验收推进：按月度完成需求验收、功能验收、上线验收、运维验收；整理验收材料（测试报告、上线清单、运营数据、用户反馈），完成签字确认。',
-              '回款全流程跟进：对接喜茶财务部门，按合同节点推进阶段性回款；解决回款过程中的疑问（验收证明、发票开具、流程审批），确保款项按期到账。'
+              '建立全国门店报修与监控体系，制定异常处理流程（10 分钟响应、2 小时闭环），显著降低重复报修率并提升系统稳定性。',
+              '定期拜访喜茶总部营运、财务、IT 部门，实地走访一线门店收集店长/收银员真实痛点，输出《客户拜访报告》并推动需求闭环，极大提升客户满意度。',
+              '通过数据看板实时监控收银成功率与订单处理效率，建立日报/周报机制，用数据驱动产品迭代与运营优化。'
             ]
           }
         ]
@@ -283,62 +248,23 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       {
         brand: '久久丫 / 留夫鸭',
         role: '业务中台负责人 (2021 - 2022 | 常驻上海)',
-        desc: '我全程主导久久丫、留夫鸭数字化中台一期从 0 到 1 落地，覆盖需求调研→蓝图设计→系统对接→功能落地→培训赋能→上线验收→全国推广全流程。',
+        desc: '全程主导久久丫、留夫鸭数字化中台一期从 0 到 1 落地，覆盖需求调研→蓝图设计→系统对接→功能落地→培训赋能→上线验收→全国推广全流程。',
         highlight: '从0到1全流程主导',
         coreWork: [
           {
-            title: '项目全流程主导（从 0 到 1 总负责）',
+            title: '一、全流程项目主导与落地',
             items: [
-              '前期调研与蓝图规划：牵头门店、营运、财务、新零售、IT 多部门调研，梳理 13 个核心业务流程；输出业务现状分析、系统蓝图方案、接口集成方案，完成蓝图汇报与确认；制定项目实施计划、里程碑节点、风险管控方案，确保方向一致。',
-              '系统落地与功能实现：主导商品、库存、订单、价格、对账、账号六大核心模块落地；完成 HiPOS 收银、BOH 库存、全渠道交易、移动大掌柜四大系统上线；负责需求评审、功能验收、UAT 测试、问题闭环，保障系统符合业务实际。',
-              '上线验收与交付：制定上线切换方案、应急预案、数据迁移方案；完成 5 家试点门店上线验证、首次月结、系统终验；输出操作手册、培训文档、验收报告，完成项目正式交付。',
-              '全国规模化推广：搭建总部→分部→门店三级推广组织，制定 6 批次全国推广计划；统筹五大区域，覆盖 3000+ 门店；建立推广评审机制、周复盘机制、问题快速响应机制，保障推广效率。'
+              '负责从需求调研、蓝图设计到全国 3000+ 门店规模化推广的全流程，主导商品、库存、订单、价格、对账等六大核心模块落地。',
+              '成功集成 SAP ERP、云徙会员、自研小程序等第三方系统，实现全渠道商品、价格、库存、交易的一体化履约与财务自动对账。',
+              '搭建总部→分部→门店三级推广组织与培训赋能体系，实现 6 批次全国快速切换，保障业务平稳过渡。'
             ]
           },
           {
-            title: '核心系统对接落地',
+            title: '二、客户成功与运营',
             items: [
-              '外卖平台对接落地：负责美团、饿了么全渠道对接，完成门店、商品、团单映射；实现订单自动接单、语音播报、小票自动打印、渠道统一管理；落地外卖菜单中台统一管控、价格同步、库存共享、自动沽清。',
-              '第三方系统集成对接：对接 SAP ERP（商品、库存、订货、退货、盘点、营收数据双向同步）；对接云徙会员（会员认证、优惠券核销、积分/储值支付）；对接自研小程序（菜单、库存、订单、支付、履约一体化）；对接聚合支付、物流配送、电子发票，实现全链路自动化。',
-              '数据与报表对接：搭建全渠道数据口径，实现 POS、外卖、小程序数据统一；落地门店实时报表、营收报表、库存报表、对账报表自动化；完成异常电子小票修复机制，保障数据准确可追溯。'
-            ]
-          },
-          {
-            title: '关键业务功能落地',
-            items: [
-              '全渠道商品 & 价格体系落地：建立统一商品库、多规格管理、BOM 配方、套餐组合标准化；落地价格中心、渠道价、门店价、菜单分组、新门店快速复制；实现美团/饿了么/POS/小程序商品通、价格通、库存通。',
-              '智能库存 & 订货体系落地：落地订货→收货→退货→报废→调拨→盘点全流程闭环；实现日盘/月盘、移动盘点、库存实时扣减、自动预警；搭建建议订货量模型，按销量、库存、损耗自动计算订货量。',
-              '全渠道交易 & 履约落地：统一堂食、外卖、自提、小程序订单，实现一站式收银；落地促销引擎、满减、折扣、会员价、平台券统一核销；实现自动日结、财务自动对账、加盟商分账自动化。'
-            ]
-          },
-          {
-            title: '培训方案与赋能落地',
-            items: [
-              '分层培训体系设计：制定总部→分部→门店三级培训方案，覆盖运维、运营、店长、收银员；输出操作手册、培训 PPT、教学视频、FAQ 全套资料；设计场景化培训（收银操作、外卖接单、库存管理、日结合规）。',
-              '培训执行与赋能：组织集中培训、现场带教、远程指导，确保全员会用；建立考核机制、答疑群、紧急支持通道，降低上线阻力；知识转移给分部团队，实现区域自主运维、自主培训。'
-            ]
-          },
-          {
-            title: '项目管理与跨部门协同',
-            items: [
-              '项目管控：主导周例会、进度跟踪、风险预警、问题闭环、里程碑验收；协调顶誉营运、财务、新零售、IT、加盟商与合阔产研、实施团队；管控需求范围、变更流程、交付质量、上线节奏。',
-              '运营规则落地：制定门店运营 SOP、权限管理、业务流程、审批规则；建立异常处理机制、数据核对机制、月结机制；保障系统上线后可运行、可管理、可迭代。'
-            ]
-          },
-          {
-            title: '上线后运营拜访与客户成功（大客户运营能力）',
-            items: [
-              '总部/区域定期拜访：主动上门拜访顶誉总部、区域负责人，沟通系统使用情况；收集需求、反馈体验、协调优化、提升满意度。',
-              '门店实地巡检与辅导：下门店看实操、查流程、纠错误、提效率；解决订货不准、盘点复杂、对账麻烦、操作繁琐等真实痛点。',
-              '运营指标复盘：定期输出订货准确率、盘点完成率、库存差异率、问题关闭率；用数据证明系统价值，强化客户认可。'
-            ]
-          },
-          {
-            title: '验收与回款跟进（商务 + 项目闭环能力）',
-            items: [
-              '项目验收材料准备：整理实施报告、测试报告、培训记录、上线清单、功能清单；协助完成验收流程、签字盖章、阶段验收。',
-              '回款全流程跟进：按合同节点对接财务、销管、总部管理层；推动验收确认→开票→回款全闭环；确保项目款项按期到账，无拖欠、无争议。',
-              '售后与续费基础：建立良好客户关系，为后续二期增补、三期拓展、续费打下基础。'
+              '主动上门拜访顶誉总部及区域负责人，深入一线门店实地巡检，解决订货不准、盘点复杂、对账麻烦等真实痛点。',
+              '定期输出运营指标复盘（订货准确率、库存差异率等），用数据证明系统价值，强化客户认可并为后续增补续费打下基础。',
+              '建立问题快速响应与周复盘机制，通过实地带教与远程指导，实现区域团队的自主运维与持续成功。'
             ]
           }
         ]
@@ -346,7 +272,7 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       {
         brand: '自媒体 IP 矩阵',
         role: '内容主理人',
-        desc: '独立搭建抖音 + 小红书双平台二次元动漫 IP 矩阵，依托 AIGC 实现1 个月高效涨粉 5000 + 高粘性垂直粉丝，构建从角色原创设计、剧本分镜到 AI 视频生成的全链路标准化工作流，实现内容规模化、低成本、高效率持续产出。',
+        desc: '独立搭建抖音 + 小红书双平台二次元动漫 IP 矩阵，依托 AIGC 实现1 个月高效涨粉 5000 + 高粘性垂直粉丝，构建从角色原创设计、剧本分镜到 AI 视频生成的全链路标准化工作流。',
         highlight: '1个月涨粉5000+',
         coreWork: [
           {
@@ -366,12 +292,6 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
             items: [
               '熟练运用 Gemini、ComfyUI、Seedance、可灵 等 AI 工具，打通 “剧本→分镜→角色→画面→视频→剪辑” 自动化生产闭环，内容产出效率提升 80%。'
             ]
-          },
-          {
-            title: '账号冷启动与增长',
-            items: [
-              '通过精准定位、系列化内容、高频互动完成账号冷启动，单月涨粉 5000+，粉丝粘性、互动率显著高于行业平均。'
-            ]
           }
         ]
       }
@@ -386,6 +306,104 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       {
         name: "LLM 量化交易助手",
         desc: "基于大语言模型的量化交易辅助系统，提供市场情绪分析与策略建议。",
+        tags: ["Python", "LLM", "Quant"],
+        link: "Private Project"
+      }
+    ]
+  } : {
+    metrics: [
+      { value: '5000+', label: 'Stores Deployed' },
+      { value: '90%', label: 'Key Account Retention' },
+      { value: '50%', label: 'Team Revenue Contribution' },
+      { value: '5000+', label: 'AIGC Monthly Followers' }
+    ],
+    brands: ["HEYTEA", "Juewei Duck", "DQ", "Peets", "T9 Tea", "Linlee", "TamJai", "Something For", "Guoyaya"],
+    cases: [
+      {
+        brand: 'HEYTEA',
+        role: 'Project Lead (2018 - 2020 | Shenzhen)',
+        desc: 'Benchmark project for omni-channel digital transformation. HiPOS system covers 500+ stores (2020 data), supporting scaled operation of direct-sale and overseas stores.',
+        highlight: '100k+ Peak Daily Orders',
+        coreWork: [
+          {
+            title: '1. Project Management & Digital Implementation',
+            items: [
+              'Led 0-to-1 implementation and national rollout for 2000+ stores, managing the full lifecycle from requirement review to phased rollout.',
+              'Coordinated cross-system integration (mini-programs, payment, BOH, etc.), supporting 100k+ peak daily orders.',
+              'Integrated BOH supply chain with POS, implementing auto-BOM breakdown and suggested ordering for 500+ stores.'
+            ]
+          },
+          {
+            title: '2. Customer Success & Operational Visits',
+            items: [
+              'Established a national maintenance system with a 2-hour resolution SLA, significantly improving system stability.',
+              'Conducted regular HQ visits and on-site store inspections to resolve real pain points, driving requirement implementation.',
+              'Monitored operational metrics via real-time dashboards, using data to drive product iterations.'
+            ]
+          }
+        ]
+      },
+      {
+        brand: 'Juewei Duck / Liufu Duck',
+        role: 'Middle Platform Lead (2021 - 2022 | Shanghai)',
+        desc: 'Fully led the 0-to-1 implementation of the Phase I digital middle-platform, covering the entire process from requirement research to national rollout.',
+        highlight: '0 to 1 Full Process Lead',
+        coreWork: [
+          {
+            title: '1. Full-Process Project Leadership & Implementation',
+            items: [
+              'Responsible for the 0-to-1 digital middle-platform rollout across 3000+ stores, leading 6 core modules.',
+              'Integrated SAP ERP, membership, and in-house mini-programs, achieving omni-channel fulfillment.',
+              'Built a 3-tier promotion and training system, ensuring rapid national transition and business continuity.'
+            ]
+          },
+          {
+            title: '2. Customer Success & Operational Visits',
+            items: [
+              'Proactively visited HQ and regional leaders, solving real pain points through on-site coaching.',
+              'Delivered regular operational reviews, proving system value with data and securing long-term recognition.',
+              'Established rapid response and weekly retrospective mechanisms, empowering regional teams.'
+            ]
+          }
+        ]
+      },
+      {
+        brand: 'Social Media IP Matrix',
+        role: 'Content Creator',
+        desc: 'Independently built a 2D anime IP matrix. Leveraged AIGC to gain 5000+ followers in one month. Constructed a full-link standardized workflow.',
+        highlight: '5000+ Followers in 1 Month',
+        coreWork: [
+          {
+            title: '1. Comprehensive IP Visual Design',
+            items: [
+              'Independently completed the design of character personas and reusable original visual assets.'
+            ]
+          },
+          {
+            title: '2. Content System Construction',
+            items: [
+              'Autonomously planned anime short theaters and serialized content with viral potential.'
+            ]
+          },
+          {
+            title: '3. AIGC Full-Process Workflow Setup',
+            items: [
+              'Utilized AI tools to bridge the automated production loop, increasing efficiency by 80%.'
+            ]
+          }
+        ]
+      }
+    ],
+    aiProjects: [
+      {
+        name: "AIGC Anime IP Matrix",
+        desc: "Anime content production and operation based on AIGC technology, achieving 5000+ monthly followers.",
+        tags: ["ComfyUI", "Seedance", "Kling", "CapCut"],
+        link: "Douyin / Xiaohongshu"
+      },
+      {
+        name: "LLM Quant Assistant",
+        desc: "Quantitative trading assistant system based on LLMs, providing market sentiment analysis.",
         tags: ["Python", "LLM", "Quant"],
         link: "Private Project"
       }
@@ -525,7 +543,7 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
           }),
 
           // Projects / Star Cases
-          createSectionTitle(isZh ? "明星案例与项目成就" : "Star Cases & Project Achievements"),
+          createSectionTitle(isZh ? "明星案例与核心数据" : "Star Cases & Key Data"),
           
           // Metrics in Word
           new Table({
@@ -560,42 +578,6 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
                     })
                   ]
                 }))
-              })
-            ],
-          }),
-
-          // Brand Wall in Word
-          new Table({
-            width: { size: 100, type: WidthType.PERCENTAGE },
-            borders: {
-              top: { style: BorderStyle.SINGLE, size: 2, color: "f1f5f9" },
-              bottom: { style: BorderStyle.SINGLE, size: 2, color: "f1f5f9" },
-              left: { style: BorderStyle.SINGLE, size: 2, color: "f1f5f9" },
-              right: { style: BorderStyle.SINGLE, size: 2, color: "f1f5f9" },
-            },
-            rows: [
-              new TableRow({
-                children: [
-                  new TableCell({
-                    shading: { fill: "ffffff" },
-                    children: [
-                      new Paragraph({
-                        children: [
-                          new TextRun({ text: isZh ? "合作客户" : "Cooperated Brands", bold: true, size: 18, color: "94a3b8" }),
-                        ],
-                        alignment: AlignmentType.CENTER,
-                        spacing: { before: 100, after: 100 },
-                      }),
-                      new Paragraph({
-                        children: [
-                          new TextRun({ text: projects.brands.join("  •  "), size: 18, color: "475569" }),
-                        ],
-                        alignment: AlignmentType.CENTER,
-                        spacing: { before: 100, after: 200 },
-                      }),
-                    ]
-                  })
-                ]
               })
             ],
           }),
@@ -638,6 +620,42 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
               )
             ]) : [])
           ]),
+
+          // Brand Wall in Word - Moved Below Case Studies
+          new Table({
+            width: { size: 100, type: WidthType.PERCENTAGE },
+            borders: {
+              top: { style: BorderStyle.SINGLE, size: 2, color: "f1f5f9" },
+              bottom: { style: BorderStyle.SINGLE, size: 2, color: "f1f5f9" },
+              left: { style: BorderStyle.SINGLE, size: 2, color: "f1f5f9" },
+              right: { style: BorderStyle.SINGLE, size: 2, color: "f1f5f9" },
+            },
+            rows: [
+              new TableRow({
+                children: [
+                  new TableCell({
+                    shading: { fill: "ffffff" },
+                    children: [
+                      new Paragraph({
+                        children: [
+                          new TextRun({ text: isZh ? "曾经合作品牌" : "PAST COLLABORATIONS", bold: true, size: 18, color: "94a3b8" }),
+                        ],
+                        alignment: AlignmentType.CENTER,
+                        spacing: { before: 100, after: 100 },
+                      }),
+                      new Paragraph({
+                        children: [
+                          new TextRun({ text: projects.brands.join("  •  "), size: 18, color: "475569" }),
+                        ],
+                        alignment: AlignmentType.CENTER,
+                        spacing: { before: 100, after: 200 },
+                      }),
+                    ]
+                  })
+                ]
+              })
+            ],
+          }),
 
           // AI Innovation Lab in Word
           new Paragraph({

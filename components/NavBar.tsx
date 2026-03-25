@@ -22,7 +22,7 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
   const translations = {
     zh: {
       home: '首页',
-      projects: '项目成就',
+      projects: '核心数据',
       experience: '职业生涯',
       skills: '专业技能',
       education: '教育背景',
@@ -31,7 +31,7 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
     },
     en: {
       home: 'Home',
-      projects: 'Projects',
+      projects: 'Key Data',
       experience: 'Experience',
       skills: 'Skills',
       education: 'Education',
