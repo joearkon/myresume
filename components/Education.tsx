@@ -56,7 +56,7 @@ const Education: React.FC<EducationProps> = ({ language }) => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-1">
             {t.title} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
-          <p className="text-slate-600 dark:text-gray-400 print:text-xs print:text-gray-500">{t.subtitle}</p>
+          <p className="text-slate-600 dark:text-gray-400 print:text-[10pt] print:text-gray-500">{t.subtitle}</p>
         </div>
 
         <div className="space-y-6 print:space-y-2">
@@ -66,17 +66,17 @@ const Education: React.FC<EducationProps> = ({ language }) => {
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-2 print:mb-0.5">
                    <div className="w-2 h-8 bg-blue-800 dark:bg-blue-400 rounded-full print:hidden"></div>
-                   <h3 className="text-2xl font-bold text-slate-800 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-sm">{item.school}</h3>
+                    <h3 className="text-2xl font-bold text-slate-800 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base">{item.school}</h3>
                 </div>
-                <div className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-2 ml-5 print:text-xs print:ml-0 print:mb-0.5">
+                <div className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-2 ml-5 print:text-[10pt] print:ml-0 print:mb-0.5">
                   {item.degree}
                 </div>
-                <p className="text-slate-500 dark:text-gray-400 text-sm ml-5 leading-relaxed print:text-xs print:ml-0 print:leading-normal">
+                <p className="text-slate-500 dark:text-gray-400 text-sm ml-5 leading-relaxed print:text-[10pt] print:ml-0 print:leading-normal">
                   {item.desc}
                 </p>
               </div>
 
-              <div className="flex-shrink-0 bg-white dark:bg-slate-800 px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-sm font-bold group-hover:bg-blue-800 dark:group-hover:bg-blue-400 group-hover:text-white dark:group-hover:text-slate-900 transition-all print:p-0 print:bg-transparent print:border-0 print:text-xs print:font-medium">
+              <div className="flex-shrink-0 bg-white dark:bg-slate-800 px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 text-sm font-bold group-hover:bg-blue-800 dark:group-hover:bg-blue-400 group-hover:text-white dark:group-hover:text-slate-900 transition-all print:p-0 print:bg-transparent print:border-0 print:text-[9pt] print:font-medium">
                 {item.date}
               </div>
 

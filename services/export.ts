@@ -103,7 +103,7 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       description: "核心项目交付负责人。统筹 SaaS 项目全生命周期管理，从需求对接、方案设计到落地上线、验收交付，主导多个头部餐饮品牌数字化转型项目，累计覆盖超 5000 家连锁门店。",
       achievements: [
         "上海适达餐饮集团 (DQ 冰雪皇后、PPJ 棒约翰): 负责 BOH 门店供应链项目交付。对接全国 1000+ 门店需求，设计库存管理、采购补货、物流追踪全流程解决方案，上线后供应链周转效率明显提升，库存损耗率降低 2%。",
-        "深圳喜茶 (HEYTEA): 2018-2020年常驻深圳总部，主导核心项目交付。完成 BOH 供应链与全渠道 POS 系统打通，支撑 2000+ 门店及线上多渠道订单一体化处理，实现“下单-履约-结算”全链路数字化，峰值订单处理能力达 10万+ 笔/日；(BOM配方设计研发曾获专利)",
+        "深圳喜茶 (HEYTEA): 2018-2020年常驻深圳总部，作为核心对接人主导门店供应链 BOH 与 HiPOS 系统从 0 到 1 落地。统筹线上小程序、外卖平台、线下 POS 与 BOH 供应链全域打通，实现“下单-履约-结算”一体化数字化闭环，支撑全国门店规模化运营；(BOM配方设计研发曾获专利)",
         "浙江久久丫食品: 2021-2022年常驻客户现场，负责业务中台项目。搭建集订单、库存、会员、财务于一体的业务中台，整合全国 1800+ 门店数据，打破数据孤岛，为品牌精细化运营与业务经营决策提供有力支撑。",
         "交付管理：统筹 SaaS 项目全生命周期管理，负责进度、风险及质量控制，确保多个大型项目按期保质交付，获得客户高度认可。"
       ]
@@ -172,7 +172,7 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       description: "Head of core project delivery. Managed full SaaS project lifecycles, from requirement alignment and solution design to go-live and acceptance, leading digital transformation for top catering brands covering 5000+ stores.",
       achievements: [
         "Shanghai Shida Catering Group (DQ, Papa John's): Responsible for BOH store supply chain project delivery. Aligned requirements for 1000+ stores nationwide, designed full-process solutions for inventory, procurement, and logistics, reducing inventory loss by 2%.",
-        "Shenzhen HEYTEA: Stationed in Shenzhen HQ (2018-2020), led core project delivery. Integrated BOH supply chain with omni-channel POS, supporting integrated order processing for 2000+ stores and online channels, with peak daily capacity of 100k+ orders; (Patented BOM recipe design).",
+        "Shenzhen HEYTEA: Stationed in Shenzhen HQ (2018-2020), as the core contact led the 0-to-1 implementation of BOH supply chain and HiPOS systems. Coordinated the integration of mini-programs, delivery platforms, offline POS, and BOH supply chain, achieving an integrated 'Order-Fulfillment-Settlement' digital loop to support nationwide scaled operations; (Patented BOM recipe design).",
         "Zhejiang Juewei Duck: Stationed on-site (2021-2022), responsible for business middle-platform project. Built an integrated platform for orders, inventory, membership, and finance, consolidating data for 1800+ stores to support refined operations and business decisions.",
         "Delivery Management: Managed full SaaS project lifecycles, responsible for schedule, risk, and quality control, ensuring on-time and high-quality delivery of multiple large-scale projects."
       ]
@@ -230,9 +230,10 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
           {
             title: '一、项目管理与数字化落地',
             items: [
-              '主导 HiPOS 系统从 0 到 1 落地与全国 2000+ 门店规模化推广，负责从需求评审、SOW 签署、UAT 验收、试点验证到全国分阶段上线的全生命周期管理。',
-              '统筹跨系统全域对接（小程序、支付、BOH、EHR 人事等），统一订单与商品口径，支撑日峰值 10万+ 订单的高并发业务场景。',
-              '实现 BOH 供应链与 POS 全渠道打通，落地智能拆解与建议订货量自动计算，保障 500+ 门店高效、低成本运营。'
+              '负责覆盖全国 800+ 门店（2020年）的门店供应链 BOH 和 POS 收银体系的搭建。',
+              '作为喜茶核心对接人，全流程主导门店供应链调研、设计、开发实施（期间也负责开发核心的商品 BOM 配方模块）及上线运营。',
+              '凭借 BOH 项目的出色交付赢得信任，继而主导 HiPOS 项目从 0 到 1 落地，负责与喜茶内部产研开发团队对接，统筹线上小程序、外卖平台、线下 POS 与 BOH 供应链全域打通，实现“下单-履约-结算”一体化。',
+              '负责从需求调研、蓝图规划、项目排期到全国上线与验收的闭环全生命周期管理。'
             ]
           },
           {
@@ -328,9 +329,11 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
           {
             title: '1. Project Management & Digital Implementation',
             items: [
-              'Led 0-to-1 implementation and national rollout for 2000+ stores, managing the full lifecycle from requirement review to phased rollout.',
-              'Coordinated cross-system integration (mini-programs, payment, BOH, etc.), supporting 100k+ peak daily orders.',
-              'Integrated BOH supply chain with POS, implementing auto-BOM breakdown and suggested ordering for 500+ stores.'
+              'Responsible for building the BOH supply chain and POS system for 800+ stores nationwide (as of 2020).',
+              'As the core contact for HEYTEA, led the full lifecycle of store supply chain research, design, development (including core BOM recipe module), and implementation.',
+              'Due to the successful delivery of the BOH project, won the responsibility for the HiPOS project in the following year, leading the 0-to-1 implementation.',
+              'Coordinated with HEYTEA\'s internal R&D team to integrate mini-programs, delivery platforms, offline POS, and BOH supply chain, achieving an integrated "Order-Fulfillment-Settlement" loop.',
+              'Managed the full project lifecycle from requirement research and blueprint planning to nationwide rollout and acceptance.'
             ]
           },
           {

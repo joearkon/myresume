@@ -40,7 +40,7 @@ const Hobbies: React.FC<HobbiesProps> = ({ language }) => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-1">
             {t.title} <span className="text-yellow-600 dark:text-yellow-500">{t.titleHighlight}</span>
           </h2>
-          <p className="text-slate-600 dark:text-gray-400 transition-colors duration-300 print:text-[10px] print:text-slate-500">{t.subtitle}</p>
+          <p className="text-slate-600 dark:text-gray-400 transition-colors duration-300 print:text-[10pt] print:text-slate-500">{t.subtitle}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 print:grid-cols-3 print:gap-4">
@@ -54,8 +54,8 @@ const Hobbies: React.FC<HobbiesProps> = ({ language }) => {
                </div>
             </div>
             <div className="p-6 print:p-0">
-              <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2 group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-sm print:mb-1">{t.gunplaTitle}</h3>
-              <p className="text-sm text-slate-600 dark:text-gray-400 mb-4 leading-relaxed transition-colors print:text-[10px] print:leading-tight">
+              <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2 group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:mb-1">{t.gunplaTitle}</h3>
+              <p className="text-sm text-slate-600 dark:text-gray-400 mb-4 leading-relaxed transition-colors print:text-[10pt] print:leading-tight">
                 {t.gunplaDesc}
               </p>
             </div>
@@ -69,8 +69,8 @@ const Hobbies: React.FC<HobbiesProps> = ({ language }) => {
                </div>
              </div>
              <div className="p-6 print:p-0">
-               <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2 group-hover:text-green-500 transition-colors print:text-sm print:mb-1">{t.footballTitle}</h3>
-               <p className="text-sm text-slate-600 dark:text-gray-400 mb-4 leading-relaxed transition-colors print:text-[10px] print:leading-tight">
+               <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2 group-hover:text-green-500 transition-colors print:text-base print:mb-1">{t.footballTitle}</h3>
+               <p className="text-sm text-slate-600 dark:text-gray-400 mb-4 leading-relaxed transition-colors print:text-[10pt] print:leading-tight">
                  {t.footballDesc}
                </p>
              </div>
@@ -84,8 +84,8 @@ const Hobbies: React.FC<HobbiesProps> = ({ language }) => {
                </div>
              </div>
              <div className="p-6 print:p-0">
-               <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2 group-hover:text-pink-500 transition-colors print:text-sm print:mb-1">{t.videoTitle}</h3>
-               <p className="text-sm text-slate-600 dark:text-gray-400 mb-4 leading-relaxed transition-colors print:text-[10px] print:leading-tight">
+               <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2 group-hover:text-pink-500 transition-colors print:text-base print:mb-1">{t.videoTitle}</h3>
+               <p className="text-sm text-slate-600 dark:text-gray-400 mb-4 leading-relaxed transition-colors print:text-[10pt] print:leading-tight">
                  {t.videoDesc}
                </p>
              </div>

@@ -49,7 +49,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           description: "核心项目交付负责人。统筹 SaaS 项目全生命周期管理，从需求对接、方案设计到落地上线、验收交付，主导多个头部餐饮品牌数字化转型项目，累计覆盖超 5000 家连锁门店。",
           achievements: [
             "上海适达餐饮集团 (DQ 冰雪皇后、PPJ 棒约翰): 负责 BOH 门店供应链项目交付。对接全国 1000+ 门店需求，设计库存管理、采购补货、物流追踪全流程解决方案，上线后供应链周转效率明显提升，库存损耗率降低 2%。",
-            "深圳喜茶 (HEYTEA): 2018-2020年常驻深圳总部，主导核心项目交付。完成 BOH 供应链与全渠道 POS 系统打通，支撑 2000+ 门店及线上多渠道订单一体化处理，实现“下单-履约-结算”全链路数字化，峰值订单处理能力达 10万+ 笔/日；(BOM配方设计研发曾获专利)",
+            "深圳喜茶 (HEYTEA): 2018-2020年常驻深圳总部，作为核心对接人主导门店供应链 BOH 与 HiPOS 系统从 0 到 1 落地。统筹线上小程序、外卖平台、线下 POS 与 BOH 供应链全域打通，实现“下单-履约-结算”一体化数字化闭环，支撑全国门店规模化运营；(BOM配方设计研发曾获专利)",
             "浙江久久丫食品: 2021-2022年常驻客户现场，负责业务中台项目。搭建集订单、库存、会员、财务于一体的业务中台，整合全国 1800+ 门店数据，打破数据孤岛，为品牌精细化运营与业务经营决策提供有力支撑。",
             "交付管理：统筹 SaaS 项目全生命周期管理，负责进度、风险及质量控制，确保多个大型项目按期保质交付，获得客户高度认可。"
           ],
@@ -145,7 +145,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           description: "Head of core project delivery. Managed full SaaS project lifecycles, from requirement alignment and solution design to go-live and acceptance, leading digital transformation for top catering brands covering 5000+ stores.",
           achievements: [
             "Shanghai Shida Catering Group (DQ, Papa John's): Responsible for BOH store supply chain project delivery. Aligned requirements for 1000+ stores nationwide, designed full-process solutions for inventory, procurement, and logistics, reducing inventory loss by 2%.",
-            "Shenzhen HEYTEA: Stationed in Shenzhen HQ (2018-2020), led core project delivery. Integrated BOH supply chain with omni-channel POS, supporting integrated order processing for 2000+ stores and online channels, with peak daily capacity of 100k+ orders; (Patented BOM recipe design).",
+            "Shenzhen HEYTEA: Stationed in Shenzhen HQ (2018-2020), as the core contact led the 0-to-1 implementation of BOH supply chain and HiPOS systems. Coordinated the integration of mini-programs, delivery platforms, offline POS, and BOH supply chain, achieving an integrated 'Order-Fulfillment-Settlement' digital loop to support nationwide scaled operations; (Patented BOM recipe design).",
             "Zhejiang Juewei Duck: Stationed on-site (2021-2022), responsible for business middle-platform project. Built an integrated platform for orders, inventory, membership, and finance, consolidating data for 1800+ stores to support refined operations and business decisions.",
             "Delivery Management: Managed full SaaS project lifecycles, responsible for schedule, risk, and quality control, ensuring on-time and high-quality delivery of multiple large-scale projects."
           ],
@@ -208,10 +208,10 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
     <section id="experience" className="py-20 bg-white dark:bg-slate-900/50 relative transition-colors duration-500 print:py-4">
       <div className="max-w-4xl mx-auto px-4">
         <div className="mb-16 text-center print:mb-6 print:text-left">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-1">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-1 print:tracking-tight">
             <span className="text-blue-800 dark:text-blue-400">{language === 'zh' ? '职业' : 'Work'}</span> {language === 'zh' ? '生涯' : 'Experience'}
           </h2>
-          <p className="mt-4 text-slate-600 dark:text-gray-400 transition-colors duration-300 print:mt-0 print:text-[10px] print:text-slate-500">
+          <p className="mt-4 text-slate-600 dark:text-gray-400 tracking-tight transition-colors duration-300 print:mt-0 print:text-[10pt] print:text-slate-500 print:tracking-tight">
             {language === 'zh' 
               ? '十年磨一剑 • 从技术底层到商业顶层的全链路进阶'
               : '10+ Years • From Technical Foundation to Business Leadership'}
@@ -223,31 +223,31 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
             <div key={exp.id} className="group relative border-b border-slate-200 dark:border-slate-800 pb-12 last:border-0 last:pb-0 print:pb-6 print:break-inside-avoid">
               
               <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2 print:mb-1">
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base">
+                <h3 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:tracking-tight">
                   {exp.role}
                 </h3>
-                <span className="text-sm font-medium text-slate-500 dark:text-gray-400 whitespace-nowrap print:text-[10px]">
+                <span className="text-sm font-medium text-slate-500 dark:text-gray-400 whitespace-nowrap print:text-[9pt]">
                   {exp.period}
                 </span>
               </div>
               
-              <div className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-4 print:text-xs print:mb-1">
+              <div className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-4 print:text-[10pt] print:mb-1">
                 {exp.company}
                 {exp.isPromoted && (
-                  <span className="ml-3 text-xs font-normal bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-gray-400 px-2 py-1 rounded print:px-1.5 print:py-0.5 print:text-[9px]">
+                  <span className="ml-3 text-xs font-normal bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-gray-400 px-2 py-1 rounded print:px-1.5 print:py-0.5 print:text-[8pt]">
                     {language === 'zh' ? '内部晋升' : 'Promoted Internally'}
                   </span>
                 )}
               </div>
               
-              <p className="text-slate-600 dark:text-gray-300 mb-4 leading-relaxed text-justify print:text-[10px] print:mb-2 print:leading-normal">
+              <p className="text-slate-600 dark:text-gray-300 mb-4 leading-snug text-justify print:text-[10pt] print:mb-2 print:leading-snug">
                 {exp.description}
               </p>
 
               {exp.achievements && (
-                <ul className="mb-6 space-y-2 list-disc list-inside text-slate-600 dark:text-gray-400 marker:text-blue-800 dark:marker:text-blue-400 print:mb-3 print:space-y-1 print:text-[10px]">
+                <ul className="mb-6 space-y-2 list-disc list-inside text-slate-600 dark:text-gray-400 marker:text-blue-800 dark:marker:text-blue-400 print:mb-3 print:space-y-1 print:text-[9.5pt] print:leading-snug">
                   {exp.achievements.map((ach, i) => (
-                    <li key={i} className="leading-relaxed print:leading-normal">
+                    <li key={i} className="leading-snug print:leading-normal">
                       <span className="-ml-2">{ach}</span>
                     </li>
                   ))}
@@ -256,7 +256,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
 
               <div className="flex flex-wrap gap-2 print:gap-1.5">
                 {exp.tags.map(tag => (
-                  <span key={tag} className="text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-gray-400 px-3 py-1 rounded border border-slate-200 dark:border-slate-700 print:px-2 print:py-0.5 print:text-[9px]">
+                  <span key={tag} className="text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-gray-400 px-3 py-1 rounded border border-slate-200 dark:border-slate-700 print:px-2 print:py-0.5 print:text-[8.5pt]">
                     {tag}
                   </span>
                 ))}

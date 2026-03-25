@@ -136,35 +136,37 @@
         body {
           background: white !important;
           color: #1e293b !important; /* slate-800 */
-          font-size: 10pt; 
-          line-height: 1.5;
+          font-size: 10.5pt; 
+          line-height: 1.4;
+          letter-spacing: -0.01em;
           overflow: visible !important;
         }
 
         /* 4. 空间优化：紧凑布局 */
         section {
-          padding: 12px 0 !important;
-          margin: 0 !important;
+          padding: 16px 0 !important;
+          margin: 0 auto !important;
+          max-width: 18cm !important; /* Mimic max-w-4xl on A4 */
           page-break-inside: auto;
         }
         
         .mb-20, .mb-16, .mb-12, .py-20, .pt-28, .pb-12 {
-            margin-bottom: 16px !important;
-            padding-top: 8px !important;
-            padding-bottom: 8px !important;
+            margin-bottom: 12px !important;
+            padding-top: 4px !important;
+            padding-bottom: 4px !important;
         }
         
         .max-w-4xl, .max-w-5xl, .max-w-6xl, .max-w-7xl {
-          max-width: 100% !important;
+          max-width: 18cm !important;
           padding: 0 !important;
-          margin: 0 !important;
+          margin: 0 auto !important;
         }
 
         /* 5. 标题与文字 */
-        h1 { font-size: 24pt !important; margin-bottom: 8px !important; }
-        h2 { font-size: 18pt !important; margin-top: 20px !important; margin-bottom: 12px !important; }
-        h3 { font-size: 14pt !important; margin-bottom: 6px !important; }
-        h4 { font-size: 12pt !important; }
+        h1 { font-size: 26pt !important; margin-bottom: 6px !important; letter-spacing: -0.02em !important; }
+        h2 { font-size: 20pt !important; margin-top: 16px !important; margin-bottom: 10px !important; letter-spacing: -0.02em !important; }
+        h3 { font-size: 16pt !important; margin-bottom: 4px !important; letter-spacing: -0.01em !important; }
+        h4 { font-size: 13pt !important; letter-spacing: -0.01em !important; }
         
         /* 6. 保持网格布局但优化空间 */
         .grid {

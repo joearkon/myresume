@@ -80,7 +80,7 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-1">
             {t.title} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
-          <p className="text-slate-600 dark:text-gray-400 print:text-xs print:text-gray-500">{t.subtitle}</p>
+          <p className="text-slate-600 dark:text-gray-400 print:text-[10pt] print:text-gray-500">{t.subtitle}</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 print:grid-cols-1 print:gap-4">
@@ -96,7 +96,7 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
                 </h3>
               </div>
 
-              <p className="text-sm text-slate-500 dark:text-gray-400 mb-6 h-10 leading-relaxed print:text-xs print:mb-2 print:h-auto print:leading-normal">
+              <p className="text-sm text-slate-500 dark:text-gray-400 mb-6 h-10 leading-relaxed print:text-[10pt] print:mb-2 print:h-auto print:leading-normal">
                 {category.description}
               </p>
 
@@ -104,11 +104,11 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
                 {category.items.map((item, idx) => (
                   <span 
                     key={idx} 
-                    className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors duration-300 print:px-2 print:py-0.5 print:text-[10px] print:bg-transparent print:border-gray-200
+                    className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors duration-300 print:px-2 print:py-0.5 print:text-[9pt] print:bg-transparent print:border-gray-200
                       ${index === 0 
                         ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800 hover:bg-blue-200 dark:hover:bg-blue-900/50' 
                         : index === 1
-                          ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 border border-purple-200 dark:border-purple-800 hover:bg-purple-200 dark:hover:bg-purple-900/50 text-xs pt-2'
+                          ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 border border-purple-200 dark:border-purple-800 hover:bg-purple-200 dark:hover:bg-purple-900/50'
                           : 'bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-600 hover:bg-slate-300 dark:hover:bg-slate-600'
                       }
                     `}
