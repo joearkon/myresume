@@ -220,7 +220,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
 
         <div className="space-y-12 print:space-y-6">
           {experiences.map((exp) => (
-            <div key={exp.id} className="group relative border-b border-slate-200 dark:border-slate-800 pb-12 last:border-0 last:pb-0 print:pb-6 print:break-inside-avoid">
+            <div key={exp.id} className="group relative border-b border-slate-200 dark:border-slate-800 pb-12 last:border-0 last:pb-0 print:pb-6">
               
               <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2 print:mb-1">
                 <h3 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:tracking-tight">

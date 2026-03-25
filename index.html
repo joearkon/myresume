@@ -179,9 +179,15 @@
         a:after { content: "" !important; }
 
         /* 8. 分页保护 */
-        .group, li, .border-b, .rounded-xl, .rounded-lg {
+        li, .rounded-xl, .rounded-lg {
           page-break-inside: avoid !important;
           break-inside: avoid !important;
+        }
+
+        /* 确保标题不孤立在页尾 */
+        h1, h2, h3, h4, h5, h6 {
+          page-break-after: avoid !important;
+          break-after: avoid !important;
         }
 
         /* 9. 针对特定组件的微调 */

@@ -319,7 +319,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             <h3 className="text-2xl font-bold text-center mb-10 text-slate-800 dark:text-white print:text-base print:mb-3 print:text-left">{t.casesTitle}</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10 print:grid-cols-1 print:gap-y-6">
             {t.cases.map((item: any, index) => (
-                <div key={index} className={`group border-b border-slate-100 dark:border-slate-800 pb-8 last:border-0 md:last:border-b print:pb-4 print:border-gray-100 print:break-inside-avoid ${item.colSpan ? 'md:col-span-2' : ''}`}>
+                <div key={index} className={`group border-b border-slate-100 dark:border-slate-800 pb-8 last:border-0 md:last:border-b print:pb-4 print:border-gray-100 ${item.colSpan ? 'md:col-span-2' : ''}`}>
                   <div className="flex justify-between items-start mb-2 print:mb-1">
                     <h4 className="text-lg font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:tracking-tight">
                       {item.brand}
