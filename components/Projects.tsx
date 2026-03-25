@@ -57,7 +57,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         },
         {
           brand: '久久丫',
-          role: '业务中台负责人 (2021 - 2022 | 常驻上海)',
+          role: '业务中台负责人 (2022 - 2024 | 常驻上海-嘉善)',
           colSpan: true,
           background: '作为集团核心数字化转型战略项目，项目旨在自上而下统一管理层至基层门店的数字化认知与建设标准。当前企业痛点突出，各系统高度孤立：ERP、SAP、财务、小程序、POS、CRM、加盟商订货等平台均为独立建设，未形成协同；同时旗下拥有久久丫、留夫鸭、玩儿串串、e 铺多等多品牌运营，存在严重的数据孤岛问题。业务层面存在加盟销售与订货流程割裂、财务与加盟商回款管理不清晰等问题。亟需建设统一业务中台，从三大维度实现一体化管控：系统层面（打通销售—订货—分销—回款全链路）、管理层面（覆盖加盟商门店、总部、O2O 线上、POS 线下、运营及财务全角色协同）、数据层面（整合上游供应链订货数据、库存数据、总部门店销售管控数据，实现全域数据互通与统一管理）。',
           coreWork: [
@@ -192,7 +192,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         },
         {
           brand: 'Jiujiuya',
-          role: 'Middle Platform Lead (2021 - 2022 | Shanghai)',
+          role: 'Middle Platform Lead (2022 - 2024 | Shanghai-Jiashan)',
           colSpan: true,
           background: 'As a core strategic project for the group\'s digital transformation, it aimed to unify digital awareness and construction standards from management to grassroots stores. The enterprise faced significant pain points with highly isolated systems: ERP, SAP, Finance, Mini-programs, POS, CRM, and franchisee ordering platforms were built independently without synergy. Operating multiple brands like Juewei Duck, Liufu Duck, Waner Chuanchuan, and ePuduo further exacerbated data silos. Business-wise, there were gaps between franchisee sales and ordering processes, and unclear financial/collection management. A unified business middle-platform was urgently needed to achieve integrated control across three dimensions: System (linking sales-ordering-distribution-collection), Management (coordinating franchisees, HQ, O2O, POS, operations, and finance), and Data (integrating supply chain, inventory, and sales data for unified management).',
           coreWork: [
