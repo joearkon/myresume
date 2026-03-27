@@ -35,6 +35,14 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
           ),
           description: '深度应用 AIGC 技术赋能业务增长、内容创作与流程自动化',
           items: ['LLM 大模型应用', 'Gemini / GPT', '提示词工程 (Prompt)', 'AIGC 自动化', 'ComfyUI / SD', 'AI 智能体开发']
+        },
+        {
+          category: '语言能力',
+          icon: (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" /></svg>
+          ),
+          description: '具备良好的英语沟通与技术文档阅读能力',
+          items: ['英语六级 (CET-6)', '商务英语沟通', '技术文档阅读', '海外项目协作', '口语流利']
         }
       ]
     },
@@ -66,6 +74,14 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
           ),
           description: 'Deep application of AIGC to empower business growth and content creation',
           items: ['LLM Application', 'Gemini / GPT', 'Prompt Engineering', 'AIGC Automation', 'ComfyUI / SD', 'AI Agent Dev']
+        },
+        {
+          category: 'Languages',
+          icon: (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" /></svg>
+          ),
+          description: 'Proficient in English communication and technical documentation',
+          items: ['CET-6', 'Business English', 'Technical Reading', 'Global Collaboration', 'Fluent Speaking']
         }
       ]
     }
@@ -83,9 +99,9 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
           <p className="text-slate-600 dark:text-gray-400 print:text-[10pt] print:text-gray-500">{t.subtitle}</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 print:grid-cols-1 print:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 print:grid-cols-1 print:gap-4">
           {t.skills.map((category, index) => (
-            <div key={index} className="group bg-white dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-800 dark:hover:border-blue-400 transition-all duration-300 flex flex-col print:p-0 print:border-0 print:break-inside-avoid">
+            <div key={index} className="group bg-white dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-800 dark:hover:border-blue-400 transition-all duration-300 flex flex-col print:p-0 print:border-0 print:break-inside-avoid">
               
               <div className="flex items-center gap-4 mb-6 print:mb-1">
                 <div className="p-3 bg-white dark:bg-slate-800 rounded-xl text-blue-800 dark:text-blue-400 shadow-sm group-hover:scale-110 transition-transform duration-300 print:hidden">
@@ -96,7 +112,7 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
                 </h3>
               </div>
 
-              <p className="text-sm text-slate-500 dark:text-gray-400 mb-6 h-10 leading-relaxed print:text-[10pt] print:mb-2 print:h-auto print:leading-normal">
+              <p className="text-sm text-slate-500 dark:text-gray-400 mb-6 min-h-[3rem] leading-relaxed print:text-[10pt] print:mb-2 print:h-auto print:leading-normal">
                 {category.description}
               </p>
 
@@ -109,7 +125,9 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
                         ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800 hover:bg-blue-200 dark:hover:bg-blue-900/50' 
                         : index === 1
                           ? 'bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 border border-purple-200 dark:border-purple-800 hover:bg-purple-200 dark:hover:bg-purple-900/50'
-                          : 'bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-600 hover:bg-slate-300 dark:hover:bg-slate-600'
+                          : index === 2
+                            ? 'bg-slate-200 text-slate-700 dark:bg-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-600 hover:bg-slate-300 dark:hover:bg-slate-600'
+                            : 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 hover:bg-emerald-200 dark:hover:bg-emerald-900/50'
                       }
                     `}
                   >

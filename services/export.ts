@@ -416,7 +416,8 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
   const skills = [
     { category: isZh ? "核心能力" : "Core Competencies", items: isZh ? ["SaaS 项目管理", "大客户运营", "数字化转型", "AIGC 应用", "全生命周期交付"] : ["SaaS Project Management", "Key Account Operations", "Digital Transformation", "AIGC Application", "Full Lifecycle Delivery"] },
     { category: isZh ? "技术栈" : "Tech Stack", items: ["Microservices", "OMS/POS Systems", "SharePoint", "Microsoft 365", "Python", "Prompt Engineering"] },
-    { category: isZh ? "工具" : "Tools", items: ["ComfyUI", "Gemini", "Seedance", "Kling", "Power Automate", "Jira", "Confluence"] }
+    { category: isZh ? "工具" : "Tools", items: ["ComfyUI", "Gemini", "Seedance", "Kling", "Power Automate", "Jira", "Confluence"] },
+    { category: isZh ? "语言" : "Languages", items: isZh ? ["英语六级 (CET-6)", "商务英语沟通", "技术文档阅读", "海外项目协作", "口语流利"] : ["CET-6", "Business English", "Technical Reading", "Global Collaboration", "Fluent Speaking"] }
   ];
 
   const education = [
