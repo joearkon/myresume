@@ -62,14 +62,14 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
     roles: ['技术架构', '项目交付', '客户增长', 'AI 自媒体创作'],
     contact: '男 | 32岁 | 135 2425 2203 | 313455055@qq.com | home.kunkun1023.xyz',
     info: '10年经验 | 期望城市: 上海 | 正在寻找机会 | 本科',
-    desc: '从代码到底层架构，从单项目交付到大客户运营。我不仅懂技术实现，更懂如何将技术转化为商业价值。曾主导喜茶、DQ、棒约翰等头部品牌的数字化落地。目前正全面拥抱 AI 时代，深耕 AIGC 与新媒体运营。由对游戏动漫的热爱驱动，探索利用 AI 工具进行内容二创与剪辑。通过构建标准化的 AI 内容产出工作流，在抖音、小红书成功打造个人账号与高粘性 IP 矩阵，并独立开发了基于大模型的量化交易助手。'
+    desc: '10 年高端品牌大客户运营与全链路项目管理专家，同时是拥有 2 年用车体验的蔚来 ET5T 车主。深度认同蔚来用户企业理念，长期关注新能源行业发展，对汽车用户运营、客户关系经营、高端服务体系具备天然理解与热情。擅长头部客户全生命周期运营、大型项目落地、全国体系化推广、客户留存与增长，过往服务喜茶、久久丫等头部品牌，大客户留存率 90%+。希望以车主 + 资深运营者的双重身份加入蔚来，将高端服务经验、用户思维与项目能力投入到蔚来客户发展与用户运营中，长期陪伴品牌成长。'
   } : {
     name: 'Joe.Chen',
     title: 'Digital Transformation Expert | AIGC Social Media',
     roles: ['Tech Arch', 'Delivery', 'Growth', 'AI Social Media'],
     contact: 'Male | 32 Years Old | +86 135 2425 2203 | 313455055@qq.com | home.kunkun1023.xyz',
     info: '10 Years Exp | City: Shanghai | Actively Seeking Opportunities | Bachelor',
-    desc: 'From coding to architecture, from project delivery to key account growth. I bridge the gap between technical implementation and business value. Led digital transformation for top brands like Heytea, DQ, and Papa John\'s. Currently fully embracing the AI era, deeply engaged in AIGC and social media operations. Driven by a passion for gaming and anime, exploring AI-powered secondary creation and video editing. By building standardized AI content production workflows, successfully established personal accounts and high-engagement IP matrices on Douyin and Xiaohongshu, alongside developing LLM-based quantitative trading assistants.'
+    desc: '10-year expert in high-end brand KA operations and full-link project management, and a NIO ET5T owner with 2 years of experience. Deeply resonate with NIO\'s user-centric philosophy, with a natural understanding and passion for automotive user operations and high-end service systems. Specialized in full-lifecycle operations for top-tier clients and nationwide systematic promotion. Previously served leading brands such as Heytea and Jiujiuya, with a KA retention rate of 90%+. Aspiring to join NIO with the dual identity of an owner and a senior operator, contributing high-end service experience and user-centric thinking to NIO\'s customer development and user operations.'
   };
 
   const experience = isZh ? [

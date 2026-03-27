@@ -26,11 +26,11 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info4Val: '10余年 +',
       desc: (
         <>
-          拥有 <span className="text-slate-900 dark:text-white font-bold">10余年</span> 数字化转型与大客户运营经验，曾主导 <span className="text-slate-900 dark:text-white font-bold">喜茶、乐乐茶、久久丫</span> 等千万级头部餐饮品牌项目落地。
+          <span className="text-slate-900 dark:text-white font-bold">10 年高端品牌大客户运营与全链路项目管理专家</span>，同时是拥有 <span className="text-slate-900 dark:text-white font-bold">2 年用车体验的蔚来 ET5T 车主</span>。深度认同蔚来用户企业理念，长期关注新能源行业发展，对汽车用户运营、客户关系经营、高端服务体系具备天然理解与热情。
           <br className="hidden md:block mt-2" />
-          从代码到底层架构，从单项目交付到大客户运营，<span className="text-slate-900 dark:text-white font-bold">我不仅懂技术实现，更懂如何将技术转化为商业价值。</span>
+          擅长头部客户全生命周期运营、大型项目落地、全国体系化推广、客户留存与增长，过往服务 <span className="text-slate-900 dark:text-white font-bold">喜茶、久久丫</span> 等头部品牌，<span className="text-slate-900 dark:text-white font-bold">大客户留存率 90%+</span>。
           <br className="hidden md:block mt-2" />
-          目前正全面拥抱 AI 时代，<span className="text-purple-600 dark:text-purple-400 font-bold">深耕 AIGC 与新媒体运营</span>。通过构建标准化的 AI 内容产出工作流，在抖音、小红书成功打造高粘性 IP 矩阵，并独立开发了基于大模型的量化交易助手，致力于将前沿技术转化为实际生产力。
+          希望以 <span className="text-blue-600 dark:text-blue-400 font-bold">车主 + 资深运营者</span> 的双重身份加入蔚来，将高端服务经验、用户思维与项目能力投入到蔚来客户发展与用户运营中，长期陪伴品牌成长。
         </>
       ),
       btnResume: '查看完整履历',
@@ -56,11 +56,11 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info4Val: '10 Years +',
       desc: (
         <>
-          With <span className="text-slate-900 dark:text-white font-bold">10+ years</span> of experience in digital transformation and key account operations, I have led enterprise-level projects for top brands like <span className="text-slate-900 dark:text-white font-bold">Heytea, Lelecha, and Jiujiuya</span>.
+          <span className="text-slate-900 dark:text-white font-bold">10-year expert in high-end brand KA operations and full-link project management</span>, and a <span className="text-slate-900 dark:text-white font-bold">NIO ET5T owner with 2 years of experience</span>. Deeply resonate with NIO's user-centric philosophy, with a natural understanding and passion for automotive user operations and high-end service systems.
           <br className="hidden md:block mt-2" />
-          From coding to architecture, from project delivery to key account growth, <span className="text-slate-900 dark:text-white font-bold">I bridge the gap between technical implementation and business value.</span>
+          Specialized in full-lifecycle operations for top-tier clients and nationwide systematic promotion. Previously served leading brands such as <span className="text-slate-900 dark:text-white font-bold">Heytea and Jiujiuya</span>, with a <span className="text-slate-900 dark:text-white font-bold">KA retention rate of 90%+</span>.
           <br className="hidden md:block mt-2" />
-          Currently fully embracing the AI era, <span className="text-purple-600 dark:text-purple-400 font-bold">deeply engaged in AIGC and social media operations</span>. By building standardized AI content production workflows, I have successfully established high-engagement IP matrices on Douyin and Xiaohongshu, and independently developed an LLM-based quantitative trading assistant, dedicating to turning cutting-edge tech into real productivity.
+          Aspiring to join NIO with the <span className="text-blue-600 dark:text-blue-400 font-bold">dual identity of an owner and a senior operator</span>, contributing high-end service experience and user-centric thinking to NIO's customer development and user operations.
         </>
       ),
       btnResume: 'View Experience',
