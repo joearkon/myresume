@@ -60,16 +60,16 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
     name: '陈子卓野',
     title: '全链路数字化专家 | AIGC 新媒体运营',
     roles: ['技术架构', '项目交付', '客户增长', 'AI 自媒体创作'],
-    contact: '男 | 32岁 | 135 2425 2203 | 313455055@qq.com | home.kunkun1023.xyz',
-    info: '10年经验 | 期望城市: 上海 | 正在寻找机会 | 本科',
-    desc: '10 年高端品牌大客户运营与全链路项目管理专家，同时是拥有 2 年用车体验的蔚来 ET5T 车主。深度认同蔚来用户企业理念，长期关注新能源行业发展，对汽车用户运营、客户关系经营、高端服务体系具备天然理解与热情。擅长头部客户全生命周期运营、大型项目落地、全国体系化推广、客户留存与增长，过往服务喜茶、久久丫等头部品牌，大客户留存率 90%+。希望以车主 + 资深运营者的双重身份加入蔚来，将高端服务经验、用户思维与项目能力投入到蔚来客户发展与用户运营中，长期陪伴品牌成长。'
+    contact: '+86 135 2425 2203 | 313455055@qq.com | home.kunkun1023.xyz',
+    info: '1986年10月 | 汉族 | 上海 | 中共党员 | 本科 | 10余年 +',
+    desc: '拥有 10余年 数字化转型与大客户运营经验，曾主导 喜茶、乐乐茶、久久丫 等千万级头部餐饮品牌项目落地。从代码到底层架构，从单项目交付到大客户运营，我不仅懂技术实现，更懂如何将技术转化为商业价值。目前正全面拥抱 AI 时代，深耕 AIGC 与新媒体运营。通过构建标准化的 AI 内容产出工作流，在抖音、小红书成功打造高粘性 IP 矩阵，并独立开发了基于大模型的量化交易助手，致力于将前沿技术转化为实际生产力。'
   } : {
     name: 'Joe.Chen',
     title: 'Digital Transformation Expert | AIGC Social Media',
     roles: ['Tech Arch', 'Delivery', 'Growth', 'AI Social Media'],
-    contact: 'Male | 32 Years Old | +86 135 2425 2203 | 313455055@qq.com | home.kunkun1023.xyz',
-    info: '10 Years Exp | City: Shanghai | Actively Seeking Opportunities | Bachelor',
-    desc: '10-year expert in high-end brand KA operations and full-link project management, and a NIO ET5T owner with 2 years of experience. Deeply resonate with NIO\'s user-centric philosophy, with a natural understanding and passion for automotive user operations and high-end service systems. Specialized in full-lifecycle operations for top-tier clients and nationwide systematic promotion. Previously served leading brands such as Heytea and Jiujiuya, with a KA retention rate of 90%+. Aspiring to join NIO with the dual identity of an owner and a senior operator, contributing high-end service experience and user-centric thinking to NIO\'s customer development and user operations.'
+    contact: '+86 135 2425 2203 | 313455055@qq.com | home.kunkun1023.xyz',
+    info: 'Oct 1986 | Han | Shanghai | Party Member | Bachelor | 10 Years +',
+    desc: 'With over 10 years of experience in digital transformation and KA operations, I have led project implementations for top-tier brands like HEYTEA, LeLeCha, and Jiujiuya. From coding to architecture, from delivery to operations, I bridge the gap between technical implementation and business value. Currently embracing the AI era, focusing on AIGC and social media operations. By building standardized AI workflows, I\'ve created high-engagement IP matrices on Douyin/Xiaohongshu and developed AI-driven quant tools to turn frontier tech into productivity.'
   };
 
   const experience = isZh ? [
@@ -82,24 +82,32 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
         "独立搭建抖音 + 小红书双平台二次元动漫 IP 矩阵，依托 AIGC 实现 1 个月高效涨粉 5000 + 高粘性垂直粉丝",
         "构建从角色原创设计、剧本分镜到 AI 视频生成的全链路标准化工作流，实现内容规模化、低成本、高效率产出",
         "深入研究 AI 提示词工程（Prompt Engineering）与 ComfyUI 工作流编排，内容生产效率提升 80%"
+      ],
+      aiProjects: [
+        {
+          name: '股票量化助手',
+          desc: '基于大模型的智能股票量化分析与决策支持系统，提供实时数据洞察与策略回测。',
+          tags: ['AI 量化', '股票分析', 'LLM', '数据可视化']
+        }
       ]
     },
     {
       role: "SaaS 平台大客户总监",
       company: "上海合阔信息技术有限公司",
-      period: "2023 - 2025.07",
-      description: "聚焦 SaaS 平台上线后大客户全生命周期运营。以客户价值为核心，构建系统化客户维护与增长体系。",
+      period: "2023 - 2025.07 (后期)",
+      description: "聚焦 SaaS 平台上线后大客户全生命周期运营。以客户价值为核心，构建 system 化客户维护与增长体系。",
       achievements: [
-        "负责维护大客户平台产品运营，包括 DQ，喜茶，乐乐茶，Something For，Seesaw，T9，久久丫等品牌",
-        "制定分层客户维护策略，针对头部连锁品牌的个性化需求，提供定制化增值服务，建立季度走访、月度复盘机制",
-        "0-1 搭建客户留存监控体系，实时跟踪系统使用率，大客户年度留存率稳定在 90% 以上",
-        "牵头客户续约与增收工作，深度挖掘需求，负责团队每年为公司贡献 50% 左右的营收"
-      ]
+        "大客户 (KA) 独立运营体系：针对喜茶、星巴克、DQ、久久丫等头部品牌制定独立运营逻辑。为喜茶成立“产研+业务”专项小组以匹配其快速扩张；为星巴克组建独立运维团队保障一线业务；为 DQ、久久丫等百万级品牌分配独立 CSM 深度挖掘潜在需求。",
+        "中小客户 (SMB) 精细化管理：针对 SomethingFor、果呀呀、Seesaw 等品牌采用“AM+PM”共同维护机制。通过提炼共性痛点并转化为 SaaS 产品需求，定期与产品团队沟通，显著提升系统使用率与客户满意度。",
+        "生态伙伴与全球化布局：深度联动国内外合作伙伴，筛选并培养优质代理商，协助进行更大规模的拓客、实施与运维，实现业务快速复制。",
+        "售前赋能与最佳实践：与售前团队紧密合作，输出实际客户成功案例与行业最佳实践白皮书，辅助售前团队在投标打标阶段提供强有力的数字化支撑。"
+      ],
+      brands: ["喜茶 (HEYTEA)", "久久丫", "DQ (Dairy Queen)", "T9 Tea", "Linlee (邻里)", "谭仔 (TamJai)", "Something For", "果呀呀"]
     },
     {
-      role: "SaaS 项目经理",
+      role: "SaaS 平台项目经理",
       company: "上海合阔信息技术有限公司",
-      period: "2018 - 2023",
+      period: "2018 - 2023 (中期)",
       description: "核心项目交付负责人。统筹 SaaS 项目全生命周期管理，从需求对接、方案设计到落地上线、验收交付，主导多个头部餐饮品牌数字化转型项目，累计覆盖超 5000 家连锁门店。",
       achievements: [
         "上海适达餐饮集团 (DQ 冰雪皇后、PPJ 棒约翰): 负责 BOH 门店供应链项目交付。对接全国 1000+ 门店需求，设计库存管理、采购补货、物流追踪全流程解决方案，上线后供应链周转效率明显提升，库存损耗率降低 2%。",
@@ -111,7 +119,7 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
     {
       role: "SaaS 云平台高级软件开发",
       company: "上海合阔信息技术有限公司",
-      period: "2016.04 - 2018",
+      period: "2016.04 - 2018 (早期)",
       description: "初创阶段核心成员。牵头 SaaS 餐饮云平台从 0 到 1 的底层构建，奠定平台技术基石。",
       achievements: [
         "主导平台底层架构设计，采用微服务架构，支撑多租户隔离与高并发处理",
@@ -151,6 +159,13 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
         "Independently built a 2D anime IP matrix across Douyin and Xiaohongshu, gaining 5000+ vertical followers in 1 month via AIGC.",
         "Constructed a full-link standardized workflow from original character design and script to AI video generation, achieving scalable and efficient output.",
         "Deeply researched AI Prompt Engineering and ComfyUI workflow orchestration, increasing content production efficiency by 80%."
+      ],
+      aiProjects: [
+        {
+          name: 'Stock Quant Assistant',
+          desc: 'An intelligent stock quantitative analysis and decision-support system based on LLMs, providing real-time data insights and strategy backtesting.',
+          tags: ['AI Quant', 'Stock Analysis', 'LLM', 'Data Visualization']
+        }
       ]
     },
     {
@@ -159,11 +174,12 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       period: "2023 - 2025.07",
       description: "Focused on full lifecycle management of key accounts post-launch. Built a systematic customer maintenance and growth system centered on customer value.",
       achievements: [
-        "Managed platform operations for brands including DQ, Heytea, Lelecha, Something For, Seesaw, T9, Juewei Duck.",
-        "Developed tiered customer maintenance strategies and provided customized value-added services.",
-        "Built customer retention monitoring system from 0-1, maintaining 90%+ retention for key accounts.",
-        "Led renewal and upselling, team contributed ~50% of company revenue annually."
-      ]
+        "KA Independent Operation System: Developed customized operation systems for top-tier brands (HEYTEA, Starbucks, DQ, Jiujiuya, etc.). Established a dedicated 'R&D + Business' task force for HEYTEA and a specialized O&M team for Starbucks. Assigned dedicated CSMs for 1M+ revenue accounts to track dynamics and mine latent needs.",
+        "SMB Refined Operations & Product Synergy: Implemented a joint 'AM + PM' mechanism for brands like SomethingFor, Guoyaya, and Seesaw. Identified common pain points to define SaaS product requirements, collaborating with the product team to drive feature iterations and improve adoption.",
+        "Ecosystem Partnership & Global Expansion: Collaborated with domestic and international partners to empower agents for large-scale acquisition, implementation, and O&M, facilitating global business growth.",
+        "Pre-sales Enablement & Best Practices: Partnered with the pre-sales team to output 'Best Practice' case studies and white papers, providing critical support for bidding and technical proposals."
+      ],
+      brands: ["HEYTEA", "Jiujiuya", "DQ (Dairy Queen)", "T9 Tea", "Linlee", "TamJai", "Something For", "Guoyaya"]
     },
     {
       role: "SaaS Project Manager",
@@ -219,18 +235,17 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       { value: '50%', label: '团队营收贡献' },
       { value: '5000+', label: 'AIGC 账号单月涨粉' }
     ],
-    brands: ["喜茶 (HEYTEA)", "久久丫 / 留夫鸭", "DQ (Dairy Queen)", "Peets (皮爷咖啡)", "T9 Tea", "Linlee (邻里)", "谭仔 (TamJai)", "Something For", "果呀呀"],
     cases: [
       {
         brand: 'HEYTEA 喜茶',
         role: '项目负责人 (2018 - 2020 | 常驻深圳)',
         desc: '全渠道数字化转型标杆项目。HiPOS 系统覆盖全国 500+ 门店（2020年数据，2024年已突破 2000 家），支撑喜茶直营 + 海外门店规模化运营。',
-        highlight: '日订单峰值 10万+',
+        highlight: '订单单峰值 10 万+',
         coreWork: [
           {
             title: '一、项目管理与数字化落地',
             items: [
-              '负责覆盖全国 800+ 门店（2020年）的门店供应链 BOH 和 POS 收银体系的搭建。',
+              '负责覆盖全国 800+ 门店（2020 年）的门店供应链 BOH 和 POS 收银体系的搭建。',
               '作为喜茶核心对接人，全流程主导门店供应链调研、设计、开发实施（期间也负责开发核心的商品 BOM 配方模块）及上线运营。',
               '凭借 BOH 项目的出色交付赢得信任，继而主导 HiPOS 项目从 0 到 1 落地，负责与喜茶内部产研开发团队对接，统筹线上小程序、外卖平台、线下 POS 与 BOH 供应链全域打通，实现“下单-履约-结算”一体化。',
               '负责从需求调研、蓝图规划、项目排期到全国上线与验收的闭环全生命周期管理。'
@@ -296,20 +311,6 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
           }
         ]
       }
-    ],
-    aiProjects: [
-      {
-        name: "AIGC 动漫 IP 矩阵",
-        desc: "基于 AIGC 技术的二次元动漫内容生产与运营，实现月度涨粉 5000+。",
-        tags: ["ComfyUI", "Seedance", "Kling", "CapCut"],
-        link: "Douyin / Xiaohongshu"
-      },
-      {
-        name: "LLM 量化交易助手",
-        desc: "基于大语言模型的量化交易辅助系统，提供市场情绪分析与策略建议。",
-        tags: ["Python", "LLM", "Quant"],
-        link: "Private Project"
-      }
     ]
   } : {
     metrics: [
@@ -318,7 +319,6 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       { value: '50%', label: 'Team Revenue Contribution' },
       { value: '5000+', label: 'AIGC Monthly Followers' }
     ],
-    brands: ["HEYTEA", "Juewei Duck", "DQ", "Peets", "T9 Tea", "Linlee", "TamJai", "Something For", "Guoyaya"],
     cases: [
       {
         brand: 'HEYTEA',
@@ -395,20 +395,6 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
             ]
           }
         ]
-      }
-    ],
-    aiProjects: [
-      {
-        name: "AIGC Anime IP Matrix",
-        desc: "Anime content production and operation based on AIGC technology, achieving 5000+ monthly followers.",
-        tags: ["ComfyUI", "Seedance", "Kling", "CapCut"],
-        link: "Douyin / Xiaohongshu"
-      },
-      {
-        name: "LLM Quant Assistant",
-        desc: "Quantitative trading assistant system based on LLMs, providing market sentiment analysis.",
-        tags: ["Python", "LLM", "Quant"],
-        link: "Private Project"
       }
     ]
   };
@@ -547,7 +533,7 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
           }),
 
           // Projects / Star Cases
-          createSectionTitle(isZh ? "明星案例与核心数据" : "Star Cases & Key Data"),
+          createSectionTitle(isZh ? "客户成功与运营管理 (2024~2025年)" : "Customer Success & Operations Management (2024-2025)"),
           
           // Metrics in Word
           new Table({
@@ -569,16 +555,16 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
                     new Paragraph({
                       alignment: AlignmentType.CENTER,
                       children: [
-                        new TextRun({ text: m.value, bold: true, size: 28, color: "1e40af" }),
+                        new TextRun({ text: m.value, bold: true, size: 24, color: "1e40af" }),
                       ],
-                      spacing: { before: 120 }
+                      spacing: { before: 100 }
                     }),
                     new Paragraph({
                       alignment: AlignmentType.CENTER,
                       children: [
-                        new TextRun({ text: m.label, size: 16, color: "64748b" }),
+                        new TextRun({ text: m.label, size: 14, color: "64748b" }),
                       ],
-                      spacing: { after: 120 }
+                      spacing: { after: 100 }
                     })
                   ]
                 }))
@@ -589,9 +575,9 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
           ...projects.cases.flatMap((c: any) => [
             new Paragraph({
               children: [
-                new TextRun({ text: `${c.brand} | ${c.role}`, bold: true, size: 22 }),
+                new TextRun({ text: `${c.brand} | ${c.role}`, bold: true, size: 20 }),
               ],
-              spacing: { before: 200 },
+              spacing: { before: 150 },
             }),
             new Paragraph({
               children: [
@@ -599,102 +585,30 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
                   text: `${isZh ? '核心成就' : 'Highlight'}: ${c.highlight}`, 
                   bold: true, 
                   color: "16a34a", // Green color for highlights
-                  size: 20 
+                  size: 18 
                 }),
               ],
-              spacing: { after: 100 },
+              spacing: { after: 50 },
             }),
             new Paragraph({
               text: c.desc,
-              spacing: { after: 100 },
+              spacing: { after: 50 },
             }),
             ...(c.coreWork ? c.coreWork.flatMap((work: any) => [
               new Paragraph({
                 children: [
-                  new TextRun({ text: work.title, bold: true, size: 20, color: "333333" }),
+                  new TextRun({ text: work.title, bold: true, size: 18, color: "333333" }),
                 ],
-                spacing: { before: 100, after: 50 },
+                spacing: { before: 50, after: 25 },
               }),
               ...work.items.map((item: string) => 
                 new Paragraph({
                   text: item,
                   bullet: { level: 0 },
-                  spacing: { after: 50 },
+                  spacing: { after: 25 },
                 })
               )
             ]) : [])
-          ]),
-
-          // Brand Wall in Word - Moved Below Case Studies
-          new Table({
-            width: { size: 100, type: WidthType.PERCENTAGE },
-            borders: {
-              top: { style: BorderStyle.SINGLE, size: 2, color: "f1f5f9" },
-              bottom: { style: BorderStyle.SINGLE, size: 2, color: "f1f5f9" },
-              left: { style: BorderStyle.SINGLE, size: 2, color: "f1f5f9" },
-              right: { style: BorderStyle.SINGLE, size: 2, color: "f1f5f9" },
-            },
-            rows: [
-              new TableRow({
-                children: [
-                  new TableCell({
-                    shading: { fill: "ffffff" },
-                    children: [
-                      new Paragraph({
-                        children: [
-                          new TextRun({ text: isZh ? "曾经合作品牌" : "PAST COLLABORATIONS", bold: true, size: 18, color: "94a3b8" }),
-                        ],
-                        alignment: AlignmentType.CENTER,
-                        spacing: { before: 100, after: 100 },
-                      }),
-                      new Paragraph({
-                        children: [
-                          new TextRun({ text: projects.brands.join("  •  "), size: 18, color: "475569" }),
-                        ],
-                        alignment: AlignmentType.CENTER,
-                        spacing: { before: 100, after: 200 },
-                      }),
-                    ]
-                  })
-                ]
-              })
-            ],
-          }),
-
-          // AI Innovation Lab in Word
-          new Paragraph({
-            children: [
-              new TextRun({ 
-                text: isZh ? "AI 创新实验室" : "AI Innovation Lab", 
-                bold: true, 
-                size: 24,
-                color: "3b82f6" 
-              }),
-            ],
-            spacing: { before: 400, after: 200 },
-          }),
-          ...projects.aiProjects.flatMap((p) => [
-            new Paragraph({
-              children: [
-                new TextRun({ text: p.name, bold: true, size: 22 }),
-              ],
-            }),
-            new Paragraph({
-              text: p.desc,
-              spacing: { after: 100 },
-            }),
-            new Paragraph({
-              children: [
-                new TextRun({ text: `${isZh ? '技术栈' : 'Tags'}: ${p.tags.join(", ")}`, italics: true, color: "666666", size: 18 }),
-              ],
-              spacing: { after: 100 },
-            }),
-            new Paragraph({
-              children: [
-                new TextRun({ text: `${isZh ? '访问链接' : 'Link'}: ${p.link}`, color: "3b82f6", size: 18 }),
-              ],
-              spacing: { after: 200 },
-            }),
           ]),
 
           // Career Path
@@ -706,38 +620,62 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
                 italics: true,
                 bold: true,
                 color: "333333",
-                size: 22,
+                size: 20,
               }),
             ],
-            spacing: { after: 200 },
+            spacing: { after: 150 },
           }),
 
           // Experience
           ...experience.flatMap((exp) => [
             new Paragraph({
               children: [
-                new TextRun({ text: `${exp.role} | ${exp.company}`, bold: true, size: 24 }),
+                new TextRun({ text: `${exp.role} | ${exp.company}`, bold: true, size: 22 }),
               ],
-              spacing: { before: 200 },
+              spacing: { before: 150 },
             }),
             new Paragraph({
               children: [
-                new TextRun({ text: exp.period, italics: true, color: "666666" }),
+                new TextRun({ text: exp.period, italics: true, color: "666666", size: 16 }),
               ],
-              spacing: { after: 100 },
+              spacing: { after: 50 },
             }),
             new Paragraph({
               text: exp.description,
-              spacing: { after: 100 },
+              spacing: { after: 50 },
             }),
             ...exp.achievements.map(
               (ach) =>
                 new Paragraph({
                   text: ach,
                   bullet: { level: 0 },
-                  spacing: { after: 50 },
+                  spacing: { after: 25 },
                 })
             ),
+            // Brands in Experience
+            ...(exp.brands ? [
+              new Paragraph({
+                children: [
+                  new TextRun({ text: isZh ? "曾经合作品牌：" : "Brands Worked With: ", bold: true, size: 18, color: "475569" }),
+                  new TextRun({ text: exp.brands.join(isZh ? "、" : ", "), size: 18, color: "475569" }),
+                ],
+                bullet: { level: 0 },
+                spacing: { before: 50, after: 50 },
+              })
+            ] : []),
+            // AI Projects in Experience
+            ...(exp.aiProjects ? [
+              ...exp.aiProjects.flatMap((p: any) => [
+                new Paragraph({
+                  children: [
+                    new TextRun({ text: `${p.name}：`, bold: true, size: 18, color: "475569" }),
+                    new TextRun({ text: p.desc, size: 18, color: "475569" }),
+                  ],
+                  bullet: { level: 0 },
+                  spacing: { after: 25 },
+                })
+              ])
+            ] : []),
           ]),
 
           // Skills
@@ -746,10 +684,10 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
             (skill) =>
               new Paragraph({
                 children: [
-                  new TextRun({ text: `${skill.category}: `, bold: true }),
-                  new TextRun({ text: skill.items.join(", ") }),
+                  new TextRun({ text: `${skill.category}: `, bold: true, size: 18 }),
+                  new TextRun({ text: skill.items.join(", "), size: 18 }),
                 ],
-                spacing: { after: 100 },
+                spacing: { after: 50 },
               })
           ),
 
@@ -759,10 +697,10 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
             (edu) =>
               new Paragraph({
                 children: [
-                  new TextRun({ text: edu.school, bold: true }),
-                  new TextRun({ text: ` | ${edu.degree} (${edu.date})` }),
+                  new TextRun({ text: edu.school, bold: true, size: 18 }),
+                  new TextRun({ text: ` | ${edu.degree} (${edu.date})`, size: 18 }),
                 ],
-                spacing: { after: 100 },
+                spacing: { after: 50 },
               })
           ),
 
@@ -773,10 +711,10 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
               new Paragraph({
                 alignment: AlignmentType.LEFT,
                 children: [
-                  new TextRun({ text: `${hobby.title}: `, bold: true, size: 20 }),
+                  new TextRun({ text: `${hobby.title}: `, bold: true, size: 18 }),
                   new TextRun({ text: hobby.desc, size: 18 }),
                 ],
-                spacing: { after: 100 },
+                spacing: { after: 50 },
               })
           ),
 
@@ -785,19 +723,19 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
           new Paragraph({
             alignment: AlignmentType.LEFT,
             children: [
-              new TextRun({ text: contactMe.phone, size: 18 }),
+              new TextRun({ text: contactMe.phone, size: 16 }),
               new TextRun({ text: "", break: 1 }),
-              new TextRun({ text: contactMe.email, size: 18 }),
+              new TextRun({ text: contactMe.email, size: 16 }),
               new TextRun({ text: "", break: 1 }),
-              new TextRun({ text: contactMe.wechat, size: 18 }),
+              new TextRun({ text: contactMe.wechat, size: 16 }),
               new TextRun({ text: "", break: 1 }),
-              new TextRun({ text: contactMe.douyin, size: 18 }),
+              new TextRun({ text: contactMe.douyin, size: 16 }),
               new TextRun({ text: "", break: 1 }),
-              new TextRun({ text: contactMe.xiaohongshu, size: 18 }),
+              new TextRun({ text: contactMe.xiaohongshu, size: 16 }),
               new TextRun({ text: "", break: 1 }),
-              new TextRun({ text: contactMe.website, size: 18 }),
+              new TextRun({ text: contactMe.website, size: 16 }),
             ],
-            spacing: { before: 100, after: 200 },
+            spacing: { before: 50, after: 100 },
           }),
         ],
       },
