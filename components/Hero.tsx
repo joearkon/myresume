@@ -1,6 +1,5 @@
 import React from 'react';
 import { Language } from '../App';
-import { generateWord } from '../services/export';
 
 interface HeroProps {
   language: Language;
@@ -35,8 +34,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       ),
       btnResume: '查看完整履历',
       btnContact: '联系方式',
-      btnExport: '导出 PDF 简历',
-      btnDownloadWord: '下载 Word 简历'
+      btnExport: '导出 PDF 简历'
     },
     en: {
       tagline: 'Digital Transformation Expert',
@@ -65,8 +63,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       ),
       btnResume: 'View Experience',
       btnContact: 'Contact Me',
-      btnExport: 'Export to PDF',
-      btnDownloadWord: 'Download Word'
+      btnExport: 'Export to PDF'
     }
   };
 
@@ -76,17 +73,6 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
   const handlePrint = (e: React.MouseEvent) => {
     e.preventDefault();
     window.print();
-  };
-
-  // Function to handle Word download
-  const handleDownloadWord = async (e: React.MouseEvent) => {
-    e.preventDefault();
-    try {
-      // Use local avatar path which is more reliable and avoids CORS issues
-      await generateWord(language, "/avatar.jpg");
-    } catch (error) {
-      console.error("Word download failed:", error);
-    }
   };
 
   return (
@@ -169,15 +155,6 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           >
              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
              {t.btnExport}
-          </button>
-
-          {/* Download Word Button */}
-          <button 
-            onClick={handleDownloadWord}
-            className="px-5 py-2 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm font-medium rounded-md border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all flex items-center gap-2 shadow-sm cursor-pointer"
-          >
-             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-             {t.btnDownloadWord}
           </button>
 
           <a href="#contact" className="px-5 py-2 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm font-medium rounded-md border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm">
