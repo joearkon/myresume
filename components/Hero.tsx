@@ -26,11 +26,11 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info4Val: '10余年 +',
       desc: (
         <>
-          <span className="text-slate-900 dark:text-white font-bold">10 年高端品牌大客户运营与全链路项目管理专家</span>，同时是拥有 <span className="text-slate-900 dark:text-white font-bold">2 年用车体验的蔚来 ET5T 车主</span>。深度认同蔚来用户企业理念，长期关注新能源行业发展，对汽车用户运营、客户关系经营、高端服务体系具备天然理解与热情。
+          拥有 <span className="text-slate-900 dark:text-white font-bold">10余年</span> 数字化转型与大客户运营经验，曾主导 <span className="text-slate-900 dark:text-white font-bold">喜茶、乐乐茶、久久丫</span> 等千万级头部餐饮品牌项目落地。
           <br className="hidden md:block mt-2" />
-          擅长头部客户全生命周期运营、大型项目落地、全国体系化推广、客户留存与增长，过往服务 <span className="text-slate-900 dark:text-white font-bold">喜茶、久久丫</span> 等头部品牌，<span className="text-slate-900 dark:text-white font-bold">大客户留存率 90%+</span>。
+          从代码到底层架构，从单项目交付到大客户运营，<span className="text-slate-900 dark:text-white font-bold">我不仅懂技术实现，更懂如何将技术转化为商业价值</span>。
           <br className="hidden md:block mt-2" />
-          希望以 <span className="text-blue-600 dark:text-blue-400 font-bold">车主 + 资深运营者</span> 的双重身份加入蔚来，将高端服务经验、用户思维与项目能力投入到蔚来客户发展与用户运营中，长期陪伴品牌成长。
+          目前正全面拥抱 AI 时代，<span className="text-purple-600 dark:text-purple-400 font-bold">深耕 AIGC 与新媒体运营</span>。通过构建标准化的 AI 内容产出工作流，在抖音、小红书成功打造高粘性 IP 矩阵，并独立开发了基于大模型的量化交易助手，致力于将前沿技术转化为实际生产力。
         </>
       ),
       btnResume: '查看完整履历',
@@ -56,11 +56,11 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info4Val: '10 Years +',
       desc: (
         <>
-          <span className="text-slate-900 dark:text-white font-bold">10-year expert in high-end brand KA operations and full-link project management</span>, and a <span className="text-slate-900 dark:text-white font-bold">NIO ET5T owner with 2 years of experience</span>. Deeply resonate with NIO's user-centric philosophy, with a natural understanding and passion for automotive user operations and high-end service systems.
+          With over <span className="text-slate-900 dark:text-white font-bold">10 years</span> of experience in digital transformation and KA operations, I have led project implementations for top-tier brands like <span className="text-slate-900 dark:text-white font-bold">HEYTEA, LeLeCha, and Jiujiuya</span>.
           <br className="hidden md:block mt-2" />
-          Specialized in full-lifecycle operations for top-tier clients and nationwide systematic promotion. Previously served leading brands such as <span className="text-slate-900 dark:text-white font-bold">Heytea and Jiujiuya</span>, with a <span className="text-slate-900 dark:text-white font-bold">KA retention rate of 90%+</span>.
+          From coding to architecture, from delivery to operations, <span className="text-slate-900 dark:text-white font-bold">I bridge the gap between technical implementation and business value</span>.
           <br className="hidden md:block mt-2" />
-          Aspiring to join NIO with the <span className="text-blue-600 dark:text-blue-400 font-bold">dual identity of an owner and a senior operator</span>, contributing high-end service experience and user-centric thinking to NIO's customer development and user operations.
+          Currently embracing the AI era, <span className="text-purple-600 dark:text-purple-400 font-bold">focusing on AIGC and social media operations</span>. By building standardized AI workflows, I've created high-engagement IP matrices on Douyin/Xiaohongshu and developed AI-driven quant tools to turn frontier tech into productivity.
         </>
       ),
       btnResume: 'View Experience',
@@ -90,22 +90,22 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center items-start relative overflow-hidden px-4 pt-28 pb-12 md:pt-20 transition-colors duration-500 print:min-h-0 print:py-4 print:block">
+    <section id="home" className="min-h-screen flex flex-col justify-center items-start relative overflow-hidden px-4 pt-20 pb-8 md:pt-16 transition-colors duration-500 print:min-h-0 print:py-4 print:block">
       <div className="z-10 max-w-5xl w-full mx-auto">
         
         {/* Unified Header for Web and Print */}
-        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-8 mb-12 print:mb-4 print:flex-row print:items-start print:gap-6">
+        <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-6 mb-8 print:mb-4 print:flex-row print:items-start print:gap-6">
           {/* Text Content */}
           <div className="flex-1 text-center md:text-left print:text-left">
-            <h1 className="text-4xl md:text-6xl font-bold mb-2 tracking-tight text-slate-900 dark:text-white transition-all duration-500 print:text-3xl print:mb-1 print:tracking-tight">
+            <h1 className="text-3xl md:text-5xl font-bold mb-1.5 tracking-tight text-slate-900 dark:text-white transition-all duration-500 print:text-3xl print:mb-1 print:tracking-tight">
               {t.name}
             </h1>
             
-            <div className="text-xl md:text-2xl font-medium text-slate-500 dark:text-slate-400 mb-6 tracking-wide uppercase print:text-lg print:mb-1 print:tracking-tight">
+            <div className="text-lg md:text-xl font-medium text-slate-500 dark:text-slate-400 mb-4 tracking-wide uppercase print:text-lg print:mb-1 print:tracking-tight">
               {language === 'zh' ? 'Joe.Chen' : '陈子卓野'}
             </div>
             
-            <h2 className="text-lg md:text-xl font-normal text-slate-600 dark:text-gray-300 mb-6 flex flex-wrap justify-center md:justify-start items-center gap-2 md:gap-4 transition-colors duration-300 print:text-sm print:mb-2 print:gap-2">
+            <h2 className="text-base md:text-lg font-normal text-slate-600 dark:text-gray-300 mb-4 flex flex-wrap justify-center md:justify-start items-center gap-2 md:gap-4 transition-colors duration-300 print:text-sm print:mb-2 print:gap-2">
               <span>{t.role1}</span> <span className="hidden md:inline text-slate-300 dark:text-slate-600 print:inline">|</span>
               <span>{t.role2}</span> <span className="hidden md:inline text-slate-300 dark:text-slate-600 print:inline">|</span>
               <span>{t.role3}</span> <span className="hidden md:inline text-slate-300 dark:text-slate-600 print:inline">|</span>
@@ -113,7 +113,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
             </h2>
 
             {/* Contact Info */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-sm text-slate-600 dark:text-slate-400 mb-6 font-medium print:mb-1 print:gap-3 print:text-[9pt]">
+            <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-[13px] text-slate-600 dark:text-slate-400 mb-4 font-medium print:mb-1 print:gap-3 print:text-[9pt]">
                 <div className="flex items-center gap-1"><svg className="w-4 h-4 print:w-3 print:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg> +86 135 2425 2203</div>
                 <div className="flex items-center gap-1"><svg className="w-4 h-4 print:w-3 print:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg> 313455055@qq.com</div>
                 <div className="flex items-center gap-1"><svg className="w-4 h-4 print:w-3 print:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg> home.kunkun1023.xyz</div>
@@ -122,7 +122,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
 
           {/* Avatar Section */}
           <div className="relative shrink-0 print:ml-0">
-             <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-white dark:bg-slate-800 shadow-md border border-slate-200 dark:border-slate-700 overflow-hidden print:w-20 print:h-20">
+             <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-full p-1 bg-white dark:bg-slate-800 shadow-md border border-slate-200 dark:border-slate-700 overflow-hidden print:w-20 print:h-20">
                 <img 
                     src="https://img.remit.ee/api/file/BQACAgUAAyEGAASHRsPbAAESCqxpwLYLP8Jhn6EnyGll64FUqPbl9gACHjMAAiLeAAFWZRBcwlspcNM6BA.jpg" 
                     alt="陈子卓野 (Joe Chen)" 
@@ -134,38 +134,38 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
         </div>
 
         {/* Personal Info Card - Web View */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm md:text-base mb-8 print:mb-4 print:grid-cols-4 print:gap-2">
-            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 rounded-lg transition-colors duration-300 print:p-2 print:border-slate-100">
-                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 uppercase tracking-wider print:text-[8pt]">{t.info1Title}</div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-[13px] md:text-sm mb-6 print:mb-4 print:grid-cols-4 print:gap-2">
+            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg transition-colors duration-300 print:p-2 print:border-slate-100">
+                <div className="text-slate-500 dark:text-gray-400 text-[10px] mb-0.5 uppercase tracking-wider print:text-[8pt]">{t.info1Title}</div>
                 <div className="text-slate-900 dark:text-white font-medium print:text-[9pt]">{t.info1Val}</div>
             </div>
-            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 rounded-lg transition-colors duration-300 print:p-2 print:border-slate-100">
-                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 uppercase tracking-wider print:text-[8pt]">{t.info2Title}</div>
+            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg transition-colors duration-300 print:p-2 print:border-slate-100">
+                <div className="text-slate-500 dark:text-gray-400 text-[10px] mb-0.5 uppercase tracking-wider print:text-[8pt]">{t.info2Title}</div>
                 <div className="text-slate-900 dark:text-white font-medium print:text-[9pt]">{t.info2Val}</div>
             </div>
-            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 rounded-lg transition-colors duration-300 print:p-2 print:border-slate-100">
-                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 uppercase tracking-wider print:text-[8pt]">{t.info3Title}</div>
+            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg transition-colors duration-300 print:p-2 print:border-slate-100">
+                <div className="text-slate-500 dark:text-gray-400 text-[10px] mb-0.5 uppercase tracking-wider print:text-[8pt]">{t.info3Title}</div>
                 <div className="text-slate-900 dark:text-white font-medium print:text-[9pt]">{t.info3Val}</div>
             </div>
-            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-4 rounded-lg transition-colors duration-300 print:p-2 print:border-slate-100">
-                <div className="text-slate-500 dark:text-gray-400 text-xs mb-1 uppercase tracking-wider print:text-[8pt]">{t.info4Title}</div>
+            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg transition-colors duration-300 print:p-2 print:border-slate-100">
+                <div className="text-slate-500 dark:text-gray-400 text-[10px] mb-0.5 uppercase tracking-wider print:text-[8pt]">{t.info4Title}</div>
                 <div className="text-slate-900 dark:text-white font-medium print:text-[9pt]">{t.info4Val}</div>
             </div>
         </div>
         
-        <p className="text-base md:text-lg text-slate-700 dark:text-gray-300 mb-12 leading-relaxed transition-colors duration-300 print:text-[10pt] print:text-slate-700 print:text-left print:mb-4 print:leading-snug">
+        <p className="text-[15px] md:text-base text-slate-700 dark:text-gray-300 mb-8 leading-relaxed transition-colors duration-300 print:text-[10pt] print:text-slate-700 print:text-left print:mb-4 print:leading-snug">
           {t.desc}
         </p>
         
-        <div className="flex flex-wrap gap-4 justify-center md:justify-start items-center print:hidden">
-          <a href="#experience" className="px-6 py-2.5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-medium rounded-md hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow-sm">
+        <div className="flex flex-wrap gap-3 justify-center md:justify-start items-center print:hidden">
+          <a href="#experience" className="px-5 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-medium rounded-md hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow-sm">
             {t.btnResume}
           </a>
 
           {/* Export PDF Button - Triggers Print */}
           <button 
             onClick={handlePrint}
-            className="px-6 py-2.5 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-medium rounded-md border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all flex items-center gap-2 shadow-sm cursor-pointer"
+            className="px-5 py-2 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm font-medium rounded-md border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all flex items-center gap-2 shadow-sm cursor-pointer"
           >
              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
              {t.btnExport}
@@ -174,13 +174,13 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           {/* Download Word Button */}
           <button 
             onClick={handleDownloadWord}
-            className="px-6 py-2.5 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-medium rounded-md border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all flex items-center gap-2 shadow-sm cursor-pointer"
+            className="px-5 py-2 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm font-medium rounded-md border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all flex items-center gap-2 shadow-sm cursor-pointer"
           >
              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
              {t.btnDownloadWord}
           </button>
 
-          <a href="#contact" className="px-6 py-2.5 bg-white dark:bg-slate-800 text-slate-800 dark:text-white font-medium rounded-md border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm">
+          <a href="#contact" className="px-5 py-2 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm font-medium rounded-md border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm">
             {t.btnContact}
           </a>
         </div>

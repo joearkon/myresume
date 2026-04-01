@@ -21,6 +21,14 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
             "构建从角色原创设计、剧本分镜到 AI 视频生成的全链路标准化工作流，实现内容规模化、低成本、高效率产出",
             "深入研究 AI 提示词工程（Prompt Engineering）与 ComfyUI 工作流编排，内容生产效率提升 80%"
           ],
+          aiProjects: [
+            {
+              name: '股票量化助手',
+              desc: '基于大模型的智能股票量化分析与决策支持系统，提供实时数据洞察与策略回测。',
+              link: 'https://stock-mind.kunkun1023.xyz/',
+              tags: ['AI 量化', '股票分析', 'LLM', '数据可视化']
+            }
+          ],
           tags: ["AIGC", "ComfyUI", "Gemini AI", "内容运营"],
           color: "border-purple-500 dark:border-purple-400",
           isPromoted: false
@@ -32,10 +40,15 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           period: "2023 - 2025.07 (后期)",
           description: "聚焦 SaaS 平台上线后大客户全生命周期运营。以客户价值为核心，构建系统化客户维护与增长体系。",
           achievements: [
-            "负责维护大客户平台产品运营，包括 DQ，喜茶，乐乐茶，Something For，Seesaw，T9，久久丫等品牌",
-            "制定分层客户维护策略，针对头部连锁品牌的个性化需求，提供定制化增值服务，建立季度走访、月度复盘机制",
-            "0-1 搭建客户留存监控体系，实时跟踪系统使用率，大客户年度留存率稳定在 90% 以上",
-            "牵头客户续约与增收工作，深度挖掘需求，负责团队每年为公司贡献 50% 左右的营收"
+            "大客户 (KA) 独立运营体系：针对喜茶、星巴克、DQ、久久丫等头部品牌制定独立运营逻辑。为喜茶成立“产研+业务”专项小组以匹配其快速扩张；为星巴克组建独立运维团队保障一线业务；为 DQ、久久丫等百万级品牌分配独立 CSM 深度挖掘潜在需求。",
+            "中小客户 (SMB) 精细化管理：针对 SomethingFor、果呀呀、Seesaw 等品牌采用“AM+PM”共同维护机制。通过提炼共性痛点并转化为 SaaS 产品需求，定期与产品团队沟通，显著提升系统使用率与客户满意度。",
+            "生态伙伴与全球化布局：深度联动国内外合作伙伴，筛选并培养优质代理商，协助进行更大规模的拓客、实施与运维，实现业务快速复制。",
+            "售前赋能与最佳实践：与售前团队紧密合作，输出实际客户成功案例与行业最佳实践白皮书，辅助售前团队在投标打标阶段提供强有力的数字化支撑。"
+          ],
+          brands: [
+            "喜茶 (HEYTEA)", "久久丫", "DQ (Dairy Queen)",
+            "T9 Tea", "Linlee (邻里)", 
+            "谭仔 (TamJai)", "Something For", "果呀呀"
           ],
           tags: ["客户增长", "CRM体系", "商业价值", "团队管理"],
           color: "border-red-500 dark:border-red-400",
@@ -117,6 +130,14 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
             "Constructed a full-link standardized workflow from original character design and script to AI video generation, achieving scalable and efficient output.",
             "Deeply researched AI Prompt Engineering and ComfyUI workflow orchestration, increasing content production efficiency by 80%."
           ],
+          aiProjects: [
+            {
+              name: 'Stock Quant Assistant',
+              desc: 'An intelligent stock quantitative analysis and decision-support system based on LLMs, providing real-time data insights and strategy backtesting.',
+              link: 'https://stock-mind.kunkun1023.xyz/',
+              tags: ['AI Quant', 'Stock Analysis', 'LLM', 'Data Visualization']
+            }
+          ],
           tags: ["AIGC", "ComfyUI", "Gemini AI", "Content Operation"],
           color: "border-purple-500 dark:border-purple-400",
           isPromoted: false
@@ -128,10 +149,15 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           period: "2023 - 2025.07 (Late Stage)",
           description: "Focused on full lifecycle management of key accounts post-launch. Built a systematic customer maintenance and growth system centered on customer value.",
           achievements: [
-            "Managed platform operations for brands including DQ, Heytea, Lelecha, Something For, Seesaw, T9, Juewei Duck.",
-            "Developed tiered customer maintenance strategies and provided customized value-added services.",
-            "Built customer retention monitoring system from 0-1, maintaining 90%+ retention for key accounts.",
-            "Led renewal and upselling, team contributed ~50% of company revenue annually."
+            "KA Independent Operation System: Developed customized operation systems for top-tier brands (HEYTEA, Starbucks, DQ, Jiujiuya, etc.). Established a dedicated 'R&D + Business' task force for HEYTEA and a specialized O&M team for Starbucks. Assigned dedicated CSMs for 1M+ revenue accounts to track dynamics and mine latent needs.",
+            "SMB Refined Operations & Product Synergy: Implemented a joint 'AM + PM' mechanism for brands like SomethingFor, Guoyaya, and Seesaw. Identified common pain points to define SaaS product requirements, collaborating with the product team to drive feature iterations and improve adoption.",
+            "Ecosystem Partnership & Global Expansion: Collaborated with domestic and international partners to empower agents for large-scale acquisition, implementation, and O&M, facilitating global business growth.",
+            "Pre-sales Enablement & Best Practices: Partnered with the pre-sales team to output 'Best Practice' case studies and white papers, providing critical support for bidding and technical proposals."
+          ],
+          brands: [
+            "HEYTEA", "Jiujiuya", "DQ (Dairy Queen)",
+            "T9 Tea", "Linlee", 
+            "TamJai", "Something For", "Guoyaya"
           ],
           tags: ["Customer Growth", "CRM", "Business Value", "Management"],
           color: "border-red-500 dark:border-red-400",
@@ -205,47 +231,47 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
   const experiences = getExperiences(language);
 
   return (
-    <section id="experience" className="py-20 bg-white dark:bg-slate-900/50 relative transition-colors duration-500 print:py-4">
+    <section id="experience" className="py-12 bg-white dark:bg-slate-900/50 relative transition-colors duration-500 print:py-2">
       <div className="max-w-4xl mx-auto px-4">
-        <div className="mb-16 text-center print:mb-6 print:text-left">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-1 print:tracking-tight">
+        <div className="mb-10 text-center print:mb-4 print:text-left">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-0.5 print:tracking-tight">
             <span className="text-blue-800 dark:text-blue-400">{language === 'zh' ? '职业' : 'Work'}</span> {language === 'zh' ? '生涯' : 'Experience'}
           </h2>
-          <p className="mt-4 text-slate-600 dark:text-gray-400 tracking-tight transition-colors duration-300 print:mt-0 print:text-[10pt] print:text-slate-500 print:tracking-tight">
+          <p className="mt-2 text-slate-600 dark:text-gray-400 tracking-tight transition-colors duration-300 print:mt-0 print:text-[9.5pt] print:text-slate-500 print:tracking-tight">
             {language === 'zh' 
               ? '十年磨一剑 • 从技术底层到商业顶层的全链路进阶'
               : '10+ Years • From Technical Foundation to Business Leadership'}
           </p>
         </div>
 
-        <div className="space-y-12 print:space-y-6">
+        <div className="space-y-8 print:space-y-4">
           {experiences.map((exp) => (
-            <div key={exp.id} className="group relative border-b border-slate-200 dark:border-slate-800 pb-12 last:border-0 last:pb-0 print:pb-6">
+            <div key={exp.id} className="group relative border-b border-slate-200 dark:border-slate-800 pb-8 last:border-0 last:pb-0 print:pb-4">
               
-              <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2 print:mb-1">
-                <h3 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:tracking-tight">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1.5 gap-2 print:mb-0.5">
+                <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:tracking-tight">
                   {exp.role}
                 </h3>
-                <span className="text-sm font-medium text-slate-500 dark:text-gray-400 whitespace-nowrap print:text-[9pt]">
+                <span className="text-xs font-medium text-slate-500 dark:text-gray-400 whitespace-nowrap print:text-[8.5pt]">
                   {exp.period}
                 </span>
               </div>
               
-              <div className="text-lg font-medium text-slate-700 dark:text-slate-300 mb-4 print:text-[10pt] print:mb-1">
+              <div className="text-base font-medium text-slate-700 dark:text-slate-300 mb-2.5 print:text-[9.5pt] print:mb-0.5">
                 {exp.company}
                 {exp.isPromoted && (
-                  <span className="ml-3 text-xs font-normal bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-gray-400 px-2 py-1 rounded print:px-1.5 print:py-0.5 print:text-[8pt]">
+                  <span className="ml-2 text-[10px] font-normal bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-gray-400 px-1.5 py-0.5 rounded print:px-1 print:py-0 print:text-[7.5pt]">
                     {language === 'zh' ? '内部晋升' : 'Promoted Internally'}
                   </span>
                 )}
               </div>
               
-              <p className="text-slate-600 dark:text-gray-300 mb-4 leading-snug text-justify print:text-[10pt] print:mb-2 print:leading-snug">
+              <p className="text-[13px] text-slate-600 dark:text-gray-300 mb-3 leading-snug text-justify print:text-[9.5pt] print:mb-1.5 print:leading-snug">
                 {exp.description}
               </p>
 
               {exp.achievements && (
-                <ul className="mb-6 space-y-2 list-disc list-inside text-slate-600 dark:text-gray-400 marker:text-blue-800 dark:marker:text-blue-400 print:mb-3 print:space-y-1 print:text-[9.5pt] print:leading-snug">
+                <ul className="mb-4 space-y-1.5 list-disc list-inside text-[13px] text-slate-600 dark:text-gray-400 marker:text-blue-800 dark:marker:text-blue-400 print:mb-2 print:space-y-0.5 print:text-[9pt] print:leading-snug">
                   {exp.achievements.map((ach, i) => (
                     <li key={i} className="leading-snug print:leading-normal">
                       <span className="-ml-2">{ach}</span>
@@ -254,9 +280,36 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
                 </ul>
               )}
 
-              <div className="flex flex-wrap gap-2 print:gap-1.5">
+              {/* Brands Section */}
+              {exp.brands && (
+                <div className="mb-4 print:mb-2">
+                  <ul className="space-y-1.5 list-disc list-inside text-[13px] text-slate-600 dark:text-gray-400 marker:text-blue-800 dark:marker:text-blue-400 print:space-y-0.5 print:text-[9pt] print:leading-snug">
+                    <li className="leading-snug print:leading-normal">
+                      <span className="-ml-2">{language === 'zh' ? '曾经合作品牌：' : 'Brands Worked With: '}</span>
+                      <span className="-ml-2">{exp.brands.join(language === 'zh' ? '、' : ', ')}</span>
+                    </li>
+                  </ul>
+                </div>
+              )}
+
+              {/* AI Projects Section */}
+              {exp.aiProjects && (
+                <div className="mb-4 print:mb-2">
+                  <ul className="space-y-1.5 list-disc list-inside text-[13px] text-slate-600 dark:text-gray-400 marker:text-blue-800 dark:marker:text-blue-400 print:space-y-0.5 print:text-[9pt] print:leading-snug">
+                    {exp.aiProjects.map((proj, idx) => (
+                      <li key={idx} className="leading-snug print:leading-normal">
+                        <span className="-ml-2">{proj.name}：</span>
+                        <span className="-ml-2">{proj.desc}</span>
+                        {proj.link && <a href={proj.link} target="_blank" className="ml-2 text-blue-800 dark:text-blue-400 hover:underline print:hidden text-[10px]">Visit →</a>}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              <div className="flex flex-wrap gap-1.5 print:gap-1">
                 {exp.tags.map(tag => (
-                  <span key={tag} className="text-xs font-medium bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-gray-400 px-3 py-1 rounded border border-slate-200 dark:border-slate-700 print:px-2 print:py-0.5 print:text-[8.5pt]">
+                  <span key={tag} className="text-[10px] font-medium bg-slate-50 dark:bg-slate-800 text-slate-600 dark:text-gray-400 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-700 print:px-1.5 print:py-0 print:text-[8pt]">
                     {tag}
                   </span>
                 ))}

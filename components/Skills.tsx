@@ -90,37 +90,37 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
   const t = content[language];
 
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-slate-950 relative transition-colors duration-500 print:py-4">
+    <section id="skills" className="py-12 bg-white dark:bg-slate-950 relative transition-colors duration-500 print:py-2">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="mb-16 text-center print:mb-4 print:text-left">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-1">
+        <div className="mb-10 text-center print:mb-4 print:text-left">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-0.5">
             {t.title} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
-          <p className="text-slate-600 dark:text-gray-400 print:text-[10pt] print:text-gray-500">{t.subtitle}</p>
+          <p className="text-slate-600 dark:text-gray-400 print:text-[9.5pt] print:text-gray-500">{t.subtitle}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 print:grid-cols-1 print:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 print:grid-cols-1 print:gap-3">
           {t.skills.map((category, index) => (
-            <div key={index} className="group bg-white dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-800 dark:hover:border-blue-400 transition-all duration-300 flex flex-col print:p-0 print:border-0 print:break-inside-avoid">
+            <div key={index} className="group bg-white dark:bg-slate-900/50 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-800 dark:hover:border-blue-400 transition-all duration-300 flex flex-col print:p-0 print:border-0 print:break-inside-avoid">
               
-              <div className="flex items-center gap-4 mb-6 print:mb-1">
-                <div className="p-3 bg-white dark:bg-slate-800 rounded-xl text-blue-800 dark:text-blue-400 shadow-sm group-hover:scale-110 transition-transform duration-300 print:hidden">
+              <div className="flex items-center gap-3 mb-4 print:mb-0.5">
+                <div className="p-2.5 bg-white dark:bg-slate-800 rounded-xl text-blue-800 dark:text-blue-400 shadow-sm group-hover:scale-110 transition-transform duration-300 print:hidden">
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-bold text-slate-800 dark:text-white print:text-base">
+                <h3 className="text-lg font-bold text-slate-800 dark:text-white print:text-base">
                   {category.category}
                 </h3>
               </div>
 
-              <p className="text-sm text-slate-500 dark:text-gray-400 mb-6 min-h-[3rem] leading-relaxed print:text-[10pt] print:mb-2 print:h-auto print:leading-normal">
+              <p className="text-[13px] text-slate-500 dark:text-gray-400 mb-4 min-h-[2.5rem] leading-relaxed print:text-[9.5pt] print:mb-1.5 print:h-auto print:leading-normal">
                 {category.description}
               </p>
 
-              <div className="flex flex-wrap gap-2 mt-auto print:mt-0 print:gap-1">
+              <div className="flex flex-wrap gap-1.5 mt-auto print:mt-0 print:gap-1">
                 {category.items.map((item, idx) => (
                   <span 
                     key={idx} 
-                    className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors duration-300 print:px-2 print:py-0.5 print:text-[9pt] print:bg-transparent print:border-gray-200
+                    className={`px-2 py-1 rounded-lg text-[12px] font-medium transition-colors duration-300 print:px-1.5 print:py-0 print:text-[8.5pt] print:bg-transparent print:border-gray-200
                       ${index === 0 
                         ? 'bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 border border-blue-200 dark:border-blue-800 hover:bg-blue-200 dark:hover:bg-blue-900/50' 
                         : index === 1
