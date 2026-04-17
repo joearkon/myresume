@@ -24,13 +24,45 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info4Title: '经验年限',
       info4Val: '10余年 +',
       desc: (
-        <>
-          拥有 <span className="text-slate-900 dark:text-white font-bold">10余年</span> 数字化转型与大客户运营经验，曾主导 <span className="text-slate-900 dark:text-white font-bold">喜茶、乐乐茶、久久丫</span> 等千万级头部餐饮品牌项目落地。
-          <br className="hidden md:block mt-2" />
-          从代码到底层架构，从单项目交付到大客户运营，<span className="text-slate-900 dark:text-white font-bold">我不仅懂技术实现，更懂如何将技术转化为商业价值</span>。
-          <br className="hidden md:block mt-2" />
-          目前正全面拥抱 AI 时代，<span className="text-purple-600 dark:text-purple-400 font-bold">深耕 AIGC 与新媒体运营</span>。通过构建标准化的 AI 内容产出工作流，在抖音、小红书成功打造高粘性 IP 矩阵，并独立开发了基于大模型的量化交易助手，致力于将前沿技术转化为实际生产力。
-        </>
+        <div className="space-y-6">
+          <p className="border-l-2 border-slate-900 dark:border-white pl-4 italic text-slate-600 dark:text-slate-400">
+            拥有 10 余年餐饮数字化转型与 KA 大客户运营实战积淀，深度参与头部连锁品牌从 0 到 1 的数字化体系搭建与规模化落地。主导喜茶、乐乐茶、久久丫等千万级餐饮品牌 SaaS 项目全流程交付，覆盖全国 5000+ 门店，实现客户 90%+ 年度留存与团队营收 50%+ 贡献，在 KA 大客户开发、客户深耕与项目落地方面具备成熟方法论。
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4">
+            <div className="group print:break-inside-avoid">
+              <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 print:bg-blue-600"></span>
+                <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">餐饮 SaaS 专业积淀</h4>
+              </div>
+              <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[9pt] print:text-slate-600">
+                深耕餐饮 SaaS 行业十余年，精通连锁餐饮数字化全链路经营，精通需求调研→方案设计→项目落地→上线培训→验收回款的全流程闭环。
+                擅长为连锁品牌定制一套化解决方案，推动门店运营效率提升。
+              </p>
+            </div>
+
+            <div className="group print:break-inside-avoid">
+              <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 print:bg-emerald-600"></span>
+                <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">AIGC 与跨界能力</h4>
+              </div>
+              <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[9pt] print:text-slate-600">
+                积极拥抱 AI 时代，构建标准化工作流体系，熟练运用提示词工程、ComfyUI 等工具。
+                在短视频平台打造高粘性二次元 IP 矩阵。同时基于大模型开发量化交易助手，具备极强的跨领域效率交付。
+              </p>
+            </div>
+
+            <div className="group print:break-inside-avoid">
+              <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 print:bg-amber-600"></span>
+                <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">核心价值与标签</h4>
+              </div>
+              <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[9pt] print:text-slate-600">
+                兼具 10 年行业沉淀度与 AI 时代的快速学习迭代力。以结果为导向，擅长将技术、产品与客户需求深度绑定，创造可量化的商业价值。
+              </p>
+            </div>
+          </div>
+        </div>
       ),
       btnResume: '查看完整履历',
       btnContact: '联系方式',
@@ -53,13 +85,43 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info4Title: 'Experience',
       info4Val: '10 Years +',
       desc: (
-        <>
-          With over <span className="text-slate-900 dark:text-white font-bold">10 years</span> of experience in digital transformation and KA operations, I have led project implementations for top-tier brands like <span className="text-slate-900 dark:text-white font-bold">HEYTEA, LeLeCha, and Jiujiuya</span>.
-          <br className="hidden md:block mt-2" />
-          From coding to architecture, from delivery to operations, <span className="text-slate-900 dark:text-white font-bold">I bridge the gap between technical implementation and business value</span>.
-          <br className="hidden md:block mt-2" />
-          Currently embracing the AI era, <span className="text-purple-600 dark:text-purple-400 font-bold">focusing on AIGC and social media operations</span>. By building standardized AI workflows, I've created high-engagement IP matrices on Douyin/Xiaohongshu and developed AI-driven quant tools to turn frontier tech into productivity.
-        </>
+        <div className="space-y-6">
+          <p className="border-l-2 border-slate-900 dark:border-white pl-4 italic text-slate-600 dark:text-slate-400">
+            10+ years of expertise in catering digital transformation and KA operation. Deeply involved in digital system building and large-scale implementation from 0 to 1 for top-tier brands. Led full-cycle delivery for premium brands like HEYTEA, Lelecha, and Jiujiuya, covering 5,000+ stores with 90%+ annual retention and 50%+ contribution to team revenue.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4">
+            <div className="group print:break-inside-avoid">
+              <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 print:bg-blue-600"></span>
+                <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">Catering SaaS Expertise</h4>
+              </div>
+              <p className="text-[12px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[8.5pt] print:text-slate-600">
+                Dedicated to catering SaaS for over a decade. Expert in the full-cycle closed loop from requirement survey to project acceptance. Specialized in customized solutions that drive efficiency.
+              </p>
+            </div>
+
+            <div className="group print:break-inside-avoid">
+              <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 print:bg-emerald-600"></span>
+                <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">AIGC & Cross-domain</h4>
+              </div>
+              <p className="text-[12px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[8.5pt] print:text-slate-600">
+                Actively embracing AI. Built standardized AIGC workflows for social media. Independently developed an AI-driven quantitative trading assistant, bridging tech with business productivity.
+              </p>
+            </div>
+
+            <div className="group print:break-inside-avoid">
+              <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 print:bg-amber-600"></span>
+                <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">Core Value & Brand</h4>
+              </div>
+              <p className="text-[12px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[8.5pt] print:text-slate-600">
+                Combining industrial stability with AI-era agility. Result-oriented and specialized in aligning tech with customer needs to create measurable commercial value.
+              </p>
+            </div>
+          </div>
+        </div>
       ),
       btnResume: 'View Experience',
       btnContact: 'Contact Me',
@@ -83,20 +145,20 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-6 mb-8 print:mb-4 print:flex-row print:items-start print:gap-6">
           {/* Text Content */}
           <div className="flex-1 text-center md:text-left print:text-left">
-            <h1 className="text-3xl md:text-5xl font-bold mb-1.5 tracking-tight text-slate-900 dark:text-white transition-all duration-500 print:text-3xl print:mb-1 print:tracking-tight">
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-1 tracking-tighter text-slate-900 dark:text-white transition-all duration-500 print:text-3xl print:mb-1 print:tracking-tight">
               {t.name}
             </h1>
             
-            <div className="text-lg md:text-xl font-medium text-slate-500 dark:text-slate-400 mb-4 tracking-wide uppercase print:text-lg print:mb-1 print:tracking-tight">
+            <div className="text-xl md:text-2xl font-light text-slate-400 dark:text-slate-500 mb-6 tracking-[0.2em] uppercase print:text-lg print:mb-1 print:tracking-tight">
               {language === 'zh' ? 'Joe.Chen' : '陈子卓野'}
             </div>
             
-            <h2 className="text-base md:text-lg font-normal text-slate-600 dark:text-gray-300 mb-4 flex flex-wrap justify-center md:justify-start items-center gap-2 md:gap-4 transition-colors duration-300 print:text-sm print:mb-2 print:gap-2">
-              <span>{t.role1}</span> <span className="hidden md:inline text-slate-300 dark:text-slate-600 print:inline">|</span>
-              <span>{t.role2}</span> <span className="hidden md:inline text-slate-300 dark:text-slate-600 print:inline">|</span>
-              <span>{t.role3}</span> <span className="hidden md:inline text-slate-300 dark:text-slate-600 print:inline">|</span>
-              <span>{t.role4}</span>
-            </h2>
+            <div className="flex flex-wrap justify-center md:justify-start items-center gap-2 mb-8 transition-colors duration-300 print:text-sm print:mb-2 print:gap-2">
+              <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-[11px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700">{t.role1}</span>
+              <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-[11px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700">{t.role2}</span>
+              <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-[11px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700">{t.role3}</span>
+              <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-[11px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700">{t.role4}</span>
+            </div>
 
             {/* Contact Info */}
             <div className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-[13px] text-slate-600 dark:text-slate-400 mb-4 font-medium print:mb-1 print:gap-3 print:text-[9pt]">
@@ -120,28 +182,28 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
         </div>
 
         {/* Personal Info Card - Web View */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-[13px] md:text-sm mb-6 print:mb-4 print:grid-cols-4 print:gap-2">
-            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg transition-colors duration-300 print:p-2 print:border-slate-100">
-                <div className="text-slate-500 dark:text-gray-400 text-[10px] mb-0.5 uppercase tracking-wider print:text-[8pt]">{t.info1Title}</div>
-                <div className="text-slate-900 dark:text-white font-medium print:text-[9pt]">{t.info1Val}</div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-[13px] md:text-sm mb-8 print:mb-4 print:grid-cols-4 print:gap-2">
+            <div className="bg-slate-50/50 dark:bg-slate-900/30 border-l-2 border-blue-500 py-2 px-4 transition-colors duration-300 print:p-2 print:border-slate-100">
+                <div className="text-slate-400 dark:text-slate-500 text-[10px] mb-0.5 uppercase tracking-[0.1em] font-semibold print:text-[8pt]">{t.info1Title}</div>
+                <div className="text-slate-900 dark:text-white font-semibold print:text-[9pt]">{t.info1Val}</div>
             </div>
-            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg transition-colors duration-300 print:p-2 print:border-slate-100">
-                <div className="text-slate-500 dark:text-gray-400 text-[10px] mb-0.5 uppercase tracking-wider print:text-[8pt]">{t.info2Title}</div>
-                <div className="text-slate-900 dark:text-white font-medium print:text-[9pt]">{t.info2Val}</div>
+            <div className="bg-slate-50/50 dark:bg-slate-900/30 border-l-2 border-emerald-500 py-2 px-4 transition-colors duration-300 print:p-2 print:border-slate-100">
+                <div className="text-slate-400 dark:text-slate-500 text-[10px] mb-0.5 uppercase tracking-[0.1em] font-semibold print:text-[8pt]">{t.info2Title}</div>
+                <div className="text-slate-900 dark:text-white font-semibold print:text-[9pt]">{t.info2Val}</div>
             </div>
-            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg transition-colors duration-300 print:p-2 print:border-slate-100">
-                <div className="text-slate-500 dark:text-gray-400 text-[10px] mb-0.5 uppercase tracking-wider print:text-[8pt]">{t.info3Title}</div>
-                <div className="text-slate-900 dark:text-white font-medium print:text-[9pt]">{t.info3Val}</div>
+            <div className="bg-slate-50/50 dark:bg-slate-900/30 border-l-2 border-amber-500 py-2 px-4 transition-colors duration-300 print:p-2 print:border-slate-100">
+                <div className="text-slate-400 dark:text-slate-500 text-[10px] mb-0.5 uppercase tracking-[0.1em] font-semibold print:text-[8pt]">{t.info3Title}</div>
+                <div className="text-slate-900 dark:text-white font-semibold print:text-[9pt]">{t.info3Val}</div>
             </div>
-            <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 p-3 rounded-lg transition-colors duration-300 print:p-2 print:border-slate-100">
-                <div className="text-slate-500 dark:text-gray-400 text-[10px] mb-0.5 uppercase tracking-wider print:text-[8pt]">{t.info4Title}</div>
-                <div className="text-slate-900 dark:text-white font-medium print:text-[9pt]">{t.info4Val}</div>
+            <div className="bg-slate-50/50 dark:bg-slate-900/30 border-l-2 border-rose-500 py-2 px-4 transition-colors duration-300 print:p-2 print:border-slate-100">
+                <div className="text-slate-400 dark:text-slate-500 text-[10px] mb-0.5 uppercase tracking-[0.1em] font-semibold print:text-[8pt]">{t.info4Title}</div>
+                <div className="text-slate-900 dark:text-white font-semibold print:text-[9pt]">{t.info4Val}</div>
             </div>
         </div>
         
-        <p className="text-[15px] md:text-base text-slate-700 dark:text-gray-300 mb-8 leading-relaxed transition-colors duration-300 print:text-[10pt] print:text-slate-700 print:text-left print:mb-4 print:leading-snug">
+        <div className="mb-10 print:mb-4">
           {t.desc}
-        </p>
+        </div>
         
         <div className="flex flex-wrap gap-3 justify-center md:justify-start items-center print:hidden">
           <a href="#experience" className="px-5 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-medium rounded-md hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow-sm">
