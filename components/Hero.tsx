@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
             <div className="group print:break-inside-avoid">
               <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500 print:bg-blue-600"></span>
-                <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">餐饮 SaaS 专业积淀</h4>
+                <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">专业沉淀</h4>
               </div>
               <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[9pt] print:text-slate-600">
                 深耕餐饮 SaaS 行业十余年，精通连锁餐饮数字化全链路经营，精通需求调研→方案设计→项目落地→上线培训→验收回款的全流程闭环。
@@ -94,7 +94,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
             <div className="group print:break-inside-avoid">
               <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500 print:bg-blue-600"></span>
-                <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">Catering SaaS Expertise</h4>
+                <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">Professional Expertise</h4>
               </div>
               <p className="text-[12px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[8.5pt] print:text-slate-600">
                 Dedicated to catering SaaS for over a decade. Expert in the full-cycle closed loop from requirement survey to project acceptance. Specialized in customized solutions that drive efficiency.
