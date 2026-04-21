@@ -17,9 +17,9 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           period: "2025.08 - 至今",
           description: "全面拥抱 AI 时代，探索 AIGC 技术在内容创作与商业变现中的应用，构建高效的自动化工作流。",
           achievements: [
-            "独立搭建抖音 + 小红书双平台二次元动漫 IP 矩阵，依托 AIGC 实现 1 个月高效涨粉 5000 + 高粘性垂直粉丝",
-            "构建从角色原创设计、剧本分镜到 AI 视频生成的全链路标准化工作流，实现内容规模化、低成本、高效率产出",
-            "深入研究 AI 提示词工程（Prompt Engineering）与 ComfyUI 工作流编排，内容生产效率提升 80%"
+            "通过构建定制化 Prompt 和低代码工作流 (Claude Code / Coze) 实现方案内容撰写、调研以及内容营销方面的自动化流水线，搭建快速迁移工具并赋能自身的使用场景能力",
+            "独立搭建跨平台二次元动漫 IP 矩阵：依托 AIGC 实现 1 个月内垂直粉丝高效增长 5000+，验证了 AI 在内容生产与私域引流上的商业化闭环能力",
+            "构建全链路 AI 视频生产工作流：集成原创角色设计、AI 剧本分镜到视频生成，内容生产效率较传统模式提升 80%，实现内容规模化、低成本产出"
           ],
           aiProjects: [
             {
@@ -127,9 +127,9 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           period: "2025.08 - Present",
           description: "Fully embraced the AI era, exploring the application of AIGC technologies in content creation and commercial monetization, building highly efficient automated workflows.",
           achievements: [
-            "Independently built a 2D anime IP matrix across Douyin and Xiaohongshu, gaining 5000+ vertical followers in 1 month via AIGC.",
-            "Constructed a full-link standardized workflow from original character design and script to AI video generation, achieving scalable and efficient output.",
-            "Deeply researched AI Prompt Engineering and ComfyUI workflow orchestration, increasing content production efficiency by 80%."
+            "Built customized Prompts and low-code workflows (Claude Code / Coze) to implement automated pipelines for proposal writing, research, and content marketing, developing rapid migration tools to empower self-use scenario capabilities.",
+            "Independently built a cross-platform anime IP matrix: Achieved 5000+ vertical followers in 1 month via AIGC, verifying the commercial loop of AI in content production and private traffic acquisition.",
+            "Constructed a full-link AI video production workflow: Integrated character design, scriptwriting, and video generation, increasing production efficiency by 80% compared to traditional models."
           ],
           aiProjects: [
             {

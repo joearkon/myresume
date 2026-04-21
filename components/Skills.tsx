@@ -21,20 +21,20 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
           items: ['SaaS 架构设计', '项目交付管理', '大客户运营', '数字化转型咨询', '团队建设', '业务中台搭建']
         },
         {
-          category: '技术栈',
+          category: '全栈技术栈',
           icon: (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
           ),
-          description: '扎实的技术底座，能够深入理解业务痛点并转化为技术方案',
-          items: ['微服务架构', 'Java / Go', 'ETL / 数据集成', '.NET / SharePoint', 'React / 前端基础', '高并发处理']
+          description: '扎实的技术底座，保持对底层架构及云原生、大模型等前沿技术的持续敏锐度',
+          items: ['云原生 (Cloud Native)', '微服务架构', 'Docker / K8s', 'Java / Go / Python', 'RAG 架构', '数据治理']
         },
         {
-          category: 'AI 与 数字化工具',
+          category: 'AI 与 提效方法论',
           icon: (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
           ),
-          description: '深度应用 AIGC 技术赋能业务增长、内容创作与流程自动化',
-          items: ['LLM 大模型应用', 'Gemini / GPT', '提示词工程 (Prompt)', 'AIGC 自动化', 'ComfyUI / SD', 'AI 智能体开发']
+          description: '深度应用 AIGC 与低代码 AI 平台（Claude Code/Coze）赋能组织提效与业务创新',
+          items: ['LLM 应用开发', 'AI Agents', 'Claude Code', 'Prompt 调优', 'Gemini AI Studio', 'Coze 自动化']
         },
         {
           category: '语言能力',
@@ -60,20 +60,20 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
           items: ['SaaS Architecture', 'Project Delivery', 'KA Management', 'Digital Transformation', 'Team Building', 'Business Middle-Platform']
         },
         {
-          category: 'Tech Stack',
+          category: 'Full-Stack Tech',
           icon: (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
           ),
-          description: 'Solid technical foundation, translating business needs into technical solutions',
-          items: ['Microservices', 'Java / Go', 'ETL / Data Integration', '.NET / SharePoint', 'React / Frontend', 'High Concurrency']
+          description: 'Hands-on tech background with continuous focus on Cloud Native and LLM architectures',
+          items: ['Cloud Native', 'Microservices', 'Docker / K8s', 'Java / Go / Python', 'RAG Architecture', 'Data Governance']
         },
         {
-          category: 'AI & Digital Tools',
+          category: 'AI & Methodology',
           icon: (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
           ),
-          description: 'Deep application of AIGC to empower business growth and content creation',
-          items: ['LLM Application', 'Gemini / GPT', 'Prompt Engineering', 'AIGC Automation', 'ComfyUI / SD', 'AI Agent Dev']
+          description: 'Deep application of AIGC and AI platforms (Claude Code/Coze) to drive efficiency',
+          items: ['LLM Application', 'AI Agents', 'Claude Code', 'Prompt Engineering', 'Gemini AI Studio', 'Coze Automation']
         },
         {
           category: 'Languages',
