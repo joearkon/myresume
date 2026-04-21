@@ -14,14 +14,14 @@ const Education: React.FC<EducationProps> = ({ language }) => {
       edu: [
         {
           school: '上海海事大学',
-          degree: '本科',
-          date: '2006.09 - 2009.06',
-          desc: '系统掌握计算机软硬件基础知识，具备扎实的编程能力与逻辑思维。'
+          degree: '全日制本科',
+          date: '2005.09 - 2009.06',
+          desc: '专业：计算机科学与技术。系统掌握计算机软硬件基础知识，具备扎实的编程能力与逻辑思维。'
         },
         {
-          school: '上海市理工大学附属高中',
+          school: '上海市理工大学附属高中（重点）',
           degree: '高中',
-          date: '2007.09 - 2009.06',
+          date: '2002.09 - 2005.06',
           desc: '建立良好的理科基础与学习习惯。'
         }
       ]
@@ -33,14 +33,14 @@ const Education: React.FC<EducationProps> = ({ language }) => {
       edu: [
         {
           school: 'Shanghai Maritime University',
-          degree: 'Bachelor',
-          date: '2006.09 - 2009.06',
-          desc: 'Mastered fundamentals of computer software and hardware, developing strong programming skills and logical thinking.'
+          degree: 'Full-time Bachelor',
+          date: '2005.09 - 2009.06',
+          desc: 'Major: Computer Science and Technology. Mastered fundamentals of computer software and hardware, developing strong programming skills and logical thinking.'
         },
         {
-          school: 'High School Affiliated to USST',
+          school: 'Affiliated High School of USST (Key)',
           degree: 'High School',
-          date: '2007.09 - 2009.06',
+          date: '2002.09 - 2005.06',
           desc: 'Established a solid foundation in science and study habits.'
         }
       ]

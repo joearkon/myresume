@@ -8,7 +8,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ language }) => {
   const content = {
     zh: {
-      tagline: '全链路数字化专家',
+      tagline: '数字化专家顾问 / KA 大客户总监 / 项目管理（SaaS + AI 方向）',
       tagline2: 'AIGC 新媒体运营',
       name: '陈子卓野',
       role1: '技术架构',
@@ -69,7 +69,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       btnExport: '导出 PDF 简历'
     },
     en: {
-      tagline: 'Digital Transformation Expert',
+      tagline: 'Digital Expert Consultant / KA Key Account Director / Project Management (SaaS + AI)',
       tagline2: 'AIGC Social Media',
       name: 'Joe.Chen',
       role1: 'Tech Arch',
@@ -153,11 +153,13 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
               {language === 'zh' ? 'Joe.Chen' : '陈子卓野'}
             </div>
             
-            <div className="flex flex-wrap justify-center md:justify-start items-center gap-2 mb-8 transition-colors duration-300 print:text-sm print:mb-2 print:gap-2">
-              <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-[11px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700">{t.role1}</span>
-              <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-[11px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700">{t.role2}</span>
-              <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-[11px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700">{t.role3}</span>
-              <span className="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full text-[11px] font-bold uppercase tracking-wider border border-slate-200 dark:border-slate-700">{t.role4}</span>
+            <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 mb-8 transition-all duration-300 print:text-sm print:mb-3 print:gap-2">
+              <span className="px-4 py-1.5 bg-blue-50 dark:bg-blue-900/20 text-blue-800 dark:text-blue-400 rounded-lg text-[13px] font-bold uppercase tracking-tight border border-blue-100 dark:border-blue-800/50 shadow-sm print:px-0 print:py-0 print:border-0 print:bg-transparent print:shadow-none print:text-blue-800 print:text-[11pt]">
+                {t.tagline}
+              </span>
+              <span className="px-4 py-1.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-lg text-[12px] font-medium tracking-tight border border-slate-200 dark:border-slate-700 shadow-sm print:px-0 print:py-0 print:border-0 print:bg-transparent print:shadow-none print:text-slate-500 print:text-[10pt] print:before:content-['|'] print:before:mx-2 print:before:text-slate-300">
+                {t.tagline2}
+              </span>
             </div>
 
             {/* Contact Info */}

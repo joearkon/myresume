@@ -40,17 +40,18 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           period: "2023 - 2025.07 (后期)",
           description: "聚焦 SaaS 平台上线后大客户全生命周期运营。以客户价值为核心，构建系统化客户维护与增长体系。",
           achievements: [
-            "大客户 (KA) 独立运营体系：针对喜茶、星巴克、DQ、久久丫等头部品牌制定独立运营逻辑。为喜茶成立“产研+业务”专项小组以匹配其快速扩张；为星巴克组建独立运维团队保障一线业务；为 DQ、久久丫等百万级品牌分配独立 CSM 深度挖掘潜在需求。",
-            "中小客户 (SMB) 精细化管理：针对 SomethingFor、果呀呀、Seesaw 等品牌采用“AM+PM”共同维护机制。通过提炼共性痛点并转化为 SaaS 产品需求，定期与产品团队沟通，显著提升系统使用率与客户满意度。",
-            "生态伙伴与全球化布局：深度联动国内外合作伙伴，筛选并培养优质代理商，协助进行更大规模的拓客、实施与运维，实现业务快速复制。",
-            "售前赋能与最佳实践：与售前团队紧密合作，输出实际客户成功案例与行业最佳实践白皮书，辅助售前团队在投标打标阶段提供强有力的数字化支撑。"
+            "售前解决方案管理：曾多次主导售前讲标投标案例，独立完成大中型连锁企业的售前方案演示和讲标工作。主导行业头部品牌数字化项目全流程售前与投标工作，独立完成需求调研、业务蓝图规划、技术方案设计、系统架构规划、投标文件编制，覆盖技术标 + 商务标全模块；针对多个千万级标杆项目，独立负责现场讲标、答疑及全场景方案演示，精准传递产品价值。支撑多个百万/千万级项目成功中标，讲标通过率位居团队前列，为项目落地奠定坚实基石。",
+            "大客户 (KA) 独立运营体系：针对多个头部品牌制定独立运营逻辑。成立“产研+业务”专项小组以匹配客户的高速扩张需求；组建专业运维团队保障高可用业务运行；针对百万级以上营收品牌分配独立 CSM 经理，深度挖掘潜在需求并实现精细化价值深耕。",
+            "中小客户 (SMB) 精细化管理：采用“AM+PM”共同维护机制。通过提炼全行业共性痛点并将其闭环转化为 SaaS 产品迭代需求，显著提升系统使用率与客户满意度。",
+            "生态环节与全球化布局：深度联动国内外合作伙伴，筛选并培养优质代理商，协助进行更大规模的拓客、实施与运维，实现业务快速复制。",
+            "售前赋能与最佳实践：将 KA 客户成功案例沉淀为行业最佳实践白皮书，辅助售前团队在投标阶段提供强有力的数字化交付支撑。"
           ],
           brands: [
             "喜茶 (HEYTEA)", "久久丫", "DQ (Dairy Queen)",
             "T9 Tea", "Linlee (邻里)", 
             "谭仔 (TamJai)", "Something For", "果呀呀"
           ],
-          tags: ["客户增长", "CRM体系", "商业价值", "团队管理"],
+          tags: ["售前方案", "客户增长", "CRM体系", "商业价值", "团队管理"],
           color: "border-red-500 dark:border-red-400",
           isPromoted: true
         },
@@ -149,17 +150,18 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           period: "2023 - 2025.07 (Late Stage)",
           description: "Focused on full lifecycle management of key accounts post-launch. Built a systematic customer maintenance and growth system centered on customer value.",
           achievements: [
-            "KA Independent Operation System: Developed customized operation systems for top-tier brands (HEYTEA, Starbucks, DQ, Jiujiuya, etc.). Established a dedicated 'R&D + Business' task force for HEYTEA and a specialized O&M team for Starbucks. Assigned dedicated CSMs for 1M+ revenue accounts to track dynamics and mine latent needs.",
-            "SMB Refined Operations & Product Synergy: Implemented a joint 'AM + PM' mechanism for brands like SomethingFor, Guoyaya, and Seesaw. Identified common pain points to define SaaS product requirements, collaborating with the product team to drive feature iterations and improve adoption.",
-            "Ecosystem Partnership & Global Expansion: Collaborated with domestic and international partners to empower agents for large-scale acquisition, implementation, and O&M, facilitating global business growth.",
-            "Pre-sales Enablement & Best Practices: Partnered with the pre-sales team to output 'Best Practice' case studies and white papers, providing critical support for bidding and technical proposals."
+            "Pre-sales Solution Management: Led multiple pre-sales bidding cases for major chain enterprises. Managed the full cycle of pre-sales and bidding for top-tier catering brands, including requirement survey, business blueprinting, technical solution design, and bid document preparation. Responsible for on-site bidding and high-impact solution demonstrations for multi-million projects, effectively communicating product value to decision-makers. Supported the successful bid of multiple million/multi-million level projects with a top-tier success rate.",
+            "KA Independent Operation System: Developed customized operation systems for multiple top-tier brands. Established dedicated 'R&D + Business' task forces to support rapid client expansion and specialized O&M teams for high-availability business. Assigned dedicated CSMs for high-revenue accounts to track dynamics and mine latent needs.",
+            "SMB Refined Operations: Implemented a joint 'AM + PM' mechanism. Identified common industry pain points to define SaaS product requirements, collaborating with the product team to drive feature iterations.",
+            "Ecosystem & Global Expansion: Empowered domestic and international partners/agents for large-scale acquisition and implementation, facilitating global business growth.",
+            "Pre-sales Enablement: Transformed KA success stories into industry best practice white papers, providing critical support for strategic bidding and technical proposals."
           ],
           brands: [
             "HEYTEA", "Jiujiuya", "DQ (Dairy Queen)",
             "T9 Tea", "Linlee", 
             "TamJai", "Something For", "Guoyaya"
           ],
-          tags: ["Customer Growth", "CRM", "Business Value", "Management"],
+          tags: ["Pre-sales", "Customer Growth", "CRM", "Business Value", "Management"],
           color: "border-red-500 dark:border-red-400",
           isPromoted: true
         },

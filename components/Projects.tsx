@@ -82,9 +82,46 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
       ],
       archTitle: '数字化架构体系',
       archDesc: '打通 BOH 供应链与 POS 全渠道，消除数据孤岛，构建一体化业务中台。',
+      group0Title: '售前解决方案管理',
       group1Title: '客户成功与运营管理',
       group2Title: '项目落地成果案例',
       cases: [
+        {
+          brand: '数字化咨询与售前解决方案管理',
+          role: '数字化解决方案顾问 (2023 - 2025 | 全链路售前赋能)',
+          colSpan: true,
+          background: '深度参与头部连锁餐饮品牌数字化项目售前管理，主导从需求挖掘、蓝图设计到投标讲标的全流程交付，支撑数千万级项目成功中标。',
+          coreWork: [
+            {
+              title: '一、深度售前咨询与架构蓝图策划',
+              items: [
+                '深度参与头部连锁餐饮品牌数字化项目售前全流程管理，独立完成需求调研、业务蓝图规划、技术架构设计、SaaS 解决方案输出及 POC 验证方案。',
+                '主导技术标 + 商务标双轨编制，独立完成投标文件撰写、方案评审与答疑准备，针对品牌业务场景定制数字化转型路径与实施路线图。'
+              ]
+            },
+            {
+              title: '二、现场讲标与业务价值传递',
+              items: [
+                '负责现场讲标与客户技术答疑，针对客户决策层与业务部门开展方案宣讲、系统演示与业务价值解读，精准传递 SaaS 产品核心能力与行业适配性。',
+                '曾多次独立主导大中型连锁企业的售前讲标，通过专业方案演示推动客户对方案的高度认可。'
+              ]
+            },
+            {
+              title: '三、标准化赋能与售前交付闭环机制',
+              items: [
+                '将 KA 客户成功案例沉淀为行业最佳实践白皮书与标准化售前方案库，为销售团队提供可复用的模板，支撑投标效率提升 40%+。',
+                '建立售前-交付闭环机制，通过售前深度调研提前识别项目实施难点并输出风险预案，显著提升项目交付成功率。'
+              ]
+            }
+          ],
+          achievements: [
+            '独立支撑多个百万/千万级标杆项目成功中标，讲标通过率位居团队前列。',
+            '沉淀全场景售前方案库，直接驱动 SaaS 产品核心功能迭代多项，实现客户需求与产品功能的精准转化。',
+            '为项目落地奠定坚实基础，讲标专业度与方案匹配度获得客户决策层高度认可。'
+          ],
+          tags: ['售前咨询', '标书编制', '解决方案', '行业白皮书'],
+          highlight: '千万级项目成功中标'
+        },
         {
           brand: '核心运营逻辑与体系建设',
           role: '大客户运营负责人 / 客户成功总监 (2024 - 2025 | 存量与增量业务管理)',
@@ -202,9 +239,46 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
       ],
       archTitle: 'Digital Architecture',
       archDesc: 'Bridging BOH supply chain and POS omni-channel to eliminate data silos.',
+      group0Title: 'Pre-sales Solution Management',
       group1Title: 'Customer Success & Operations Management',
       group2Title: 'Project Implementation Cases',
       cases: [
+        {
+          brand: 'Digital Consulting & Pre-sales Solution Management',
+          role: 'Digital Solution Consultant (2023 - 2025 | Full-link Enablement)',
+          colSpan: true,
+          background: 'Deeply involved in pre-sales management for top-tier catering brands, leading the full process from requirement mining to successful bidding for multi-million projects.',
+          coreWork: [
+            {
+              title: '1. In-depth Pre-sales Consulting & Architecture Blueprinting',
+              items: [
+                'Deeply involved in full pre-sales management for top-tier catering brands, completing surveys, blueprints, SaaS solutions, and POC verification.',
+                'Led technical and commercial bid preparation, drafting proposals and customizing digital transformation roadmaps for chain brands.'
+              ]
+            },
+            {
+              title: '2. On-site Bidding & Business Value Delivery',
+              items: [
+                'Responsible for live bidding and technical Q&A, conducting solution presentations and system demos for decision-makers and business departments.',
+                'Successfully led multiple pre-sales bidding cases for large enterprises, achieving high approval through professional demonstrations.'
+              ]
+            },
+            {
+              title: '3. Standardization Enablement & Pre-sales/Delivery Loop',
+              items: [
+                'Transformed KA success stories into industry white papers and standard solution libraries, providing reusable templates that boosted bidding efficiency by 40%+.',
+                'Established a closed-loop mechanism between pre-sales and delivery to early-identify implementation risks, significantly improving project success rates.'
+              ]
+            }
+          ],
+          achievements: [
+            'Independently supported successful bidding for multiple million/multi-million level projects with a top-tier success rate.',
+            'Driven multiple core SaaS feature iterations by accurately transforming client needs into product roadmap items.',
+            'Precision of solutions and professionalism of bidding recognized highly by client decision-makers.'
+          ],
+          tags: ['Pre-sales Consulting', 'Bidding', 'SaaS Solution', 'White Papers'],
+          highlight: 'Multi-million Bid Success'
+        },
         {
           brand: 'Core Operation Logic & System Construction',
           role: 'Head of KA Operations / Customer Success Director (2024 - 2025)',
@@ -343,13 +417,25 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         {/* 3. Case Study Cards - Simplified to List Style */}
         <div className="mb-10 print:mb-4">
             <div className="space-y-10 print:space-y-4">
+              {/* Group 0: Pre-sales Management */}
+              <div>
+                <h3 className="text-xl font-bold text-left mb-6 text-slate-800 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1.5 px-3">
+                  {t.group0Title}
+                </h3>
+                <div className="grid grid-cols-1 gap-y-6 mt-4 print:mt-2">
+                  {t.cases.slice(0, 1).map((item: any, index) => (
+                    <ProjectCard key={index} item={item} language={language} />
+                  ))}
+                </div>
+              </div>
+
               {/* Group 1: KA Operations */}
               <div>
                 <h3 className="text-xl font-bold text-left mb-6 text-slate-800 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1.5 px-3">
                   {t.group1Title}
                 </h3>
                 <div className="grid grid-cols-1 gap-y-6 mt-4 print:mt-2">
-                  {t.cases.slice(0, 1).map((item: any, index) => (
+                  {t.cases.slice(1, 2).map((item: any, index) => (
                     <ProjectCard key={index} item={item} language={language} />
                   ))}
                 </div>
@@ -361,7 +447,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                   {t.group2Title}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8 print:grid-cols-1 print:gap-y-4 print:mt-2">
-                  {t.cases.slice(1).map((item: any, index) => (
+                  {t.cases.slice(2).map((item: any, index) => (
                     <ProjectCard key={index} item={item} language={language} />
                   ))}
                 </div>
