@@ -52,8 +52,8 @@ const Education: React.FC<EducationProps> = ({ language }) => {
   return (
     <section id="education" className="py-12 bg-white dark:bg-slate-950 relative transition-colors duration-500 print:py-2">
       <div className="max-w-4xl mx-auto px-4">
-        <div className="mb-10 text-center print:mb-4 print:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-0.5">
+        <div className="mb-10 text-center print:mb-3 print:text-left">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-slate-900 dark:text-white transition-colors duration-300 print:text-lg print:mb-0">
             {t.title} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
           <p className="text-slate-600 dark:text-gray-400 print:text-[9.5pt] print:text-gray-500">{t.subtitle}</p>

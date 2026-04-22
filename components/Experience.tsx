@@ -47,8 +47,8 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
             "售前赋能与最佳实践：将 KA 客户成功案例沉淀为行业最佳实践白皮书，辅助售前团队在投标阶段提供强有力的数字化交付支撑。"
           ],
           brands: [
-            "喜茶 (HEYTEA)", "久久丫", "DQ (Dairy Queen)",
-            "T9 Tea", "Linlee (邻里)", 
+            "喜茶 (HEYTEA)", "久久丫", "DQ (Dairy Queen)", "乐乐茶 (LELECHA)",
+            "绝绝紫 / 绝味鸭脖", "Seesaw Coffee", "T9 Tea", "Linlee (邻里)", 
             "谭仔 (TamJai)", "Something For", "果呀呀"
           ],
           tags: ["售前方案", "客户增长", "CRM体系", "商业价值", "团队管理"],
@@ -268,8 +268,8 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
 
   return (
     <section id="experience" className="py-12 bg-white dark:bg-slate-900/50 relative transition-colors duration-500 print:py-2">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="mb-10 text-center print:mb-4 print:text-left">
+      <div className="max-w-4xl mx-auto px-4 print:px-0">
+        <div className="mb-10 text-center print:mb-3 print:text-left">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-0.5 print:tracking-tight">
             <span className="text-blue-800 dark:text-blue-400">{language === 'zh' ? '职业' : 'Work'}</span> {language === 'zh' ? '生涯' : 'Experience'}
           </h2>
@@ -280,9 +280,9 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           </p>
         </div>
 
-        <div className="space-y-8 print:space-y-4">
+        <div className="space-y-8 print:space-y-3">
           {experiences.map((exp) => (
-            <div key={exp.id} className="group relative border-b border-slate-200 dark:border-slate-800 pb-8 last:border-0 last:pb-0 print:pb-4">
+            <div key={exp.id} className="group relative border-b border-slate-200 dark:border-slate-800 pb-8 last:border-0 last:pb-0 print:pb-3 print:last:pb-0">
               
               <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1.5 gap-2 print:mb-0.5">
                 <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:tracking-tight">

@@ -145,15 +145,15 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
         <div className="flex flex-col md:flex-row items-center md:items-start justify-between gap-6 mb-8 print:mb-4 print:flex-row print:items-start print:gap-6">
           {/* Text Content */}
           <div className="flex-1 text-center md:text-left print:text-left">
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-1 tracking-tighter text-slate-900 dark:text-white transition-all duration-500 print:text-3xl print:mb-1 print:tracking-tight">
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-1 tracking-tighter text-slate-900 dark:text-white transition-all duration-500 print:text-2xl print:mb-0 print:tracking-tight">
               {t.name}
             </h1>
             
-            <div className="text-xl md:text-2xl font-light text-slate-400 dark:text-slate-500 mb-6 tracking-[0.2em] uppercase print:text-lg print:mb-1 print:tracking-tight">
+            <div className="text-xl md:text-2xl font-light text-slate-400 dark:text-slate-500 mb-6 tracking-[0.2em] uppercase print:text-base print:mb-0.5 print:tracking-tight">
               {language === 'zh' ? 'Joe.Chen' : '陈子卓野'}
             </div>
             
-            <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 mb-8 transition-all duration-300 print:text-sm print:mb-3 print:gap-2">
+            <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 mb-8 transition-all duration-300 print:text-sm print:mb-2 print:gap-2">
               <span className="px-4 py-1.5 bg-blue-50 dark:bg-blue-900/20 text-blue-800 dark:text-blue-400 rounded-lg text-[13px] font-bold uppercase tracking-tight border border-blue-100 dark:border-blue-800/50 shadow-sm print:px-0 print:py-0 print:border-0 print:bg-transparent print:shadow-none print:text-blue-800 print:text-[11pt]">
                 {t.tagline}
               </span>

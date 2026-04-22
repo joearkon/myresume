@@ -6,7 +6,7 @@ interface ProjectsProps {
 }
 
 const ProjectCard: React.FC<{ item: any; language: Language }> = ({ item, language }) => (
-  <div className={`group border-b border-slate-100 dark:border-slate-800 pb-6 last:border-0 md:last:border-b print:pb-3 print:border-gray-100 ${item.colSpan ? 'md:col-span-2' : ''}`}>
+  <div className={`group border-b border-slate-100 dark:border-slate-800 pb-6 last:border-0 md:last:border-b print:pb-2 print:border-gray-100 print:break-inside-auto ${item.colSpan ? 'md:col-span-2' : ''}`}>
     <div className="flex justify-between items-start mb-1.5 print:mb-1">
       <h4 className="text-base font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:tracking-tight">
         {item.brand}
@@ -388,10 +388,10 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
 
   return (
     <section id="projects" className="py-12 bg-white dark:bg-slate-900 relative transition-colors duration-500 print:py-2">
-      <div className="max-w-4xl mx-auto px-4">
+      <div className="max-w-4xl mx-auto px-4 print:px-0">
         
         {/* Section Header */}
-        <div className="text-center mb-10 print:mb-4 print:text-left">
+        <div className="text-center mb-10 print:mb-3 print:text-left">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-0.5 print:tracking-tight">
             {t.title} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
@@ -399,7 +399,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         </div>
 
         {/* 1. Key Metrics Bar - Simplified */}
-        <div className="border-y border-slate-100 dark:border-slate-800 py-5 mb-10 flex flex-wrap justify-between items-center gap-4 print:py-2 print:mb-4 print:gap-1 print:border-gray-200 print:bg-slate-50/50 print:rounded-xl">
+        <div className="border-y border-slate-100 dark:border-slate-800 py-5 mb-10 flex flex-wrap justify-between items-center gap-4 print:py-1.5 print:mb-3 print:gap-1 print:border-gray-200 print:bg-slate-50/50 print:rounded-xl">
           {t.metrics.map((metric, idx) => (
             <div key={idx} className="flex-1 min-w-[100px] text-center print:min-w-0 print:text-center">
               <div className={`text-2xl font-bold mb-0.5 ${metric.color.replace('text-', 'text-slate-900 dark:text-white')} print:text-base print:mb-0`}>
@@ -413,8 +413,8 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         </div>
 
         {/* 3. Case Study Cards - Simplified to List Style */}
-        <div className="mb-10 print:mb-4">
-            <div className="space-y-10 print:space-y-4">
+        <div className="mb-10 print:mb-3">
+            <div className="space-y-10 print:space-y-3">
               {/* Group 0: Pre-sales Management */}
               <div>
                 <h3 className="text-xl font-bold text-left mb-6 text-slate-800 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1.5 px-3">
