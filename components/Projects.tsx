@@ -88,7 +88,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
       cases: [
         {
           brand: '数字化咨询与售前解决方案管理',
-          role: '数字化解决方案顾问 (2023 - 2025 | 全链路售前赋能)',
+          role: '数字化解决方案顾问 (2024 - 2025 | 全链路售前赋能)',
           colSpan: true,
           background: '深度参与头部连锁餐饮品牌数字化项目售前管理，主导从需求挖掘、蓝图设计到投标讲标的全流程交付，支撑数千万级项目成功中标。',
           coreWork: [
@@ -115,8 +115,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             }
           ],
           achievements: [
-            '独立支撑多个百万/千万级标杆项目成功中标，讲标通过率位居团队前列。',
-            '沉淀全场景售前方案库，直接驱动 SaaS 产品核心功能迭代多项，实现客户需求与产品功能的精准转化。',
+            '支撑多个百万/千万级标杆项目成功中标（某茶饮，某咖啡品牌），讲标通过率位居团队前列。',
             '为项目落地奠定坚实基础，讲标专业度与方案匹配度获得客户决策层高度认可。'
           ],
           tags: ['售前咨询', '标书编制', '解决方案', '行业白皮书'],
@@ -124,7 +123,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         },
         {
           brand: '核心运营逻辑与体系建设',
-          role: '大客户运营负责人 / 客户成功总监 (2024 - 2025 | 存量与增量业务管理)',
+          role: '大客户运营负责人 / 客户成功总监 (2023 - 2025 | 存量与增量业务管理)',
           colSpan: true,
           background: '负责管理公司核心大客户及中小客户矩阵，通过构建独立运营体系、精细化 CSM 服务模型及生态合作伙伴网络，驱动客户价值增长与 SaaS 产品持续迭代。',
           coreWork: [
@@ -167,7 +166,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         },
         {
           brand: 'HEYTEA 喜茶',
-          role: '项目负责人 (2018 - 2020 | 常驻深圳)',
+          role: '项目负责人 (2019 - 2021 | 常驻深圳)',
           colSpan: false,
           background: '2020 年喜茶处于高速扩张期，为支撑全国直营门店规模化运营、线上线下一体化履约及供应链精细化管理，启动内部核心系统战略升级。我主导 HiPOS 收银中台与 BOH 供应链系统从 0 到 1 落地，覆盖全国门店，成为喜茶数字化转型关键项目。',
           coreWork: [
@@ -197,7 +196,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         },
         {
           brand: '久久丫',
-          role: '业务中台负责人 (2022 - 2024 | 常驻上海-嘉善)',
+          role: '业务中台负责人 (2021 - 2023 | 常驻上海-嘉善)',
           colSpan: false,
           background: '主导集团核心数字化转型战略项目，旨在建设统一业务中台，打通 ERP、SAP、财务、小程序、POS、CRM 等孤立系统，解决加盟销售与订货流程割裂、数据孤岛等痛点。',
           coreWork: [
@@ -245,7 +244,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
       cases: [
         {
           brand: 'Digital Consulting & Pre-sales Solution Management',
-          role: 'Digital Solution Consultant (2023 - 2025 | Full-link Enablement)',
+          role: 'Digital Solution Consultant (2024 - 2025 | Full-link Enablement)',
           colSpan: true,
           background: 'Deeply involved in pre-sales management for top-tier catering brands, leading the full process from requirement mining to successful bidding for multi-million projects.',
           coreWork: [
@@ -272,8 +271,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             }
           ],
           achievements: [
-            'Independently supported successful bidding for multiple million/multi-million level projects with a top-tier success rate.',
-            'Driven multiple core SaaS feature iterations by accurately transforming client needs into product roadmap items.',
+            'Supported successful bidding for multiple million/multi-million level projects (Top Tea & Coffee Brands) with a top-tier success rate.',
             'Precision of solutions and professionalism of bidding recognized highly by client decision-makers.'
           ],
           tags: ['Pre-sales Consulting', 'Bidding', 'SaaS Solution', 'White Papers'],
@@ -281,7 +279,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         },
         {
           brand: 'Core Operation Logic & System Construction',
-          role: 'Head of KA Operations / Customer Success Director (2024 - 2025)',
+          role: 'Head of KA Operations / Customer Success Director (2023 - 2025)',
           colSpan: true,
           background: 'Responsible for managing the core KA and SMB matrix, driving customer value growth and SaaS product iteration through independent operation systems, refined CSM models, and ecosystem partner networks.',
           coreWork: [
@@ -324,7 +322,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         },
         {
           brand: 'HEYTEA',
-          role: 'Project Lead (2018 - 2020 | Shenzhen)',
+          role: 'Project Lead (2019 - 2021 | Shenzhen)',
           colSpan: false,
           background: 'Led the 0-to-1 implementation of the HiPOS middle-platform and BOH supply chain system, covering all stores nationwide during HEYTEA\'s rapid expansion phase.',
           coreWork: [
@@ -354,7 +352,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         },
         {
           brand: 'Jiujiuya',
-          role: 'Middle Platform Lead (2022 - 2024 | Shanghai-Jiashan)',
+          role: 'Middle Platform Lead (2021 - 2023 | Shanghai-Jiashan)',
           colSpan: false,
           background: 'Led the digital transformation to build a unified business middle-platform, integrating ERP, SAP, POS, and CRM for 3000+ stores.',
           coreWork: [

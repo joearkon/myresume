@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       desc: (
         <div className="space-y-6">
           <p className="border-l-2 border-slate-900 dark:border-white pl-4 italic text-slate-600 dark:text-slate-400">
-            拥有 10 余年餐饮数字化转型与 KA 大客户运营实战积淀，深度参与头部连锁品牌从 0 到 1 的数字化体系搭建与规模化落地。主导喜茶、乐乐茶、久久丫等千万级餐饮品牌 SaaS 项目全流程交付，覆盖全国 5000+ 门店，实现客户 90%+ 年度留存与团队营收 50%+ 贡献，在 KA 大客户开发、客户深耕与项目落地方面具备成熟方法论。
+            拥有 10 余年餐饮数字化转型与 KA 大客户运营实战积淀。曾作为初创核心成员牵头 SaaS 云平台底层构建，并主导了喜茶、乐乐茶、久久丫等千万级品牌的数字化体系从 0 到 1 的交付与全国规模化落地。成功交付覆盖 5000+ 门店，达成 90%+ 大客户年度留存，在 KA 大客户开发、存量运营与数字化变革落地方面具备深厚方法论。
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4">
@@ -87,7 +87,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       desc: (
         <div className="space-y-6">
           <p className="border-l-2 border-slate-900 dark:border-white pl-4 italic text-slate-600 dark:text-slate-400">
-            10+ years of expertise in catering digital transformation and KA operation. Deeply involved in digital system building and large-scale implementation from 0 to 1 for top-tier brands. Led full-cycle delivery for premium brands like HEYTEA, Lelecha, and Jiujiuya, covering 5,000+ stores with 90%+ annual retention and 50%+ contribution to team revenue.
+            10+ years of deep expertise in catering digital transformation and KA operation. As a founding core member of a SaaS platform, led the 0-to-1 digital system construction and nationwide rollout for top-tier brands like HEYTEA, Lelecha, and Jiujiuya. Successfully managed 5,000+ stores with a 90%+ annual retention rate, demonstrating a proven track record in KA development, customer success, and driving organizational digital change.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4">

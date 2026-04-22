@@ -63,8 +63,8 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           description: "核心项目交付负责人。统筹 SaaS 项目全生命周期管理，从需求对接、方案设计到落地上线、验收交付，主导多个头部餐饮品牌数字化转型项目，累计覆盖超 5000 家连锁门店。",
           achievements: [
             "上海适达餐饮集团 (DQ 冰雪皇后、PPJ 棒约翰): 负责 BOH 门店供应链项目交付。对接全国 1000+ 门店需求，设计库存管理、采购补货、物流追踪全流程解决方案，上线后供应链周转效率明显提升，库存损耗率降低 2%。",
-            "深圳喜茶 (HEYTEA): 2018-2020年常驻深圳总部，作为核心对接人主导门店供应链 BOH 与 HiPOS 系统从 0 到 1 落地。统筹线上小程序、外卖平台、线下 POS 与 BOH 供应链全域打通，实现“下单-履约-结算”一体化数字化闭环，支撑全国门店规模化运营；(BOM配方设计研发曾获专利)",
-            "浙江久久丫食品: 2021-2022年常驻客户现场，负责业务中台项目。搭建集订单、库存、会员、财务于一体的业务中台，整合全国 1800+ 门店数据，打破数据孤岛，为品牌精细化运营与业务经营决策提供有力支撑。",
+            "深圳喜茶 (HEYTEA): 2019-2021年常驻深圳总部，作为核心对接人主导门店供应链 BOH 与 HiPOS 系统从 0 到 1 落地。统筹线上小程序、外卖平台、线下 POS 与 BOH 供应链全域打通，实现“下单-履约-结算”一体化数字化闭环，支撑全国门店规模化运营；(BOM配方设计研发曾获专利)",
+            "浙江久久丫食品: 2021-2023年常驻客户现场，负责业务中台项目。搭建集订单、库存、会员、财务于一体的业务中台，整合全国 1800+ 门店数据，打破数据孤岛，为品牌精细化运营与业务经营决策提供有力支撑。",
             "交付管理：统筹 SaaS 项目全生命周期管理，负责进度、风险及质量控制，确保多个大型项目按期保质交付，获得客户高度认可。"
           ],
           tags: ["PMP", "项目交付", "全生命周期管理", "专利研发"],
@@ -73,31 +73,32 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
         },
         {
           id: 3,
-          role: "SaaS 云平台高级软件开发",
+          role: "SaaS 云平台高级软件开发工程师",
           company: "上海合阔信息技术有限公司",
-          period: "2016.04 - 2018 (早期)",
-          description: "初创阶段核心成员。牵头 SaaS 餐饮云平台从 0 到 1 的底层构建，奠定平台技术基石。",
+          period: "2016.04 - 2018 (初创核心成员)",
+          description: "作为初创阶段核心技术成员，牵头餐饮 SaaS 云平台从 0 到 1 的全栈技术构建，主导底层架构设计、核心模块开发、部署运维体系搭建，为平台后续规模化扩张奠定技术基石。",
           achievements: [
-            "主导平台底层架构设计，采用微服务架构，支撑多租户隔离与高并发处理",
-            "聚焦订单 OMS 核心模块开发，设计标准化数据整合与清洗流程，解决订单来源分散痛点",
-            "打造统一数据接口体系，覆盖订单、库存、营收等核心业务维度"
+            "SaaS 平台架构从 0 到 1 搭建：主导基于 Python 框架与自研微服务框架的设计与落地，集成 OAuth 统一认证体系，实现多租户隔离与高并发处理，并利用 Jenkins + K8s 搭建自动化流水线支撑业务弹性伸缩。",
+            "核心业务模块深度开发：聚焦 OMS 订单管理系统，设计标准化数据整合清洗流程，实现全渠道订单统一接入，并通过分库分表与异步优化支撑日活跃订单处理量平滑扩容至 10 万级。",
+            "平台运维与技术沉淀：负责线上高频故障排查与性能调优（如库存超卖、延迟优化），并沉淀 SaaS 平台开发运维规范文档，为后续团队扩张与客户规模化接入门槛降低提供标准化指引。"
           ],
-          tags: ["微服务", "Java/Go", "ETL", "底层架构"],
+          tags: ["Python 框架", "OAuth/认证", "OMS 核心", "自研微服务"],
           color: "border-yellow-500 dark:border-yellow-400",
           isPromoted: false
         },
         {
           id: 4,
           role: "SharePoint 工程师",
-          company: "PwC 上海技术有限公司",
+          company: "普华永道（PwC）上海技术有限公司",
           period: "2014.01 - 2016.04",
-          description: "聚焦企业数字化协作效率提升。主导 SharePoint 平台的设计、部署与优化，支撑普华永道内部信息管理需求。",
+          description: "作为企业数字化协作核心技术成员，参与普华永道内部 SharePoint 平台的架构设计、部署实施、定制开发与运维优化，打造高可用、高效的企业级协作门户。",
           achievements: [
-            "负责公司内部 SharePoint 平台软件的开发与维护",
-            "定制开发 Web 部件与流程自动化配置，集成 Microsoft 365",
-            "利用 Power Automate 简化跨部门审批流程，提升文档协作效率"
+            "平台架构与工作流体系：参与企业级从 0 到 1 的部署实施，完成场集与权限体系设计，并深度参与企业内部工作流平台的搭建、部署与运维工作。",
+            "定制化开发与 M365 集成：基于 C#/.NET 开发自定义 Web 部件实现审批自动化，并深度集成 Teams/Exchange 打通流程孤岛，打破信息闭环。",
+            "流程自动化与国际化项目：利用 Power Automate 设计跨部门自动化审批流程（请假、采购等），并与海外 PwC 技术团队高效协作，成功交付海外医疗相关数字化项目。",
+            "运维优化与技术沉淀：负责 7x24 小时高可用性保障，输出标准化部署手册与开发规范，为后续平台扩容提供体系化指引。"
           ],
-          tags: ["SharePoint", "C#/.NET", "Power Automate", "企业协作"],
+          tags: ["SharePoint 专家", "C#/.NET", "Power Automate", "企业协作"],
           color: "border-slate-500 dark:border-gray-500",
           isPromoted: false
         },
@@ -106,14 +107,30 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           role: "微软 Web 技术 / SharePoint 工程师",
           company: "高知特信息技术（上海）有限公司",
           period: "2011.12 - 2013.12",
-          description: "作为技术组成员参与企业数字化转型项目，兼顾开发与运维，服务金融医疗行业客户。",
+          description: "作为技术团队核心成员，深度参与金融、医疗行业客户的数字化转型项目，基于微软 SharePoint 技术栈提供定制化解决方案，推动业务流程线上化。",
           achievements: [
-            "采用 SharePoint Framework (SPFx) 开发自定义组件，实现业务流程自动化",
-            "搭建客户内部审批流、文档协作门户等场景化解决方案",
-            "负责技术运维工单处理与复盘，输出分析报告推动平台迭代"
+            "行业解决方案开发：基于 SPFx 开发自定义组件，为金融客户构建合规文档管理、为医疗客户搭建病历协作等场景化门户，实现业务流程自动化。",
+            "技术运维与服务闭环：负责客户平台日常运维与工单处理，快速响应瓶颈问题，客户问题解决率与满意度位居团队前列。",
+            "跨团队协作与集成：主导 SharePoint 与客户 ERP/HIS 系统无缝集成，沉淀行业标准化解决方案模板，提升团队交付专业性。"
           ],
-          tags: ["Web开发", "SPFx", "IT运维", "数字化转型"],
+          tags: ["金融/医疗行业", "SPFx 开发", "系统实施", "IT 运维"],
           color: "border-purple-500 dark:border-purple-400",
+          isPromoted: false
+        },
+        {
+          id: 6,
+          role: ".NET & Web 技术支持工程师",
+          company: "微软（中国）有限公司",
+          period: "2010 - 2011",
+          description: "为企业级客户与内部团队提供 .NET 平台全栈技术支持，同时负责微软官方技术社区的开发维护，兼具一线客户服务、技术排障与内部平台建设能力。",
+          achievements: [
+            "企业级客户技术支持（Web/.NET/SharePoint）：负责微软官方技术支持中心（CSS）Web 板块，为企业客户提供 .NET Framework、C#、ASP.NET 与 SharePoint Server 相关的技术咨询与问题解决。",
+            "核心系统排障与优化：覆盖 ASP.NET 性能调优、IIS 部署排障、.NET 程序兼容性优化及 SharePoint 工作流开发定制化支持。",
+            "客户沟通与闭环：对接企业 IT 部门，通过远程协助定位根因并输出最佳实践文档，保障业务系统稳定运行，满意度位居团队前列。",
+            "知识库沉淀：整理典型案例与排障流程，沉淀为技术支持知识库，显著提升团队整体响应效率。"
+          ],
+          tags: [".NET", "SharePoint", "CSS技术支持", "故障排除"],
+          color: "border-blue-600 dark:border-blue-500",
           isPromoted: false
         }
       ];
@@ -173,8 +190,8 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           description: "Head of core project delivery. Managed full SaaS project lifecycles, from requirement alignment and solution design to go-live and acceptance, leading digital transformation for top catering brands covering 5000+ stores.",
           achievements: [
             "Shanghai Shida Catering Group (DQ, Papa John's): Responsible for BOH store supply chain project delivery. Aligned requirements for 1000+ stores nationwide, designed full-process solutions for inventory, procurement, and logistics, reducing inventory loss by 2%.",
-            "Shenzhen HEYTEA: Stationed in Shenzhen HQ (2018-2020), as the core contact led the 0-to-1 implementation of BOH supply chain and HiPOS systems. Coordinated the integration of mini-programs, delivery platforms, offline POS, and BOH supply chain, achieving an integrated 'Order-Fulfillment-Settlement' digital loop to support nationwide scaled operations; (Patented BOM recipe design).",
-            "Zhejiang Juewei Duck: Stationed on-site (2021-2022), responsible for business middle-platform project. Built an integrated platform for orders, inventory, membership, and finance, consolidating data for 1800+ stores to support refined operations and business decisions.",
+            "Shenzhen HEYTEA: Stationed in Shenzhen HQ (2019-2021), as the core contact led the 0-to-1 implementation of BOH supply chain and HiPOS systems. Coordinated the integration of mini-programs, delivery platforms, offline POS, and BOH supply chain, achieving an integrated 'Order-Fulfillment-Settlement' digital loop to support nationwide scaled operations; (Patented BOM recipe design).",
+            "Zhejiang Juewei Duck: Stationed on-site (2021-2023), responsible for business middle-platform project. Built an integrated platform for orders, inventory, membership, and finance, consolidating data for 1800+ stores to support refined operations and business decisions.",
             "Delivery Management: Managed full SaaS project lifecycles, responsible for schedule, risk, and quality control, ensuring on-time and high-quality delivery of multiple large-scale projects."
           ],
           tags: ["PMP", "Delivery", "Full Lifecycle", "Patents"],
@@ -185,29 +202,30 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           id: 3,
           role: "Senior Software Engineer (SaaS)",
           company: "Shanghai Hekuo Info Tech",
-          period: "2016.04 - 2018 (Early Stage)",
-          description: "Core founding member. Led the 0-to-1 underlying architecture construction of the SaaS Cloud Platform.",
+          period: "2016.04 - 2018 (Founding Core Member)",
+          description: "As a core founding technical member, led the 0-to-1 full-stack construction of the catering SaaS cloud platform. Directed underlying architecture design, core module development, and deployment systems, laying the technical foundation for scalable expansion.",
           achievements: [
-            "Led microservices architecture design, supporting multi-tenancy and high concurrency.",
-            "Focused on Order Management System (OMS) and standardized data integration/cleaning processes.",
-            "Built unified data interfaces and optimized data processing efficiency via ETL tools."
+            "0-to-1 SaaS Platform Architecture: Led the design and implementation of a custom microservices framework based on Python, integrating OAuth unified authentication for secure multi-tenancy and high-concurrency handling.",
+            "Core Business Module Development: Focused on OMS development, designing standardized data processing for omnichannel orders and optimizing performance via database partitioning and asynchronous messaging to support 100k+ daily orders.",
+            "Ops & Technical Excellence: Managed troubleshooting for high-frequency issues (e.g., inventory overselling, latency) and established SaaS development/Ops documentation standards to facilitate rapid team scale-up and client boarding."
           ],
-          tags: ["Microservices", "Java/Go", "ETL", "Architecture"],
+          tags: ["Python Framework", "OAuth/Auth", "OMS Core", "Custom Microservices"],
           color: "border-yellow-500 dark:border-yellow-400",
           isPromoted: false
         },
         {
           id: 4,
-          role: "SharePoint Engineer",
-          company: "PwC Shanghai",
+          role: "SharePoint Engineer (Digital Solutions)",
+          company: "PwC Shanghai Tech",
           period: "2014.01 - 2016.04",
-          description: "Focused on improving enterprise digital collaboration. Led SharePoint platform design, deployment, and optimization.",
+          description: "As a key technical member for digital collaboration, involved in the architectural design, deployment, custom development, and O&M of PwC's internal SharePoint platform to create a high-availability enterprise portal.",
           achievements: [
-            "Responsible for internal SharePoint platform development and maintenance.",
-            "Customized Web Parts and process automation; integrated Microsoft 365.",
-            "Used Power Automate to simplify cross-department approvals and improve efficiency."
+            "Architecture & Workflow Platform: Participated in 0-to-1 enterprise implementation and site collection planning; involved in the core construction and deployment of the internal corporate workflow platform.",
+            "Custom Development & M365: Developed custom Web Parts via C#/.NET for automated approvals and integrated Teams/Exchange to eliminate data silos and streamline workflows.",
+            "Automation & Global Collaboration: Designed automated workflows via Power Automate and collaborated with overseas PwC technical teams to deliver international medical digital projects.",
+            "O&M Excellence: Ensured 7x24 stability and established standardized deployment/development manuals to provide structural guidance for future platform expansion."
           ],
-          tags: ["SharePoint", "C#/.NET", "Power Automate", "Collaboration"],
+          tags: ["SharePoint Expert", "C#/.NET", "Power Automate", "Enterprise Collaboration"],
           color: "border-slate-500 dark:border-gray-500",
           isPromoted: false
         },
@@ -216,14 +234,30 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           role: "Microsoft Web / SharePoint Engineer",
           company: "Cognizant Technology Solutions",
           period: "2011.12 - 2013.12",
-          description: "Member of the tech team for digital transformation projects, covering development and IT operations for financial/medical clients.",
+          description: "Core member of the tech team supporting digital transformation in Finance and Healthcare industries, delivering customized SharePoint solutions to digitize business processes.",
           achievements: [
-            "Developed custom components using SharePoint Framework (SPFx) for automation.",
-            "Built scenario-based solutions like internal approval flows and document portals.",
-            "Managed IT operation tickets, established review mechanisms, and drove platform iterations."
+            "Industry Solutions: Developed custom components via SPFx, building compliance document management for Finance and record collaboration portals for Healthcare clients.",
+            "Ops & Service Loop: Managed daily O&M and ticket resolution with rapid response, maintaining top-tier customer satisfaction and issue resolution rates.",
+            "System Integration: Coordinated seamless integration between SharePoint and client ERP/HIS systems, establishing industry-standard templates for professional delivery."
           ],
-          tags: ["Web Dev", "SPFx", "IT Ops", "Digital Trans"],
+          tags: ["Fin/Medical Tech", "SPFx Dev", "Implementation", "IT Ops"],
           color: "border-purple-500 dark:border-purple-400",
+          isPromoted: false
+        },
+        {
+          id: 6,
+          role: ".NET & Web Technical Support Engineer",
+          company: "Microsoft (China) Co., Ltd.",
+          period: "2010 - 2011",
+          description: "Provided full-stack technical support for the .NET platform to enterprise clients and internal teams, while maintaining the official Microsoft technical community.",
+          achievements: [
+            "Enterprise Technical Support (Web/.NET/SharePoint): Provided technical consulting and troubleshooting for .NET Framework, C#, ASP.NET, and SharePoint Server in Microsoft's CSS department.",
+            "System Troubleshooting & Optimization: Handled performance tuning for ASP.NET apps, IIS deployment issues, .NET compatibility optimization, and custom SharePoint workflow support.",
+            "Customer Communication & Resolution: Partnered with enterprise IT departments to root-cause issues via remote sessions, delivering high-quality documentation and top-tier satisfaction rates.",
+            "Knowledge Management: Documented high-frequency issues into a technical knowledge base, significantly improving team response and resolution efficiency."
+          ],
+          tags: [".NET", "SharePoint", "CSS Support", "Troubleshooting"],
+          color: "border-blue-600 dark:border-blue-500",
           isPromoted: false
         }
       ];
