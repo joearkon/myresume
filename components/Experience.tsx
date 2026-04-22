@@ -35,13 +35,13 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
         },
         {
           id: 1,
-          role: "SaaS 平台大客户总监",
+          role: "SaaS 平台大客户总监 / 客户成功总监",
           company: "上海合阔信息技术有限公司",
           period: "2023 - 2025.07 (后期)",
-          description: "聚焦 SaaS 平台上线后大客户全生命周期运营。以客户价值为核心，构建系统化客户维护与增长体系。",
+          description: "凭借覆盖客户全生命周期管理、头部连锁客户深度运营及存量价值深耕的突出成果，由项目经理正式晋升为客户成功部门负责人（CSM 总监）。全面负责大客户留存、增购续约及长期价值运营，主导搭建客户成功体系，建立标准化服务流程、客户分层运营机制与全生命周期管理策略，推动核心指标持续保持行业标杆水平。",
           achievements: [
             "售前解决方案管理：曾多次主导售前讲标投标案例，独立完成大中型连锁企业的售前方案演示和讲标工作。主导行业头部品牌数字化项目全流程售前与投标工作，独立完成需求调研、业务蓝图规划、技术方案设计、系统架构规划、投标文件编制，覆盖技术标 + 商务标全模块；针对多个千万级标杆项目，独立负责现场讲标、答疑及全场景方案演示，精准传递产品价值。支撑多个百万/千万级项目成功中标，讲标通过率位居团队前列，为项目落地奠定坚实基石。",
-            "大客户 (KA) 独立运营体系：针对多个头部品牌制定独立运营逻辑。成立“产研+业务”专项小组以匹配客户的高速扩张需求；组建专业运维团队保障高可用业务运行；针对百万级以上营收品牌分配独立 CSM 经理，深度挖掘潜在需求并实现精细化价值深耕。",
+            "大客户 (KA) 独立运营体系：针对多个头部品牌制定独立运营逻辑。成立“产研+业务”专项小组以匹配客户的高速扩张需求；组建专业运维团队保障高可用业务运行；针对百万级以上营收品牌分配独立 CSM 经理，深度挖掘潜在需求并实现精细化价值深耕。同时，与品牌的业务负责人及 IT 负责人长期保持良好合作关系，全方位保障项目稳健运行与价值落地。",
             "中小客户 (SMB) 精细化管理：采用“AM+PM”共同维护机制。通过提炼全行业共性痛点并将其闭环转化为 SaaS 产品迭代需求，显著提升系统使用率与客户满意度。",
             "生态环节与全球化布局：深度联动国内外合作伙伴，筛选并培养优质代理商，协助进行更大规模的拓客、实施与运维，实现业务快速复制。",
             "售前赋能与最佳实践：将 KA 客户成功案例沉淀为行业最佳实践白皮书，辅助售前团队在投标阶段提供强有力的数字化交付支撑。"
@@ -60,7 +60,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           role: "SaaS 平台项目经理",
           company: "上海合阔信息技术有限公司",
           period: "2018 - 2023 (中期)",
-          description: "核心项目交付负责人。统筹 SaaS 项目全生命周期管理，从需求对接、方案设计到落地上线、验收交付，主导多个头部餐饮品牌数字化转型项目，累计覆盖超 5000 家连锁门店。",
+          description: "核心项目交付负责人。因项目中展现出极强的跨部门协作、客户沟通与方案表达能力，被团队推举同时负责技术负责人与项目经理双职责，成为技术与业务的核心衔接枢纽，正式奠定从技术向项目管理转型的基础。后续直接独立负责头部客户新项目，担任全职项目经理，统筹需求、方案、实施、交付与验收全流程，主导多个头部品牌数字化转型，累计覆盖超 5000 家连锁门店。",
           achievements: [
             "上海适达餐饮集团 (DQ 冰雪皇后、PPJ 棒约翰): 负责 BOH 门店供应链项目交付。对接全国 1000+ 门店需求，设计库存管理、采购补货、物流追踪全流程解决方案，上线后供应链周转效率明显提升，库存损耗率降低 2%。",
             "深圳喜茶 (HEYTEA): 2019-2021年常驻深圳总部，作为核心对接人主导门店供应链 BOH 与 HiPOS 系统从 0 到 1 落地。统筹线上小程序、外卖平台、线下 POS 与 BOH 供应链全域打通，实现“下单-履约-结算”一体化数字化闭环，支撑全国门店规模化运营；(BOM配方设计研发曾获专利)",
@@ -162,13 +162,13 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
         },
         {
           id: 1,
-          role: "Key Account Director (SaaS)",
+          role: "SaaS Platform KA Director / Customer Success Director",
           company: "Shanghai Hekuo Info Tech",
           period: "2023 - 2025.07 (Late Stage)",
-          description: "Focused on full lifecycle management of key accounts post-launch. Built a systematic customer maintenance and growth system centered on customer value.",
+          description: "Promoted from Project Manager to Head of Customer Success (CSM Director) following outstanding results in full lifecycle management and deep operation of top-tier chain brands. Led the construction of the Customer Success framework, establishing standardized service processes and client-tiering mechanisms to drive retention, upsell rates, and long-term value.",
           achievements: [
             "Pre-sales Solution Management: Led multiple pre-sales bidding cases for major chain enterprises. Managed the full cycle of pre-sales and bidding for top-tier catering brands, including requirement survey, business blueprinting, technical solution design, and bid document preparation. Responsible for on-site bidding and high-impact solution demonstrations for multi-million projects, effectively communicating product value to decision-makers. Supported the successful bid of multiple million/multi-million level projects with a top-tier success rate.",
-            "KA Independent Operation System: Developed customized operation systems for multiple top-tier brands. Established dedicated 'R&D + Business' task forces to support rapid client expansion and specialized O&M teams for high-availability business. Assigned dedicated CSMs for high-revenue accounts to track dynamics and mine latent needs.",
+            "KA Independent Operation System: Developed customized operation systems for multiple top-tier brands. Established dedicated 'R&D + Business' task forces to support rapid client expansion and specialized O&M teams for high-availability business. Assigned dedicated CSMs for high-revenue accounts to track dynamics and mine latent needs. Maintained long-term, positive relationships with brand business and IT heads to ensure stable project operation and value delivery.",
             "SMB Refined Operations: Implemented a joint 'AM + PM' mechanism. Identified common industry pain points to define SaaS product requirements, collaborating with the product team to drive feature iterations.",
             "Ecosystem & Global Expansion: Empowered domestic and international partners/agents for large-scale acquisition and implementation, facilitating global business growth.",
             "Pre-sales Enablement: Transformed KA success stories into industry best practice white papers, providing critical support for strategic bidding and technical proposals."
@@ -187,7 +187,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           role: "SaaS Project Manager",
           company: "Shanghai Hekuo Info Tech",
           period: "2018 - 2023 (Mid Stage)",
-          description: "Head of core project delivery. Managed full SaaS project lifecycles, from requirement alignment and solution design to go-live and acceptance, leading digital transformation for top catering brands covering 5000+ stores.",
+          description: "Head of core project delivery. Due to exceptional cross-department collaboration and communication skills, I was selected to serve as both Technical Lead and Project Manager, bridging technology and business—a role that established my transition to project management. Subsequently took independent charge of top-tier projects as a full-time PM, overseeing the entire lifecycle from requirements to delivery for 5000+ stores.",
           achievements: [
             "Shanghai Shida Catering Group (DQ, Papa John's): Responsible for BOH store supply chain project delivery. Aligned requirements for 1000+ stores nationwide, designed full-process solutions for inventory, procurement, and logistics, reducing inventory loss by 2%.",
             "Shenzhen HEYTEA: Stationed in Shenzhen HQ (2019-2021), as the core contact led the 0-to-1 implementation of BOH supply chain and HiPOS systems. Coordinated the integration of mini-programs, delivery platforms, offline POS, and BOH supply chain, achieving an integrated 'Order-Fulfillment-Settlement' digital loop to support nationwide scaled operations; (Patented BOM recipe design).",
@@ -275,8 +275,8 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           </h2>
           <p className="mt-2 text-slate-600 dark:text-gray-400 tracking-tight transition-colors duration-300 print:mt-0 print:text-[9.5pt] print:text-slate-500 print:tracking-tight">
             {language === 'zh' 
-              ? '十年磨一剑 • 从技术底层到商业顶层的全链路进阶'
-              : '10+ Years • From Technical Foundation to Business Leadership'}
+              ? '八年磨一剑 • 从技术底层到商业顶层的全链路进阶'
+              : '8+ Years • From Technical Foundation to Business Leadership'}
           </p>
         </div>
 

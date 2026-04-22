@@ -22,11 +22,11 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info3Title: '学历',
       info3Val: '本科',
       info4Title: '经验年限',
-      info4Val: '10余年 +',
+      info4Val: '8年 +',
       desc: (
         <div className="space-y-6">
           <p className="border-l-2 border-slate-900 dark:border-white pl-4 italic text-slate-600 dark:text-slate-400">
-            拥有 10 余年餐饮数字化转型与 KA 大客户运营实战积淀。曾作为初创核心成员牵头 SaaS 云平台底层构建，并主导了喜茶、乐乐茶、久久丫等千万级品牌的数字化体系从 0 到 1 的交付与全国规模化落地。成功交付覆盖 5000+ 门店，达成 90%+ 大客户年度留存，在 KA 大客户开发、存量运营与数字化变革落地方面具备深厚方法论。
+            拥有超过8年的餐饮数字化转型与 KA 大客户运营实战积淀。曾作为初创核心成员牵头 SaaS 云平台底层构建，并主导了喜茶、乐乐茶、久久丫等千万级品牌的数字化体系从 0 到 1 的交付与全国规模化落地。成功交付覆盖 5000+ 门店，达成 90%+ 大客户年度留存，在 KA 大客户开发、存量运营与数字化变革落地方面具备深厚方法论。
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4">
@@ -36,7 +36,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                 <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">专业沉淀</h4>
               </div>
               <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[9pt] print:text-slate-600">
-                深耕餐饮 SaaS 行业十余年，精通连锁餐饮数字化全链路经营，精通需求调研→方案设计→项目落地→上线培训→验收回款的全流程闭环。
+                深耕餐饮 SaaS 行业 8 年+，精通连锁餐饮数字化全链路经营，精通需求调研→方案设计→项目落地→上线培训→验收回款的全流程闭环。
                 擅长为连锁品牌定制一套化解决方案，推动门店运营效率提升。
               </p>
             </div>
@@ -58,7 +58,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                 <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">核心价值与标签</h4>
               </div>
               <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[9pt] print:text-slate-600">
-                兼具 10 年行业沉淀度与 AI 时代的快速学习迭代力。以结果为导向，擅长将技术、产品与客户需求深度绑定，创造可量化的商业价值。
+                兼具技术与餐饮行业沉淀，深度融合 AI 时代的学习迭代力。以结果为导向，擅长将技术、产品与客户需求深度绑定，创造可量化的商业价值。
               </p>
             </div>
           </div>
@@ -83,11 +83,11 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info3Title: 'Education',
       info3Val: 'Bachelor',
       info4Title: 'Experience',
-      info4Val: '10 Years +',
+      info4Val: '8 Years +',
       desc: (
         <div className="space-y-6">
           <p className="border-l-2 border-slate-900 dark:border-white pl-4 italic text-slate-600 dark:text-slate-400">
-            10+ years of deep expertise in catering digital transformation and KA operation. As a founding core member of a SaaS platform, led the 0-to-1 digital system construction and nationwide rollout for top-tier brands like HEYTEA, Lelecha, and Jiujiuya. Successfully managed 5,000+ stores with a 90%+ annual retention rate, demonstrating a proven track record in KA development, customer success, and driving organizational digital change.
+            8+ years of deep expertise in catering digital transformation and KA operation. As a founding core member of a SaaS platform, led the 0-to-1 digital system construction and nationwide rollout for top-tier brands like HEYTEA, Lelecha, and Jiujiuya. Successfully managed 5,000+ stores with a 90%+ annual retention rate, demonstrating a proven track record in KA development, customer success, and driving organizational digital change.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4">
@@ -97,7 +97,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                 <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">Professional Expertise</h4>
               </div>
               <p className="text-[12px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[8.5pt] print:text-slate-600">
-                Dedicated to catering SaaS for over a decade. Expert in the full-cycle closed loop from requirement survey to project acceptance. Specialized in customized solutions that drive efficiency.
+                Dedicated to catering SaaS for over 8 years. Expert in the full-cycle closed loop from requirement survey to project acceptance. Specialized in customized solutions that drive efficiency.
               </p>
             </div>
 
@@ -117,7 +117,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                 <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">Core Value & Brand</h4>
               </div>
               <p className="text-[12px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[8.5pt] print:text-slate-600">
-                Combining industrial stability with AI-era agility. Result-oriented and specialized in aligning tech with customer needs to create measurable commercial value.
+                Combining technical depth with catering industry expertise and AI-era agility. Result-oriented and specialized in aligning tech with customer needs to create measurable commercial value.
               </p>
             </div>
           </div>
@@ -184,7 +184,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
         </div>
 
         {/* Personal Info Card - Web View */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-[13px] md:text-sm mb-8 print:mb-4 print:grid-cols-4 print:gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-[13px] md:text-sm mb-8 print:mb-4 print:grid-cols-3 print:gap-2">
             <div className="bg-slate-50/50 dark:bg-slate-900/30 border-l-2 border-blue-500 py-2 px-4 transition-colors duration-300 print:p-2 print:border-slate-100">
                 <div className="text-slate-400 dark:text-slate-500 text-[10px] mb-0.5 uppercase tracking-[0.1em] font-semibold print:text-[8pt]">{t.info1Title}</div>
                 <div className="text-slate-900 dark:text-white font-semibold print:text-[9pt]">{t.info1Val}</div>
@@ -196,10 +196,6 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
             <div className="bg-slate-50/50 dark:bg-slate-900/30 border-l-2 border-amber-500 py-2 px-4 transition-colors duration-300 print:p-2 print:border-slate-100">
                 <div className="text-slate-400 dark:text-slate-500 text-[10px] mb-0.5 uppercase tracking-[0.1em] font-semibold print:text-[8pt]">{t.info3Title}</div>
                 <div className="text-slate-900 dark:text-white font-semibold print:text-[9pt]">{t.info3Val}</div>
-            </div>
-            <div className="bg-slate-50/50 dark:bg-slate-900/30 border-l-2 border-rose-500 py-2 px-4 transition-colors duration-300 print:p-2 print:border-slate-100">
-                <div className="text-slate-400 dark:text-slate-500 text-[10px] mb-0.5 uppercase tracking-[0.1em] font-semibold print:text-[8pt]">{t.info4Title}</div>
-                <div className="text-slate-900 dark:text-white font-semibold print:text-[9pt]">{t.info4Val}</div>
             </div>
         </div>
         
