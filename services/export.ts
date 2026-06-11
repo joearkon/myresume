@@ -58,15 +58,15 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
   // Data
   const hero = isZh ? {
     name: '陈子卓野',
-    title: '全链路数字化专家 | AIGC 新媒体运营',
-    roles: ['技术架构', '项目交付', '客户增长', 'AI 自媒体创作'],
+    title: 'AIGC 新媒体 | 大客户成功（售前售后） | 项目管理（餐饮O2O SaaS）',
+    roles: ['AIGC 新媒体', '大客户成功', '项目管理', '餐饮O2O SaaS'],
     contact: '+86 135 2425 2203 | 313455055@qq.com | home.kunkun1023.xyz',
     info: '1986年10月 | 汉族 | 上海 | 中共党员 | 本科 | 10余年 +',
     desc: '拥有 10余年 数字化转型与大客户运营经验，曾主导 喜茶、乐乐茶、久久丫 等千万级头部餐饮品牌项目落地。从代码到底层架构，从单项目交付到大客户运营，我不仅懂技术实现，更懂如何将技术转化为商业价值。目前正全面拥抱 AI 时代，深耕 AIGC 与新媒体运营。通过构建质量至上、控制生图成本的 AI 内容工作流，在小红书成功打造高粘性 IP 矩阵，并基于大模型搭建了投资决策分析系统，致力于将前沿技术转化为实际生产力。'
   } : {
     name: 'Joe.Chen',
-    title: 'Digital Transformation Expert | AIGC Social Media',
-    roles: ['Tech Arch', 'Delivery', 'Growth', 'AI Social Media'],
+    title: 'AIGC New Media | KA Success (Pre- & Post-Sales) | Project Management (Catering O2O SaaS)',
+    roles: ['AIGC New Media', 'KA Success', 'Project Management', 'Catering SaaS'],
     contact: '+86 135 2425 2203 | 313455055@qq.com | home.kunkun1023.xyz',
     info: 'Oct 1986 | Han | Shanghai | Party Member | Bachelor | 10 Years +',
     desc: 'With over 10 years of experience in digital transformation and KA operations, I have led project implementations for top-tier brands like HEYTEA, LeLeCha, and Jiujiuya. From coding to architecture, from delivery to operations, I bridge the gap between technical implementation and business value. Currently embracing the AI era, focusing on AIGC and social media operations. By establishing quality-centric AI workflows, I\'ve created high-engagement IP matrices on Xiaohongshu, optimized generation costs, and developed an AI-driven investment analysis model to turn frontier tech into productivity.'

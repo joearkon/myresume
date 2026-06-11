@@ -8,8 +8,8 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ language }) => {
   const content = {
     zh: {
-      tagline: '数字化专家顾问 / KA 大客户总监 / 项目管理（SaaS + AI 方向）',
-      tagline2: 'AIGC 新媒体运营',
+      tagline: 'AIGC 新媒体 / 大客户成功（售前售后） / 项目管理（餐饮O2O SaaS）',
+      tagline2: '求职意向',
       name: '陈子卓野',
       role1: '技术架构',
       role2: '项目交付',
@@ -69,8 +69,8 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       btnExport: '导出 PDF 简历'
     },
     en: {
-      tagline: 'Digital Expert Consultant / KA Key Account Director / Project Management (SaaS + AI)',
-      tagline2: 'AIGC Social Media',
+      tagline: 'AIGC New Media / Key Account Success (Pre- & Post-Sales) / Project Management (Catering O2O SaaS)',
+      tagline2: 'Job Intention',
       name: 'Joe.Chen',
       role1: 'Tech Arch',
       role2: 'Delivery',
