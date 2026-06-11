@@ -15,21 +15,27 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           role: "AIGC 独立开发者 / 运营者",
           company: "独立项目 / 自由职业",
           period: "2025.08 - 至今",
-          description: "全面拥抱 AI 时代，探索 AIGC 技术在内容创作与商业变现中的应用，构建高效的自动化工作流。",
+          description: "全面拥抱 AI 时代，深入探索 AIGC 核心技术在内容创意、金融决策辅助等垂直领域的工程化结合。致力于将先进的大模型工具（如 Claude Code 等）沉淀为单人高效闭环的智能化、数字化生产力工作流，实现从创意研发、数据挖掘到自媒体内容质量导向精细化运营的全站式进阶。",
           achievements: [
-            "通过构建定制化 Prompt 和低代码工作流 (Claude Code / Coze) 实现方案内容撰写、调研以及内容营销方面的自动化流水线，搭建快速迁移工具并赋能自身的使用场景能力",
-            "独立搭建跨平台二次元动漫 IP 矩阵：依托 AIGC 实现 1 个月内垂直粉丝高效增长 5000+，验证了 AI 在内容生产与私域引流上的商业化闭环能力",
-            "构建全链路 AI 视频生产工作流：集成原创角色设计、AI 剧本分镜到视频生成，内容生产效率较传统模式提升 80%，实现内容规模化、低成本产出"
+            "AI 投资交易分析决策系统（量化前置闭环）：使用 Claude Code 攻克技术与跨层级数据接口门槛，打通财经数据多维抓取与深度文本解析。针对原本需要花费数天时间精力深度研读的专业研报与行业资讯，实现数分钟内由 AI 自动完成‘抓取-整理-分析-决策结论提取’的全链路闭环聚合，极速提纯出核心营收预测与周期拐点，为实盘交易与前置抗险提供高效决策辅助。",
+            "小红书 AI 二创动漫/IP 自媒体增长矩阵（单月狂揽粉丝 3000+）：跑通从“选题定位 - 创意画面 AIGC 自定义生成（Seedance/Midjourney） - Claude 脚本重构 - 剪映 AI 剪辑”的高质量短视频生产线。坚持“质量至上”路线，拒绝低质频繁更新。面对不断抬升的制作成本与挑战，不断尝试更精益的落地策略（如通过高精度提示词和多帧角色一致性控制，大幅减少画面‘抽卡’损耗并降低落地成本），单月结合平台活动与流量，实现净暴涨 3000+ 专属高粘性粉丝，跑通高转化自发式视频增长模型。",
+            "企业级 Prompt 工程与提效工作流建设：利用大模型 Prompt 工程技术沉淀了 20 多套涵盖餐饮 SaaS 选址预测、行业讲标标书自动化生成、企业竞品追踪的大模型 Prompt 标准库，极大拓宽单人多维作业半径并提高方案产出效能。"
           ],
           aiProjects: [
             {
-              name: '股票量化助手',
-              desc: '基于大模型的智能股票量化分析与决策支持系统，提供实时数据洞察与策略回测。',
+              name: 'AI 投资交易辅助与智能分析系统',
+              desc: '自主基于 Claude Code 开发的多源研报文本智能清洗、行业周期景气度打分与上游产能传导模型，助力实盘精准决策。',
               link: 'https://stock-mind.kunkun1023.xyz/',
-              tags: ['AI 量化', '股票分析', 'LLM', '数据可视化']
+              tags: ['Claude Code', '金融量化', '大模型研报拆解', '决策外脑']
+            },
+            {
+              name: '小红书 AI 二创自媒体爆款矩阵',
+              desc: '精选 Seedance、Claude 精准企划，落实“质量优先”与“流程高性价比化”路线，单月实现极高点击率并净增粉 3000+ 的内容闭环跑通。',
+              link: '',
+              tags: ['自媒体起号', 'AIGC 视频精控', '高性价比落地', '爆款运营']
             }
           ],
-          tags: ["AIGC", "ComfyUI", "Gemini AI", "内容运营"],
+          tags: ["AIGC", "ComfyUI", "Claude Code", "内容运营", "大模型决策"],
           color: "border-purple-500 dark:border-purple-400",
           isPromoted: false
         },
@@ -142,21 +148,27 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           role: "AIGC Independent Developer / Operator",
           company: "Independent Project / Freelance",
           period: "2025.08 - Present",
-          description: "Fully embraced the AI era, exploring the application of AIGC technologies in content creation and commercial monetization, building highly efficient automated workflows.",
+          description: "Fully embraced the AI era, deeply exploring the engineering convergence of AIGC core technologies with content creation and financial decision-making as a solo developer. Committed to transforming advanced LLM-driven tools (e.g., Claude Code, Coze) into highly efficient, single-person closed-loop workflows, achieving full-stack progression from creative R&D to quality-centric social media growth.",
           achievements: [
-            "Built customized Prompts and low-code workflows (Claude Code / Coze) to implement automated pipelines for proposal writing, research, and content marketing, developing rapid migration tools to empower self-use scenario capabilities.",
-            "Independently built a cross-platform anime IP matrix: Achieved 5000+ vertical followers in 1 month via AIGC, verifying the commercial loop of AI in content production and private traffic acquisition.",
-            "Constructed a full-link AI video production workflow: Integrated character design, scriptwriting, and video generation, increasing production efficiency by 80% compared to traditional models."
+            "AI Investment Trading Analysis System (Quant Research Automation): Autonomously leveraged advanced AI developer tools (Claude Code & Coze) to architect a multi-tiered data scraping, NLP-based document parsing, and structured archiving engine. Automated the traditional days-long analytical reading of deep-dive reports and market news into minute-level actionable digests. Distilled core revenue forecasting indicators and cyclical turning points to provide robust, data-driven personal investment decision support.",
+            "Xiaohongshu AI IP/Anime Growth Matrix (3,000+ Net Followers in a Single Month): Established an advanced video funnel utilizing generative AIGC pipelines (Seedance, Claude, CapCut AI), strictly centered around 'Quality-First' content strategies rather than mere high-frequency posting. Actively explored cost-effective optimization techniques to bypass rising generation overheads—such as mastering precise prompts and visual guidance to curtail model 'gacha' wastes and maintain strict character consistency. Successfully converted 3,000+ targeted niche followers within a single month combining organic pushes and platform-sponsored campaigns.",
+            "Enterprise Prompt Engineering & Workflow Automation: Crafted and refined 20+ specialized standard prompt sets (for SaaS site selection, bid proposal generation, and business intelligence), drastically expanding single-person operational productivity and execution capabilities."
           ],
           aiProjects: [
             {
-              name: 'Stock Quant Assistant',
-              desc: 'An intelligent stock quantitative analysis and decision-support system based on LLMs, providing real-time data insights and strategy backtesting.',
+              name: 'AI Investment Analysis & Quant Decision Support',
+              desc: 'An intelligent fundamental analysis system built with Claude Code, feature-extracting broker reports, tracking upstream capacity shifts, and mapping domestic supply chains.',
               link: 'https://stock-mind.kunkun1023.xyz/',
-              tags: ['AI Quant', 'Stock Analysis', 'LLM', 'Data Visualization']
+              tags: ['Claude Code', 'AI Quant', 'LLM Intelligence', 'Data Synthesis']
+            },
+            {
+              name: 'RED AI Anim-IP Media Growth Matrix',
+              desc: 'Quality-centric social growth engine leveraging Seedance & Claude to optimize character consistency and reduce generation overhead, gaining 3,000+ targeted followers in a single month.',
+              link: '',
+              tags: ['IP Viral Growth', 'AIGC video control', 'Cost Optimization', 'Organic Growth']
             }
           ],
-          tags: ["AIGC", "ComfyUI", "Gemini AI", "Content Operation"],
+          tags: ["AIGC", "ComfyUI", "Claude Code", "Content Operation", "Data Synthesis"],
           color: "border-purple-500 dark:border-purple-400",
           isPromoted: false
         },
@@ -282,7 +294,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
 
         <div className="space-y-8 print:space-y-3">
           {experiences.map((exp) => (
-            <div key={exp.id} className="group relative border-b border-slate-200 dark:border-slate-800 pb-8 last:border-0 last:pb-0 print:pb-3 print:last:pb-0">
+            <div key={exp.id} className="group relative border-b border-slate-200 dark:border-slate-800 pb-8 last:border-0 last:pb-0 print:pb-3 print:last:pb-0 print:break-inside-avoid">
               
               <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1.5 gap-2 print:mb-0.5">
                 <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:tracking-tight">

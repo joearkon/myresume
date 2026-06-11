@@ -47,8 +47,8 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                 <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">AIGC 与跨界能力</h4>
               </div>
               <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[9pt] print:text-slate-600">
-                积极拥抱 AI 时代，构建标准化提效工作流。熟练运用 Claude Code、Coze 等工具实现业务自动化。
-                在短视频平台打造高粘性二次元 IP 矩阵。同时基于大模型开发量化交易助手，具备极强的跨领域交付力。
+                积极拥抱 AI 时代。利用 Claude Code 敏捷构建研报与信息自动提取平台，将以往费时数天的深研缩短至分钟级智能分析。
+                自媒体运营恪守“质量第一”路线，攻坚多帧角色一致性控制，大幅优化算力生图与“抽卡”损耗，单月结合平台流量精准涨粉 3000+。
               </p>
             </div>
 
@@ -107,7 +107,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                 <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">AIGC & Cross-domain</h4>
               </div>
               <p className="text-[12px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[8.5pt] print:text-slate-600">
-                Actively embracing AI. Built standardized workflows using Claude Code & Coze for business automation. Developed an AI-driven quantitative trading assistant, bridging tech with business productivity.
+                Actively embracing AI. Leveraged Claude Code to design report extraction workflows, compressing days of deep analysis into minutes of automated insight. Commits to a quality-centric strategy for social media, masterfully overcoming multi-frame consistency issues and minimizing generation costs to gain 3,000+ niche followers during platform campaigns.
               </p>
             </div>
 

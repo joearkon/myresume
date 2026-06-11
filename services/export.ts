@@ -62,14 +62,14 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
     roles: ['技术架构', '项目交付', '客户增长', 'AI 自媒体创作'],
     contact: '+86 135 2425 2203 | 313455055@qq.com | home.kunkun1023.xyz',
     info: '1986年10月 | 汉族 | 上海 | 中共党员 | 本科 | 10余年 +',
-    desc: '拥有 10余年 数字化转型与大客户运营经验，曾主导 喜茶、乐乐茶、久久丫 等千万级头部餐饮品牌项目落地。从代码到底层架构，从单项目交付到大客户运营，我不仅懂技术实现，更懂如何将技术转化为商业价值。目前正全面拥抱 AI 时代，深耕 AIGC 与新媒体运营。通过构建标准化的 AI 内容产出工作流，在抖音、小红书成功打造高粘性 IP 矩阵，并独立开发了基于大模型的量化交易助手，致力于将前沿技术转化为实际生产力。'
+    desc: '拥有 10余年 数字化转型与大客户运营经验，曾主导 喜茶、乐乐茶、久久丫 等千万级头部餐饮品牌项目落地。从代码到底层架构，从单项目交付到大客户运营，我不仅懂技术实现，更懂如何将技术转化为商业价值。目前正全面拥抱 AI 时代，深耕 AIGC 与新媒体运营。通过构建质量至上、控制生图成本的 AI 内容工作流，在小红书成功打造高粘性 IP 矩阵，并基于大模型搭建了投资决策分析系统，致力于将前沿技术转化为实际生产力。'
   } : {
     name: 'Joe.Chen',
     title: 'Digital Transformation Expert | AIGC Social Media',
     roles: ['Tech Arch', 'Delivery', 'Growth', 'AI Social Media'],
     contact: '+86 135 2425 2203 | 313455055@qq.com | home.kunkun1023.xyz',
     info: 'Oct 1986 | Han | Shanghai | Party Member | Bachelor | 10 Years +',
-    desc: 'With over 10 years of experience in digital transformation and KA operations, I have led project implementations for top-tier brands like HEYTEA, LeLeCha, and Jiujiuya. From coding to architecture, from delivery to operations, I bridge the gap between technical implementation and business value. Currently embracing the AI era, focusing on AIGC and social media operations. By building standardized AI workflows, I\'ve created high-engagement IP matrices on Douyin/Xiaohongshu and developed AI-driven quant tools to turn frontier tech into productivity.'
+    desc: 'With over 10 years of experience in digital transformation and KA operations, I have led project implementations for top-tier brands like HEYTEA, LeLeCha, and Jiujiuya. From coding to architecture, from delivery to operations, I bridge the gap between technical implementation and business value. Currently embracing the AI era, focusing on AIGC and social media operations. By establishing quality-centric AI workflows, I\'ve created high-engagement IP matrices on Xiaohongshu, optimized generation costs, and developed an AI-driven investment analysis model to turn frontier tech into productivity.'
   };
 
   const experience = isZh ? [
@@ -77,17 +77,17 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       role: "AIGC 独立开发者 / 运营者",
       company: "独立项目 / 自由职业",
       period: "2025.08 - 至今",
-      description: "全面拥抱 AI 时代，探索 AIGC 技术在内容创作与商业变现中的应用，构建高效的自动化工作流。",
+      description: "全面拥抱 AI 时代，深入探索 AIGC 核心技术在内容创意、金融决策辅助等领域的工程化结合，构建高效、高性价比的自动化生产流。",
       achievements: [
-        "独立搭建抖音 + 小红书双平台二次元动漫 IP 矩阵，依托 AIGC 实现 1 个月高效涨粉 5000 + 高粘性垂直粉丝",
-        "构建从角色原创设计、剧本分镜到 AI 视频生成的全链路标准化工作流，实现内容规模化、低成本、高效率产出",
-        "深入研究 AI 提示词工程（Prompt Engineering）与 ComfyUI 工作流编排，内容生产效率提升 80%"
+        "使用 Claude Code 搭建 AI 投资决策系统，实现数分钟内针对海量专业研报自动完成“抓取-分析-结论提取”闭环，从而提炼核心营收指标并预测拐点。",
+        "跑通小红书 AI 二创动漫 IP 增长矩阵。采用“品质至上”路线阻击低质高刷，通过高精度控词与一致性管理大幅减少画面抽卡成本损耗，单月精准增粉 3000+ 高粘性专业粉。",
+        "利用大模型 Prompt 工程技术沉淀了 20 多套涵盖餐饮 SaaS 选址预测、行业招投标自动化等企业级 Prompt 标准库。"
       ],
       aiProjects: [
         {
-          name: '股票量化助手',
-          desc: '基于大模型的智能股票量化分析与决策支持系统，提供实时数据洞察与策略回测。',
-          tags: ['AI 量化', '股票分析', 'LLM', '数据可视化']
+          name: 'AI 投资交易决策系统（Claude Code 自建）',
+          desc: '基于大模型的智能分析与决策系统，极速自动提炼财报与资讯并自动分析归纳。',
+          tags: ['AI 决策', '自动研报', 'LLM', 'Claude Code']
         }
       ]
     },
@@ -154,17 +154,17 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       role: "AIGC Independent Developer / Operator",
       company: "Independent Project / Freelance",
       period: "2025.08 - Present",
-      description: "Fully embraced the AI era, exploring the application of AIGC technologies in content creation and commercial monetization, building highly efficient automated workflows.",
+      description: "Fully embraced the AI era, deeply exploring the engineering convergence of AIGC core technologies with content creation and investment decision-making as a solo developer.",
       achievements: [
-        "Independently built a 2D anime IP matrix across Douyin and Xiaohongshu, gaining 5000+ vertical followers in 1 month via AIGC.",
-        "Constructed a full-link standardized workflow from original character design and script to AI video generation, achieving scalable and efficient output.",
-        "Deeply researched AI Prompt Engineering and ComfyUI workflow orchestration, increasing content production efficiency by 80%."
+        "Leveraged Claude Code to design report extraction workflows, compressing days of deep analysis into minutes of automated, actionable insights.",
+        "Established a quality-first AIGC short-video pipeline, overcoming multi-frame consistency struggles and minimizing image cost to gain 3,000+ followers in May.",
+        "Crafted 20+ specialized enterprise standard prompt sets (for SaaS site routing and corporate bidding) to multiply single-person execution metrics."
       ],
       aiProjects: [
         {
-          name: 'Stock Quant Assistant',
-          desc: 'An intelligent stock quantitative analysis and decision-support system based on LLMs, providing real-time data insights and strategy backtesting.',
-          tags: ['AI Quant', 'Stock Analysis', 'LLM', 'Data Visualization']
+          name: 'AI Investment Analysis System',
+          desc: 'Automates raw report crawling, token cleaning, and logical parameter extraction using Claude Code.',
+          tags: ['AI Decision Support', 'Report Automation', 'LLM', 'Claude Code']
         }
       ]
     },
@@ -233,7 +233,7 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       { value: '5000+', label: '连锁门店落地' },
       { value: '90%', label: '大客户年度留存' },
       { value: '50%', label: '团队营收贡献' },
-      { value: '5000+', label: 'AIGC 账号单月涨粉' }
+      { value: '3000+', label: 'AIGC 账号单月涨粉' }
     ],
     cases: [
       {
@@ -286,27 +286,27 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
         ]
       },
       {
-        brand: '自媒体 IP 矩阵',
-        role: '内容主理人 (2025)',
-        desc: '独立搭建抖音 + 小红书双平台二次元动漫 IP 矩阵，依托 AIGC 实现1 个月高效涨粉 5000 + 高粘性垂直粉丝，构建从角色原创设计、剧本分镜到 AI 视频生成的全链路标准化工作流。',
-        highlight: '1个月涨粉5000+',
+        brand: '小红书 AI 二创自媒体矩阵',
+        role: '内容主理人 (2026.01 - 至今)',
+        desc: '建立精细化的 AIGC 动漫/IP 短视频生成线。坚持“品质第一、精益求精”，通过精确提示词控制及多帧视觉一致性降本增效，在5月份结合平台流量快速实现净涨粉 3000+ 高粘性垂直专业粉丝。',
+        highlight: '单月快速涨粉 3000+',
         coreWork: [
           {
-            title: 'IP 视觉全案设计',
+            title: '多帧视觉与一致性攻坚',
             items: [
-              '独立完成角色人设、三视图、道具、场景、表情体系设计，形成统一可复用的原创视觉资产。'
+              '使用 Seedance 控制同一原创角色的多场景视觉一致性，突破“抽卡生图”壁垒大幅降低视频设计耗损。'
             ]
           },
           {
-            title: '内容体系搭建',
+            title: '高转化选题与脚本构筑',
             items: [
-              '自主策划动漫小剧场、剧情脚本、分镜设计、连载系列化内容，保障内容稳定输出与爆款潜力。'
+              '使用 Claude 精准微调高转化选题并深度重构脚本，把握情绪起爆点以确保观众极佳内容回馈。'
             ]
           },
           {
-            title: 'AIGC 全流程工作流搭建',
+            title: '高性价比精细化流程',
             items: [
-              '熟练运用 Gemini、ComfyUI、Seedance、可灵 等 AI 工具，打通 “剧本→分镜→角色→画面→视频→剪辑” 自动化生产闭环，内容产出效率提升 80%。'
+              '通过技术沉淀将原先繁琐的 AIGC 画面匹配转化为高效率、低制作成本的技术框架。'
             ]
           }
         ]
@@ -317,7 +317,7 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       { value: '5000+', label: 'Stores Deployed' },
       { value: '90%', label: 'Key Account Retention' },
       { value: '50%', label: 'Team Revenue Contribution' },
-      { value: '5000+', label: 'AIGC Monthly Followers' }
+      { value: '3000+', label: 'AIGC Monthly Followers' }
     ],
     cases: [
       {
@@ -371,27 +371,27 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
         ]
       },
       {
-        brand: 'Social Media IP Matrix',
-        role: 'Content Creator (2025)',
-        desc: 'Independently built a 2D anime IP matrix. Leveraged AIGC to gain 5000+ followers in one month. Constructed a full-link standardized workflow.',
-        highlight: '5000+ Followers in 1 Month',
+        brand: 'RED AI Anime/IP Growth Matrix',
+        role: 'Content Creator (2026.01 - Present)',
+        desc: 'Established quality-centric short video AIGC generation workflow. Overcame multi-frame consistency struggles and optimized prompts to reduce generation waste, rapidly converting 3,000+ followers in May.',
+        highlight: '3,000+ Followers in 1 Month',
         coreWork: [
           {
-            title: '1. Comprehensive IP Visual Design',
+            title: '1. Multi-frame Integrity & Visual Consistency',
             items: [
-              'Independently completed the design of character personas and reusable original visual assets.'
+              'Adhered to Seedance precise visual controls to secure identical animated character structures, bypassing the typical visual degradation in AI image loops.'
             ]
           },
           {
-            title: '2. Content System Construction',
+            title: '2. Dynamic Scripting with Claude',
             items: [
-              'Autonomously planned anime short theaters and serialized content with viral potential.'
+              'Analyzed audience responses via custom topic blueprints to drive organic feedback loops and click rates.'
             ]
           },
           {
-            title: '3. AIGC Full-Process Workflow Setup',
+            title: '3. Lean Workflow Implementation',
             items: [
-              'Utilized AI tools to bridge the automated production loop, increasing efficiency by 80%.'
+              'Adapted structure elements to counter escalating computing overhead, proving a cost-effective path to digital self-media execution.'
             ]
           }
         ]

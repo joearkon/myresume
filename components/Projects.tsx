@@ -6,7 +6,7 @@ interface ProjectsProps {
 }
 
 const ProjectCard: React.FC<{ item: any; language: Language }> = ({ item, language }) => (
-  <div className={`group border-b border-slate-100 dark:border-slate-800 pb-6 last:border-0 md:last:border-b print:pb-2 print:border-gray-100 print:break-inside-auto ${item.colSpan ? 'md:col-span-2' : ''}`}>
+  <div className={`group border-b border-slate-100 dark:border-slate-800 pb-6 last:border-0 md:last:border-b print:pb-2 print:border-gray-100 print:break-inside-avoid ${item.colSpan ? 'md:col-span-2' : ''}`}>
     <div className="flex justify-between items-start mb-1.5 print:mb-1">
       <h4 className="text-base font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:tracking-tight">
         {item.brand}
@@ -78,14 +78,44 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         { value: '5000+', label: '连锁门店落地', color: 'text-blue-500' },
         { value: '90%', label: '大客户年度留存', color: 'text-green-500' },
         { value: '50%', label: '团队营收贡献', color: 'text-purple-500' },
-        { value: '5000+', label: 'AIGC 账号月增粉', color: 'text-pink-500' }
+        { value: '3000+', label: 'AIGC 账号月增粉', color: 'text-pink-500' }
       ],
       archTitle: '数字化架构体系',
       archDesc: '打通 BOH 供应链与 POS 全渠道，消除数据孤岛，构建一体化业务中台。',
       group0Title: '售前解决方案管理',
       group1Title: '客户成功与运营管理',
       group2Title: '项目落地成果案例',
+      group3Title: 'AIGC 敏捷开发与创新自媒体实践',
       cases: [
+        {
+          brand: 'AIGC 智能系统与爆款自媒体矩阵实践',
+          role: 'AIGC 独立开发者 / 运营项目负责人 (2026.01 - 至今 | 个人敏捷开发)',
+          colSpan: true,
+          background: '在前沿大模型技术落地探索中，自主探索“个人AI工程师”与“一人内容创作室”的高效能、高性价比落地链路。涵盖使用 Claude Code 敏捷搭建的端到端投资分析系统，以及完全以高品质为导向实现的小红书爆款涨粉起号。',
+          coreWork: [
+            {
+              title: '一、AI 投资交易智能决策系统（Claude Code 自主搭建）',
+              items: [
+                '架设端到端研报与资讯深度提取系统：自主解决接口和逻辑痛点。针对原本需要花费数天时间精力深度研读的专业研报与新闻资讯，如今在几分钟内即可借助 AI 实现从‘抓取-整理-分析-核心结论’全自动贯通，高效消除碎片化信息滞后。',
+                '多维传导与景气度打分模型落地：从第一层抓取海外上游产能传导逻辑、层级要素级批量拆解券商核心预期与风险变量，直接提纯出最关键的业务指标。整套体系直接服务于个人实盘资金的前置研判、仓位节奏与风险排雷。'
+              ]
+            },
+            {
+              title: '二、小红书 AI 二创自媒体矩阵与爆款跑通',
+              items: [
+                '落实高品质、自闭环的 AI 视频生产线：集成 Seedance（画面生成及原创角色一致性）、Claude 与剪映 AI。坚持“品质至上、精益求精”的策略，不以频繁或低质刷量为基础。通过高精准控词与一致性引导，大幅优化落地成本（如降低“图片抽卡”损耗，使角色更符合画面预期）。',
+                '高转化爆款起号逻辑：深入研究平台 AIGC 推荐扶持标签、热搜变动与流量分发机制。结合高粘性原创 IP 二创，5 月单月结合平台活动和流量，实现净暴涨 3000+ 专属粉丝，验证转化逻辑。'
+              ]
+            }
+          ],
+          achievements: [
+            '多维 AI 决策大模型全流程贯通，原本繁冗的研报与海量资讯深度研读，如今只需几分钟即可完成提炼分析与决策规避；',
+            '自媒体账号 5 月份单月高性价比、低损跑通，净增粉 3000+ 专业粉，多条漫改爆发式作品流量破万验证价值；',
+            '沉淀出一套包含工程开发与内容放大在内的、极具敏捷开发参考价值的一人闭环数字化流程。'
+          ],
+          tags: ['Claude Code', 'AI 交易模型', '小红书增长', 'AIGC 视频工程', '敏捷闭环'],
+          highlight: '单月快速涨粉 3000+'
+        },
         {
           brand: '数字化咨询与售前解决方案管理',
           role: '数字化解决方案顾问 (2024 - 2025 | 全链路售前赋能)',
@@ -234,14 +264,44 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         { value: '5000+', label: 'Stores Implemented', color: 'text-blue-500' },
         { value: '90%', label: 'KA Annual Retention', color: 'text-green-500' },
         { value: '50%', label: 'Team Revenue Contribution', color: 'text-purple-500' },
-        { value: '5000+', label: 'AIGC Monthly Followers', color: 'text-pink-500' }
+        { value: '3000+', label: 'AIGC Monthly Followers', color: 'text-pink-500' }
       ],
       archTitle: 'Digital Architecture',
       archDesc: 'Bridging BOH supply chain and POS omni-channel to eliminate data silos.',
       group0Title: 'Pre-sales Solution Management',
       group1Title: 'Customer Success & Operations Management',
       group2Title: 'Project Implementation Cases',
+      group3Title: 'AIGC Engineering & Creative Media Practice',
       cases: [
+        {
+          brand: 'AIGC Intelligent Decision System & Red Media Growth Matrix',
+          role: 'AIGC Lead & Media Creator (2026.01 - Present | Agile Personal Studio)',
+          colSpan: true,
+          background: 'Pioneered the concept of the "Solo AI Engineer" and "1-Person Creative Hub" focusing on high fidelity and cost-effective scaling. Delivered an end-to-end investment analysis model using Claude Code, alongside a quality-first, highly optimized short-video content pipeline.',
+          coreWork: [
+            {
+              title: '1. AI Investment Analysis & Quant System (Built with Claude Code)',
+              items: [
+                'End-to-End Extraction & Parsing: Automated ingestion and token-cleaning workflows for multi-source financial report analyses. Compressed traditional days-long deep-dive readings into minutes of automated summary generation, efficiently mitigating intelligence lags.',
+                'Multi-layered Logical Modeling: Structured First-layer overseas capacity, Second-layer key parameter extraction from broker deep dives, and Third-layer cycle indicators—directly serving proactive spot hedging and capital risk shielding.'
+              ]
+            },
+            {
+              title: '2. Xiaohongshu AI Media Viral Playbook & Scaling',
+              items: [
+                'Quality-First AIGC Production: Combined Seedance (high-fidelity custom generation and character consistency control), Claude, and CapCut AI editing. Rejected high-frequency low-quality posting and adapted to rising production overheads by optimizing prompt coherence to minimize generation wastes and ensure characters fit specific artistic specifications.',
+                'Audience-Tuned Organic Growth: Leveraged viral IP modifications and high-conversion topic planning, combining platform-sponsored campaigns and organic traffic pushes within May to rapidly convert 3,000+ targeted niche followers.'
+              ]
+            }
+          ],
+          achievements: [
+            'Successfully mapped global market intelligence to real portfolio risk mitigation, compressing laborious broker deep-dives and market news loops into minute-level insights.',
+            'Acquired 3,000+ highly engaged niche followers on Xiaohongshu within a single month with premium cost-effectiveness, validating the organic viral loop.',
+            'Pioneered a robust, cost-effective blueprint illustrating how AI amplifies single-person output metrics'
+          ],
+          tags: ['Claude Code', 'AI Quant system', 'Social Media Growth', 'CapCut AI Pipeline', 'Solopreneur'],
+          highlight: '3,000+ Followers in 1 Month'
+        },
         {
           brand: 'Digital Consulting & Pre-sales Solution Management',
           role: 'Digital Solution Consultant (2024 - 2025 | Full-link Enablement)',
@@ -415,13 +475,25 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         {/* 3. Case Study Cards - Simplified to List Style */}
         <div className="mb-10 print:mb-3">
             <div className="space-y-10 print:space-y-3">
+              {/* Group 3: AIGC Project */}
+              <div>
+                <h3 className="text-xl font-bold text-left mb-6 text-slate-800 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1.5 px-3">
+                  {t.group3Title}
+                </h3>
+                <div className="grid grid-cols-1 gap-y-6 mt-4 print:mt-2">
+                  {t.cases.slice(0, 1).map((item: any, index) => (
+                    <ProjectCard key={index} item={item} language={language} />
+                  ))}
+                </div>
+              </div>
+
               {/* Group 0: Pre-sales Management */}
               <div>
                 <h3 className="text-xl font-bold text-left mb-6 text-slate-800 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1.5 px-3">
                   {t.group0Title}
                 </h3>
                 <div className="grid grid-cols-1 gap-y-6 mt-4 print:mt-2">
-                  {t.cases.slice(0, 1).map((item: any, index) => (
+                  {t.cases.slice(1, 2).map((item: any, index) => (
                     <ProjectCard key={index} item={item} language={language} />
                   ))}
                 </div>
@@ -433,7 +505,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                   {t.group1Title}
                 </h3>
                 <div className="grid grid-cols-1 gap-y-6 mt-4 print:mt-2">
-                  {t.cases.slice(1, 2).map((item: any, index) => (
+                  {t.cases.slice(2, 3).map((item: any, index) => (
                     <ProjectCard key={index} item={item} language={language} />
                   ))}
                 </div>
@@ -445,7 +517,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                   {t.group2Title}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8 print:grid-cols-1 print:gap-y-4 print:mt-2">
-                  {t.cases.slice(2).map((item: any, index) => (
+                  {t.cases.slice(3).map((item: any, index) => (
                     <ProjectCard key={index} item={item} language={language} />
                   ))}
                 </div>
