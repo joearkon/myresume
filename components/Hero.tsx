@@ -24,9 +24,12 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info4Title: '经验年限',
       info4Val: '8年 +',
       desc: (
-        <div className="space-y-6">
-          <p className="border-l-2 border-slate-900 dark:border-white pl-4 italic text-slate-600 dark:text-slate-400">
+        <div className="space-y-3">
+          <p className="border-l-4 border-indigo-600 dark:border-indigo-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
             拥有超过8年的餐饮数字化转型与 KA 大客户运营实战积淀。曾作为初创核心成员牵头 SaaS 云平台底层构建，并主导了喜茶、乐乐茶、久久丫等千万级品牌的数字化体系从 0 到 1 的交付与全国规模化落地。成功交付覆盖 5000+ 门店，达成 90%+ 大客户年度留存，在 KA 大客户开发、存量运营与数字化变革落地方面具备深厚方法论。
+          </p>
+          <p className="border-l-4 border-purple-600 dark:border-purple-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+            目前全面投身 AI 智能体编程与 AIGC 跨平台创作道路。熟练运用 Gemini、GPT、DeepSeek、Kimi、Qwen 等国内外主流大模型与 Claude Code、Codex 等 AI 智能编程 Agent，利用 AI 编程智能体和工具自主研发并开源多个项目，同时运营 AIGC 跨平台自媒体吸引全网 1w+ 粉丝，实现从餐饮 SaaS 数字化专家向 AI 前沿工程与内容创作者的双向跨界与生产力赋能。
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4">
@@ -44,11 +47,10 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
             <div className="group print:break-inside-avoid">
               <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 print:bg-emerald-600"></span>
-                <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">AIGC 与跨界能力</h4>
+                <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">AI 智能与跨界能力</h4>
               </div>
               <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[9pt] print:text-slate-600">
-                积极拥抱 AI 时代。利用 Claude Code 敏捷构建研报与信息自动提取平台，将以往费时数天的深研缩短至分钟级智能分析。
-                自媒体运营恪守“质量第一”路线，攻坚多帧角色一致性控制，大幅优化算力生图与“抽卡”损耗，单月结合平台流量精准涨粉 3000+。
+                积极拥抱 AI 时代。熟练调优 Gemini、GPT、DeepSeek、Kimi、Qwen 等国内外主流大模型，结合 Claude Code 与 Codex AI 智能编程 Agent 敏捷构建研报提取平台、2026 世界杯预测系统与 Velina Pet 桌面宠物；自媒体运营打造“AIGC 跨平台自媒体”，攻坚多帧角色一致性，小红书（7000+）与抖音（3000+）全网粉丝突破 1w+。
               </p>
             </div>
 
@@ -85,9 +87,12 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info4Title: 'Experience',
       info4Val: '8 Years +',
       desc: (
-        <div className="space-y-6">
-          <p className="border-l-2 border-slate-900 dark:border-white pl-4 italic text-slate-600 dark:text-slate-400">
+        <div className="space-y-3">
+          <p className="border-l-4 border-indigo-600 dark:border-indigo-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
             8+ years of deep expertise in catering digital transformation and KA operation. As a founding core member of a SaaS platform, led the 0-to-1 digital system construction and nationwide rollout for top-tier brands like HEYTEA, Lelecha, and Jiujiuya. Successfully managed 5,000+ stores with a 90%+ annual retention rate, demonstrating a proven track record in KA development, customer success, and driving organizational digital change.
+          </p>
+          <p className="border-l-4 border-purple-600 dark:border-purple-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+            Currently dedicated to AI agent programming and AIGC cross-platform creation. Proficient in global & domestic LLMs (Gemini, GPT, DeepSeek, Kimi, Qwen) and AI coding agents (Claude Code, Codex), independently developing and open-sourcing multiple projects with AI agents while operating cross-platform AIGC channels with 10,000+ total followers, seamlessly bridging enterprise SaaS expertise with cutting-edge AI engineering and content creation.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4">
@@ -104,10 +109,10 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
             <div className="group print:break-inside-avoid">
               <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 print:bg-emerald-600"></span>
-                <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">AIGC & Cross-domain</h4>
+                <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">AI Intelligence & Cross-domain</h4>
               </div>
               <p className="text-[12px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[8.5pt] print:text-slate-600">
-                Actively embracing AI. Leveraged Claude Code to design report extraction workflows, compressing days of deep analysis into minutes of automated insight. Commits to a quality-centric strategy for social media, masterfully overcoming multi-frame consistency issues and minimizing generation costs to gain 3,000+ niche followers during platform campaigns.
+                Actively embracing AI. Proficient in applying global & domestic LLMs (Gemini, GPT, DeepSeek, Kimi, Qwen), leveraging Claude Code & Codex AI Coding Agents to build AI investment platforms, WorldCup 2026 Predictions, and Velina Pet Desktop Mascot. Grew cross-platform AIGC channels to 10,000+ total followers across Xiaohongshu (7,000+) and Douyin (3,000+).
               </p>
             </div>
 

@@ -78,43 +78,83 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         { value: '5000+', label: '连锁门店落地', color: 'text-blue-500' },
         { value: '90%', label: '大客户年度留存', color: 'text-green-500' },
         { value: '50%', label: '团队营收贡献', color: 'text-purple-500' },
-        { value: '3000+', label: 'AIGC 账号月增粉', color: 'text-pink-500' }
+        { value: '1w+', label: 'AIGC 全网粉丝', color: 'text-pink-500' }
       ],
       archTitle: '数字化架构体系',
       archDesc: '打通 BOH 供应链与 POS 全渠道，消除数据孤岛，构建一体化业务中台。',
-      group0Title: '售前解决方案管理',
-      group1Title: '客户成功与运营管理',
-      group2Title: '项目落地成果案例',
-      group3Title: 'AIGC 敏捷开发与创新自媒体实践',
+      group0Title: '数字化咨询与售前解决方案管理',
+      group1Title: '大客户成功与体系化运营管理',
+      group2Title: '标杆项目落地成果案例',
+      group3Title: 'AI 智能、AIGC 跨平台实践与创业',
       cases: [
         {
-          brand: 'AIGC 智能系统与爆款自媒体矩阵实践',
-          role: 'AIGC 独立开发者 / 运营项目负责人 (2026.01 - 至今 | 个人敏捷开发)',
+          brand: 'AI编程智能体与开源工程项目',
+          role: 'AIGC 独立开发者 / 开源作者 (2025.08 - 至今 | 个人敏捷开发)',
           colSpan: true,
-          background: '在前沿大模型技术落地探索中，自主探索“个人AI工程师”与“一人内容创作室”的高效能、高性价比落地链路。涵盖使用 Claude Code 敏捷搭建的端到端投资分析系统，以及完全以高品质为导向实现的小红书爆款涨粉起号。',
+          background: '在前沿大模型（Claude Code、LLM）与自动化工程探索中，自主开发并开源多款实用型 AI 智能体与工程应用，涵盖金融投资决策辅助系统、2026 世界杯预测系统以及 Velina Pet 桌面宠物系统。',
           coreWork: [
             {
-              title: '一、AI 投资交易智能决策系统（Claude Code 自主搭建）',
+              title: '一、AI 投资交易智能决策系统（Claude Code / Codex Agent 搭建）',
               items: [
-                '架设端到端研报与资讯深度提取系统：自主解决接口和逻辑痛点。针对原本需要花费数天时间精力深度研读的专业研报与新闻资讯，如今在几分钟内即可借助 AI 实现从‘抓取-整理-分析-核心结论’全自动贯通，高效消除碎片化信息滞后。',
+                '架设端到端研报与资讯深度提取系统：灵活调配 Gemini、GPT、DeepSeek、Qwen 等国内外主流大模型。针对原本需要花费数天深度研读的专业研报与新闻资讯，在几分钟内即可借助 AI 实现‘抓取-整理-分析-核心结论’全自动贯通。',
                 '多维传导与景气度打分模型落地：从第一层抓取海外上游产能传导逻辑、层级要素级批量拆解券商核心预期与风险变量，直接提纯出最关键的业务指标。整套体系直接服务于个人实盘资金的前置研判、仓位节奏与风险排雷。'
               ]
             },
             {
-              title: '二、小红书 AI 二创自媒体矩阵与爆款跑通',
+              title: '二、2026 世界杯预测系统（WorldCup 2026 Predictions）',
               items: [
-                '落实高品质、自闭环的 AI 视频生产线：集成 Seedance（画面生成及原创角色一致性）、Claude 与剪映 AI。坚持“品质至上、精益求精”的策略，不以频繁或低质刷量为基础。通过高精准控词与一致性引导，大幅优化落地成本（如降低“图片抽卡”损耗，使角色更符合画面预期）。',
-                '高转化爆款起号逻辑：深入研究平台 AIGC 推荐扶持标签、热搜变动与流量分发机制。结合高粘性原创 IP 二创，5 月单月结合平台活动和流量，实现净暴涨 3000+ 专属粉丝，验证转化逻辑。'
+                '开源 2026 世界杯赛事预测与概率分析系统（GitHub: joearkon/worldcup2026-predictions），结合 LLM 与数据模型抓取交锋战绩、实时阵容与赔率指数走势。',
+                '收官战绩（2026-07-20 决赛收官）：全届 104 场中预测 101 场，胜负/晋级方向命中率 79.2%（80/101 场正确），比分命中率 29.7%（30/101 场，含 16 场精确比分），结合每日复盘与台账维护稳定胜率。'
+              ]
+            },
+            {
+              title: '三、桌面宠物系统（Velina Pet）',
+              items: [
+                '开源 AI 动态交互桌面宠物/助手（GitHub: joearkon/velina-pet），支持 LLM Agent 智能对话、沉浸式桌面动画与状态挂机。',
+                '联动米哈游等游戏开源接口，实现每日游戏签到、体力与日常任务查询、桌面通知提醒；分发至自媒体（小红书/抖音）粉丝群体体验，建立“内容流量 - 工具/社区”互动闭环。'
               ]
             }
           ],
           achievements: [
-            '多维 AI 决策大模型全流程贯通，原本繁冗的研报与海量资讯深度研读，如今只需几分钟即可完成提炼分析与决策规避；',
-            '自媒体账号 5 月份单月高性价比、低损跑通，净增粉 3000+ 专业粉，多条漫改爆发式作品流量破万验证价值；',
-            '沉淀出一套包含工程开发与内容放大在内的、极具敏捷开发参考价值的一人闭环数字化流程。'
+            '独立开发并开源 3 款涵盖金融量化、数据预测与桌面 Agent 的工程应用；',
+            '端到端贯通 LLM 分析与自动化抓取，将原本繁复的信息处理缩短至分钟级；',
+            '在 GitHub 保持规范的代码库架构、完整文档与 Readme 引导。'
           ],
-          tags: ['Claude Code', 'AI 交易模型', '小红书增长', 'AIGC 视频工程', '敏捷闭环'],
-          highlight: '单月快速涨粉 3000+'
+          tags: ['Claude Code / Codex', 'Gemini / DeepSeek / GPT', '世界杯预测', 'Velina Pet', '开源工程'],
+          highlight: '多款开源 / AI Agent'
+        },
+        {
+          brand: 'AIGC 跨平台自媒体',
+          role: 'AIGC 内容主理人 / 独立运营者 (2025.08 - 至今 | 独立内容管线)',
+          colSpan: true,
+          background: '建立精细化、高品质的跨平台 AIGC 内容生产线。截止目前小红书（7000+ 粉丝）与抖音（3000+ 粉丝）全网累计粉丝突破 10,000+。恪守“品质第一、精益求精”路线，通过高精度提示词工程与多帧视觉一致性算法降低生图成本。',
+          coreWork: [
+            {
+              title: '一、多帧视觉与角色一致性攻坚',
+              items: [
+                '熟练运用 Seedance 等工具精准控制原创/二创角色的多场景视觉一致性，突破传统 AIGC 画面不连贯壁垒，大幅降低“图片抽卡”损耗与算力成本。'
+              ]
+            },
+            {
+              title: '二、高转化脚本与内容全流程闭环',
+              items: [
+                '使用 Claude 深度重构短视频脚本与选题，结合剪映 AI 快速剪辑，打通“选题-脚本-画面-视频-剪辑”全闭环自动化管线。'
+              ]
+            },
+            {
+              title: '三、跨平台粉丝突破 1w+（小红书 7000+ / 抖音 3000+）',
+              items: [
+                '深入研究小红书与抖音流量推荐机制，2 个月内打造多条爆发式爆款作品（单条播放量破万），累积全网 10,000+ 高粘性垂直粉丝。'
+              ]
+            }
+          ],
+          achievements: [
+            '小红书粉丝 7,000+，抖音粉丝 3,000+，全网累计粉丝 10,000+；',
+            '多条 AIGC 短视频播放破万，建立极高内容爆款率与用户粘性；',
+            '沉淀高性价比、低损耗的 AIGC 图像/视频制作标准指导方案。'
+          ],
+          tags: ['AIGC 自媒体', '小红书 7000+', '抖音 3000+', '全网粉丝 1w+', 'Seedance 精控'],
+          highlight: '全网粉丝 1w+'
         },
         {
           brand: '数字化咨询与售前解决方案管理',
@@ -264,43 +304,83 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         { value: '5000+', label: 'Stores Implemented', color: 'text-blue-500' },
         { value: '90%', label: 'KA Annual Retention', color: 'text-green-500' },
         { value: '50%', label: 'Team Revenue Contribution', color: 'text-purple-500' },
-        { value: '3000+', label: 'AIGC Monthly Followers', color: 'text-pink-500' }
+        { value: '10,000+', label: 'AIGC Total Followers', color: 'text-pink-500' }
       ],
       archTitle: 'Digital Architecture',
       archDesc: 'Bridging BOH supply chain and POS omni-channel to eliminate data silos.',
-      group0Title: 'Pre-sales Solution Management',
-      group1Title: 'Customer Success & Operations Management',
-      group2Title: 'Project Implementation Cases',
-      group3Title: 'AIGC Engineering & Creative Media Practice',
+      group0Title: 'Digital Consulting & Pre-sales Solution Management',
+      group1Title: 'KA Customer Success & Operations Management',
+      group2Title: 'Benchmark Project Implementation Cases',
+      group3Title: 'AI Agents & AIGC Cross-Platform Practice',
       cases: [
         {
-          brand: 'AIGC Intelligent Decision System & Red Media Growth Matrix',
-          role: 'AIGC Lead & Media Creator (2026.01 - Present | Agile Personal Studio)',
+          brand: 'AI Coding Agents & Open-Source Projects',
+          role: 'AIGC Independent Developer / Open Source Creator (2025.08 - Present | Personal Studio)',
           colSpan: true,
-          background: 'Pioneered the concept of the "Solo AI Engineer" and "1-Person Creative Hub" focusing on high fidelity and cost-effective scaling. Delivered an end-to-end investment analysis model using Claude Code, alongside a quality-first, highly optimized short-video content pipeline.',
+          background: 'Engineered and released multiple practical AI Agent and open-source applications using Claude Code and LLM engineering, covering financial decision support, sports prediction analytics, and interactive desktop mascots.',
           coreWork: [
             {
-              title: '1. AI Investment Analysis & Quant System (Built with Claude Code)',
+              title: '1. AI Investment Analysis & Quant System (Claude Code & Codex Agent)',
               items: [
-                'End-to-End Extraction & Parsing: Automated ingestion and token-cleaning workflows for multi-source financial report analyses. Compressed traditional days-long deep-dive readings into minutes of automated summary generation, efficiently mitigating intelligence lags.',
-                'Multi-layered Logical Modeling: Structured First-layer overseas capacity, Second-layer key parameter extraction from broker deep dives, and Third-layer cycle indicators—directly serving proactive spot hedging and capital risk shielding.'
+                'End-to-End Ingestion & Parsing: Leveraged Gemini, GPT, DeepSeek, and Qwen for automated ingestion and token-cleaning workflows. Compressed days of manual reading into minutes of automated summary generation.',
+                'Multi-layered Logical Modeling: Structured overseas capacity tracking and broker deep-dive parameter extraction, serving spot hedging and capital risk shielding.'
               ]
             },
             {
-              title: '2. Xiaohongshu AI Media Viral Playbook & Scaling',
+              title: '2. 2026 World Cup Predictions System (WorldCup 2026 Predictions)',
               items: [
-                'Quality-First AIGC Production: Combined Seedance (high-fidelity custom generation and character consistency control), Claude, and CapCut AI editing. Rejected high-frequency low-quality posting and adapted to rising production overheads by optimizing prompt coherence to minimize generation wastes and ensure characters fit specific artistic specifications.',
-                'Audience-Tuned Organic Growth: Leveraged viral IP modifications and high-conversion topic planning, combining platform-sponsored campaigns and organic traffic pushes within May to rapidly convert 3,000+ targeted niche followers.'
+                'Open-source match prediction system (GitHub: joearkon/worldcup2026-predictions) leveraging LLM and data models to ingest rosters, odds dynamics, and head-to-head records.',
+                'Tournament Record (Finals July 20, 2026): Predicted 101 out of 104 matches, achieving a 79.2% match direction accuracy (80/101 correct win/qualification outcomes) and 29.7% scoreline accuracy (30/101, including 16 exact score predictions), backed by daily retrospectives.'
+              ]
+            },
+            {
+              title: '3. Desktop Mascot System (Velina Pet)',
+              items: [
+                'Open-source AI desktop companion (GitHub: joearkon/velina-pet) featuring LLM Agent interactive dialogue, desktop animations, and status tracking.',
+                'Integrated with game APIs (e.g., HoYoverse APIs) for automated daily check-ins, stamina/task queries, and desktop alerts. Distributed to social media followers (Xiaohongshu/Douyin) to build a strong "Content - Open-Source Tool/Community" engagement flywheel.'
               ]
             }
           ],
           achievements: [
-            'Successfully mapped global market intelligence to real portfolio risk mitigation, compressing laborious broker deep-dives and market news loops into minute-level insights.',
-            'Acquired 3,000+ highly engaged niche followers on Xiaohongshu within a single month with premium cost-effectiveness, validating the organic viral loop.',
-            'Pioneered a robust, cost-effective blueprint illustrating how AI amplifies single-person output metrics'
+            'Independently built and open-sourced 3 engineering applications in quant finance, sports prediction, and desktop agents.',
+            'Compressed laborious research and multi-platform development cycles into minutes with automated workflows.',
+            'Maintained clean repository architecture, documentation, and detailed README guides on GitHub.'
           ],
-          tags: ['Claude Code', 'AI Quant system', 'Social Media Growth', 'CapCut AI Pipeline', 'Solopreneur'],
-          highlight: '3,000+ Followers in 1 Month'
+          tags: ['Claude Code / Codex', 'Gemini / DeepSeek / GPT', 'WorldCup 2026', 'Velina Pet', 'Open Source'],
+          highlight: 'Open Source & AI Agents'
+        },
+        {
+          brand: 'AIGC Cross-Platform Media',
+          role: 'AIGC Content Creator & Operator (2025.08 - Present | Independent Pipeline)',
+          colSpan: true,
+          background: 'Established a refined, quality-first AIGC short-video content pipeline across Xiaohongshu (7,000+ followers) and Douyin (3,000+ followers), surpassing 10,000+ total followers to date while minimizing generation overheads.',
+          coreWork: [
+            {
+              title: '1. Multi-Frame Visuals & Character Consistency Control',
+              items: [
+                'Mastered Seedance and specialized prompt engineering to enforce character visual consistency across scenes, eliminating generation waste and reducing compute costs.'
+              ]
+            },
+            {
+              title: '2. High-Conversion Scripting & End-to-End Pipeline',
+              items: [
+                'Utilized Claude to re-structure short video scripts and topics, paired with CapCut AI for rapid automated editing.'
+              ]
+            },
+            {
+              title: '3. Cross-Platform Growth (10,000+ Total Followers)',
+              items: [
+                'Studied algorithm recommendation mechanisms on Xiaohongshu and Douyin, creating viral hits (10k+ views per video) and converting 10,000+ engaged niche followers.'
+              ]
+            }
+          ],
+          achievements: [
+            'Gained 7,000+ Xiaohongshu followers and 3,000+ Douyin followers, reaching 10,000+ total followers cross-platform.',
+            'Achieved high engagement and viral reach across multiple original and modified AIGC anime videos.',
+            'Documented cost-effective, low-loss AIGC media production guidelines.'
+          ],
+          tags: ['AIGC Media', 'Xiaohongshu 7000+', 'Douyin 3000+', '10k+ Followers', 'Seedance'],
+          highlight: '10,000+ Followers'
         },
         {
           brand: 'Digital Consulting & Pre-sales Solution Management',
@@ -475,13 +555,13 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         {/* 3. Case Study Cards - Simplified to List Style */}
         <div className="mb-10 print:mb-3">
             <div className="space-y-10 print:space-y-3">
-              {/* Group 3: AIGC Project */}
+              {/* Group 3: AI Projects & AIGC Practice */}
               <div>
                 <h3 className="text-xl font-bold text-left mb-6 text-slate-800 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1.5 px-3">
                   {t.group3Title}
                 </h3>
                 <div className="grid grid-cols-1 gap-y-6 mt-4 print:mt-2">
-                  {t.cases.slice(0, 1).map((item: any, index) => (
+                  {t.cases.slice(0, 2).map((item: any, index) => (
                     <ProjectCard key={index} item={item} language={language} />
                   ))}
                 </div>
@@ -493,7 +573,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                   {t.group0Title}
                 </h3>
                 <div className="grid grid-cols-1 gap-y-6 mt-4 print:mt-2">
-                  {t.cases.slice(1, 2).map((item: any, index) => (
+                  {t.cases.slice(2, 3).map((item: any, index) => (
                     <ProjectCard key={index} item={item} language={language} />
                   ))}
                 </div>
@@ -505,7 +585,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                   {t.group1Title}
                 </h3>
                 <div className="grid grid-cols-1 gap-y-6 mt-4 print:mt-2">
-                  {t.cases.slice(2, 3).map((item: any, index) => (
+                  {t.cases.slice(3, 4).map((item: any, index) => (
                     <ProjectCard key={index} item={item} language={language} />
                   ))}
                 </div>
@@ -517,7 +597,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                   {t.group2Title}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8 print:grid-cols-1 print:gap-y-4 print:mt-2">
-                  {t.cases.slice(3).map((item: any, index) => (
+                  {t.cases.slice(4).map((item: any, index) => (
                     <ProjectCard key={index} item={item} language={language} />
                   ))}
                 </div>

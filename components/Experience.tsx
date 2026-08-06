@@ -15,27 +15,39 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           role: "AIGC 独立开发者 / 运营者",
           company: "独立项目 / 自由职业",
           period: "2025.08 - 至今",
-          description: "全面拥抱 AI 时代，深入探索 AIGC 核心技术在内容创意、金融决策辅助等垂直领域的工程化结合。致力于将先进的大模型工具（如 Claude Code 等）沉淀为单人高效闭环的智能化、数字化生产力工作流，实现从创意研发、数据挖掘到自媒体内容质量导向精细化运营的全站式进阶。",
+          description: "全面拥抱 AI 时代，深入探索 AIGC 核心技术在内容创意、金融决策辅助等垂直领域的工程化结合。熟练运用 Gemini、GPT-4o、DeepSeek、Kimi、Qwen 等国内外主流大模型，致力于将先进的 AI 智能编程 Agent（Claude Code、Codex）沉淀为单人高效闭环的智能化、数字化生产力工作流，按场景精准选择最佳模型与工具。",
           achievements: [
-            "AI 投资交易分析决策系统（量化前置闭环）：使用 Claude Code 攻克技术与跨层级数据接口门槛，打通财经数据多维抓取与深度文本解析。针对原本需要花费数天时间精力深度研读的专业研报与行业资讯，实现数分钟内由 AI 自动完成‘抓取-整理-分析-决策结论提取’的全链路闭环聚合，极速提纯出核心营收预测与周期拐点，为实盘交易与前置抗险提供高效决策辅助。",
-            "小红书 AI 二创动漫/IP 自媒体增长矩阵（单月狂揽粉丝 3000+）：跑通从“选题定位 - 创意画面 AIGC 自定义生成（Seedance/Midjourney） - Claude 脚本重构 - 剪映 AI 剪辑”的高质量短视频生产线。坚持“质量至上”路线，拒绝低质频繁更新。面对不断抬升的制作成本与挑战，不断尝试更精益的落地策略（如通过高精度提示词和多帧角色一致性控制，大幅减少画面‘抽卡’损耗并降低落地成本），单月结合平台活动与流量，实现净暴涨 3000+ 专属高粘性粉丝，跑通高转化自发式视频增长模型。",
-            "企业级 Prompt 工程与提效工作流建设：利用大模型 Prompt 工程技术沉淀了 20 多套涵盖餐饮 SaaS 选址预测、行业讲标标书自动化生成、企业竞品追踪的大模型 Prompt 标准库，极大拓宽单人多维作业半径并提高方案产出效能。"
+            "AI 编程智能体与开源工程项目：基于 Claude Code 与 Codex 智能 Agent 搭建 AI 投资交易辅助系统（https://stock-mind.kunkun1023.xyz/）；开源 2026 世界杯预测系统（决赛收官战绩：101 场预测，胜负方向命中率 79.2%，比分命中率 29.7%）；开源 Velina Pet 桌面宠物系统，联动米哈游开源接口支持游戏签到与日常提醒，分发至自媒体粉丝群建立流量与产品互动闭环。",
+            "AIGC 跨平台自媒体（全网粉丝 1w+）：灵活运用 Gemini、DeepSeek、GPT 与 Claude，跑通“选题企划 - 画面 AIGC 自定义生成（Seedance 多帧一致性） - 文案重构 - AI 剪辑”的高质量短视频生产线。截止目前实现小红书 7000+ 粉丝、抖音 3000+ 粉丝，全网累计吸引 10,000+ 高粘性粉丝。",
+            "企业级 Prompt 工程与提效工作流建设：精通国内外多款主流大模型 Prompt 调优，沉淀了 20 多套涵盖餐饮 SaaS 选址预测、行业讲标标书自动化生成、企业竞品追踪的大模型 Prompt 标准库，极大拓宽单人作业半径。"
           ],
           aiProjects: [
             {
               name: 'AI 投资交易辅助与智能分析系统',
-              desc: '自主基于 Claude Code 开发的多源研报文本智能清洗、行业周期景气度打分与上游产能传导模型，助力实盘精准决策。',
+              desc: '基于 Claude Code 与 Codex Agent 开发的多源研报文本智能清洗、行业周期景气度打分与上游产能传导模型，助力实盘精准决策。',
               link: 'https://stock-mind.kunkun1023.xyz/',
-              tags: ['Claude Code', '金融量化', '大模型研报拆解', '决策外脑']
+              tags: ['Claude Code / Codex', 'Gemini / DeepSeek', '金融量化', '决策外脑']
             },
             {
-              name: '小红书 AI 二创自媒体爆款矩阵',
-              desc: '精选 Seedance、Claude 精准企划，落实“质量优先”与“流程高性价比化”路线，单月实现极高点击率并净增粉 3000+ 的内容闭环跑通。',
+              name: '2026 世界杯预测系统 (WorldCup Predictions)',
+              desc: '结合多大模型（GPT/DeepSeek/Qwen）与数据计算模型的赛事预测系统（GitHub 开源）。决赛收官战绩：预测 101 场，胜负方向命中率 79.2%（80 场正确），比分命中率 29.7%（含 16 场精确比分）。',
+              link: 'https://github.com/joearkon/worldcup2026-predictions',
+              tags: ['LLM 多模型', '方向命中率 79.2%', '世界杯 2026', '开源项目']
+            },
+            {
+              name: '桌面宠物系统 (Velina Pet)',
+              desc: '开源 AI 桌面宠物伴侣（GitHub）。联动米哈游开源接口实现游戏签到、体力与任务提醒，分发至小红书/抖音粉丝群打造体验闭环。',
+              link: 'https://github.com/joearkon/velina-pet',
+              tags: ['AI Agent', '米哈游接口', '桌面提醒', '粉丝闭环']
+            },
+            {
+              name: 'AIGC 跨平台自媒体',
+              desc: '精选 Seedance、Claude/Kimi 精准企划，落实“质量优先”与“流程高性价比化”路线，小红书 7000+ 粉丝，抖音 3000+ 粉丝，全网累计突破 1w+ 粉丝。',
               link: '',
-              tags: ['自媒体起号', 'AIGC 视频精控', '高性价比落地', '爆款运营']
+              tags: ['小红书 7000+', '抖音 3000+', '全网粉丝 1w+', ' Seedance 精控']
             }
           ],
-          tags: ["AIGC", "ComfyUI", "Claude Code", "内容运营", "大模型决策"],
+          tags: ["AIGC", "Claude Code", "Codex Agent", "DeepSeek / Gemini / GPT", "大模型决策"],
           color: "border-purple-500 dark:border-purple-400",
           isPromoted: false
         },
@@ -148,27 +160,39 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           role: "AIGC Independent Developer / Operator",
           company: "Independent Project / Freelance",
           period: "2025.08 - Present",
-          description: "Fully embraced the AI era, deeply exploring the engineering convergence of AIGC core technologies with content creation and financial decision-making as a solo developer. Committed to transforming advanced LLM-driven tools (e.g., Claude Code, Coze) into highly efficient, single-person closed-loop workflows, achieving full-stack progression from creative R&D to quality-centric social media growth.",
+          description: "Fully embraced the AI era, deeply exploring the engineering convergence of AIGC core technologies with content creation and investment decision-making. Proficient in applying global & domestic LLMs (Gemini, GPT-4o, DeepSeek, Kimi, Qwen), utilizing advanced AI Coding Agents (Claude Code, Codex) into efficient solo workflows, matching the right model & tool to each scenario.",
           achievements: [
-            "AI Investment Trading Analysis System (Quant Research Automation): Autonomously leveraged advanced AI developer tools (Claude Code & Coze) to architect a multi-tiered data scraping, NLP-based document parsing, and structured archiving engine. Automated the traditional days-long analytical reading of deep-dive reports and market news into minute-level actionable digests. Distilled core revenue forecasting indicators and cyclical turning points to provide robust, data-driven personal investment decision support.",
-            "Xiaohongshu AI IP/Anime Growth Matrix (3,000+ Net Followers in a Single Month): Established an advanced video funnel utilizing generative AIGC pipelines (Seedance, Claude, CapCut AI), strictly centered around 'Quality-First' content strategies rather than mere high-frequency posting. Actively explored cost-effective optimization techniques to bypass rising generation overheads—such as mastering precise prompts and visual guidance to curtail model 'gacha' wastes and maintain strict character consistency. Successfully converted 3,000+ targeted niche followers within a single month combining organic pushes and platform-sponsored campaigns.",
-            "Enterprise Prompt Engineering & Workflow Automation: Crafted and refined 20+ specialized standard prompt sets (for SaaS site selection, bid proposal generation, and business intelligence), drastically expanding single-person operational productivity and execution capabilities."
+            "AI Coding Agents & Open Source Projects: Built an AI Investment Analysis System using Claude Code & Codex Agents. Open-sourced WorldCup 2026 Predictions (Finals record: 101 matches predicted, 79.2% direction accuracy, 29.7% scoreline accuracy) and Velina Pet Desktop Mascot (integrating HoYoverse APIs for daily game check-ins and social media distribution).",
+            "AIGC Cross-Platform Media (10,000+ Total Followers): Strategically leveraged Gemini, DeepSeek, GPT, and Claude to build a quality-first short-video pipeline, reaching 10,000+ total followers to date across Xiaohongshu (7,000+) and Douyin (3,000+).",
+            "Enterprise Prompt Engineering & Workflow Automation: Mastered multi-model prompt tuning to craft 20+ specialized standard prompt sets (for SaaS site routing and corporate bidding) to multiply execution metrics."
           ],
           aiProjects: [
             {
-              name: 'AI Investment Analysis & Quant Decision Support',
-              desc: 'An intelligent fundamental analysis system built with Claude Code, feature-extracting broker reports, tracking upstream capacity shifts, and mapping domestic supply chains.',
+              name: 'AI Investment Analysis & Decision System',
+              desc: 'Built with Claude Code & Codex Agents to feature-extract broker reports with Gemini & DeepSeek, tracking capacity shifts for real-market decisions.',
               link: 'https://stock-mind.kunkun1023.xyz/',
-              tags: ['Claude Code', 'AI Quant', 'LLM Intelligence', 'Data Synthesis']
+              tags: ['Claude Code / Codex', 'Gemini / DeepSeek', 'AI Quant', 'Data Synthesis']
             },
             {
-              name: 'RED AI Anim-IP Media Growth Matrix',
-              desc: 'Quality-centric social growth engine leveraging Seedance & Claude to optimize character consistency and reduce generation overhead, gaining 3,000+ targeted followers in a single month.',
+              name: 'WorldCup 2026 Predictions System',
+              desc: 'Open-source match prediction system leveraging multi-LLM (GPT/DeepSeek/Qwen) data processing on GitHub. Achieved 79.2% match direction accuracy and 29.7% scoreline accuracy across 101 predicted matches.',
+              link: 'https://github.com/joearkon/worldcup2026-predictions',
+              tags: ['Multi-LLM', '79.2% Win Rate', 'WorldCup 2026', 'Open Source']
+            },
+            {
+              name: 'Velina Pet Desktop Mascot',
+              desc: 'Open-source AI desktop companion on GitHub. Integrated game APIs for auto check-ins and daily alerts, distributed to social media fans for community engagement.',
+              link: 'https://github.com/joearkon/velina-pet',
+              tags: ['AI Agent', 'HoYoverse API', 'Desktop Alerts', 'Fan Engagement']
+            },
+            {
+              name: 'AIGC Cross-Platform Media',
+              desc: 'Quality-centric social growth engine with Seedance and Claude/Kimi across Xiaohongshu (7,000+) and Douyin (3,000+), reaching 10,000+ followers.',
               link: '',
-              tags: ['IP Viral Growth', 'AIGC video control', 'Cost Optimization', 'Organic Growth']
+              tags: ['AIGC Media', 'Xiaohongshu 7000+', 'Douyin 3000+', '10k+ Followers']
             }
           ],
-          tags: ["AIGC", "ComfyUI", "Claude Code", "Content Operation", "Data Synthesis"],
+          tags: ["AIGC", "Claude Code", "Codex Agent", "DeepSeek / Gemini / GPT", "LLM Decision"],
           color: "border-purple-500 dark:border-purple-400",
           isPromoted: false
         },

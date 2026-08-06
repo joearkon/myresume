@@ -62,14 +62,14 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
     roles: ['AIGC 新媒体', '大客户成功', '项目管理', '餐饮O2O SaaS'],
     contact: '+86 135 2425 2203 | 313455055@qq.com | home.kunkun1023.xyz',
     info: '1986年10月 | 汉族 | 上海 | 中共党员 | 本科 | 10余年 +',
-    desc: '拥有 10余年 数字化转型与大客户运营经验，曾主导 喜茶、乐乐茶、久久丫 等千万级头部餐饮品牌项目落地。从代码到底层架构，从单项目交付到大客户运营，我不仅懂技术实现，更懂如何将技术转化为商业价值。目前正全面拥抱 AI 时代，深耕 AIGC 与新媒体运营。通过构建质量至上、控制生图成本的 AI 内容工作流，在小红书成功打造高粘性 IP 矩阵，并基于大模型搭建了投资决策分析系统，致力于将前沿技术转化为实际生产力。'
+    desc: '拥有超过 8 年的餐饮数字化转型与 KA 大客户运营实战积淀。曾作为初创核心成员牵头 SaaS 云平台底层构建，并主导喜茶、乐乐茶、久久丫等千万级品牌的数字化体系从 0 到 1 交付与全国规模化落地（交付 5000+ 门店，年度留存 90%+），在 KA 客户开发与存量运营具备深厚方法论。\n\n目前全面投身 AI 智能体编程与 AIGC 跨平台创作道路。熟练运用 Gemini、GPT、DeepSeek、Kimi、Qwen 等国内外主流大模型及 Claude Code、Codex 等 AI 智能编程 Agent，利用 AI 编程智能体和工具自主研发并开源多个项目，同时运营 AIGC 自媒体突破全网 1w+ 粉丝，实现餐饮 SaaS 数字化与前沿 AI 生产力的深度融合。'
   } : {
     name: 'Joe.Chen',
     title: 'AIGC New Media | KA Success (Pre- & Post-Sales) | Project Management (Catering O2O SaaS)',
     roles: ['AIGC New Media', 'KA Success', 'Project Management', 'Catering SaaS'],
     contact: '+86 135 2425 2203 | 313455055@qq.com | home.kunkun1023.xyz',
     info: 'Oct 1986 | Han | Shanghai | Party Member | Bachelor | 10 Years +',
-    desc: 'With over 10 years of experience in digital transformation and KA operations, I have led project implementations for top-tier brands like HEYTEA, LeLeCha, and Jiujiuya. From coding to architecture, from delivery to operations, I bridge the gap between technical implementation and business value. Currently embracing the AI era, focusing on AIGC and social media operations. By establishing quality-centric AI workflows, I\'ve created high-engagement IP matrices on Xiaohongshu, optimized generation costs, and developed an AI-driven investment analysis model to turn frontier tech into productivity.'
+    desc: '8+ years of deep expertise in catering digital transformation and KA operation. As a founding core member of a SaaS platform, led the 0-to-1 digital system construction and nationwide rollout for top-tier brands like HEYTEA, Lelecha, and Jiujiuya (5,000+ stores, 90%+ KA retention).\n\nCurrently dedicated to AI agent programming and AIGC cross-platform creation. Proficient in global & domestic LLMs (Gemini, GPT, DeepSeek, Kimi, Qwen) and AI coding agents (Claude Code, Codex), independently developing and open-sourcing multiple projects with AI agents while managing 10,000+ AIGC social media followers.'
   };
 
   const experience = isZh ? [
@@ -77,17 +77,32 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       role: "AIGC 独立开发者 / 运营者",
       company: "独立项目 / 自由职业",
       period: "2025.08 - 至今",
-      description: "全面拥抱 AI 时代，深入探索 AIGC 核心技术在内容创意、金融决策辅助等领域的工程化结合，构建高效、高性价比的自动化生产流。",
+      description: "全面拥抱 AI 时代，深入探索 AIGC 核心技术在内容创意、金融决策辅助等领域的工程化结合。熟练运用 Gemini、GPT、DeepSeek、Kimi、Qwen 等国内外大模型，结合 Claude Code 与 Codex Agent 打造单人闭环生产力。",
       achievements: [
-        "使用 Claude Code 搭建 AI 投资决策系统，实现数分钟内针对海量专业研报自动完成“抓取-分析-结论提取”闭环，从而提炼核心营收指标并预测拐点。",
-        "跑通小红书 AI 二创动漫 IP 增长矩阵。采用“品质至上”路线阻击低质高刷，通过高精度控词与一致性管理大幅减少画面抽卡成本损耗，单月精准增粉 3000+ 高粘性专业粉。",
+        "AI 编程智能体与开源工程项目：基于 Claude Code 与 Codex Agent 搭建 AI 投资交易辅助系统（https://stock-mind.kunkun1023.xyz/）；开源 2026 世界杯预测系统（决赛收官战绩：101 场预测，胜负方向命中率 79.2%，比分命中率 29.7%）；开源 Velina Pet 桌面宠物系统，联动米哈游开源接口支持游戏签到与日常提醒，分发至自媒体粉丝群建立流量与产品互动闭环。",
+        "AIGC 跨平台自媒体（小红书 7000+ / 抖音 3000+，全网粉丝 1w+）：跑通高质量短视频“选题-生图-脚本-剪辑”全闭环管线，精控 Seedance 多帧角色一致性与生图损耗，截止目前全网精准涨粉 10,000+。",
         "利用大模型 Prompt 工程技术沉淀了 20 多套涵盖餐饮 SaaS 选址预测、行业招投标自动化等企业级 Prompt 标准库。"
       ],
       aiProjects: [
         {
-          name: 'AI 投资交易决策系统（Claude Code 自建）',
-          desc: '基于大模型的智能分析与决策系统，极速自动提炼财报与资讯并自动分析归纳。',
-          tags: ['AI 决策', '自动研报', 'LLM', 'Claude Code']
+          name: 'AI 投资交易辅助与智能分析系统（Claude Code / Codex）',
+          desc: '基于大模型（Gemini/DeepSeek/GPT）的智能分析与决策系统，自动提炼财报与资讯并自动分析归纳。',
+          tags: ['AI 决策', 'Claude Code / Codex', 'Gemini / DeepSeek', 'LLM']
+        },
+        {
+          name: '2026 世界杯预测系统 (WorldCup Predictions)',
+          desc: '开源基于 LLM 与数据模型的赛事预测系统（GitHub）。决赛收官战绩：预测 101 场，胜负方向命中率 79.2%（80 场正确），比分命中率 29.7%（含 16 场精确比分）。',
+          tags: ['LLM', '方向命中率 79.2%', '世界杯 2026', '开源项目']
+        },
+        {
+          name: '桌面宠物系统 (Velina Pet)',
+          desc: '开源 AI 桌面宠物伴侣（GitHub）。联动米哈游开源接口实现游戏签到、体力与任务提醒，分发至自媒体粉丝群建立互动闭环。',
+          tags: ['AI Agent', '米哈游接口', '桌面提醒', '粉丝闭环']
+        },
+        {
+          name: 'AIGC 跨平台自媒体',
+          desc: '小红书 7000+ 粉丝，抖音 3000+ 粉丝，全网累计 1w+ 粉丝。精控多帧角色一致性与生图损耗。',
+          tags: ['AIGC 自媒体', '小红书 7000+', '抖音 3000+', '全网粉丝 1w+']
         }
       ]
     },
@@ -154,17 +169,32 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       role: "AIGC Independent Developer / Operator",
       company: "Independent Project / Freelance",
       period: "2025.08 - Present",
-      description: "Fully embraced the AI era, deeply exploring the engineering convergence of AIGC core technologies with content creation and investment decision-making as a solo developer.",
+      description: "Fully embraced the AI era, deeply exploring the engineering convergence of AIGC core technologies with content creation and investment decision-making. Proficient in global & domestic LLMs (Gemini, GPT, DeepSeek, Kimi, Qwen) and AI Coding Agents (Claude Code, Codex).",
       achievements: [
-        "Leveraged Claude Code to design report extraction workflows, compressing days of deep analysis into minutes of automated, actionable insights.",
-        "Established a quality-first AIGC short-video pipeline, overcoming multi-frame consistency struggles and minimizing image cost to gain 3,000+ followers in May.",
+        "AI Coding Agents & Open Source Projects: Built an AI Investment Analysis System with Claude Code & Codex Agents. Open-sourced WorldCup 2026 Predictions (Finals record: 101 matches predicted, 79.2% direction accuracy, 29.7% scoreline accuracy) and Velina Pet Desktop Mascot (integrating HoYoverse APIs for daily game check-ins and social media distribution).",
+        "AIGC Cross-Platform Media (10,000+ Followers): Established a quality-first AIGC short-video pipeline across Xiaohongshu (7,000+ followers) and Douyin (3,000+ followers), reaching 10,000+ total followers to date.",
         "Crafted 20+ specialized enterprise standard prompt sets (for SaaS site routing and corporate bidding) to multiply single-person execution metrics."
       ],
       aiProjects: [
         {
           name: 'AI Investment Analysis System',
-          desc: 'Automates raw report crawling, token cleaning, and logical parameter extraction using Claude Code.',
-          tags: ['AI Decision Support', 'Report Automation', 'LLM', 'Claude Code']
+          desc: 'Automates raw report crawling, token cleaning, and logical parameter extraction using Claude Code, Codex, Gemini, and DeepSeek.',
+          tags: ['AI Decision Support', 'Claude Code / Codex', 'Gemini / DeepSeek', 'LLM']
+        },
+        {
+          name: 'WorldCup 2026 Predictions System',
+          desc: 'Open-source match prediction system on GitHub. Achieved 79.2% match direction accuracy and 29.7% scoreline accuracy across 101 predicted matches.',
+          tags: ['LLM', '79.2% Win Rate', 'WorldCup 2026', 'Open Source']
+        },
+        {
+          name: 'Velina Pet Desktop Mascot',
+          desc: 'Open-source AI desktop companion on GitHub. Integrated game APIs for auto check-ins and daily alerts, distributed to social media fans.',
+          tags: ['AI Agent', 'HoYoverse API', 'Desktop Alerts', 'Fan Engagement']
+        },
+        {
+          name: 'AIGC Cross-Platform Media',
+          desc: 'Quality-centric social growth engine across Xiaohongshu (7,000+) and Douyin (3,000+), reaching 10,000+ followers.',
+          tags: ['AIGC Media', 'Xiaohongshu 7000+', 'Douyin 3000+', '10k+ Followers']
         }
       ]
     },
@@ -286,27 +316,53 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
         ]
       },
       {
-        brand: '小红书 AI 二创自媒体矩阵',
-        role: '内容主理人 (2026.01 - 至今)',
-        desc: '建立精细化的 AIGC 动漫/IP 短视频生成线。坚持“品质第一、精益求精”，通过精确提示词控制及多帧视觉一致性降本增效，在5月份结合平台流量快速实现净涨粉 3000+ 高粘性垂直专业粉丝。',
-        highlight: '单月快速涨粉 3000+',
+        brand: 'AI编程智能体与开源工程项目',
+        role: 'AIGC 独立开发者 / 开源作者 (2025.08 - 至今)',
+        desc: '包含基于 Claude Code 自研的大模型投资决策系统、2026 世界杯预测系统（WorldCup Predictions）以及 Velina Pet 桌面宠物系统，贯通金融量化、数据预测与 Agent 桌面交互。',
+        highlight: '开源与 AI Agent',
         coreWork: [
           {
-            title: '多帧视觉与一致性攻坚',
+            title: '一、AI 投资交易辅助与智能分析系统',
             items: [
-              '使用 Seedance 控制同一原创角色的多场景视觉一致性，突破“抽卡生图”壁垒大幅降低视频设计耗损。'
+              '基于 Claude Code 构建研报与资讯自动提炼平台，数分钟内自动完成‘抓取-整理-分析-核心结论’全自动贯通。'
             ]
           },
           {
-            title: '高转化选题与脚本构筑',
+            title: '二、2026 世界杯预测系统（WorldCup Predictions）',
             items: [
-              '使用 Claude 精准微调高转化选题并深度重构脚本，把握情绪起爆点以确保观众极佳内容回馈。'
+              '开源基于 LLM 与数据模型的赛事预测系统（GitHub: joearkon/worldcup2026-predictions）。2026-07-20 决赛收官：101 场预测，胜负方向命中率 79.2%（80 场正确），比分命中率 29.7%（30 场，含 16 场精确比分）。'
             ]
           },
           {
-            title: '高性价比精细化流程',
+            title: '三、桌面宠物系统（Velina Pet）',
             items: [
-              '通过技术沉淀将原先繁琐的 AIGC 画面匹配转化为高效率、低制作成本的技术框架。'
+              '开源 AI 动态交互桌面伴侣（GitHub: joearkon/velina-pet）。联动米哈游等开源接口实现游戏内容联动、签到、状态查询与日常提醒，分发给自媒体粉丝，构建互动体验闭环。'
+            ]
+          }
+        ]
+      },
+      {
+        brand: 'AIGC 跨平台自媒体',
+        role: '内容主理人 / 独立运营者 (2025.08 - 至今)',
+        desc: '建立精细化的 AIGC 动漫/IP 短视频生成线。精控多帧视觉一致性与提示词算法，2 个月内实现小红书 7000+、抖音 3000+，全网累计涨粉 10,000+。',
+        highlight: '全网粉丝 1w+',
+        coreWork: [
+          {
+            title: '一、多帧视觉与一致性攻坚',
+            items: [
+              '使用 Seedance 控制同一原创角色的多场景视觉一致性，大幅降低生图耗损。'
+            ]
+          },
+          {
+            title: '二、高转化选题与脚本重构',
+            items: [
+              '使用 Claude 精准微调高转化选题并重构脚本，结合剪映 AI 实现高性价比产出。'
+            ]
+          },
+          {
+            title: '三、跨平台粉丝突破（1w+）',
+            items: [
+              '小红书 7000+ 粉丝，抖音 3000+ 粉丝，全网累计吸引 10,000+ 垂直高粘性粉丝。'
             ]
           }
         ]
@@ -317,7 +373,7 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
       { value: '5000+', label: 'Stores Deployed' },
       { value: '90%', label: 'Key Account Retention' },
       { value: '50%', label: 'Team Revenue Contribution' },
-      { value: '3000+', label: 'AIGC Monthly Followers' }
+      { value: '10,000+', label: 'AIGC Total Followers' }
     ],
     cases: [
       {
@@ -371,27 +427,53 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
         ]
       },
       {
-        brand: 'RED AI Anime/IP Growth Matrix',
-        role: 'Content Creator (2026.01 - Present)',
-        desc: 'Established quality-centric short video AIGC generation workflow. Overcame multi-frame consistency struggles and optimized prompts to reduce generation waste, rapidly converting 3,000+ followers in May.',
-        highlight: '3,000+ Followers in 1 Month',
+        brand: 'AI Coding Agents & Open Source Projects',
+        role: 'AIGC Developer / Open Source Creator (2025.08 - Present)',
+        desc: 'Architected AI Investment Decision System with Claude Code and released open-source projects on GitHub (WorldCup 2026 Predictions & Velina Pet Desktop Mascot).',
+        highlight: 'Open Source & AI Agent',
+        coreWork: [
+          {
+            title: '1. AI Investment Analysis System',
+            items: [
+              'Built automated report extraction pipelines with Claude Code, parsing deep report insights in minutes.'
+            ]
+          },
+          {
+            title: '2. WorldCup 2026 Predictions System',
+            items: [
+              'Open-sourced match prediction system (GitHub: joearkon/worldcup2026-predictions). Tournament final record (July 20, 2026): 101 matches predicted, 79.2% match direction accuracy (80/101 correct) and 29.7% scoreline accuracy (30/101, 16 exact).'
+            ]
+          },
+          {
+            title: '3. Velina Pet Desktop Mascot',
+            items: [
+              'Open-sourced desktop AI companion (GitHub: joearkon/velina-pet). Integrated HoYoverse APIs for game check-ins, daily task alerts, and stamina tracking, distributed to social media followers.'
+            ]
+          }
+        ]
+      },
+      {
+        brand: 'AIGC Cross-Platform Media',
+        role: 'Content Creator / Operator (2025.08 - Present)',
+        desc: 'Quality-first short video AIGC pipeline across Xiaohongshu (7,000+) and Douyin (3,000+), reaching 10,000+ total followers in 2 months.',
+        highlight: '10,000+ Followers',
         coreWork: [
           {
             title: '1. Multi-frame Integrity & Visual Consistency',
             items: [
-              'Adhered to Seedance precise visual controls to secure identical animated character structures, bypassing the typical visual degradation in AI image loops.'
+              'Utilized Seedance to maintain character visual consistency and reduce image generation waste.'
             ]
           },
           {
-            title: '2. Dynamic Scripting with Claude',
+            title: '2. Script Optimization with Claude',
             items: [
-              'Analyzed audience responses via custom topic blueprints to drive organic feedback loops and click rates.'
+              'Refined scripts and topic blueprints with Claude for maximum engagement and click rates.'
             ]
           },
           {
-            title: '3. Lean Workflow Implementation',
+            title: '3. Cross-Platform Organic Growth',
             items: [
-              'Adapted structure elements to counter escalating computing overhead, proving a cost-effective path to digital self-media execution.'
+              'Grew Xiaohongshu to 7,000+ followers and Douyin to 3,000+ followers, totaling 10,000+ followers.'
             ]
           }
         ]

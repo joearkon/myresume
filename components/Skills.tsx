@@ -33,8 +33,8 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
           icon: (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
           ),
-          description: '深度应用 AIGC 与低代码 AI 平台（Claude Code/Coze）赋能组织提效与业务创新',
-          items: ['LLM 应用开发', 'AI Agents', 'Claude Code', 'Prompt 调优', 'Gemini AI Studio', 'Coze 自动化']
+          description: '熟练掌握国内外主流大模型（Gemini/GPT/DeepSeek/Kimi/Qwen），精通 Claude Code、Codex 等 AI 智能编程 Agent，按场景选择最佳模型与工具提效',
+          items: ['Claude Code', 'Codex Agent', 'Gemini / GPT', 'DeepSeek / Kimi / Qwen', 'LLM Agent 开发', 'Prompt 调优']
         },
         {
           category: '语言能力',
@@ -72,8 +72,8 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
           icon: (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
           ),
-          description: 'Deep application of AIGC and AI platforms (Claude Code/Coze) to drive efficiency',
-          items: ['LLM Application', 'AI Agents', 'Claude Code', 'Prompt Engineering', 'Gemini AI Studio', 'Coze Automation']
+          description: 'Proficient in global & domestic LLMs (Gemini, GPT, DeepSeek, Kimi, Qwen) and AI coding agents (Claude Code, Codex), selecting optimal models & tools for tasks',
+          items: ['Claude Code', 'Codex Agent', 'Gemini / GPT', 'DeepSeek / Kimi / Qwen', 'LLM Agent Dev', 'Prompt Engineering']
         },
         {
           category: 'Languages',
