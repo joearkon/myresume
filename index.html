@@ -109,6 +109,7 @@
         * {
           -webkit-print-color-adjust: exact !important;
           print-color-adjust: exact !important;
+          box-shadow: none !important;
         }
 
         /* 2. 隐藏非核心 UI 元素与禁止动画 */
@@ -146,78 +147,108 @@
 
         /* 3. 页面边距与尺寸 */
         @page {
-          margin: 0.5cm 0.8cm; 
-          size: A4;
+          margin: 1cm 1cm; 
+          size: A4 portrait;
         }
 
         body {
           background: white !important;
-          color: #1e293b !important; /* slate-800 */
-          font-size: 10pt; 
+          color: #0f172a !important; /* slate-900 */
+          font-size: 9.5pt; 
           line-height: 1.35;
           letter-spacing: -0.01em;
           overflow: visible !important;
         }
 
-        /* 4. 空间优化：紧凑布局 */
+        /* 4. 允许绝大多数容器自然分页，防止整块下移造成海量空白 */
         section {
-          padding: 8px 0 !important;
-          margin: 0 auto !important;
-          max-width: 19.5cm !important; 
-          page-break-inside: auto;
+          padding: 6px 0 !important;
+          margin: 0 auto 6px auto !important;
+          max-width: 100% !important; 
+          page-break-inside: auto !important;
+          break-inside: auto !important;
         }
-        
-        .mb-20, .mb-16, .mb-12, .mb-10, .mb-8, .py-20, .pt-28, .pb-12, .py-12 {
-            margin-bottom: 4px !important;
-            padding-top: 2px !important;
-            padding-bottom: 2px !important;
+
+        div, article, .rounded-xl, .rounded-lg, .rounded-2xl, .group {
+          page-break-inside: auto !important;
+          break-inside: auto !important;
         }
-        
+
+        .mb-20, .mb-16, .mb-12, .mb-10, .mb-8, .mb-6, .py-20, .pt-28, .pb-12, .py-12 {
+          margin-bottom: 4px !important;
+          padding-top: 2px !important;
+          padding-bottom: 2px !important;
+        }
+
         .max-w-4xl, .max-w-5xl, .max-w-6xl, .max-w-7xl {
-          max-width: 19.5cm !important;
+          max-width: 100% !important;
           padding: 0 !important;
           margin: 0 auto !important;
         }
 
-        /* 5. 标题与文字 */
-        h1 { font-size: 22pt !important; margin-bottom: 2px !important; letter-spacing: -0.02em !important; }
-        h2 { font-size: 16pt !important; margin-top: 8px !important; margin-bottom: 4px !important; letter-spacing: -0.02em !important; border-bottom: 1px solid #3b82f6 !important; padding-bottom: 1px !important; }
-        h3 { font-size: 12.5pt !important; margin-bottom: 1px !important; letter-spacing: -0.01em !important; }
-        h4 { font-size: 10.5pt !important; letter-spacing: -0.01em !important; }
-        
-        /* 6. 保持网格布局但优化空间 */
-        .grid {
-          display: grid !important;
-          gap: 12px !important;
-        }
-
-        /* 7. 链接处理：不再强制显示长 URL */
-        a { text-decoration: none !important; color: inherit !important; }
-        a:after { content: "" !important; }
-
-        /* 8. 分页保护 */
-        li, .rounded-xl, .rounded-lg {
+        /* 5. 标题与文字：防止标题孤立在页脚 */
+        h1 { font-size: 20pt !important; margin-bottom: 2px !important; letter-spacing: -0.02em !important; }
+        h2 { 
+          font-size: 14pt !important; 
+          margin-top: 8px !important; 
+          margin-bottom: 4px !important; 
+          letter-spacing: -0.02em !important; 
+          border-bottom: 1.5px solid #2563eb !important; 
+          padding-bottom: 2px !important;
+          page-break-after: avoid !important;
+          break-after: avoid !important;
           page-break-inside: avoid !important;
           break-inside: avoid !important;
         }
-
-        /* 确保标题不孤立在页尾 */
-        h1, h2, h3, h4, h5, h6 {
+        h3 { 
+          font-size: 11.5pt !important; 
+          margin-top: 6px !important;
+          margin-bottom: 2px !important; 
+          letter-spacing: -0.01em !important;
+          page-break-after: avoid !important;
+          break-after: avoid !important;
+        }
+        h4, h5, h6 { 
+          font-size: 10pt !important; 
+          margin-bottom: 2px !important;
           page-break-after: avoid !important;
           break-after: avoid !important;
         }
 
-        /* 9. 针对特定组件的微调 */
+        /* 6. 保持网格布局但优化空间 */
+        .grid {
+          display: grid !important;
+          gap: 8px !important;
+        }
+
+        /* 7. 链接处理 */
+        a { text-decoration: none !important; color: inherit !important; }
+        a:after { content: "" !important; }
+
+        /* 8. 细粒度控制：列表项不中途截断，其他大元素可跨页 */
+        li {
+          page-break-inside: avoid !important;
+          break-inside: avoid !important;
+        }
+
+        .print\:break-inside-avoid {
+          page-break-inside: avoid !important;
+          break-inside: avoid !important;
+        }
+
+        /* 9. Component Specific overrides */
         #home {
           min-height: auto !important;
           padding-top: 0 !important;
-          border-bottom: 1px solid #e2e8f0;
+          border-bottom: 1px solid #cbd5e1;
+          page-break-inside: avoid !important;
+          break-inside: avoid !important;
         }
 
         /* 技能标签紧凑化 */
         #skills span {
-            padding: 2px 6px !important;
-            font-size: 8.5pt !important;
+          padding: 1px 5px !important;
+          font-size: 8pt !important;
         }
       }
     </style>

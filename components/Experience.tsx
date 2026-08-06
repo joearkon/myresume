@@ -318,9 +318,9 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
 
         <div className="space-y-8 print:space-y-3">
           {experiences.map((exp) => (
-            <div key={exp.id} className="group relative border-b border-slate-200 dark:border-slate-800 pb-8 last:border-0 last:pb-0 print:pb-3 print:last:pb-0 print:break-inside-avoid">
+            <div key={exp.id} className="group relative border-b border-slate-200 dark:border-slate-800 pb-8 last:border-0 last:pb-0 print:pb-3 print:last:pb-0 print:mb-2">
               
-              <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1.5 gap-2 print:mb-0.5">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1.5 gap-2 print:mb-0.5 print:break-inside-avoid">
                 <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:tracking-tight">
                   {exp.role}
                 </h3>

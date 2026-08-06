@@ -6,7 +6,7 @@ interface ProjectsProps {
 }
 
 const ProjectCard: React.FC<{ item: any; language: Language }> = ({ item, language }) => (
-  <div className={`group border-b border-slate-100 dark:border-slate-800 pb-6 last:border-0 md:last:border-b print:pb-2 print:border-gray-100 print:break-inside-avoid ${item.colSpan ? 'md:col-span-2' : ''}`}>
+  <div className={`group border-b border-slate-100 dark:border-slate-800 pb-6 last:border-0 md:last:border-b print:pb-2.5 print:mb-2 print:border-gray-200 ${item.colSpan ? 'md:col-span-2' : ''}`}>
     <div className="flex justify-between items-start mb-1.5 print:mb-1">
       <h4 className="text-base font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:tracking-tight">
         {item.brand}
@@ -38,7 +38,7 @@ const ProjectCard: React.FC<{ item: any; language: Language }> = ({ item, langua
         <h5 className="text-[11px] font-bold text-slate-800 dark:text-slate-200 mb-1.5 print:mb-0.5 print:text-[9.5pt]">{language === 'zh' ? '核心工作内容' : 'Core Responsibilities'}</h5>
         <div className="space-y-2 print:space-y-1">
           {item.coreWork.map((work: any, wIdx: number) => (
-            <div key={wIdx}>
+            <div key={wIdx} className="print:break-inside-avoid">
               <h6 className="text-[13px] font-semibold text-slate-700 dark:text-slate-300 mb-0.5 print:text-[9.5pt]">{work.title}</h6>
               <ul className="list-disc list-outside ml-4 text-[13px] text-slate-600 dark:text-gray-400 space-y-0.5 leading-snug print:text-[9pt] print:space-y-0 print:leading-snug">
                 {work.items.map((wi: string, iIdx: number) => <li key={iIdx}>{wi}</li>)}
@@ -50,7 +50,7 @@ const ProjectCard: React.FC<{ item: any; language: Language }> = ({ item, langua
     )}
 
     {item.achievements && (
-      <div className="mb-3 print:mb-1.5">
+      <div className="mb-3 print:mb-1.5 print:break-inside-avoid">
         <h5 className="text-[11px] font-bold text-slate-800 dark:text-slate-200 mb-0.5 print:text-[9.5pt]">{language === 'zh' ? '核心成就数据' : 'Core Achievement Data'}</h5>
         <ul className="list-disc list-outside ml-4 text-[13px] text-slate-600 dark:text-gray-400 space-y-0.5 leading-snug print:text-[9pt] print:space-y-0 print:leading-snug">
           {item.achievements.map((ach: string, aIdx: number) => <li key={aIdx}>{ach}</li>)}
