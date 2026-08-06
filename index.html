@@ -236,6 +236,25 @@
           break-inside: avoid !important;
         }
 
+        /* 强制分页控制：支持特定模块另起一页 */
+        .print\:break-before-page,
+        .print\:page-break-before {
+          break-before: page !important;
+          page-break-before: always !important;
+        }
+
+        .print\:break-after-page,
+        .print\:page-break-after {
+          break-after: page !important;
+          page-break-after: always !important;
+        }
+
+        /* 职业生涯模块默认强制从新一页开始，消除第一页底部挤压与不自然留白 */
+        #experience {
+          break-before: page !important;
+          page-break-before: always !important;
+        }
+
         /* 9. Component Specific overrides */
         #home {
           min-height: auto !important;

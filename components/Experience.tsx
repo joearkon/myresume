@@ -303,7 +303,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
   const experiences = getExperiences(language);
 
   return (
-    <section id="experience" className="py-12 bg-white dark:bg-slate-900/50 relative transition-colors duration-500 print:py-2">
+    <section id="experience" className="py-12 bg-white dark:bg-slate-900/50 relative transition-colors duration-500 print:py-2 print:break-before-page">
       <div className="max-w-4xl mx-auto px-4 print:px-0">
         <div className="mb-10 text-center print:mb-3 print:text-left">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-0.5 print:tracking-tight">
