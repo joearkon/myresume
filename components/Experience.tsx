@@ -13,41 +13,16 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
         {
           id: 0,
           role: "AIGC 独立开发者 / 运营者",
-          company: "独立项目 / 自由职业",
+          company: "独立项目｜自由职业",
           period: "2025.08 - 至今",
-          description: "全面拥抱 AI 时代，深入探索 AIGC 核心技术在内容创意、金融决策辅助等垂直领域的工程化结合。熟练运用 Gemini、GPT-4o、DeepSeek、Kimi、Qwen 等国内外主流大模型，致力于将先进的 AI 智能编程 Agent（Claude Code、Codex）沉淀为单人高效闭环的智能化、数字化生产力工作流，按场景精准选择最佳模型与工具。",
+          description: "围绕连锁消费数字化、业务辅助决策场景探索 AIGC 工程化落地；熟练运用 Gemini、GPT-4o、DeepSeek、Kimi、Qwen 等主流大模型，依托 Claude Code、Codex AI 编程 Agent 搭建单人闭环智能化工作流，根据业务场景完成模型选型与流程封装，沉淀可迁移至企业服务的 AI 落地方法论。",
           achievements: [
-            "AI 编程智能体与开源工程项目：基于 Claude Code 与 Codex 智能 Agent 搭建 AI 投资交易辅助系统（https://stock-mind.kunkun1023.xyz/）；开源 2026 世界杯预测系统（决赛收官战绩：101 场预测，胜负方向命中率 79.2%，比分命中率 29.7%）；开源 Velina Pet 桌面宠物系统，联动米哈游开源接口支持游戏签到与日常提醒，分发至自媒体粉丝群建立流量与产品互动闭环。",
-            "AIGC 跨平台自媒体（全网粉丝 1w+）：灵活运用 Gemini、DeepSeek、GPT 与 Claude，跑通“选题企划 - 画面 AIGC 自定义生成（Seedance 多帧一致性） - 文案重构 - AI 剪辑”的高质量短视频生产线。截止目前实现小红书 7000+ 粉丝、抖音 3000+ 粉丝，全网累计吸引 10,000+ 高粘性粉丝。",
-            "企业级 Prompt 工程与提效工作流建设：精通国内外多款主流大模型 Prompt 调优，沉淀了 20 多套涵盖餐饮 SaaS 选址预测、行业讲标标书自动化生成、企业竞品追踪的大模型 Prompt 标准库，极大拓宽单人作业半径。"
+            "大模型数据处理与智能分析工作流搭建：依托 AI 编程 Agent 开发多源文本萃取、研报清洗、景气度量化分析流水线，搭建 AI 辅助研判系统，实现产业链信息自动解析与传导建模，验证多模型融合调度、自动化数据处理方案。",
+            "面向连锁 SaaS 场景的企业级 Prompt 工程沉淀：深耕大模型提示词调优，沉淀 20 余套标准化 Prompt 模板库，覆盖餐饮 / 连锁 SaaS 方案撰写、选址测算、竞品追踪、行业标书自动化生成，搭建轻量化 AI 业务提效流水线，赋能客户方案交付效率提升。",
+            "AIGC 标准化内容生产与用户运营链路实践：搭建「选题规划 - 多帧一致性图像生成 - 文案重构 - AI 剪辑」自动化短视频生产链路，落地跨平台内容运营，积累用户分层、私域社群运营与流量闭环搭建经验，可迁移用于连锁品牌用户运营场景。",
+            "开源原型项目技术验证：落地多项开源验证项目（赛事预测系统、AI 桌面助手），完成第三方接口联动、消息自动化推送等技术原型验证，持续打磨系统集成、自动化触发等工程实践能力。"
           ],
-          aiProjects: [
-            {
-              name: 'AI 投资交易辅助与智能分析系统',
-              desc: '基于 Claude Code 与 Codex Agent 开发的多源研报文本智能清洗、行业周期景气度打分与上游产能传导模型，助力实盘精准决策。',
-              link: 'https://stock-mind.kunkun1023.xyz/',
-              tags: ['Claude Code / Codex', 'Gemini / DeepSeek', '金融量化', '决策外脑']
-            },
-            {
-              name: '2026 世界杯预测系统 (WorldCup Predictions)',
-              desc: '结合多大模型（GPT/DeepSeek/Qwen）与数据计算模型的赛事预测系统（GitHub 开源）。决赛收官战绩：预测 101 场，胜负方向命中率 79.2%（80 场正确），比分命中率 29.7%（含 16 场精确比分）。',
-              link: 'https://github.com/joearkon/worldcup2026-predictions',
-              tags: ['LLM 多模型', '方向命中率 79.2%', '世界杯 2026', '开源项目']
-            },
-            {
-              name: '桌面宠物系统 (Velina Pet)',
-              desc: '开源 AI 桌面宠物伴侣（GitHub）。联动米哈游开源接口实现游戏签到、体力与任务提醒，分发至小红书/抖音粉丝群打造体验闭环。',
-              link: 'https://github.com/joearkon/velina-pet',
-              tags: ['AI Agent', '米哈游接口', '桌面提醒', '粉丝闭环']
-            },
-            {
-              name: 'AIGC 跨平台自媒体',
-              desc: '精选 Seedance、Claude/Kimi 精准企划，落实“质量优先”与“流程高性价比化”路线，小红书 7000+ 粉丝，抖音 3000+ 粉丝，全网累计突破 1w+ 粉丝。',
-              link: '',
-              tags: ['小红书 7000+', '抖音 3000+', '全网粉丝 1w+', ' Seedance 精控']
-            }
-          ],
-          tags: ["AIGC", "Claude Code", "Codex Agent", "DeepSeek / Gemini / GPT", "大模型决策"],
+          tags: ["AIGC", "Claude Code", "Codex Agent", "Prompt工程", "LLM 自动化工作流"],
           color: "border-purple-500 dark:border-purple-400",
           isPromoted: false
         },

@@ -29,12 +29,12 @@ const Skills: React.FC<SkillsProps> = ({ language }) => {
           items: ['云原生 (Cloud Native)', '微服务架构', 'Docker / K8s', 'Java / Go / Python', 'RAG 架构', '数据治理']
         },
         {
-          category: 'AI 与 提效方法论',
+          category: 'AI 智能与跨界能力',
           icon: (
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
           ),
-          description: '熟练掌握国内外主流大模型（Gemini/GPT/DeepSeek/Kimi/Qwen），精通 Claude Code、Codex 等 AI 智能编程 Agent，按场景选择最佳模型与工具提效',
-          items: ['Claude Code', 'Codex Agent', 'Gemini / GPT', 'DeepSeek / Kimi / Qwen', 'LLM Agent 开发', 'Prompt 调优']
+          description: '熟练调优 Gemini、GPT、DeepSeek、Kimi、Qwen 等主流大模型，依托 Claude Code、Codex 智能编程 Agent 搭建自动化数据萃取、研报解析工作流；完整实践 AIGC 多模态内容生产管线，掌握角色一致性、批量素材生成等工程方法。拥有跨平台用户触达实践经验，理解多渠道内容分发、用户分层运营逻辑，相关经验可迁移用于协助连锁品牌搭建 AI 驱动的用户运营、内容生产体系。',
+          items: ['Claude Code / Codex', 'Gemini / GPT / DeepSeek', 'AIGC 多模态管线', '角色一致性精控', '用户分层运营', '跨平台触达']
         },
         {
           category: '语言能力',

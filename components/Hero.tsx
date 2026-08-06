@@ -8,7 +8,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ language }) => {
   const content = {
     zh: {
-      tagline: 'AIGC 新媒体 / 大客户成功（售前售后） / 项目管理（餐饮O2O SaaS）',
+      tagline: 'AI 数字化解决方案｜KA 大客户成功｜SaaS 售前咨询｜连锁零售餐饮数字化',
       tagline2: '求职意向',
       name: '陈子卓野',
       role1: '技术架构',
@@ -22,14 +22,14 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info3Title: '学历',
       info3Val: '本科',
       info4Title: '经验年限',
-      info4Val: '8年 +',
+      info4Val: '10年',
       desc: (
         <div className="space-y-3">
           <p className="border-l-4 border-indigo-600 dark:border-indigo-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
-            拥有超过8年的餐饮数字化转型与 KA 大客户运营实战积淀。曾作为初创核心成员牵头 SaaS 云平台底层构建，并主导了喜茶、乐乐茶、久久丫等千万级品牌的数字化体系从 0 到 1 的交付与全国规模化落地。成功交付覆盖 5000+ 门店，达成 90%+ 大客户年度留存，在 KA 大客户开发、存量运营与数字化变革落地方面具备深厚方法论。
+            拥有 10 年餐饮连锁 SaaS 全链路实战经验，覆盖底层平台研发、千万级 KA 客户项目交付、售前方案讲标全闭环；深耕 LLM 智能体工程与 AIGC 全域营销落地，熟练运用 Claude Code、多款主流大模型搭建自动化分析、内容生产工作流。
           </p>
           <p className="border-l-4 border-purple-600 dark:border-purple-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
-            目前全面投身 AI 智能体编程与 AIGC 跨平台创作道路。熟练运用 Gemini、GPT、DeepSeek、Kimi、Qwen 等国内外主流大模型与 Claude Code、Codex 等 AI 智能编程 Agent，利用 AI 编程智能体和工具自主研发并开源多个项目，同时运营 AIGC 跨平台自媒体吸引全网 1w+ 粉丝，实现从餐饮 SaaS 数字化专家向 AI 前沿工程与内容创作者的双向跨界与生产力赋能。
+            熟知线下门店运营、多渠道信息割裂、多系统数据孤岛等企业数字化共性痛点；自主使用 Claude Code,Codex等AI智能编程体 搭建 LLM 自动化工作流，完整跑通 AIGC 内容、用户运营全链路实践，可向客户直观演示工具落地提效完整路径；擅长融合底层技术理解、项目全周期交付、售前方案咨询三重能力，能够独立完成客户需求诊断、数字化方案设计、MVP 试点规划直至全域规模化落地，适配消息底座 + AI 数字化工具分阶段渐进落地的客户实施体系。
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4">
@@ -39,18 +39,17 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                 <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">专业沉淀</h4>
               </div>
               <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[9pt] print:text-slate-600">
-                深耕餐饮 SaaS 行业 8 年+，精通连锁餐饮数字化全链路经营，精通需求调研→方案设计→项目落地→上线培训→验收回款的全流程闭环。
-                擅长为连锁品牌定制一套化解决方案，推动门店运营效率提升。
+                深耕连锁消费 SaaS 行业 8 年 +，掌握数字化项目全流程闭环：需求调研、方案设计、实施交付、培训直至验收回款；可面向连锁品牌输出一体化数字化方案，精通门店管理与运营。
               </p>
             </div>
 
             <div className="group print:break-inside-avoid">
               <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 print:bg-emerald-600"></span>
-                <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">AI 智能与跨界能力</h4>
+                <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">AI 智能与实战应用能力</h4>
               </div>
               <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[9pt] print:text-slate-600">
-                积极拥抱 AI 时代。熟练调优 Gemini、GPT、DeepSeek、Kimi、Qwen 等国内外主流大模型，结合 Claude Code 与 Codex AI 智能编程 Agent 敏捷构建研报提取平台、2026 世界杯预测系统与 Velina Pet 桌面宠物；自媒体运营打造“AIGC 跨平台自媒体”，攻坚多帧角色一致性，小红书（7000+）与抖音（3000+）全网粉丝突破 1w+。
+                熟练调优主流大模型，运用 Claude Code,Codex等AI智能编程工具 搭建 LLM 自动化数据处理工作流；落地 AIGC 多模态内容生产全链路，具备用户分层、多渠道触达实践，可协助连锁客户落地轻量化 AI 运营试点方案。
               </p>
             </div>
 
@@ -60,7 +59,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                 <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">核心价值与标签</h4>
               </div>
               <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[9pt] print:text-slate-600">
-                兼具技术与餐饮行业沉淀，深度融合 AI 时代的学习迭代力。以结果为导向，擅长将技术、产品与客户需求深度绑定，创造可量化的商业价值。
+                融合行业经验、技术认知与 AI 落地实操能力，擅长锚定客户业务痛点，设计分阶段数字化实施路径，依托产品与 AI 工具创造可量化运营价值。
               </p>
             </div>
           </div>
