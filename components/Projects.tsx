@@ -272,6 +272,36 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
           ],
           tags: ['3000+ 门店', '业务中台', '全流程主导'],
           highlight: '0 到 1 全流程主导'
+        },
+        {
+          brand: '谭仔 (Tam Jai International) 全域数字化运营专项',
+          role: 'CSM 总监 (2024 - 2025 | 全球化运营)',
+          colSpan: false,
+          background: '覆盖香港、新加坡、日本、澳洲、马来西亚、菲律宾多区域连锁门店，统筹海内外点餐、客服与系统协同运维。',
+          coreWork: [
+            {
+              title: '一、海外 Zendesk+WhatsApp 全域客服专项落地',
+              items: [
+                '从零搭建企业级多语种工单平台，以 WhatsApp Business 作为海外客户核心沟通渠道，打通 WhatsApp、海外 APP、社交平台全渠道咨询会话统一归集。',
+                '配置跨时区、多语种智能工单路由与分级 SLA 响应规则，搭建多国语言自助知识库，支持 WhatsApp 关键词自动推送答疑素材。',
+                '依托工单数据提炼海外门店高频系统痛点，反向推动海外版 SaaS 功能迭代。'
+              ]
+            },
+            {
+              title: '二、海外 Issue 报修可视化与标准化服务体系构建',
+              items: [
+                '实现海外相关 issue 报修总览可视化浏览、统计与复盘，建立起标准化的客户服务体系流程。',
+                '沉淀跨国连锁客户服务、系统故障处置标准化流程，输出海外数字化落地方案支撑售前投标。'
+              ]
+            }
+          ],
+          achievements: [
+            '覆盖香港、新加坡、日本、澳洲、马来西亚、菲律宾多区域连锁门店；',
+            '海外相关 issue 报修总览可视化浏览、统计与复盘，同时建立起标准化的客户服务体系流程；',
+            '输出海外数字化落地标准化方案支撑售前投标。'
+          ],
+          tags: ['Zendesk+WhatsApp', '跨国连锁', 'Issue报修可视化', 'SaaS 海外迭代', '标准化客服体系'],
+          highlight: '搭建标准化客服体系'
         }
       ]
     },
@@ -498,6 +528,36 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
           ],
           tags: ['3000+ Stores', 'Middle Platform', 'Full Process Lead'],
           highlight: '0 to 1 Full Process Lead'
+        },
+        {
+          brand: 'Tam Jai International (TamJai) Global Digital Operations',
+          role: 'CSM Director (2024 - 2025)',
+          colSpan: false,
+          background: 'Covered multi-region chain stores across Hong Kong, Singapore, Japan, Australia, Malaysia, and the Philippines, coordinating ordering, customer support, and system O&M.',
+          coreWork: [
+            {
+              title: '1. Overseas Zendesk + WhatsApp Omni-channel Customer Support',
+              items: [
+                'Built an enterprise multi-language ticketing platform from scratch with WhatsApp Business as the core channel, unifying inquiries from WhatsApp, mobile apps, and social platforms.',
+                'Configured cross-time-zone and multi-language smart routing with SLA rules, establishing self-service knowledge bases and automated keyword responses on WhatsApp.',
+                'Extracted high-frequency store pain points from ticketing data to drive overseas SaaS product iterations.'
+              ]
+            },
+            {
+              title: '2. Overseas Issue Repair Visualization & Standardized Service Framework',
+              items: [
+                'Implemented visual browsing, statistics, and review for overseas issue tickets, while establishing a standardized customer service workflow.',
+                'Documented standardized O&M and troubleshooting workflows for multinational chain clients, outputting digital implementation solutions to support pre-sales bidding.'
+              ]
+            }
+          ],
+          achievements: [
+            'Covered multi-region chain operations across Hong Kong, Singapore, Japan, Australia, Malaysia, and Philippines.',
+            'Implemented visual browsing, statistics, and review for overseas issue tickets, establishing a standardized customer service workflow.',
+            'Empowered pre-sales bidding with standardized delivery frameworks.'
+          ],
+          tags: ['Zendesk + WhatsApp', 'Global Chains', 'Issue Repair Visualization', 'SaaS Iteration'],
+          highlight: 'Standardized Support Framework'
         }
       ]
     }
