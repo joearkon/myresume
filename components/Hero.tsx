@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       desc: (
         <div className="space-y-4 my-2">
           <p className="border-l-4 border-indigo-600 dark:border-indigo-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3 print:mb-2 print:text-[9.5pt]">
-            拥有 10 年餐饮连锁 SaaS 全链路实战经验，覆盖底层平台研发、千万级 KA 客户项目交付。熟知门店运营、总部内系统运营流程，擅长梳理企业内部多系统、多部门协同等连锁餐饮企业经营问题并分析企业数字化共性痛点以及改进方式；
+            拥有 10 年餐饮连锁 SaaS 全链路实战经验，覆盖底层平台建设、千万级 KA 客户项目交付。熟知门店运营、总部内系统运营流程，擅长梳理企业内部多系统、多部门协同等连锁餐饮企业经营问题并分析企业数字化共性痛点以及改进方式；
           </p>
           <p className="border-l-4 border-purple-600 dark:border-purple-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3 print:mb-2 print:text-[9.5pt]">
             同时深耕 LLM 智能体工程与 AIGC AI视频营销等相关落地，能够熟练运用 Claude Code、Codex等多款主流大模型搭建自动化分析、内容生产工作流，擅长融合底层技术理解、项目全周期交付、售前方案咨询三重能力，能够独立完成客户需求诊断、数字化方案设计、MVP 试点规划直至全域规模化落地，适配消息底座 + AI 数字化工具分阶段渐进落地的客户实施体系。
