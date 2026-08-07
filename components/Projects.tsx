@@ -5,6 +5,28 @@ interface ProjectsProps {
   language: Language;
 }
 
+const renderTextWithLinks = (text: string) => {
+  if (!text) return text;
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+  const parts = text.split(urlRegex);
+  return parts.map((part, index) => {
+    if (part.match(urlRegex)) {
+      return (
+        <a
+          key={index}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 dark:text-blue-400 hover:underline print:no-underline print:text-slate-800 break-all font-mono"
+        >
+          {part}
+        </a>
+      );
+    }
+    return part;
+  });
+};
+
 const ProjectCard: React.FC<{ item: any; language: Language }> = ({ item, language }) => (
   <div className={`group border-b border-slate-100 dark:border-slate-800 pb-6 last:border-0 md:last:border-b print:pb-2.5 print:mb-2 print:border-gray-200 ${item.colSpan ? 'md:col-span-2' : ''}`}>
     <div className="flex justify-between items-start mb-1.5 print:mb-1">
@@ -22,14 +44,14 @@ const ProjectCard: React.FC<{ item: any; language: Language }> = ({ item, langua
 
     {item.desc && (
       <p className="text-[13px] text-slate-600 dark:text-gray-300 mb-3 leading-snug line-clamp-3 group-hover:line-clamp-none transition-all print:text-[9.5pt] print:mb-1.5 print:leading-normal print:line-clamp-none">
-          {item.desc}
+          {renderTextWithLinks(item.desc)}
       </p>
     )}
 
     {item.background && (
       <div className="mb-3 print:mb-1.5">
         <h5 className="text-[11px] font-bold text-slate-800 dark:text-slate-200 mb-0.5 print:text-[9.5pt]">{language === 'zh' ? '项目背景' : 'Background'}</h5>
-        <p className="text-[13px] text-slate-600 dark:text-gray-300 leading-snug print:text-[9.5pt] print:leading-snug">{item.background}</p>
+        <p className="text-[13px] text-slate-600 dark:text-gray-300 leading-snug print:text-[9.5pt] print:leading-snug">{renderTextWithLinks(item.background)}</p>
       </div>
     )}
 
@@ -41,7 +63,7 @@ const ProjectCard: React.FC<{ item: any; language: Language }> = ({ item, langua
             <div key={wIdx} className="print:break-inside-avoid">
               <h6 className="text-[13px] font-semibold text-slate-700 dark:text-slate-300 mb-0.5 print:text-[9.5pt]">{work.title}</h6>
               <ul className="list-disc list-outside ml-4 text-[13px] text-slate-600 dark:text-gray-400 space-y-0.5 leading-snug print:text-[9pt] print:space-y-0 print:leading-snug">
-                {work.items.map((wi: string, iIdx: number) => <li key={iIdx}>{wi}</li>)}
+                {work.items.map((wi: string, iIdx: number) => <li key={iIdx}>{renderTextWithLinks(wi)}</li>)}
               </ul>
             </div>
           ))}
@@ -53,7 +75,7 @@ const ProjectCard: React.FC<{ item: any; language: Language }> = ({ item, langua
       <div className="mb-3 print:mb-1.5 print:break-inside-avoid">
         <h5 className="text-[11px] font-bold text-slate-800 dark:text-slate-200 mb-0.5 print:text-[9.5pt]">{language === 'zh' ? '核心成就数据' : 'Core Achievement Data'}</h5>
         <ul className="list-disc list-outside ml-4 text-[13px] text-slate-600 dark:text-gray-400 space-y-0.5 leading-snug print:text-[9pt] print:space-y-0 print:leading-snug">
-          {item.achievements.map((ach: string, aIdx: number) => <li key={aIdx}>{ach}</li>)}
+          {item.achievements.map((ach: string, aIdx: number) => <li key={aIdx}>{renderTextWithLinks(ach)}</li>)}
         </ul>
       </div>
     )}
@@ -94,15 +116,24 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
           background: '熟练运用 Claude Code、Codex Agent 结合多厂商大模型搭建自动化数据处理、行业研判工作流，沉淀可复用 LLM 自动化处理架构，适配企业多源数据清洗、行业信息拆解、标准化报告自动生成等数字化场景：',
           coreWork: [
             {
-              title: '一、AI产业链条数据智能分析系统',
+              title: '一、AI产业链条与A股行情智能分析系统',
               items: [
                 '搭建端到端资讯、研报自动化解析流程，实现海外产业数据抓取、国内产业链传导逻辑拆解、行业景气度量化打分全流程自动化；整套数据建模、批量文本结构化处理思路，可迁移服务连锁客户做行业经营研判、全域用户数据分层分析、客户经营报表自动生成。'
               ]
             },
             {
-              title: '二、轻量化 AI 辅助工具开源实践',
+              title: '二、轻量化 AI 辅助工具与赛事预测开源实践',
               items: [
-                '开发轻量化桌面智能助手 Velina Pet（开源地址：https://github.com/joearkon/velina-pet），依托 LLM Agent 实现自动化提醒、动态语音（tts服务）、信息汇总、定时任务处理；结合一些实用MCP组成接口联动，可以实现对于特定业务场景的调用和任务，项目完整沉淀需求设计、迭代测试、用户反馈闭环流程，可复用至企业内部运营自动化、客户运维预警场景。'
+                '开发轻量化桌面智能助手 Velina Pet，依托 LLM Agent 实现自动化提醒、动态语音（TTS服务）、信息汇总、定时任务处理；结合实用 MCP 组成接口联动，实现特定业务场景调用和任务处理。',
+                '构建 2026 世界杯赛事预测系统，依托大模型与数据模型对球队阵容、赔率动态与历史对阵数据进行智能分析与精准预测。'
+              ]
+            },
+            {
+              title: '三、核心开源项目地址',
+              items: [
+                'https://github.com/joearkon/worldcup2026-predictions',
+                'https://github.com/joearkon/A-stock-dashboard',
+                'https://github.com/joearkon/velina-pet'
               ]
             }
           ],
@@ -345,8 +376,16 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
             {
               title: '3. Desktop Mascot System (Velina Pet)',
               items: [
-                'Open-source AI desktop companion (GitHub: joearkon/velina-pet) featuring LLM Agent interactive dialogue, desktop animations, and status tracking.',
+                'Open-source AI desktop companion featuring LLM Agent interactive dialogue, desktop animations, and status tracking.',
                 'Integrated with game APIs (e.g., HoYoverse APIs) for automated daily check-ins, stamina/task queries, and desktop alerts. Distributed to social media followers (Xiaohongshu/Douyin) to build a strong "Content - Open-Source Tool/Community" engagement flywheel.'
+              ]
+            },
+            {
+              title: '4. Open-Source Repository Links',
+              items: [
+                'https://github.com/joearkon/worldcup2026-predictions',
+                'https://github.com/joearkon/A-stock-dashboard',
+                'https://github.com/joearkon/velina-pet'
               ]
             }
           ],

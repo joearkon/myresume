@@ -17,10 +17,10 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           period: "2025.08 - 至今",
           description: "围绕AI应用，AI视频，AI业务的崛起，结合自身的想法探索AIGC工程化思维和落地；熟练运用 Gemini、GPT-4o、DeepSeek、Kimi、Qwen 等主流大模型，依托 Claude Code、Codex AI 编程 Agent 搭建单人闭环智能化工作流，根据业务场景完成模型选型与流程封装，沉淀可迁移至企业服务的 AI 落地方法论。",
           achievements: [
-            "大模型数据处理与智能分析工作流搭建：依托 AI 编程 Agent 开发多源文本萃取、研报清洗、景气度量化分析流水线，搭建多模型融合研判系统，实现产业链信息自动解析与传导建模，验证 LLM 调度、自动化数据处理方案。（开源地址：https://github.com/joearkon/QuantStockMind）",
+            "大模型数据处理与智能分析工作流搭建：依托 AI 编程 Agent 开发多源文本萃取、研报清洗、景气度量化分析流水线，搭建多模型融合研判系统，实现产业链信息自动解析与传导建模，验证 LLM 调度、自动化数据处理方案。",
             "面向连锁 SaaS 场景的企业级 Prompt 工程沉淀：深耕大模型提示词调优，沉淀 20 余套标准化 Prompt 模板库，覆盖餐饮 / 连锁 SaaS 方案撰写、选址测算、竞品追踪、行业标书自动化生成，搭建轻量化 AI 业务提效流水线，赋能客户方案交付效率提升。",
             "AIGC 标准化内容生产与用户运营链路实践：搭建「选题规划 - 多帧一致性图像生成 - 文案重构 - AI 剪辑」自动化短视频生产链路，落地跨平台内容运营，积累用户分层、私域社群运营与流量闭环搭建经验，可迁移用于连锁品牌用户运营场景。",
-            "开源原型项目技术验证：落地多项开源验证项目（赛事预测系统、AI 桌面助手/Velina Pet），完成第三方接口联动、消息自动化推送等技术原型验证，持续打磨系统集成、自动化触发等工程实践能力。（开源地址：https://github.com/joearkon/velina-pet）"
+            "开源原型项目技术验证：落地多项开源验证项目（赛事预测系统、AI 桌面助手/Velina Pet），完成第三方接口联动、消息自动化推送等技术原型验证，持续打磨系统集成、自动化触发等工程实践能力。"
           ],
           tags: ["AIGC", "Claude Code", "Codex Agent", "Prompt工程", "LLM 自动化工作流"],
           color: "border-purple-500 dark:border-purple-400",

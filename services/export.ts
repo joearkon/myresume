@@ -338,6 +338,14 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
             items: [
               '开源 AI 动态交互桌面伴侣（GitHub: joearkon/velina-pet）。联动米哈游等开源接口实现游戏内容联动、签到、状态查询与日常提醒，分发给自媒体粉丝，构建互动体验闭环。'
             ]
+          },
+          {
+            title: '四、开源地址',
+            items: [
+              'https://github.com/joearkon/worldcup2026-predictions',
+              'https://github.com/joearkon/A-stock-dashboard',
+              'https://github.com/joearkon/velina-pet'
+            ]
           }
         ]
       },
@@ -448,6 +456,14 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
             title: '3. Velina Pet Desktop Mascot',
             items: [
               'Open-sourced desktop AI companion (GitHub: joearkon/velina-pet). Integrated HoYoverse APIs for game check-ins, daily task alerts, and stamina tracking, distributed to social media followers.'
+            ]
+          },
+          {
+            title: '4. Open-Source Links',
+            items: [
+              'https://github.com/joearkon/worldcup2026-predictions',
+              'https://github.com/joearkon/A-stock-dashboard',
+              'https://github.com/joearkon/velina-pet'
             ]
           }
         ]
