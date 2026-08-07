@@ -62,14 +62,14 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
     roles: ['AIGC 新媒体', '大客户成功', '项目管理', '餐饮O2O SaaS'],
     contact: '+86 135 2425 2203 | 313455055@qq.com | home.kunkun1023.xyz',
     info: '1986年10月 | 汉族 | 上海 | 中共党员 | 本科 | 10余年 +',
-    desc: '拥有超过 8 年的餐饮数字化转型与 KA 大客户运营实战积淀。曾作为初创核心成员牵头 SaaS 云平台底层构建，并主导喜茶、乐乐茶、久久丫等千万级品牌的数字化体系从 0 到 1 交付与全国规模化落地（交付 5000+ 门店，年度留存 90%+），在 KA 客户开发与存量运营具备深厚方法论。\n\n目前全面投身 AI 智能体编程与 AIGC 跨平台创作道路。熟练运用 Gemini、GPT、DeepSeek、Kimi、Qwen 等国内外主流大模型及 Claude Code、Codex 等 AI 智能编程 Agent，利用 AI 编程智能体和工具自主研发并开源多个项目，同时运营 AIGC 自媒体突破全网 1w+ 粉丝，实现餐饮 SaaS 数字化与前沿 AI 生产力的深度融合。'
+    desc: '拥有 10 年餐饮连锁 SaaS 全链路实战经验，覆盖底层平台研发、千万级 KA 客户项目交付。熟知门店运营、总部内系统运营流程，擅长梳理企业内部多系统、多部门协同等连锁餐饮企业经营问题并分析企业数字化共性痛点以及改进方式；\n\n同时深耕 LLM 智能体工程与 AIGC AI视频营销等相关落地，能够熟练运用 Claude Code、Codex等多款主流大模型搭建自动化分析、内容生产工作流，擅长融合底层技术理解、项目全周期交付、售前方案咨询三重能力，能够独立完成客户需求诊断、数字化方案设计、MVP 试点规划直至全域规模化落地，适配消息底座 + AI 数字化工具分阶段渐进落地的客户实施体系。'
   } : {
     name: 'Joe.Chen',
     title: 'AIGC New Media | KA Success (Pre- & Post-Sales) | Project Management (Catering O2O SaaS)',
     roles: ['AIGC New Media', 'KA Success', 'Project Management', 'Catering SaaS'],
     contact: '+86 135 2425 2203 | 313455055@qq.com | home.kunkun1023.xyz',
     info: 'Oct 1986 | Han | Shanghai | Party Member | Bachelor | 10 Years +',
-    desc: '8+ years of deep expertise in catering digital transformation and KA operation. As a founding core member of a SaaS platform, led the 0-to-1 digital system construction and nationwide rollout for top-tier brands like HEYTEA, Lelecha, and Jiujiuya (5,000+ stores, 90%+ KA retention).\n\nCurrently dedicated to AI agent programming and AIGC cross-platform creation. Proficient in global & domestic LLMs (Gemini, GPT, DeepSeek, Kimi, Qwen) and AI coding agents (Claude Code, Codex), independently developing and open-sourcing multiple projects with AI agents while managing 10,000+ AIGC social media followers.'
+    desc: '10 years of full-stack practical experience in catering chain SaaS, covering underlying platform R&D and multi-million KA project delivery. Well-versed in store operations and HQ system workflows; skilled at addressing catering chain operational issues such as multi-system and multi-department collaboration, while analyzing common enterprise digitalization pain points and improvement paths.\n\nDeeply engaged in LLM agent engineering and AIGC AI video marketing implementation. Proficient in leveraging leading LLMs and AI coding agents (Claude Code, Codex) to build automated analysis and content production workflows. Blends technical understanding, end-to-end project delivery, and pre-sales consulting capabilities to independently conduct client requirement diagnostics, solution architecture design, MVP pilot planning, and full-scale rollout—adapting to a phased implementation framework powered by messaging foundations and AI digital tools.'
   };
 
   const experience = isZh ? [

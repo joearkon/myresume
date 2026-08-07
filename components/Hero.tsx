@@ -24,22 +24,22 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info4Title: '经验年限',
       info4Val: '10年',
       desc: (
-        <div className="space-y-3">
-          <p className="border-l-4 border-indigo-600 dark:border-indigo-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+        <div className="space-y-4 my-2">
+          <p className="border-l-4 border-indigo-600 dark:border-indigo-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3 print:mb-2 print:text-[9.5pt]">
             拥有 10 年餐饮连锁 SaaS 全链路实战经验，覆盖底层平台研发、千万级 KA 客户项目交付。熟知门店运营、总部内系统运营流程，擅长梳理企业内部多系统、多部门协同等连锁餐饮企业经营问题并分析企业数字化共性痛点以及改进方式；
           </p>
-          <p className="border-l-4 border-purple-600 dark:border-purple-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+          <p className="border-l-4 border-purple-600 dark:border-purple-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3 print:mb-2 print:text-[9.5pt]">
             同时深耕 LLM 智能体工程与 AIGC AI视频营销等相关落地，能够熟练运用 Claude Code、Codex等多款主流大模型搭建自动化分析、内容生产工作流，擅长融合底层技术理解、项目全周期交付、售前方案咨询三重能力，能够独立完成客户需求诊断、数字化方案设计、MVP 试点规划直至全域规模化落地，适配消息底座 + AI 数字化工具分阶段渐进落地的客户实施体系。
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4 print:mt-2">
             <div className="group print:break-inside-avoid">
               <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500 print:bg-blue-600"></span>
                 <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">专业沉淀</h4>
               </div>
               <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[9pt] print:text-slate-600">
-                深耕连锁消费 SaaS 行业 8 年 +，掌握数字化项目全流程闭环：需求调研、方案设计、实施交付、培训直至验收回款；可面向连锁品牌输出一体化数字化方案，精通门店管理与运营。
+                深耕连锁消费 SaaS 行业 10 年 +，掌握数字化项目全流程闭环：需求调研、方案设计、实施交付、培训直至验收回款；可面向连锁品牌输出一体化数字化方案，精通门店管理与运营。
               </p>
             </div>
 
@@ -84,24 +84,24 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       info3Title: 'Education',
       info3Val: 'Bachelor',
       info4Title: 'Experience',
-      info4Val: '8 Years +',
+      info4Val: '10 Years +',
       desc: (
-        <div className="space-y-3">
-          <p className="border-l-4 border-indigo-600 dark:border-indigo-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
-            8+ years of deep expertise in catering digital transformation and KA operation. As a founding core member of a SaaS platform, led the 0-to-1 digital system construction and nationwide rollout for top-tier brands like HEYTEA, Lelecha, and Jiujiuya. Successfully managed 5,000+ stores with a 90%+ annual retention rate, demonstrating a proven track record in KA development, customer success, and driving organizational digital change.
+        <div className="space-y-4 my-2">
+          <p className="border-l-4 border-indigo-600 dark:border-indigo-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3 print:mb-2 print:text-[9.5pt]">
+            10 years of full-stack practical experience in catering chain SaaS, covering underlying platform R&D and multi-million KA project delivery. Well-versed in store operations and HQ system workflows; skilled at addressing catering chain operational issues such as multi-system and multi-department collaboration, while analyzing common enterprise digitalization pain points and improvement paths.
           </p>
-          <p className="border-l-4 border-purple-600 dark:border-purple-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
-            Currently dedicated to AI agent programming and AIGC cross-platform creation. Proficient in global & domestic LLMs (Gemini, GPT, DeepSeek, Kimi, Qwen) and AI coding agents (Claude Code, Codex), independently developing and open-sourcing multiple projects with AI agents while operating cross-platform AIGC channels with 10,000+ total followers, seamlessly bridging enterprise SaaS expertise with cutting-edge AI engineering and content creation.
+          <p className="border-l-4 border-purple-600 dark:border-purple-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3 print:mb-2 print:text-[9.5pt]">
+            Deeply engaged in LLM agent engineering and AIGC AI video marketing implementation. Proficient in leveraging leading LLMs and AI coding agents (Claude Code, Codex) to build automated analysis and content production workflows. Blends technical understanding, end-to-end project delivery, and pre-sales consulting capabilities to independently conduct client requirement diagnostics, solution architecture design, MVP pilot planning, and full-scale rollout—adapting to a phased implementation framework powered by messaging foundations and AI digital tools.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4 print:mt-2">
             <div className="group print:break-inside-avoid">
               <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500 print:bg-blue-600"></span>
                 <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">Professional Expertise</h4>
               </div>
               <p className="text-[12px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[8.5pt] print:text-slate-600">
-                Dedicated to catering SaaS for over 8 years. Expert in the full-cycle closed loop from requirement survey to project acceptance. Specialized in customized solutions that drive efficiency.
+                Dedicated to catering SaaS for over 10 years. Expert in the full-cycle closed loop from requirement survey to project acceptance. Specialized in customized solutions that drive efficiency.
               </p>
             </div>
 
