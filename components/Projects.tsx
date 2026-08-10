@@ -152,9 +152,15 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
           background: '独立搭建标准化 AIGC 内容全流程工作管线，覆盖需求梳理、提示词工程、多模态素材生成、AI 剪辑、数据复盘完整闭环；长期研究多渠道用户行为与触达逻辑，沉淀标准化低成本内容生产流程。相关实践经验可复用在为客户输出标准化运营物料、多渠道用户触达内容、方案可视化素材等售前与客户运营场景。（目前小红书和抖音转化1w+粉丝）',
           coreWork: [
             {
-              title: '一、轻量化 AI 辅助工具与桌面智能助手',
+              title: '一、全链路 AIGC 视频自动化工作流搭建与落地',
               items: [
-                '开发轻量化桌面智能助手，依托 LLM Agent 实现自动化提醒、动态语音系统、信息汇总、定时任务处理；项目完整沉淀需求设计、迭代测试、用户反馈闭环流程，可复用至企业内部运营自动化、客户维护等场景。'
+                '以 LibTV、Lovart 为基础搭建垂直短视频标准化创作管线，打通从需求拆解、剧本生成、角色人设、场景规划、分镜脚本到 AI 自动剪辑完整链路；借助 Claude Code、Codex 开发自动化调度脚本，实现文案校对、音频匹配、合规审查、版本迭代批量处理，大幅降低人工重复创作成本，形成可标准化复制的 AI 内容生产流程。'
+              ]
+            },
+            {
+              title: '二、多平台用户分层运营实践',
+              items: [
+                '基于自动化内容管线持续输出垂直向短视频内容，研究抖音、小红书平台分发规则与用户行为特征，根据渠道属性差异化调整脚本、画面与推送节奏，沉淀轻量化低成本内容运营方法论。'
               ]
             }
           ],
@@ -404,21 +410,15 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
           background: 'Established a refined, quality-first AIGC short-video content pipeline across Xiaohongshu (7,000+ followers) and Douyin (3,000+ followers), surpassing 10,000+ total followers to date while minimizing generation overheads.',
           coreWork: [
             {
-              title: '1. Multi-Frame Visuals & Character Consistency Control',
+              title: '1. End-to-End AIGC Video Automation Workflow & Implementation',
               items: [
-                'Mastered Seedance and specialized prompt engineering to enforce character visual consistency across scenes, eliminating generation waste and reducing compute costs.'
+                'Built a standardized vertical short-video creation pipeline based on LibTV and Lovart, covering requirement analysis, script generation, character design, scene planning, storyboarding, to AI automated editing; developed automated scheduling scripts using Claude Code and Codex for batch copy editing, audio matching, compliance review, and version iteration, significantly cutting manual overhead.'
               ]
             },
             {
-              title: '2. High-Conversion Scripting & End-to-End Pipeline',
+              title: '2. Multi-Platform User Segmentation & Operations Practice',
               items: [
-                'Utilized Claude to re-structure short video scripts and topics, paired with CapCut AI for rapid automated editing.'
-              ]
-            },
-            {
-              title: '3. Cross-Platform Growth (10,000+ Total Followers)',
-              items: [
-                'Studied algorithm recommendation mechanisms on Xiaohongshu and Douyin, creating viral hits (10k+ views per video) and converting 10,000+ engaged niche followers.'
+                'Continuously produced vertical short videos via the automated pipeline, analyzing algorithm distribution rules and user behaviors across Douyin and Xiaohongshu; customized scripts, visuals, and publishing schedules per channel characteristics, building a lightweight, cost-effective content operation methodology.'
               ]
             }
           ],

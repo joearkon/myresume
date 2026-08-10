@@ -356,21 +356,15 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
         highlight: '全网粉丝 1w+',
         coreWork: [
           {
-            title: '一、多帧视觉与一致性攻坚',
+            title: '一、全链路 AIGC 视频自动化工作流搭建与落地',
             items: [
-              '使用 Seedance 控制同一原创角色的多场景视觉一致性，大幅降低生图耗损。'
+              '以 LibTV、Lovart 为基础搭建垂直短视频标准化创作管线，打通从需求拆解、剧本生成、角色人设、场景规划、分镜脚本到 AI 自动剪辑完整链路；借助 Claude Code、Codex 开发自动化调度脚本，实现文案校对、音频匹配、合规审查、版本迭代批量处理，大幅降低人工重复创作成本，形成可标准化复制的 AI 内容生产流程。'
             ]
           },
           {
-            title: '二、高转化选题与脚本重构',
+            title: '二、多平台用户分层运营实践',
             items: [
-              '使用 Claude 精准微调高转化选题并重构脚本，结合剪映 AI 实现高性价比产出。'
-            ]
-          },
-          {
-            title: '三、跨平台粉丝突破（1w+）',
-            items: [
-              '小红书 7000+ 粉丝，抖音 3000+ 粉丝，全网累计吸引 10,000+ 垂直高粘性粉丝。'
+              '基于自动化内容管线持续输出垂直向短视频内容，研究抖音、小红书平台分发规则与用户行为特征，根据渠道属性差异化调整脚本、画面与推送节奏，沉淀轻量化低成本内容运营方法论。'
             ]
           }
         ]
@@ -475,21 +469,15 @@ export const generateWord = async (language: Language, avatarUrl?: string) => {
         highlight: '10,000+ Followers',
         coreWork: [
           {
-            title: '1. Multi-frame Integrity & Visual Consistency',
+            title: '1. End-to-End AIGC Video Automation Workflow & Implementation',
             items: [
-              'Utilized Seedance to maintain character visual consistency and reduce image generation waste.'
+              'Built a standardized vertical short-video creation pipeline based on LibTV and Lovart, covering requirement analysis, script generation, character design, scene planning, storyboarding, to AI automated editing; developed automated scheduling scripts using Claude Code and Codex for batch copy editing, audio matching, compliance review, and version iteration, significantly cutting manual overhead.'
             ]
           },
           {
-            title: '2. Script Optimization with Claude',
+            title: '2. Multi-Platform User Segmentation & Operations Practice',
             items: [
-              'Refined scripts and topic blueprints with Claude for maximum engagement and click rates.'
-            ]
-          },
-          {
-            title: '3. Cross-Platform Organic Growth',
-            items: [
-              'Grew Xiaohongshu to 7,000+ followers and Douyin to 3,000+ followers, totaling 10,000+ followers.'
+              'Continuously produced vertical short videos via the automated pipeline, analyzing algorithm distribution rules and user behaviors across Douyin and Xiaohongshu; customized scripts, visuals, and publishing schedules per channel characteristics, building a lightweight, cost-effective content operation methodology.'
             ]
           }
         ]
