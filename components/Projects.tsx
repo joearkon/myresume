@@ -634,19 +634,21 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         <div className="mb-10 print:mb-3">
             <div className="space-y-10 print:space-y-3">
               {/* Group 3: AI Projects & AIGC Practice */}
-              <div>
+              <div id="proj-group-ai">
                 <h3 className="text-xl font-bold text-left mb-6 text-slate-800 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1.5 px-3">
                   {t.group3Title}
                 </h3>
                 <div className="grid grid-cols-1 gap-y-6 mt-4 print:mt-2">
                   {t.cases.slice(0, 2).map((item: any, index) => (
-                    <ProjectCard key={index} item={item} language={language} />
+                    <div key={index} id={index === 0 ? "proj-card-ai-agent" : "proj-card-aigc"}>
+                      <ProjectCard item={item} language={language} />
+                    </div>
                   ))}
                 </div>
               </div>
 
               {/* Group 0: Pre-sales Management */}
-              <div>
+              <div id="proj-group-presales">
                 <h3 className="text-xl font-bold text-left mb-6 text-slate-800 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1.5 px-3">
                   {t.group0Title}
                 </h3>
@@ -658,7 +660,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
               </div>
 
               {/* Group 1: KA Operations */}
-              <div>
+              <div id="proj-group-ka">
                 <h3 className="text-xl font-bold text-left mb-6 text-slate-800 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1.5 px-3">
                   {t.group1Title}
                 </h3>
@@ -670,7 +672,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
               </div>
 
               {/* Group 2: Implementation Cases */}
-              <div>
+              <div id="proj-group-saas">
                 <h3 className="text-xl font-bold text-left mb-6 text-slate-800 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1.5 px-3">
                   {t.group2Title}
                 </h3>

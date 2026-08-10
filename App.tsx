@@ -9,6 +9,7 @@ import Hobbies from './components/Hobbies';
 import ChatWidget from './components/ChatWidget';
 import Contact from './components/Contact';
 import ScrollToTop from './components/ScrollToTop';
+import OutlineIndex from './components/OutlineIndex';
 
 export type Language = 'zh' | 'en';
 
@@ -72,7 +73,7 @@ const App: React.FC = () => {
           <Hobbies language={language} />
         </main>
         <Contact language={language} />
-        <ChatWidget language={language} />
+        <OutlineIndex language={language} />
         <ScrollToTop />
       </div>
     </div>
