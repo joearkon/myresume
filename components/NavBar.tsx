@@ -23,6 +23,7 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
     zh: {
       home: '首页',
       projects: '核心数据',
+      productAchievements: '产品成就',
       experience: '职业生涯',
       skills: '专业技能',
       education: '教育背景',
@@ -32,6 +33,7 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
     en: {
       home: 'Home',
       projects: 'Key Data',
+      productAchievements: 'Products',
       experience: 'Experience',
       skills: 'Skills',
       education: 'Education',
@@ -58,9 +60,10 @@ const NavBar: React.FC<NavBarProps> = ({ darkMode, toggleTheme, language, toggle
         </div>
         
         <div className="flex items-center gap-4 md:gap-6">
-          <div className="hidden md:flex gap-6 lg:gap-8">
+          <div className="hidden md:flex gap-5 lg:gap-7">
             {[
               { name: t.home, link: '#home' },
+              { name: t.productAchievements, link: '#product-achievements' },
               { name: t.projects, link: '#projects' },
               { name: t.experience, link: '#experience' },
               { name: t.skills, link: '#skills' },

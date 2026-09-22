@@ -5,598 +5,317 @@ interface ProjectsProps {
   language: Language;
 }
 
-const renderTextWithLinks = (text: string) => {
-  if (!text) return text;
-  const urlRegex = /(https?:\/\/[^\s]+)/g;
-  const parts = text.split(urlRegex);
-  return parts.map((part, index) => {
-    if (part.match(urlRegex)) {
-      return (
-        <a
-          key={index}
-          href={part}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 dark:text-blue-400 hover:underline print:no-underline print:text-slate-800 break-all font-mono"
-        >
-          {part}
-        </a>
-      );
-    }
-    return part;
-  });
-};
-
-const ProjectCard: React.FC<{ item: any; language: Language }> = ({ item, language }) => (
-  <div className={`group border-b border-slate-100 dark:border-slate-800 pb-6 last:border-0 md:last:border-b print:pb-2.5 print:mb-2 print:border-gray-200 ${item.colSpan ? 'md:col-span-2' : ''}`}>
-    <div className="flex justify-between items-start mb-1.5 print:mb-1">
-      <h4 className="text-base font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:tracking-tight">
-        {item.brand}
-      </h4>
-      <span className="text-[9px] font-bold text-blue-800 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/30 px-1.5 py-0.5 rounded uppercase print:bg-transparent print:border print:border-blue-100 print:text-[8pt]">
-        {item.highlight}
-      </span>
-    </div>
-    
-    <div className="text-[10px] font-bold text-slate-400 dark:text-gray-500 mb-1.5 uppercase tracking-normal print:text-[8.5pt] print:mb-0.5 print:tracking-normal">
-        {item.role}
-    </div>
-
-    {item.desc && (
-      <p className="text-[13px] text-slate-600 dark:text-gray-300 mb-3 leading-snug line-clamp-3 group-hover:line-clamp-none transition-all print:text-[9.5pt] print:mb-1.5 print:leading-normal print:line-clamp-none">
-          {renderTextWithLinks(item.desc)}
-      </p>
-    )}
-
-    {item.background && (
-      <div className="mb-3 print:mb-1.5">
-        <h5 className="text-[11px] font-bold text-slate-800 dark:text-slate-200 mb-0.5 print:text-[9.5pt]">{language === 'zh' ? '项目背景' : 'Background'}</h5>
-        <p className="text-[13px] text-slate-600 dark:text-gray-300 leading-snug print:text-[9.5pt] print:leading-snug">{renderTextWithLinks(item.background)}</p>
-      </div>
-    )}
-
-    {item.coreWork && (
-      <div className="mb-3 print:mb-1.5">
-        <h5 className="text-[11px] font-bold text-slate-800 dark:text-slate-200 mb-1.5 print:mb-0.5 print:text-[9.5pt]">{language === 'zh' ? '核心工作内容' : 'Core Responsibilities'}</h5>
-        <div className="space-y-2 print:space-y-1">
-          {item.coreWork.map((work: any, wIdx: number) => (
-            <div key={wIdx} className="print:break-inside-avoid">
-              <h6 className="text-[13px] font-semibold text-slate-700 dark:text-slate-300 mb-0.5 print:text-[9.5pt]">{work.title}</h6>
-              <ul className="list-disc list-outside ml-4 text-[13px] text-slate-600 dark:text-gray-400 space-y-0.5 leading-snug print:text-[9pt] print:space-y-0 print:leading-snug">
-                {work.items.map((wi: string, iIdx: number) => <li key={iIdx}>{renderTextWithLinks(wi)}</li>)}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-    )}
-
-    {item.achievements && (
-      <div className="mb-3 print:mb-1.5 print:break-inside-avoid">
-        <h5 className="text-[11px] font-bold text-slate-800 dark:text-slate-200 mb-0.5 print:text-[9.5pt]">{language === 'zh' ? '核心成就数据' : 'Core Achievement Data'}</h5>
-        <ul className="list-disc list-outside ml-4 text-[13px] text-slate-600 dark:text-gray-400 space-y-0.5 leading-snug print:text-[9pt] print:space-y-0 print:leading-snug">
-          {item.achievements.map((ach: string, aIdx: number) => <li key={aIdx}>{renderTextWithLinks(ach)}</li>)}
-        </ul>
-      </div>
-    )}
-
-    <div className="flex flex-wrap gap-1 print:gap-1 mt-3 print:mt-1.5">
-        {item.tags.map((tag: string, i: number) => (
-        <span key={i} className="text-[10px] bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-gray-400 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700 print:bg-transparent print:border-gray-200 print:text-[8pt] print:px-1 print:py-0">
-            {tag}
-        </span>
-        ))}
-    </div>
-  </div>
-);
+interface ProjectCaseItem {
+  id: string;
+  name: string;
+  group: 'rollout' | 'csm' | 'presales';
+  category: string;
+  role: string;
+  scale: string;
+  badge?: string;
+  brandBadges?: string[];
+  challenge: string;
+  solutions: string[];
+  achievements: string[];
+  links?: { title: string; url: string }[];
+  tags: string[];
+}
 
 const Projects: React.FC<ProjectsProps> = ({ language }) => {
   const content = {
     zh: {
-      title: '过去',
-      titleHighlight: '成就',
-      subtitle: '用数据说话，以结果导向',
+      titlePrefix: '核心项目交付、',
+      titleHighlight: '推广落地与大客户运营',
+      subtitle: '从千万级售前咨询到 5000+ 门店标杆割接与精细化运营，以实战成果证明业务拿结果能力',
       metrics: [
-        { value: '5000+', label: '连锁门店落地', color: 'text-blue-500' },
-        { value: '90%', label: '大客户年度留存', color: 'text-green-500' },
-        { value: '50%', label: '团队营收贡献', color: 'text-purple-500' },
-        { value: '1w+', label: 'AIGC 全网粉丝', color: 'text-pink-500' }
+        { value: '5000+', label: '全国连锁门店交付落地', color: 'text-blue-600' },
+        { value: '90%', label: '头部 KA 客户年度留存率', color: 'text-emerald-600' },
+        { value: '50%', label: '团队年度核心营收贡献', color: 'text-purple-600' },
+        { value: '3000+', label: '千店级中台平滑割接', color: 'text-amber-600' }
       ],
-      archTitle: '数字化架构体系',
-      archDesc: '打通 BOH 供应链与 POS 全渠道，消除数据孤岛，构建一体化业务中台。',
-      group0Title: '数字化咨询与售前解决方案管理',
-      group1Title: '大客户成功与体系化运营管理',
-      group2Title: '标杆项目落地成果案例',
-      group3Title: 'AI 智能、AIGC 跨平台实践与创业',
+      groups: {
+        rollout: '标杆品牌千万级项目交付与全国推广落地',
+        csm: '大客户成功 (CSM) 与头部连锁精细化运营体系',
+        presales: '数字化咨询、售前方案设计与千万级招投标'
+      },
       cases: [
         {
-          brand: 'AI 编程智能体与开源工程项目',
-          role: 'AIGC 独立开发者 / 开源作者 (2025.08 - 至今 | 个人敏捷开发)',
-          colSpan: true,
-          background: '熟练运用 Claude Code、Codex Agent 结合多厂商大模型搭建自动化数据处理、行业研判工作流，沉淀可复用 LLM 自动化处理架构，适配企业多源数据清洗、行业信息拆解、标准化报告自动生成等数字化场景：',
-          coreWork: [
-            {
-              title: '一、AI产业链条与A股行情智能分析系统',
-              items: [
-                '搭建端到端资讯、研报自动化解析流程，实现海外产业数据抓取、国内产业链传导逻辑拆解、行业景气度量化打分全流程自动化；整套数据建模、批量文本结构化处理思路，可迁移服务连锁客户做行业经营研判、全域用户数据分层分析、客户经营报表自动生成。'
-              ]
-            },
-            {
-              title: '二、轻量化 AI 辅助工具与赛事预测开源实践',
-              items: [
-                '开发轻量化桌面智能助手 Velina Pet，依托 LLM Agent 实现自动化提醒、动态语音（TTS服务）、信息汇总、定时任务处理；结合实用 MCP 组成接口联动，实现特定业务场景调用和任务处理。',
-                '构建 2026 世界杯赛事预测系统，依托大模型与数据模型对球队阵容、赔率动态与历史对阵数据进行智能分析与精准预测。'
-              ]
-            },
-            {
-              title: '三、核心开源项目地址',
-              items: [
-                'https://github.com/joearkon/worldcup2026-predictions',
-                'https://github.com/joearkon/A-stock-dashboard',
-                'https://github.com/joearkon/velina-pet'
-              ]
-            }
+          id: 'proj-case-jiujiuya',
+          name: '久久丫 · 顶誉集团：3000+ 连锁门店数字化业务中台全面割接与推广',
+          group: 'rollout' as const,
+          category: '千店级复杂中台交付与实施推广',
+          role: '交付总指挥 / 业务中台负责人 (常驻嘉善生产基地与上海总部)',
+          scale: '3000+ 门店分 6 批平滑割接 | 59 套异构系统打通',
+          badge: '千店级中台交付',
+          brandBadges: ['久久丫', '留夫鸭', '顶誉集团', '阿里云私有化'],
+          challenge: '旗下久久丫、留夫鸭 3000+ 门店遍布全国，直营与特许加盟双轨并行，存量林立着 SAP、金蝶、自研 POS 等 59 套异构系统孤岛。价格策略混乱、加盟对账耗时数周，生产与门店要货脱节，业务系统割接对稳定性要求极高。',
+          solutions: [
+            '【现场驻场调研与流程梳理】常驻嘉善供应链生产基地与上海总部，带领团队历时 71 天走访 7 大核心部门，梳理 120+ 流程泳道图，输出业务中台落地蓝图。',
+            '【千店千价与加盟订货推广】针对短保卤味加盟商，推广落地移动端要货门户；在阿里云私有化环境中打通 59 个存量接口，支撑千店千价下发与履约协同。',
+            '【分批平滑割接战役部署】制定「单店打样跑通 -> 片区集群验证 -> 全国 6 批次推进」的稳健割接策略，建立作战指挥室与应急回滚演练机制。'
           ],
           achievements: [
-            '沉淀可复用 LLM 自动化处理架构，适配企业多源数据清洗、行业信息拆解与标准化报告自动生成；',
-            '贯通端到端产业数据抓取与景气度打分模型，可直接迁移服务连锁客户做数据分层与经营报表生成；',
-            '开发轻量化桌面 Agent 并结合 MCP 联动，沉淀需求设计至用户反馈闭环，可复用至企业运营自动化。'
+            '【平滑割接与业务连续性】分 6 批次推进全国 3000+ 门店系统平稳割接上线，有效保障了全国门店营业与供应链发货的连续性；',
+            '【加盟对账效率跃升 80%+】改变跨月手工对账模式，加盟商订货至资金核销流程线上化，大幅缩减对账周期；',
+            '【产销协同与周转优化】打通门店要货与中央工厂排产，供应链库存周转率提升超 15%，获集团高管团队认可。'
           ],
-          tags: ['Claude Code / Codex Agent', 'LLM 自动化架构', 'MCP 接口联动', '桌面 Agent', '开源工程'],
-          highlight: 'LLM 自动化架构 / 开源 Agent'
+          tags: ['久久丫 3000+ 门店', '平滑割接', '59 系统打通', '对账提效 80%', '产销协同', '大型项目总控']
         },
         {
-          brand: 'AIGC 跨平台内容实践',
-          role: 'AIGC 内容主理人 / 独立运营者 (2025.08 - 至今 | 独立内容管线)',
-          colSpan: true,
-          background: '独立搭建标准化 AIGC 内容全流程工作管线，覆盖需求梳理、提示词工程、多模态素材生成、AI 剪辑、数据复盘完整闭环；长期研究多渠道用户行为与触达逻辑，沉淀标准化低成本内容生产流程。相关实践经验可复用在为客户输出标准化运营物料、多渠道用户触达内容、方案可视化素材等售前与客户运营场景。（目前小红书和抖音转化1w+粉丝）',
-          coreWork: [
-            {
-              title: '一、全链路 AIGC 视频自动化工作流搭建与落地',
-              items: [
-                '以 LibTV、Lovart 为基础搭建垂直短视频标准化创作管线，打通从需求拆解、剧本生成、角色人设、场景规划、分镜脚本到 AI 自动剪辑完整链路；借助 Claude Code、Codex 开发自动化调度脚本，实现文案校对、音频匹配、合规审查、版本迭代批量处理，大幅降低人工重复创作成本，形成可标准化复制的 AI 内容生产流程。'
-              ]
-            },
-            {
-              title: '二、多平台用户分层运营实践',
-              items: [
-                '基于自动化内容管线持续输出垂直向短视频内容，研究抖音、小红书平台分发规则与用户行为特征，根据渠道属性差异化调整脚本、画面与推送节奏，沉淀轻量化低成本内容运营方法论。'
-              ]
-            }
+          id: 'proj-case-heytea',
+          name: '喜茶 (HEYTEA) 深圳总部：全国 800+ 直营门店收银履约与建议订货全国推广',
+          group: 'rollout' as const,
+          category: '头部新茶饮全域标杆交付与精细化运营',
+          role: '项目总负责人 / 方案架构师 (常驻喜茶深圳总部 2 年)',
+          scale: '全国 800+ 直营门店 | 日峰值 10万+ 订单 | 物耗降本千万级',
+          badge: '新茶饮标杆落地',
+          brandBadges: ['喜茶 HEYTEA', '800+ 直营店', '建议订货 MRP', '深圳总部'],
+          challenge: '喜茶处于全国狂飙突进期，日峰值 10 万+ 订单严重冲击前台造成卡单漏单；极短保鲜果与高单价乳品严重依赖店长拍脑袋订货，全国门店报损率高达 5.9%，频现断货与爆仓并存。',
+          solutions: [
+            '【全渠道收银全国上线推广】常驻喜茶总部统筹全国 800+ 门店 HiPOS 收银系统与自研 uprint 打印微服务分批割接，针对小红书/小程序爆单场景定制分吧台出单规范。',
+            '【建议订货飞轮机制落地运营】推行「总部统一策略参数 -> 算法输出建议订货量 -> 店长仅处理例外并必填原因 -> 经营指标反向校准」的落地推行宣贯与督导培训机制。',
+            '【跨部门作战与指标责任制】协同营运部、供应链大仓与督导团队建立周度物耗对焦机制，将订货提报准时率与报损指标挂钩门店 KPI。'
           ],
           achievements: [
-            '小红书与抖音全网累计转化粉丝 10,000+；',
-            '独立搭建“需求-提示词-多模态素材-AI剪辑-数据复盘”标准化 AIGC 全流程工作管线；',
-            '沉淀低成本内容生产与自动化工具流程，可复用至售前方案可视化素材与客户运营支持场景。'
+            '【全国门店极速稳定履约】平稳支撑 800+ 直营门店日峰值 10 万+ 订单，出单故障与错单率降至历史最低，成为茶饮行业收银履约典范；',
+            '【报损率压降挽回千万物耗】全国门店报损与盘点差异率自 5.9% 显著压降至 3.9%，年化直接挽回超千万元级鲜果原料损耗；',
+            '【店长作业提效与供应链稳定】店长日均订货操作时间缩减 40 分钟/店/天，订货提报准时率达 99.2%，大仓原料缺货率下降 45%。'
           ],
-          tags: ['AIGC 跨平台', '小红书 / 抖音 1w+ 粉丝', '提示词工程', '多模态素材生成', '全流程工作管线'],
-          highlight: '全网粉丝 1w+'
+          tags: ['喜茶全国推广', 'HiPOS 落地', '损耗 5.9%->3.9%', '年降千万元', '门店订货飞轮', '营运协同']
         },
         {
-          brand: '数字化咨询与售前解决方案管理',
-          role: '数字化解决方案顾问 (2024 - 2025 | 全链路售前赋能)',
-          colSpan: true,
-          background: '深度参与头部连锁餐饮品牌数字化项目售前管理，主导从需求挖掘、蓝图设计到投标讲标的全流程交付，支撑数千万级项目成功中标。',
-          coreWork: [
-            {
-              title: '一、深度售前咨询与架构蓝图策划',
-              items: [
-                '深度参与头部连锁餐饮品牌数字化项目售前全流程管理，独立完成需求调研、业务蓝图规划、技术架构设计、SaaS 解决方案输出及 POC 验证方案。',
-                '主导技术标 + 商务标双轨编制，独立完成投标文件撰写、方案评审与答疑准备，针对品牌业务场景定制数字化转型路径与实施路线图。'
-              ]
-            },
-            {
-              title: '二、现场讲标与业务价值传递',
-              items: [
-                '负责现场讲标与客户技术答疑，针对客户决策层与业务部门开展方案宣讲、系统演示与业务价值解读，精准传递 SaaS 产品核心能力与行业适配性。',
-                '曾多次独立主导大中型连锁企业的售前讲标，通过专业方案演示推动客户对方案的高度认可。'
-              ]
-            },
-            {
-              title: '三、标准化赋能与售前交付闭环机制',
-              items: [
-                '将 KA 客户成功案例沉淀为行业最佳实践白皮书与标准化售前方案库，为销售团队提供可复用的模板，支撑投标效率提升 40%+。',
-                '建立售前-交付闭环机制，通过售前深度调研提前识别项目实施难点并输出风险预案，显著提升项目交付成功率。'
-              ]
-            }
+          id: 'proj-case-shida',
+          name: '适达餐饮集团 (DQ 冰雪皇后 / 棒约翰)：1000+ 跨国连锁门店 BOH 供应链交付',
+          group: 'rollout' as const,
+          category: '外资快餐跨国供应链实施交付',
+          role: '实施交付经理 / 解决方案架构师',
+          scale: '全国 1000+ 门店 | 盘点提效 50% | 食材损耗降低 2%',
+          badge: '跨国连锁交付',
+          brandBadges: ['DQ 冰雪皇后', '棒约翰 Papa John\'s', '适达餐饮', '1000+ 门店'],
+          challenge: '知名跨国快餐冰品原料保鲜要求严苛，此前门店进销存与冷链大仓数据割裂，手工盘点效率低下且账实不符，损耗与食品安全隐患难以溯源。',
+          solutions: [
+            '【BOH 进销存标准化交付】实施交付标准化门店 BOH 进销存系统，覆盖日盘、周盘、月盘实时盘点与耗损智能预警。',
+            '【冷链仓店一体化打通】打通门店端要货与中央冷链大仓直连，规范跨国连锁门店物料收发与温控流转 SOP。',
+            '【全国督导与店组培训认证】制定多语言培训手册，分大区推进店长、值班经理数字化实操认证考核。'
           ],
           achievements: [
-            '支撑多个百万/千万级标杆项目成功中标（某茶饮，某咖啡品牌），讲标通过率位居团队前列。',
-            '为项目落地奠定坚实基础，讲标专业度与方案匹配度获得客户决策层高度认可。'
+            '【赋能千店盘点提效 50%】成功推广覆盖全国 1000+ DQ 与棒约翰门店，单店盘点用时缩减一半；',
+            '【损耗降低与合规达标】食材综合损耗降低 2%，全面达成跨国连锁企业内控审计与食品安全合规要求。'
           ],
-          tags: ['售前咨询', '标书编制', '解决方案', '行业白皮书'],
-          highlight: '千万级项目成功中标'
+          tags: ['DQ / 棒约翰', '门店 BOH 供应链', '1000+ 门店', '盘点提效 50%', '损耗降 2%', '标准化 SOP']
         },
         {
-          brand: '核心运营逻辑与体系建设',
-          role: '大客户运营负责人 / 客户成功总监 (2023 - 2025 | 存量与增量业务管理)',
-          colSpan: true,
-          background: '负责管理公司核心大客户及中小客户矩阵，通过构建独立运营体系、精细化 CSM 服务模型及生态合作伙伴网络，驱动客户价值增长与 SaaS 产品持续迭代。',
-          coreWork: [
-            {
-              title: '一、大客户 (KA) 独立运营体系建设',
-              items: [
-                '针对喜茶、星巴克、DQ、久久丫等头部品牌，制定“一客一策”的独立运营体系，确保服务逻辑与客户业务高度匹配。',
-                '喜茶专项：成立“产研+业务”专项项目小组，深度匹配其业务的高速扩张与内部系统协同需求。',
-                '星巴克专项：组建独立运维团队，负责一线业务的 7x24 小时高可用运维保障。',
-                '大型连锁 (DQ/久久丫)：针对年营收百万级以上的门店，分配独立客户成功经理 (CSM)，深度挖掘潜在需求并掌握客户动向，通过周报/月报机制实现精细化管理。'
-              ]
-            },
-            {
-              title: '二、中小客户 (SMB) 精细化运营与产品赋能',
-              items: [
-                '针对 SomethingFor、果呀呀、Seesaw 等品牌，采用“AM+PM”共同维护机制，践行“小而精”的服务理念。',
-                '痛点提炼：通过调研中小客户的共性痛点，提炼出符合 SaaS 路径的核心需求，定期与产品团队沟通，推动产品功能迭代，显著提升 SaaS 使用率与客户满意度。'
-              ]
-            },
-            {
-              title: '三、生态合作伙伴与全球化布局',
-              items: [
-                '深度联动国内外合作伙伴，筛选并培养优质代理商，协助进行更大规模的拓客、实施与运维，实现业务的快速复制与全球化覆盖。'
-              ]
-            },
-            {
-              title: '四、售前赋能与最佳实践输出',
-              items: [
-                '与售前团队紧密合作，将实际客户成功案例转化为“行业最佳实践”白皮书，辅助售前团队在投标与方案宣讲阶段提供强有力的数字化支撑。'
-              ]
-            }
+          id: 'proj-case-tamjai',
+          name: '谭仔国际 (TamJai International)：全球化多国跨国连锁数字化运营与智能运维',
+          group: 'rollout' as const,
+          category: '跨国连锁出海数字化运营与服务交付',
+          role: '全球数字化运营负责人 / 解决方案架构师',
+          scale: '覆盖港、新、日、澳、马、菲等多国连锁 | 工单响应闭环提效 50%',
+          badge: '全球化出海运营',
+          brandBadges: ['谭仔三哥', '谭仔云南米线', 'Zendesk', '多国出海运营'],
+          challenge: '品牌高速拓展香港、新加坡、日本、澳大利亚、马来西亚及菲律宾等多国市场，跨时区、多语言导致跨国门店软硬件故障申报迟缓，服务体验与响应严重滞后。',
+          solutions: [
+            '【全球化智能客服平台构建】以 WhatsApp Business 与 Zendesk 为核心纽带，从 0 搭建多时区、多语种全球服务工单协同体系。',
+            '【跨时区智能路由与 SLA 分级】配置多国语言常见问题自助知识库，制定跨时区紧急事件智能分流派单机制与三级 SLA 升级规则。',
+            '【海外 Issue 可视化与运营复盘】建立海外门店硬件与系统故障报修看板，定期向海外管理层输出数字化运营与产品优化建议。'
           ],
           achievements: [
-            '构建了覆盖全国及海外市场的多级客户服务体系',
-            '通过需求提炼驱动 SaaS 产品核心功能迭代 10+ 项',
-            '辅助售前团队成功拿下多个百万级标杆项目'
+            '【跨国工单流转提效 50%】有效覆盖海外数百家门店，工单平均响应与闭环处理时效提升 50%；',
+            '【输出成熟出海运营体系】建立标准化跨国数字化运维体系，为国内 SaaS 解决方案出海赋能积累关键实战方法论。'
           ],
-          tags: ['KA 运营', '客户成功', '生态赋能', 'SaaS 迭代'],
-          highlight: '大客户独立运营体系'
+          tags: ['谭仔国际', '全球化出海', '跨时区智能运维', '工单提效 50%', '多语种服务', 'Zendesk']
         },
         {
-          brand: 'HEYTEA 喜茶',
-          role: '项目负责人 (2019 - 2021 | 常驻深圳)',
-          colSpan: false,
-          background: '2020 年喜茶处于高速扩张期，为支撑全国直营门店规模化运营、线上线下一体化履约及供应链精细化管理，启动内部核心系统战略升级。我主导 HiPOS 收银中台与 BOH 供应链系统从 0 到 1 落地，覆盖全国门店，成为喜茶数字化转型关键项目。',
-          coreWork: [
-            {
-              title: '项目管理与数字化落地',
-              items: [
-                '负责喜茶全国 800+ 直营门店供应链 BOH 体系 + POS 收银系统的整体搭建与落地。',
-                '主导门店供应链深度调研、业务方案设计、系统开发落地，独立负责核心商品 BOM 配方模块设计。',
-                '主导 HiPOS 全域收银中台项目，实现线上小程序、外卖平台、线下 POS、BOH 供应链全域数据打通。'
-              ]
-            },
-            {
-              title: '客户成功与运营',
-              items: [
-                '搭建喜茶大客户专属服务团队，统筹产研、测试、实施资源配置。',
-                '建立全国门店报修与系统监控体系，制定标准化异常处理流程（10分钟响应、2小时闭环）。'
-              ]
-            }
+          id: 'proj-ka-csm',
+          name: '头部连锁品牌大客户成功 (CSM) 与精细化分层运营体系',
+          group: 'csm' as const,
+          category: '存量大客户精细化运营与商业增购',
+          role: '大客户运营负责人 / 客户成功总监 (CSM Director)',
+          scale: '90% 核心 KA 年度留存率 | 贡献团队 50% 核心营收',
+          badge: '核心运营机制',
+          brandBadges: ['喜茶', '星巴克', 'SomethingFor', '果呀呀'],
+          challenge: '存量大客户系统定制深、容错门槛高且决策链条长；中小品牌诉求散乱，若无体系化分层运营机制，极易导致售后救火、客户流失与增购乏力。',
+          solutions: [
+            '【“一客一策”分层运营矩阵】喜茶配备产研专班实现双周敏捷迭代；星巴克组建 7x24 高可用保障团队；重点大型连锁配置专属 CSM 深度驻场挖潜。',
+            '【中小客户联合运维网格】针对 SomethingFor、果呀呀等成长型连锁，采用 AM（客户经理）+ PM（项目经理）网格化联合机制，提炼共性痛点反哺产研。',
+            '【服务即增购与交付认证】联动国内外生态服务商建立交付运维认证机制，以高满意度续约与模块增购驱动业务长效增长。'
           ],
           achievements: [
-            '主导落地动态配方管理体系，助力年度损耗降低1%。',
-            '系统稳定支撑日订单峰值 10万+，保障业务高效运转。',
-            'BOM 配方设计成功申请发明专利。'
+            '【核心 KA 客户 90% 高留存】核心头部标杆客户年度续约留存率稳定达 90% 以上，建立起深厚互信的高管客情关系；',
+            '【贡献团队 50% 核心营收】通过精细化深度运营、功能模块增购与新品牌签约，持续贡献团队一半的年度核心营收；',
+            '【产研反哺产品正向迭代】提炼一线客户共性痛点，驱动底层 SaaS 产品完成 10+ 项核心功能标准化重构。'
           ],
-          tags: ['高并发', 'BOM专利', '数字化转型'],
-          highlight: '日订单峰值 10万+'
+          tags: ['KA 一客一策', '90% 留存率', '50% 营收贡献', 'CSM 精细化运营', '增购拓展', '产研反哺']
         },
         {
-          brand: '久久丫',
-          role: '业务中台负责人 (2021 - 2023 | 常驻上海-嘉善)',
-          colSpan: false,
-          background: '主导集团核心数字化转型战略项目，旨在建设统一业务中台，打通 ERP、SAP、财务、小程序、POS、CRM 等孤立系统，解决加盟销售与订货流程割裂、数据孤岛等痛点。',
-          coreWork: [
-            {
-              title: '全流程项目主导与实施',
-              items: [
-                '独立负责从需求调研、蓝图设计到全国 3000+ 门店规模化落地的全生命周期管理。',
-                '主导商品、库存、订单、价格、结算六大核心中台模块的方案设计与落地。',
-                '建立三级推广与分层培训体系，在紧迫工期内完成从试点到 6 批次全国上线的切换。'
-              ]
-            },
-            {
-              title: '客户成功与运营',
-              items: [
-                '深度走访一线门店，精准捕获加盟商在订货、盘点、对账等场景的真实痛点并闭环解决。',
-                '建立长效复盘与运维管理机制，形成“问题台账-复盘分析-优化响应”的闭环管理。'
-              ]
-            }
+          id: 'proj-presales-framework',
+          name: '企业级数字化咨询、方案架构与千万级售前招投标',
+          group: 'presales' as const,
+          category: '售前咨询与商业化招投标拓展',
+          role: '数字化解决方案专家 / 资深售前顾问',
+          scale: '深度支撑千万级项目中标 | 现场讲标高通过率',
+          badge: '千万级招投标',
+          brandBadges: ['头部知名茶饮', '大型咖啡连锁', '全国知名快餐', '数字化蓝图'],
+          challenge: '大型连锁企业数字化转型决策链长、利益诉求复杂，通用 PPT 方案无法切中客户 C-Level 业务痛点，售前与交付存在断层风险。',
+          solutions: [
+            '【端到端顶层规划与 POC 攻坚】主导大型连锁客户业务蓝图规划、系统架构设计与场景化 POC（概念验证），精准击中客户降本增效痛点。',
+            '【技术商务双标与高管讲标答辩】高质量统筹编制技术标与商务标书，现场主导竞品对标剖析、高水准讲标答辩及高管技术质疑拆解。',
+            '【方案武器库与售前交付闭环】沉淀《连锁餐饮数字化最佳实践白皮书》与标准化售前方案库，建立售前-交付前置风险排查闭环。'
           ],
           achievements: [
-            '完成全国 3000+ 门店规模化上线。',
-            '实现全域系统集成，达成线上线下一体化与财务智能对账。',
-            '构建六大中心，实现产供销存全链路互联互通。'
+            '【支撑多个百万/千万级项目中标】深度支撑某知名头部茶饮、大型咖啡连锁等标杆项目成功中标，开拓数千万元级商业盘子；',
+            '【讲标通过率位居团队前列】专业的技术深度与精准的行业理解获得客户 C-Level 决策层高度认可，讲标中标率名列前茅；',
+            '【方案编制效率提升 40%+】建立标准化售前工具与标书模板资产，大幅缩短前期立项周期并降低交付履约风险。'
           ],
-          tags: ['3000+ 门店', '业务中台', '全流程主导'],
-          highlight: '0 到 1 全流程主导'
-        },
-        {
-          brand: '谭仔 (Tam Jai International) 全域数字化运营专项',
-          role: 'CSM 总监 (2024 - 2025 | 全球化运营)',
-          colSpan: false,
-          background: '覆盖香港、新加坡、日本、澳洲、马来西亚、菲律宾多区域连锁门店，统筹海内外点餐、客服与系统协同运维。',
-          coreWork: [
-            {
-              title: '一、海外 Zendesk+WhatsApp 全域客服专项落地',
-              items: [
-                '从零搭建企业级多语种工单平台，以 WhatsApp Business 作为海外客户核心沟通渠道，打通 WhatsApp、海外 APP、社交平台全渠道咨询会话统一归集。',
-                '配置跨时区、多语种智能工单路由与分级 SLA 响应规则，搭建多国语言自助知识库，支持 WhatsApp 关键词自动推送答疑素材。',
-                '依托工单数据提炼海外门店高频系统痛点，反向推动海外版 SaaS 功能迭代。'
-              ]
-            },
-            {
-              title: '二、海外 Issue 报修可视化与标准化服务体系构建',
-              items: [
-                '实现海外相关 issue 报修总览可视化浏览、统计与复盘，建立起标准化的客户服务体系流程。',
-                '沉淀跨国连锁客户服务、系统故障处置标准化流程，输出海外数字化落地方案支撑售前投标。'
-              ]
-            }
-          ],
-          achievements: [
-            '覆盖香港、新加坡、日本、澳洲、马来西亚、菲律宾多区域连锁门店；',
-            '海外相关 issue 报修总览可视化浏览、统计与复盘，同时建立起标准化的客户服务体系流程；',
-            '输出海外数字化落地标准化方案支撑售前投标。'
-          ],
-          tags: ['Zendesk+WhatsApp', '跨国连锁', 'Issue报修可视化', 'SaaS 海外迭代', '标准化客服体系'],
-          highlight: '搭建标准化客服体系'
+          tags: ['售前蓝图规划', '千万级项目中标', '技术商务标书', '高管讲标答辩', '行业白皮书', 'POC 验证']
         }
       ]
     },
     en: {
-      title: 'Past',
-      titleHighlight: 'Achievements',
-      subtitle: 'Data-driven, result-oriented approach',
+      titlePrefix: 'Key Project Delivery,',
+      titleHighlight: 'Rollout & KA Operations',
+      subtitle: 'From multi-million presales bids to 5000+ chain store cutovers and refined customer success operations',
       metrics: [
-        { value: '5000+', label: 'Stores Implemented', color: 'text-blue-500' },
-        { value: '90%', label: 'KA Annual Retention', color: 'text-green-500' },
-        { value: '50%', label: 'Team Revenue Contribution', color: 'text-purple-500' },
-        { value: '10,000+', label: 'AIGC Total Followers', color: 'text-pink-500' }
+        { value: '5000+', label: 'Stores Successfully Delivered', color: 'text-blue-600' },
+        { value: '90%', label: 'Key Account Annual Retention', color: 'text-emerald-600' },
+        { value: '50%', label: 'Team Core Revenue Contribution', color: 'text-purple-600' },
+        { value: '3000+', label: 'Stores Platform Cutover', color: 'text-amber-600' }
       ],
-      archTitle: 'Digital Architecture',
-      archDesc: 'Bridging BOH supply chain and POS omni-channel to eliminate data silos.',
-      group0Title: 'Digital Consulting & Pre-sales Solution Management',
-      group1Title: 'KA Customer Success & Operations Management',
-      group2Title: 'Benchmark Project Implementation Cases',
-      group3Title: 'AI Agents & AIGC Cross-Platform Practice',
+      groups: {
+        rollout: 'Benchmark Brand Multi-Million Delivery & Nationwide Rollout',
+        csm: 'Key Account Success (CSM) & Operations Architecture',
+        presales: 'Digital Consulting, Pre-sales Solutions & Bidding'
+      },
       cases: [
         {
-          brand: 'AI Coding Agents & Open-Source Projects',
-          role: 'AIGC Independent Developer / Open Source Creator (2025.08 - Present | Personal Studio)',
-          colSpan: true,
-          background: 'Engineered and released multiple practical AI Agent and open-source applications using Claude Code and LLM engineering, covering financial decision support, sports prediction analytics, and interactive desktop mascots.',
-          coreWork: [
-            {
-              title: '1. AI Investment Analysis & Quant System (Claude Code & Codex Agent)',
-              items: [
-                'End-to-End Ingestion & Parsing: Leveraged Gemini, GPT, DeepSeek, and Qwen for automated ingestion and token-cleaning workflows. Compressed days of manual reading into minutes of automated summary generation.',
-                'Multi-layered Logical Modeling: Structured overseas capacity tracking and broker deep-dive parameter extraction, serving spot hedging and capital risk shielding.'
-              ]
-            },
-            {
-              title: '2. 2026 World Cup Predictions System (WorldCup 2026 Predictions)',
-              items: [
-                'Open-source match prediction system (GitHub: joearkon/worldcup2026-predictions) leveraging LLM and data models to ingest rosters, odds dynamics, and head-to-head records.',
-                'Tournament Record (Finals July 20, 2026): Predicted 101 out of 104 matches, achieving a 79.2% match direction accuracy (80/101 correct win/qualification outcomes) and 29.7% scoreline accuracy (30/101, including 16 exact score predictions), backed by daily retrospectives.'
-              ]
-            },
-            {
-              title: '3. Desktop Mascot System (Velina Pet)',
-              items: [
-                'Open-source AI desktop companion featuring LLM Agent interactive dialogue, desktop animations, and status tracking.',
-                'Integrated with game APIs (e.g., HoYoverse APIs) for automated daily check-ins, stamina/task queries, and desktop alerts. Distributed to social media followers (Xiaohongshu/Douyin) to build a strong "Content - Open-Source Tool/Community" engagement flywheel.'
-              ]
-            },
-            {
-              title: '4. Open-Source Repository Links',
-              items: [
-                'https://github.com/joearkon/worldcup2026-predictions',
-                'https://github.com/joearkon/A-stock-dashboard',
-                'https://github.com/joearkon/velina-pet'
-              ]
-            }
+          id: 'proj-case-jiujiuya',
+          name: 'Jiujiuya · Dingyu Group: 3000+ Stores Middle-Platform Cutover & Nationwide Rollout',
+          group: 'rollout' as const,
+          category: 'Large-Scale Enterprise Platform Delivery & Implementation',
+          role: 'Head of Delivery / Middle-Platform Lead (Stationed in Jiashan Factory & Shanghai HQ)',
+          scale: '3000+ Stores in 6 Batches Smooth Cutover | 59 Systems Connected',
+          badge: 'Large-Scale Delivery',
+          brandBadges: ['Jiujiuya', 'Liufu Duck', 'Dingyu Group', 'Alibaba Cloud Private'],
+          challenge: '3000+ direct and franchise stores across China were trapped by 59 siloed systems (SAP, Kingdee, legacy POS). Chaotic pricing and multi-week reconciliation delays severely decoupled production from store orders.',
+          solutions: [
+            'Stationed on-site at Jiashan supply base and Shanghai HQ for 71 days across 7 departments, mapping 120+ swimlane workflows into an actionable blueprint.',
+            'Rolled out mobile ordering for short-shelf-life braised food franchise stores, connecting 59 legacy APIs on private cloud with sub-second price dispatching.',
+            'Executed a 3-tier cutover campaign: single store pilot -> regional cluster trial -> 6-batch nationwide deployment with an operational war-room and rollback drills.'
           ],
           achievements: [
-            'Independently built and open-sourced 3 engineering applications in quant finance, sports prediction, and desktop agents.',
-            'Compressed laborious research and multi-platform development cycles into minutes with automated workflows.',
-            'Maintained clean repository architecture, documentation, and detailed README guides on GitHub.'
+            'Conducted smooth cutover across 3000+ stores nationwide in 6 batches, ensuring business continuity for stores and supply chains;',
+            'Accelerated franchisee reconciliation efficiency by 80%+, transitioning from manual cross-month audits to digitized closing;',
+            'Synchronized store demand with factory scheduling, boosting inventory turnover by over 15%.'
           ],
-          tags: ['Claude Code / Codex', 'Gemini / DeepSeek / GPT', 'WorldCup 2026', 'Velina Pet', 'Open Source'],
-          highlight: 'Open Source & AI Agents'
+          tags: ['Jiujiuya 3000+ Stores', 'Smooth Cutover', '59 Integrations', 'Reconciliation +80%', 'Supply-Demand Loop']
         },
         {
-          brand: 'AIGC Cross-Platform Media',
-          role: 'AIGC Content Creator & Operator (2025.08 - Present | Independent Pipeline)',
-          colSpan: true,
-          background: 'Established a refined, quality-first AIGC short-video content pipeline across Xiaohongshu (7,000+ followers) and Douyin (3,000+ followers), surpassing 10,000+ total followers to date while minimizing generation overheads.',
-          coreWork: [
-            {
-              title: '1. End-to-End AIGC Video Automation Workflow & Implementation',
-              items: [
-                'Built a standardized vertical short-video creation pipeline based on LibTV and Lovart, covering requirement analysis, script generation, character design, scene planning, storyboarding, to AI automated editing; developed automated scheduling scripts using Claude Code and Codex for batch copy editing, audio matching, compliance review, and version iteration, significantly cutting manual overhead.'
-              ]
-            },
-            {
-              title: '2. Multi-Platform User Segmentation & Operations Practice',
-              items: [
-                'Continuously produced vertical short videos via the automated pipeline, analyzing algorithm distribution rules and user behaviors across Douyin and Xiaohongshu; customized scripts, visuals, and publishing schedules per channel characteristics, building a lightweight, cost-effective content operation methodology.'
-              ]
-            }
+          id: 'proj-case-heytea',
+          name: 'HEYTEA Shenzhen HQ: Nationwide 800+ Direct Stores POS & MRP Implementation',
+          group: 'rollout' as const,
+          category: 'Tier-1 Tea-Drink Flagship Delivery & Field Operations',
+          role: 'Core Project Manager / Solution Architect (Stationed at Shenzhen HQ for 2 Years)',
+          scale: '800+ Direct Stores | 100k+ Peak Orders | Tens of Millions in Waste Savings',
+          badge: 'Industry Benchmark',
+          brandBadges: ['HEYTEA', '800+ Direct Stores', 'MRP Smart Ordering', 'Shenzhen HQ'],
+          challenge: 'Rapid store expansion faced 100k+ daily peak orders choking front counters; highly perishable fruit and dairy relied on subjective guesswork, resulting in 5.9% waste rates and frequent stockouts.',
+          solutions: [
+            'Stationed at Shenzhen HQ to orchestrate nationwide HiPOS cutover across 800+ direct stores with uprint microservices, tailoring bar-level ticketing workflows.',
+            'Operationalized the MRP feedback flywheel: HQ sets policy -> system calculates recommendations -> store managers handle exceptions with mandatory reasons -> metrics calibration.',
+            'Instituted weekly loss review cadences across operations, supply chain, and district managers, linking submission punctuality to store KPIs.'
           ],
           achievements: [
-            'Gained 7,000+ Xiaohongshu followers and 3,000+ Douyin followers, reaching 10,000+ total followers cross-platform.',
-            'Achieved high engagement and viral reach across multiple original and modified AIGC anime videos.',
-            'Documented cost-effective, low-loss AIGC media production guidelines.'
+            'Seamlessly sustained 100k+ peak orders across 800+ direct stores nationwide with historically low ticketing fault rates;',
+            'Cut store-level waste and audit variance from 5.9% to 3.9%, saving tens of millions RMB in annual fresh ingredient costs;',
+            'Saved 40 mins/day in store manager ordering time, achieved 99.2% on-time submission, and cut warehouse stockouts by 45%.'
           ],
-          tags: ['AIGC Media', 'Xiaohongshu 7000+', 'Douyin 3000+', '10k+ Followers', 'Seedance'],
-          highlight: '10,000+ Followers'
+          tags: ['HEYTEA Rollout', 'HiPOS Delivery', 'Waste 5.9%->3.9%', 'Millions Saved', 'Ordering Flywheel']
         },
         {
-          brand: 'Digital Consulting & Pre-sales Solution Management',
-          role: 'Digital Solution Consultant (2024 - 2025 | Full-link Enablement)',
-          colSpan: true,
-          background: 'Deeply involved in pre-sales management for top-tier catering brands, leading the full process from requirement mining to successful bidding for multi-million projects.',
-          coreWork: [
-            {
-              title: '1. In-depth Pre-sales Consulting & Architecture Blueprinting',
-              items: [
-                'Deeply involved in full pre-sales management for top-tier catering brands, completing surveys, blueprints, SaaS solutions, and POC verification.',
-                'Led technical and commercial bid preparation, drafting proposals and customizing digital transformation roadmaps for chain brands.'
-              ]
-            },
-            {
-              title: '2. On-site Bidding & Business Value Delivery',
-              items: [
-                'Responsible for live bidding and technical Q&A, conducting solution presentations and system demos for decision-makers and business departments.',
-                'Successfully led multiple pre-sales bidding cases for large enterprises, achieving high approval through professional demonstrations.'
-              ]
-            },
-            {
-              title: '3. Standardization Enablement & Pre-sales/Delivery Loop',
-              items: [
-                'Transformed KA success stories into industry white papers and standard solution libraries, providing reusable templates that boosted bidding efficiency by 40%+.',
-                'Established a closed-loop mechanism between pre-sales and delivery to early-identify implementation risks, significantly improving project success rates.'
-              ]
-            }
+          id: 'proj-case-shida',
+          name: 'Shanghai Shida (DQ / Papa John\'s): 1000+ Chain Stores BOH Supply Chain Rollout',
+          group: 'rollout' as const,
+          category: 'Multinational Fast-Food Supply Chain Delivery',
+          role: 'Implementation Delivery Manager / Solution Architect',
+          scale: '1000+ Stores Nationwide | Stocktaking Efficiency +50% | Food Waste -2%',
+          badge: 'Global Chain Delivery',
+          brandBadges: ['DQ Ice Cream', 'Papa John\'s', 'Shida Group', '1000+ Stores'],
+          challenge: 'Strict shelf-life criteria in global ice cream/pizza operations suffered from disconnected store inventory and manual stocktaking errors, obscuring waste and food safety tracking.',
+          solutions: [
+            'Delivered standardized BOH store inventory management covering real-time daily/weekly/monthly audits and smart loss alerts.',
+            'Linked store demand directly to central cold-chain distribution, standardizing multinational temperature and stock handling SOPs.',
+            'Authored bilingual training curricula, running structured certification for regional store managers and shift leaders.'
           ],
           achievements: [
-            'Supported successful bidding for multiple million/multi-million level projects (Top Tea & Coffee Brands) with a top-tier success rate.',
-            'Precision of solutions and professionalism of bidding recognized highly by client decision-makers.'
+            'Empowered 1000+ stores across China, boosting daily inventory counting speed by 50%;',
+            'Reduced overall food waste by 2%, ensuring full compliance with international internal audit standards.'
           ],
-          tags: ['Pre-sales Consulting', 'Bidding', 'SaaS Solution', 'White Papers'],
-          highlight: 'Multi-million Bid Success'
+          tags: ['DQ / Papa John\'s', 'BOH Supply Chain', '1000+ Stores', 'Audit +50%', 'Waste -2%']
         },
         {
-          brand: 'Core Operation Logic & System Construction',
-          role: 'Head of KA Operations / Customer Success Director (2023 - 2025)',
-          colSpan: true,
-          background: 'Responsible for managing the core KA and SMB matrix, driving customer value growth and SaaS product iteration through independent operation systems, refined CSM models, and ecosystem partner networks.',
-          coreWork: [
-            {
-              title: '1. KA Independent Operation System',
-              items: [
-                'Developed customized operation systems for top-tier brands (HEYTEA, Starbucks, DQ, Jiujiuya, etc.) to ensure high alignment with client business logic.',
-                'HEYTEA Special: Established a dedicated "R&D + Business" task force to support rapid expansion and internal synergy.',
-                'Starbucks Special: Formed a dedicated O&M team to ensure high-availability support for frontline operations.',
-                'Large Chains (DQ/Jiujiuya): Assigned dedicated CSMs for 1M+ revenue accounts to track dynamics, mine latent needs, and ensure high-quality reporting.'
-              ]
-            },
-            {
-              title: '2. SMB Refined Operations & Product Synergy',
-              items: [
-                'Implemented a joint "AM + PM" mechanism for brands like SomethingFor, Guoyaya, and Seesaw, practicing a "Small but Exquisite" service philosophy.',
-                'Pain Point Extraction: Identified common SMB pain points to define SaaS product requirements, collaborating with the product team to drive feature iterations and improve adoption.'
-              ]
-            },
-            {
-              title: '3. Ecosystem Partnership & Global Expansion',
-              items: [
-                'Collaborated with domestic and international partners to empower agents for large-scale acquisition, implementation, and O&M, facilitating global business growth.'
-              ]
-            },
-            {
-              title: '4. Pre-sales Enablement & Best Practices',
-              items: [
-                'Partnered with the pre-sales team to output "Best Practice" case studies, providing critical support for bidding and technical proposals.'
-              ]
-            }
+          id: 'proj-case-tamjai',
+          name: 'TamJai International: Global Chain Multi-Region Digital Operations & Support',
+          group: 'rollout' as const,
+          category: 'Global Chain Digital Operations & Service Delivery',
+          role: 'Global Digital Operations Lead / Solution Architect',
+          scale: 'Covering HK, Singapore, Japan, Australia, Malaysia, Philippines | Resolution Speed +50%',
+          badge: 'Global Operations',
+          brandBadges: ['TamJai SamGor', 'TamJai Yunnan', 'Zendesk', 'Global Rollout'],
+          challenge: 'Rapid expansion across HK, Singapore, Japan, Australia, Malaysia, and the Philippines suffered from multi-timezone, multilingual barriers and sluggish field equipment repair loops.',
+          solutions: [
+            'Built an omnichannel global support infrastructure from scratch leveraging WhatsApp Business and Zendesk.',
+            'Configured multi-lingual self-service bots, cross-timezone emergency dispatching, and tiered SLA escalation rules.',
+            'Established global issue visibility dashboards, providing regular performance and product insights to executives.'
           ],
           achievements: [
-            'Built a multi-level customer service system covering domestic and overseas markets.',
-            'Driven 10+ core SaaS feature iterations through requirement extraction.',
-            'Assisted pre-sales in winning multiple million-level benchmark projects.'
+            'Empowered hundreds of stores globally, boosting incident turnaround and resolution speed by 50%;',
+            'Documented standardized multinational digital support playbooks, establishing a scalable methodology for SaaS globalization.'
           ],
-          tags: ['KA Ops', 'Customer Success', 'Ecosystem', 'SaaS Iteration'],
-          highlight: 'KA Independent Ops System'
+          tags: ['TamJai International', 'Global Rollout', 'Cross-Timezone O&M', 'Speed +50%', 'Zendesk']
         },
         {
-          brand: 'HEYTEA',
-          role: 'Project Lead (2019 - 2021 | Shenzhen)',
-          colSpan: false,
-          background: 'Led the 0-to-1 implementation of the HiPOS middle-platform and BOH supply chain system, covering all stores nationwide during HEYTEA\'s rapid expansion phase.',
-          coreWork: [
-            {
-              title: 'Project Management & Implementation',
-              items: [
-                'Responsible for the overall construction of BOH and POS systems for 800+ stores.',
-                'Led supply chain research, business solution design, and BOM recipe module R&D.',
-                'Integrated mini-programs, delivery platforms, and POS data to build a closed-loop system.'
-              ]
-            },
-            {
-              title: 'Customer Success & Operations',
-              items: [
-                'Established a dedicated service team and coordinated resources across R&D and testing.',
-                'Built a nationwide monitoring system with standardized exception handling (10-min response).'
-              ]
-            }
+          id: 'proj-ka-csm',
+          name: 'Tier-1 Key Account Customer Success (CSM) & Tiered Operations Framework',
+          group: 'csm' as const,
+          category: 'Enterprise Account Retention & Expansion',
+          role: 'Head of KA Operations / Customer Success Director (CSM Director)',
+          scale: '90% Core KA Annual Retention | 50% Team Core Revenue Share',
+          badge: 'Core Operations',
+          brandBadges: ['HEYTEA', 'Starbucks', 'SomethingFor', 'Guoyaya'],
+          challenge: 'Enterprise accounts required high availability and complex workflows, while SMB accounts faced fragmented needs, causing high churn risks without a structured tiered model.',
+          solutions: [
+            'Designed a tiered matrix: dedicated R&D squads for HEYTEA, 24/7 high-availability squads for Starbucks, and embedded CSMs for key chains.',
+            'Created combined AM (Account Manager) + PM (Project Manager) squads for high-growth SMBs like SomethingFor and Guoyaya.',
+            'Partnered with domestic and global agencies to establish certified implementation and service delivery training.'
           ],
           achievements: [
-            'Reduced annual internal loss by 1% through dynamic recipe management.',
-            'Supported 100k+ peak daily orders stably.',
-            'Successfully applied for an invention patent for BOM design.'
+            'Sustained a 90%+ annual retention rate across tier-1 key accounts with deep executive-level trust;',
+            'Account expansions, module upsells, and renewals consistently generated 50% of the team’s total revenue;',
+            'Extracted universal client bottlenecks to guide 10+ core feature standardizations in the base SaaS platform.'
           ],
-          tags: ['High Concurrency', 'Patented BOM', 'Digitalization'],
-          highlight: '100k+ Peak Daily Orders'
+          tags: ['KA Operations', '90% Retention', '50% Revenue Share', 'CSM Framework', 'Upsell Expansion']
         },
         {
-          brand: 'Jiujiuya',
-          role: 'Middle Platform Lead (2021 - 2023 | Shanghai-Jiashan)',
-          colSpan: false,
-          background: 'Led the digital transformation to build a unified business middle-platform, integrating ERP, SAP, POS, and CRM for 3000+ stores.',
-          coreWork: [
-            {
-              title: 'Full-Process Leadership',
-              items: [
-                'Managed the full lifecycle from research to scaled rollout across 3000+ stores.',
-                'Led the design of core modules: product, inventory, order, price, and reconciliation.',
-                'Established a three-tier training system to ensure smooth transition for franchisees.'
-              ]
-            },
-            {
-              title: 'Customer Success & Operations',
-              items: [
-                'Conducted on-site research to solve real pain points in ordering and reconciliation.',
-                'Established long-term O&M mechanisms and a closed-loop problem management system.'
-              ]
-            }
+          id: 'proj-presales-framework',
+          name: 'Digital Consulting, Architecture Blueprinting & Multi-Million Presales Bidding',
+          group: 'presales' as const,
+          category: 'Presales Consulting & Commercial Bidding',
+          role: 'Digital Solution Specialist / Senior Presales Consultant',
+          scale: 'Supported Multi-Million Bid Wins | High Executive Defense Approval',
+          badge: 'Multi-Million Bidding',
+          brandBadges: ['Leading Tea Chain', 'Major Coffee Chain', 'Fast Food Enterprise', 'Digital Blueprint'],
+          challenge: 'Enterprise digital initiatives involved long decision cycles and multifaceted stakeholders; generic decks failed to address C-level priorities.',
+          solutions: [
+            'Led discovery, business architecture design, and scenario-based POC (Proof of Concept) demonstrations addressing cost and efficiency.',
+            'Authored comprehensive technical and commercial proposals; delivered live executive pitches and technical defense.',
+            'Authored the Chain Catering Digitalization Best Practices White Paper and standard proposal repositories.'
           ],
           achievements: [
-            'Scaled rollout to 3000+ stores nationwide.',
-            'Achieved online-offline integration and automated financial reconciliation.',
-            'Built six major centers for full supply chain interoperability.'
+            'Directly supported multi-million contract wins for prominent tea and coffee enterprises, unlocking tens of millions in market value;',
+            'Consistently achieved industry-leading pitch-win ratios with high praise from client executive boards;',
+            'Accelerated proposal turnaround by 40%+ while mitigating downstream delivery risks.'
           ],
-          tags: ['3000+ Stores', 'Middle Platform', 'Full Process Lead'],
-          highlight: '0 to 1 Full Process Lead'
-        },
-        {
-          brand: 'Tam Jai International (TamJai) Global Digital Operations',
-          role: 'CSM Director (2024 - 2025)',
-          colSpan: false,
-          background: 'Covered multi-region chain stores across Hong Kong, Singapore, Japan, Australia, Malaysia, and the Philippines, coordinating ordering, customer support, and system O&M.',
-          coreWork: [
-            {
-              title: '1. Overseas Zendesk + WhatsApp Omni-channel Customer Support',
-              items: [
-                'Built an enterprise multi-language ticketing platform from scratch with WhatsApp Business as the core channel, unifying inquiries from WhatsApp, mobile apps, and social platforms.',
-                'Configured cross-time-zone and multi-language smart routing with SLA rules, establishing self-service knowledge bases and automated keyword responses on WhatsApp.',
-                'Extracted high-frequency store pain points from ticketing data to drive overseas SaaS product iterations.'
-              ]
-            },
-            {
-              title: '2. Overseas Issue Repair Visualization & Standardized Service Framework',
-              items: [
-                'Implemented visual browsing, statistics, and review for overseas issue tickets, while establishing a standardized customer service workflow.',
-                'Documented standardized O&M and troubleshooting workflows for multinational chain clients, outputting digital implementation solutions to support pre-sales bidding.'
-              ]
-            }
-          ],
-          achievements: [
-            'Covered multi-region chain operations across Hong Kong, Singapore, Japan, Australia, Malaysia, and Philippines.',
-            'Implemented visual browsing, statistics, and review for overseas issue tickets, establishing a standardized customer service workflow.',
-            'Empowered pre-sales bidding with standardized delivery frameworks.'
-          ],
-          tags: ['Zendesk + WhatsApp', 'Global Chains', 'Issue Repair Visualization', 'SaaS Iteration'],
-          highlight: 'Standardized Support Framework'
+          tags: ['Presales Blueprinting', 'Multi-Million Bids', 'Proposal Authoring', 'Executive Defense', 'White Paper']
         }
       ]
     }
@@ -611,83 +330,195 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
         {/* Section Header */}
         <div className="text-center mb-10 print:mb-3 print:text-left">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-0.5 print:tracking-tight">
-            {t.title} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
+            {t.titlePrefix} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
-          <p className="text-slate-600 dark:text-gray-400 tracking-tight print:text-[9.5pt] print:text-slate-500 print:tracking-tight">{t.subtitle}</p>
+          <p className="text-slate-600 dark:text-gray-400 tracking-tight print:text-[9.5pt] print:text-slate-500 print:tracking-tight">
+            {t.subtitle}
+          </p>
         </div>
 
-        {/* 1. Key Metrics Bar - Simplified */}
-        <div className="border-y border-slate-100 dark:border-slate-800 py-5 mb-10 flex flex-wrap justify-between items-center gap-4 print:py-1.5 print:mb-3 print:gap-1 print:border-gray-200 print:bg-slate-50/50 print:rounded-xl">
+        {/* 1. Key Metrics Bar */}
+        <div className="border-y border-slate-200/80 dark:border-slate-800 py-4 mb-10 flex flex-wrap justify-between items-center gap-4 bg-slate-50/50 dark:bg-slate-900/50 rounded-xl px-4 print:py-1.5 print:mb-3 print:gap-1 print:border-gray-200 print:bg-slate-50/50 print:rounded-none">
           {t.metrics.map((metric, idx) => (
-            <div key={idx} className="flex-1 min-w-[100px] text-center print:min-w-0 print:text-center">
-              <div className={`text-2xl font-bold mb-0.5 ${metric.color.replace('text-', 'text-slate-900 dark:text-white')} print:text-base print:mb-0`}>
+            <div key={idx} className="flex-1 min-w-[110px] text-center print:min-w-0">
+              <div className="text-2xl font-bold mb-0.5 text-slate-900 dark:text-white print:text-base print:mb-0">
                 {metric.value}
               </div>
-              <div className="text-[10px] text-slate-500 dark:text-gray-400 font-medium uppercase tracking-wider print:text-[8pt] print:tracking-normal">
+              <div className="text-[11px] text-slate-500 dark:text-gray-400 font-medium uppercase tracking-wider print:text-[8pt] print:tracking-normal">
                 {metric.label}
               </div>
             </div>
           ))}
         </div>
 
-        {/* 3. Case Study Cards - Simplified to List Style */}
-        <div className="mb-10 print:mb-3">
-            <div className="space-y-10 print:space-y-3">
-              {/* Group 3: AI Projects & AIGC Practice */}
-              <div id="proj-group-ai">
-                <h3 className="text-xl font-bold text-left mb-6 text-slate-800 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1.5 px-3">
-                  {t.group3Title}
-                </h3>
-                <div className="grid grid-cols-1 gap-y-6 mt-4 print:mt-2">
-                  {t.cases.slice(0, 2).map((item: any, index) => (
-                    <div key={index} id={index === 0 ? "proj-card-ai-agent" : "proj-card-aigc"}>
-                      <ProjectCard item={item} language={language} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Group 0: Pre-sales Management */}
-              <div id="proj-group-presales">
-                <h3 className="text-xl font-bold text-left mb-6 text-slate-800 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1.5 px-3">
-                  {t.group0Title}
-                </h3>
-                <div className="grid grid-cols-1 gap-y-6 mt-4 print:mt-2">
-                  {t.cases.slice(2, 3).map((item: any, index) => (
-                    <ProjectCard key={index} item={item} language={language} />
-                  ))}
-                </div>
-              </div>
-
-              {/* Group 1: KA Operations */}
-              <div id="proj-group-ka">
-                <h3 className="text-xl font-bold text-left mb-6 text-slate-800 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1.5 px-3">
-                  {t.group1Title}
-                </h3>
-                <div className="grid grid-cols-1 gap-y-6 mt-4 print:mt-2">
-                  {t.cases.slice(3, 4).map((item: any, index) => (
-                    <ProjectCard key={index} item={item} language={language} />
-                  ))}
-                </div>
-              </div>
-
-              {/* Group 2: Implementation Cases */}
-              <div id="proj-group-saas">
-                <h3 className="text-xl font-bold text-left mb-6 text-slate-800 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1.5 px-3">
-                  {t.group2Title}
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8 print:grid-cols-1 print:gap-y-4 print:mt-2">
-                  {t.cases.slice(4).map((item: any, index) => (
-                    <ProjectCard key={index} item={item} language={language} />
-                  ))}
-                </div>
-              </div>
+        {/* 2. Structured Groups */}
+        <div className="space-y-10 print:space-y-3">
+          
+          {/* Group 1: Benchmark Rollout & Nationwide Implementation */}
+          <div id="proj-group-rollout">
+            <h3 className="text-lg sm:text-xl font-bold text-left mb-4 text-slate-900 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1">
+              {t.groups.rollout}
+            </h3>
+            <div className="space-y-6 print:space-y-2 mt-2">
+              {t.cases.filter(c => c.group === 'rollout').map((item) => (
+                <ProjectCardItem key={item.id} item={item} language={language} />
+              ))}
             </div>
+          </div>
+
+          {/* Group 2: KA Operations & CSM */}
+          <div id="proj-group-ka">
+            <h3 className="text-lg sm:text-xl font-bold text-left mb-4 text-slate-900 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1">
+              {t.groups.csm}
+            </h3>
+            <div className="space-y-6 print:space-y-2 mt-2">
+              {t.cases.filter(c => c.group === 'csm').map((item) => (
+                <ProjectCardItem key={item.id} item={item} language={language} />
+              ))}
+            </div>
+          </div>
+
+          {/* Group 3: Presales & Consulting */}
+          <div id="proj-group-presales">
+            <h3 className="text-lg sm:text-xl font-bold text-left mb-4 text-slate-900 dark:text-white print:text-base print:mb-2 border-b-2 border-blue-800 dark:border-blue-400 inline-block pb-1">
+              {t.groups.presales}
+            </h3>
+            <div className="space-y-6 print:space-y-2 mt-2">
+              {t.cases.filter(c => c.group === 'presales').map((item) => (
+                <ProjectCardItem key={item.id} item={item} language={language} />
+              ))}
+            </div>
+          </div>
+
         </div>
 
       </div>
     </section>
   );
 };
+
+const ProjectCardItem: React.FC<{ item: ProjectCaseItem; language: Language }> = ({ item, language }) => (
+  <div 
+    id={item.id}
+    className="group border border-slate-200/90 dark:border-slate-800/90 bg-white dark:bg-slate-900 rounded-xl p-5 sm:p-6 transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-md dark:hover:shadow-slate-950/40 print:p-2.5 print:mb-2 print:border-slate-300 print:rounded-none print:shadow-none print:break-inside-avoid"
+  >
+    {/* Card Header */}
+    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-2 print:mb-1">
+      <div>
+        <div className="flex flex-wrap items-center gap-2 mb-1">
+          <h4 className="text-base sm:text-lg font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:tracking-tight">
+            {item.name}
+          </h4>
+          {item.badge && (
+            <span className="text-[10px] font-semibold text-blue-800 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 rounded border border-blue-200 dark:border-blue-800 print:text-[8pt] print:px-1 print:py-0 print:border-slate-300">
+              {item.badge}
+            </span>
+          )}
+        </div>
+        
+        {/* Brand Badges Bar */}
+        {item.brandBadges && item.brandBadges.length > 0 && (
+          <div className="flex flex-wrap items-center gap-1.5 mb-1.5 print:mb-0.5">
+            <span className="text-[10px] uppercase font-bold text-slate-400 dark:text-slate-500 mr-0.5">
+              {language === 'zh' ? '代表品牌/实体:' : 'Brands/Entities:'}
+            </span>
+            {item.brandBadges.map((brand, bIdx) => (
+              <span
+                key={bIdx}
+                className="text-[11px] font-semibold text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-800/90 px-2 py-0.5 rounded border border-slate-200/80 dark:border-slate-700/80 print:text-[8pt] print:px-1 print:py-0"
+              >
+                {brand}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div className="flex flex-wrap items-center gap-2 text-[12px] print:text-[8.5pt]">
+          <span className="font-semibold text-slate-700 dark:text-slate-300">
+            {item.role}
+          </span>
+          <span className="text-slate-300 dark:text-slate-700 hidden sm:inline">|</span>
+          <span className="text-slate-500 dark:text-gray-400 font-medium">
+            {item.category}
+          </span>
+        </div>
+      </div>
+
+      <div className="text-xs sm:text-right font-medium text-blue-800 dark:text-blue-400 shrink-0 bg-slate-50 dark:bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-200/80 dark:border-slate-700/80 print:text-[8pt] print:bg-transparent print:border-none print:p-0">
+        {item.scale}
+      </div>
+    </div>
+
+    {/* 1. Challenge & Pain Points */}
+    <div className="mt-3 mb-3 print:mt-1 print:mb-1">
+      <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1 print:text-[8pt] print:mb-0">
+        {language === 'zh' ? '【交付运营挑战与痛点】' : '[Delivery & Operations Challenge]'}
+      </div>
+      <p className="text-[13px] text-slate-600 dark:text-gray-300 leading-snug text-justify print:text-[9pt] print:leading-snug">
+        {item.challenge}
+      </p>
+    </div>
+
+    {/* 2. Core Actions & Solutions */}
+    <div className="mb-3 print:mb-1">
+      <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1 print:text-[8pt] print:mb-0">
+        {language === 'zh' ? '【实施破局、组织推进与运营机制】' : '[Implementation, Execution & Operations SOP]'}
+      </div>
+      <ul className="space-y-1 list-disc list-inside text-[13px] text-slate-600 dark:text-gray-400 marker:text-blue-800 dark:marker:text-blue-400 print:space-y-0.5 print:text-[9pt] print:leading-snug">
+        {item.solutions.map((sol, sIdx) => (
+          <li key={sIdx} className="leading-snug print:leading-normal">
+            <span className="-ml-1.5">{sol}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {/* 3. Delivery Achievements & Data */}
+    <div className="mb-3.5 print:mb-1.5 bg-blue-50/40 dark:bg-slate-800/40 p-3 rounded-lg border border-blue-100/60 dark:border-slate-800 print:bg-transparent print:p-0 print:border-none">
+      <div className="text-[11px] font-bold uppercase tracking-wider text-blue-900 dark:text-blue-300 mb-1 print:text-[8.5pt] print:mb-0">
+        {language === 'zh' ? '【量化业务收益与里程碑成果】' : '[Business Impact & Milestone Outcomes]'}
+      </div>
+      <ul className="space-y-1 list-disc list-inside text-[13px] text-slate-700 dark:text-gray-300 marker:text-blue-800 dark:marker:text-blue-400 print:space-y-0.5 print:text-[9pt] print:leading-snug font-medium">
+        {item.achievements.map((ach, acIdx) => (
+          <li key={acIdx} className="leading-snug print:leading-normal">
+            <span className="-ml-1.5">{ach}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {/* Optional External Links */}
+    {item.links && item.links.length > 0 && (
+      <div className="mb-3 flex flex-wrap items-center gap-2 print:hidden">
+        <span className="text-[11px] font-bold text-slate-400 dark:text-slate-500">
+          {language === 'zh' ? '相关链接：' : 'Links:'}
+        </span>
+        {item.links.map((link, lIdx) => (
+          <a
+            key={lIdx}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[11px] text-blue-700 dark:text-blue-400 hover:text-blue-900 dark:hover:text-blue-300 underline font-medium"
+          >
+            {link.title} ↗
+          </a>
+        ))}
+      </div>
+    )}
+
+    {/* Tags */}
+    <div className="flex flex-wrap gap-1.5 print:gap-1">
+      {item.tags.map((tag, tIdx) => (
+        <span 
+          key={tIdx} 
+          className="text-[10.5px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-gray-400 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-700 print:px-1 print:py-0 print:text-[8pt] print:bg-transparent print:border-slate-300"
+        >
+          {tag}
+        </span>
+      ))}
+    </div>
+  </div>
+);
 
 export default Projects;

@@ -5,9 +5,28 @@ interface ExperienceProps {
   language: Language;
 }
 
+interface ExperienceItem {
+  id: number;
+  role: string;
+  company: string;
+  period: string;
+  description: string;
+  achievements?: string[];
+  brands?: string[];
+  aiProjects?: {
+    name: string;
+    desc: string;
+    link: string;
+    tags: string[];
+  }[];
+  tags: string[];
+  color: string;
+  isPromoted: boolean;
+}
+
 const Experience: React.FC<ExperienceProps> = ({ language }) => {
   
-  const getExperiences = (lang: Language) => {
+  const getExperiences = (lang: Language): ExperienceItem[] => {
     if (lang === 'zh') {
       return [
         {
@@ -28,54 +47,53 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
         },
         {
           id: 1,
-          role: "SaaS 平台大客户总监 / 客户成功总监",
+          role: "SaaS 平台大客户总监 / 客户成功总监 (兼解决方案架构)",
           company: "上海合阔信息技术有限公司",
           period: "2023 - 2025.07 (后期)",
-          description: "凭借覆盖客户全生命周期管理、头部连锁客户深度运营及存量价值深耕的突出成果，由项目经理正式晋升为客户成功部门负责人（CSM 总监）。全面负责大客户留存、增购续约及长期价值运营，主导搭建客户成功体系，建立标准化服务流程、客户分层运营机制与全生命周期管理策略，推动核心指标持续保持行业标杆水平。",
+          description: "由核心项目负责人晋升为客户成功部门负责人（CSM 总监兼解决方案架构）。全面负责大客户全生命周期留存、增购续约及复杂方案治理；重点主导喜茶加盟 B2B 支付中台演进（业务事实与资金事实解耦）、汇付天下大额资金闭环方案，以及谭仔跨国全域数字化运营体系搭建。",
           achievements: [
-            "售前解决方案管理：曾多次主导售前讲标投标案例，独立完成大中型连锁企业的售前方案演示和讲标工作。主导行业头部品牌数字化项目全流程售前与投标工作，独立完成需求调研、业务蓝图规划、技术方案设计、系统架构规划、投标文件编制，覆盖技术标 + 商务标全模块；针对多个千万级标杆项目，独立负责现场讲标、答疑及全场景方案演示，精准传递产品价值。支撑多个百万/千万级项目成功中标，讲标通过率位居团队前列，为项目落地奠定坚实基石。",
-            "大客户 (KA) 独立运营体系：针对多个头部品牌制定独立运营逻辑。成立“产研+业务”专项小组以匹配客户的高速扩张需求；组建专业运维团队保障高可用业务运行；针对百万级以上营收品牌分配独立 CSM 经理，深度挖掘潜在需求并实现精细化价值深耕。同时，与品牌的业务负责人及 IT 负责人长期保持良好合作关系，全方位保障项目稳健运行与价值落地。",
-            "中小客户 (SMB) 精细化管理：采用“AM+PM”共同维护机制。通过提炼全行业共性痛点并将其闭环转化为 SaaS 产品迭代需求，显著提升系统使用率与客户满意度。",
-            "生态环节与全球化布局（谭仔 TamJai 专项）：主导谭仔国际 (TamJai, 2024-2025) 港、新、日、澳、马、菲等多国跨国连锁数字化运营；从 0 搭建 Zendesk+WhatsApp 全域客服工单平台，配置跨时区智能路由与 SLA 规则；实现海外相关 issue 报修总览可视化浏览、统计与复盘，建立标准化客户服务体系流程，输出标准化运维流程支撑售前投标。",
-            "售前赋能与最佳实践：将 KA 客户成功案例沉淀为行业最佳实践白皮书，辅助售前团队在投标阶段提供强有力的数字化交付支撑。"
+            "喜茶加盟 B2B 支付与资金闭环方案：主导 BOH 供应链与喜茶支付中台集成方案评审与业务解耦设计——由 BOH 拥有订货/差异/退货业务事实，支付中台负责实付、手续费、补贴分摊与退款资金事实；协同设计按门店灰度切流、旧入口动态隐藏（防重复扣款）及汇付天下网银/U盾大额转账资金匹配方案，保障日终流水与 JDE 财务入账严格一致。",
+            "售前解决方案咨询与投标架构：主导行业头部品牌数字化项目售前全流程，独立完成需求调研、业务蓝图规划、系统架构设计与软硬件拓扑，覆盖技术标+商务标全模块；针对千万级项目独立负责现场方案演示与答疑，讲标通过率位居团队前列，支撑多个大型标杆项目成功中标。",
+            "大客户 (KA) 独立运营与持续演进：针对喜茶、星巴克、DQ、久久丫等品牌制定“一客一策”运营体系。设立“产研+业务”敏捷小组，将一线反馈持续反哺为通用 SaaS 产品能力（如动态库存校验、紧急订货、差异单复盘）。",
+            "全球化全域客服方案（谭仔 TamJai 专项）：主导谭仔国际 (TamJai, 2024-2025) 港、新、日、澳、马、菲等多国连锁数字化运营；从 0 搭建 Zendesk+WhatsApp 全域客服工单平台，配置跨时区智能路由与分级 SLA 规则，建立海外 issue 报修总览可视化与标准化运维流程。"
           ],
           brands: [
             "喜茶 (HEYTEA)", "久久丫", "DQ (Dairy Queen)", "乐乐茶 (LELECHA)",
             "绝绝紫 / 绝味鸭脖", "Seesaw Coffee", "T9 Tea", "Linlee (邻里)", 
             "谭仔 (TamJai)", "Something For", "果呀呀"
           ],
-          tags: ["售前方案", "客户增长", "CRM体系", "商业价值", "团队管理"],
+          tags: ["支付中台方案", "业务资金解耦", "售前架构", "KA 客户成功", "全球化运营"],
           color: "border-red-500 dark:border-red-400",
           isPromoted: true
         },
         {
           id: 2,
-          role: "SaaS 平台项目经理",
+          role: "SaaS 平台项目经理 / 解决方案架构师",
           company: "上海合阔信息技术有限公司",
           period: "2018 - 2023 (中期)",
-          description: "核心项目交付负责人。因项目中展现出极强的跨部门协作、客户沟通与方案表达能力，被团队推举同时负责技术负责人与项目经理双职责，成为技术与业务的核心衔接枢纽，正式奠定从技术向项目管理转型的基础。后续直接独立负责头部客户新项目，担任全职项目经理，统筹需求、方案、实施、交付与验收全流程，主导多个头部品牌数字化转型，累计覆盖超 5000 家连锁门店。",
+          description: "核心项目交付与解决方案负责人。承担技术负责人与项目经理双重职责，深度深入一线门店与客户现场，统筹业务调研、产品规划、系统集成、UAT 与规模化推广上线全流程，主导多个头部品牌数字化转型，累计覆盖超 5000 家连锁门店。",
           achievements: [
-            "上海适达餐饮集团 (DQ 冰雪皇后、PPJ 棒约翰): 负责 BOH 门店供应链项目交付。对接全国 1000+ 门店需求，设计库存管理、采购补货、物流追踪全流程解决方案，上线后供应链周转效率明显提升，库存损耗率降低 2%。",
-            "深圳喜茶 (HEYTEA): 2019-2021年常驻深圳总部，作为核心对接人主导门店供应链 BOH 与 HiPOS 系统从 0 到 1 落地。统筹线上小程序、外卖平台、线下 POS 与 BOH 供应链全域打通，实现“下单-履约-结算”一体化数字化闭环，支撑全国门店规模化运营；(BOM配方设计研发曾获专利)",
-            "浙江久久丫食品: 2021-2023年常驻客户现场，负责业务中台项目。搭建集订单、库存、会员、财务于一体的业务中台，整合全国 1800+ 门店数据，打破数据孤岛，为品牌精细化运营与业务经营决策提供有力支撑。",
-            "交付管理：统筹 SaaS 项目全生命周期管理，负责进度、风险及质量控制，确保多个大型项目按期保质交付，获得客户高度认可。"
+            "喜茶 HiPOS 全渠道履约产品演化：规划并落地「渠道接入 -> POS统一中台 -> 资金结算 -> 能力开放」四阶段演化路径；设计线上小程序订单定向 POS 接单路由、定制小票/杯贴 XML 模板引擎，并将打印与路由抽象为独立微服务（uprint/ulabel），支撑 800+ 直营门店日峰值 10万+ 订单平稳履约。",
+            "喜茶建议订货 (MRP) 产品设计与闭环飞轮：从移动加权平均逐步演进至「营业额与销量预测 + 动态 BOM 配方物耗拆解 + 万元营业额耗材用量 + 新品冷启动预估」；设计「总部定规则 -> 系统算建议 -> 门店只处理例外必填原因 -> 经营指标反向验证」的闭环机制，助力下半年报损率+盘点差异率由 5.9% 压降至 3.9%，日订货时间缩减 40 分钟/店。",
+            "久久丫 / 顶誉千店级数字化中台蓝图规划：主导 71 天跨 7+ 部门深度调研，制定「一期打基石（商品、库存、订单、价格、结算 5 通）-> 二期赋能力（加盟订货供应链）-> 三期优服务」的业务蓝图；在客户阿里云私有化环境完成 59 个存量系统接口打通，支撑久久丫 1000+、留夫鸭 500+ 门店规模化切换上线与稳定运营。",
+            "上海适达餐饮集团 (DQ、棒约翰): 负责 BOH 门店供应链交付，对接全国 1000+ 门店，设计实时库存、门店补货与物流追踪全流程方案，库存损耗率降低 2%。"
           ],
-          tags: ["PMP", "项目交付", "全生命周期管理", "专利研发"],
+          tags: ["MRP 反馈飞轮", "HiPOS 履约架构", "业务中台蓝图", "PMP", "全生命周期交付"],
           color: "border-blue-500 dark:border-blue-400",
           isPromoted: true
         },
         {
           id: 3,
-          role: "SaaS 云平台高级软件开发工程师",
+          role: "SaaS 云平台高级软件开发工程师 (产品研发核心)",
           company: "上海合阔信息技术有限公司",
           period: "2016.04 - 2018 (初创核心成员)",
-          description: "作为初创阶段核心技术成员，牵头餐饮 SaaS 云平台从 0 到 1 的全栈技术构建，主导底层架构设计、核心模块开发、部署运维体系搭建，为平台后续规模化扩张奠定技术基石。",
+          description: "作为初创阶段核心技术与产品架构成员，参与 BOH 基本架构与产品设计理念，主导 OMS 订单管理、动态配方 BOM、全渠道报表等核心业务域的设计与实现，为后续合阔产品体系奠定标准化底座。",
           achievements: [
-            "SaaS 平台架构从 0 到 1 搭建：主导基于 Python 框架与自研微服务框架的设计与落地，集成 OAuth 统一认证体系，实现多租户隔离与高并发处理，并利用 Jenkins + K8s 搭建自动化流水线支撑业务弹性伸缩。",
-            "核心业务模块深度开发：聚焦 OMS 订单管理系统，设计标准化数据整合清洗流程，实现全渠道订单统一接入，并通过分库分表与异步优化支撑日活跃订单处理量平滑扩容至 10 万级。",
-            "平台运维与技术沉淀：负责线上高频故障排查与性能调优（如库存超卖、延迟优化），并沉淀 SaaS 平台开发运维规范文档，为后续团队扩张与客户规模化接入门槛降低提供标准化指引。"
+            "OMS 统一交易与履约模型设计：主导全渠道订单中心（OMS）数据模型与状态机（OPEN -> CHECKOUT -> WAITING -> PAYING -> SALE -> TICKET 快照）设计，建立订单幂等去重、异常补偿与门店履约分发机制，让每笔订单成为库存、BOM 物耗、报表与对账结算的统一事实源。",
+            "动态配方 (BOM) 产品引擎设计：打破传统 ERP 静态物料结构，主导设计「基础配方 + 规格缩放 / 糖度减量 / 奶基底替换 / 加料新增 / 温度覆盖」的动态物料拆解引擎，实现销售品精确还原为生产原料与耗材消耗，该设计后续成功获得发明专利。",
+            "微服务业务域解耦与基础平台：参与 BOH 云原生架构搭建，将商品(SPU)、菜单(ODM)、订单(OMS)、配方(BOM)、库存(INV)、报表拆分为独立业务域，基于 Python、OAuth 多租户与 K8s 支撑平台平滑承载日活跃 10 万级订单。"
           ],
-          tags: ["Python 框架", "OAuth/认证", "OMS 核心", "自研微服务"],
+          tags: ["OMS 交易状态机", "动态 BOM 专利", "微服务业务域", "0-1 产品设计", "Python/OAuth"],
           color: "border-yellow-500 dark:border-yellow-400",
           isPromoted: false
         },
@@ -173,54 +191,53 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
         },
         {
           id: 1,
-          role: "SaaS Platform KA Director / Customer Success Director",
+          role: "SaaS Platform KA Director / Customer Success Director (Solution Architecture)",
           company: "Shanghai Hekuo Info Tech",
           period: "2023 - 2025.07 (Late Stage)",
-          description: "Promoted from Project Manager to Head of Customer Success (CSM Director) following outstanding results in full lifecycle management and deep operation of top-tier chain brands. Led the construction of the Customer Success framework, establishing standardized service processes and client-tiering mechanisms to drive retention, upsell rates, and long-term value.",
+          description: "Promoted from core project lead to Head of Customer Success (CSM Director & Solution Architecture). Responsible for full lifecycle retention, upsell renewal, and complex solution governance. Spearheaded HEYTEA franchisee B2B payment platform evolution (decoupling business facts from financial facts), Huifu PayFac large-amount capital reconciliation, and TamJai global digital operations.",
           achievements: [
-            "Pre-sales Solution Management: Led multiple pre-sales bidding cases for major chain enterprises. Managed the full cycle of pre-sales and bidding for top-tier catering brands, including requirement survey, business blueprinting, technical solution design, and bid document preparation. Responsible for on-site bidding and high-impact solution demonstrations for multi-million projects, effectively communicating product value to decision-makers. Supported the successful bid of multiple million/multi-million level projects with a top-tier success rate.",
-            "KA Independent Operation System: Developed customized operation systems for multiple top-tier brands. Established dedicated 'R&D + Business' task forces to support rapid client expansion and specialized O&M teams for high-availability business. Assigned dedicated CSMs for high-revenue accounts to track dynamics and mine latent needs. Maintained long-term, positive relationships with brand business and IT heads to ensure stable project operation and value delivery.",
-            "SMB Refined Operations: Implemented a joint 'AM + PM' mechanism. Identified common industry pain points to define SaaS product requirements, collaborating with the product team to drive feature iterations.",
-            "Ecosystem & Global Expansion: Empowered domestic and international partners/agents for large-scale acquisition and implementation, facilitating global business growth.",
-            "Pre-sales Enablement: Transformed KA success stories into industry best practice white papers, providing critical support for strategic bidding and technical proposals."
+            "HEYTEA Franchisee B2B Payment & Settlement Architecture: Led the solution review and decoupling design between BOH supply chain and HEYTEA payment middle-platform—BOH owns ordering, fulfillment differences, and return facts, while the payment platform owns actual deduction, fee/subsidy distribution, and refund facts; designed store-level canary routing, dynamic hiding of legacy payment buttons, and Huifu PayFac wire transfer reconciliation, ensuring complete alignment with JDE ledger.",
+            "Pre-sales Solution Consulting & Architecture: Directed full-cycle pre-sales for top-tier catering chains, independently producing requirement surveys, business blueprints, system architecture, and technical/commercial bidding documents; delivered live defense and high-impact demos for multi-million projects with a top-tier success rate.",
+            "KA Custom Operations & Continuous Evolution: Established bespoke operational mechanisms for brands like HEYTEA, Starbucks, DQ, and Jiujiuya. Deployed agile 'R&D + Business' squads to feed frontline customer feedback back into universal SaaS capabilities (e.g. dynamic inventory check, emergency ordering, variance review).",
+            "Global Omni-channel Support (TamJai International): Orchestrated cross-border digital operations across HK, Singapore, Japan, Australia, Malaysia, and the Philippines; built Zendesk+WhatsApp multi-lingual ticketing with cross-time-zone smart routing and tiered SLAs from scratch."
           ],
           brands: [
             "HEYTEA", "Jiujiuya", "DQ (Dairy Queen)",
             "T9 Tea", "Linlee", 
             "TamJai", "Something For", "Guoyaya"
           ],
-          tags: ["Pre-sales", "Customer Growth", "CRM", "Business Value", "Management"],
+          tags: ["Payment Architecture", "Fact Decoupling", "Pre-sales Arch", "KA Success", "Global Operations"],
           color: "border-red-500 dark:border-red-400",
           isPromoted: true
         },
         {
           id: 2,
-          role: "SaaS Project Manager",
+          role: "SaaS Project Manager / Solution Architect",
           company: "Shanghai Hekuo Info Tech",
           period: "2018 - 2023 (Mid Stage)",
-          description: "Head of core project delivery. Due to exceptional cross-department collaboration and communication skills, I was selected to serve as both Technical Lead and Project Manager, bridging technology and business—a role that established my transition to project management. Subsequently took independent charge of top-tier projects as a full-time PM, overseeing the entire lifecycle from requirements to delivery for 5000+ stores.",
+          description: "Head of core project delivery and solution architecture. Led both tech lead and PM responsibilities, deeply stationing at frontline stores and client headquarters. Orchestrated requirement surveys, product roadmap planning, system integration, UAT, and nationwide cutovers across 5000+ chain stores.",
           achievements: [
-            "Shanghai Shida Catering Group (DQ, Papa John's): Responsible for BOH store supply chain project delivery. Aligned requirements for 1000+ stores nationwide, designed full-process solutions for inventory, procurement, and logistics, reducing inventory loss by 2%.",
-            "Shenzhen HEYTEA: Stationed in Shenzhen HQ (2019-2021), as the core contact led the 0-to-1 implementation of BOH supply chain and HiPOS systems. Coordinated the integration of mini-programs, delivery platforms, offline POS, and BOH supply chain, achieving an integrated 'Order-Fulfillment-Settlement' digital loop to support nationwide scaled operations; (Patented BOM recipe design).",
-            "Zhejiang Juewei Duck: Stationed on-site (2021-2023), responsible for business middle-platform project. Built an integrated platform for orders, inventory, membership, and finance, consolidating data for 1800+ stores to support refined operations and business decisions.",
-            "Delivery Management: Managed full SaaS project lifecycles, responsible for schedule, risk, and quality control, ensuring on-time and high-quality delivery of multiple large-scale projects."
+            "HEYTEA HiPOS Omni-channel Fulfillment Evolution: Planned and delivered the 4-phase roadmap of 'Channel Ingestion -> Unified POS -> Payment Settlement -> Open API'; designed mini-program orders routing to dedicated POS terminals, custom XML receipt/cup-label template engines, and abstracted printing/routing into an independent microservice (uprint/ulabel) supporting 100k+ peak daily orders across 800+ stores.",
+            "HEYTEA Suggested Ordering (MRP) Product Design & Feedback Flywheel: Evolved from moving weighted average to 'Revenue/Sales Forecasting + Dynamic BOM Recipe Breakdown + Non-sales Consumable Usage per 10k GMV + New Item Cold Start'; architected the closed loop of 'HQ Sets Rules -> System Calculates Suggestions -> Stores Handle Exceptions with Mandatory Reasons -> Business Metric Dual Verification', reducing loss+variance rate from 5.9% to 3.9% and saving 40 min/store daily.",
+            "Jiujiuya / Dingyu 1000+ Store Digital Middle-Platform Blueprint: Spearheaded a 71-day survey across 7+ departments, establishing the blueprint of 'Phase 1 Foundations (5 unified domains) -> Phase 2 Enablement (Franchisee Ordering & Supply Chain) -> Phase 3 Consumer Services'; completed 59 system interfaces in client's private Alibaba Cloud environment, supporting 1000+ Jiujiuya and 500+ Liufu Duck stores.",
+            "Shanghai Shida Catering Group (DQ, Papa John's): Delivered BOH store supply chain for 1000+ stores nationwide, designing real-time inventory, procurement replenishment, and logistics tracking, cutting inventory loss by 2%."
           ],
-          tags: ["PMP", "Delivery", "Full Lifecycle", "Patents"],
+          tags: ["MRP Feedback Flywheel", "HiPOS Fulfillment", "Business Blueprint", "PMP", "Full Lifecycle"],
           color: "border-blue-500 dark:border-blue-400",
           isPromoted: true
         },
         {
           id: 3,
-          role: "Senior Software Engineer (SaaS)",
+          role: "Senior Software Engineer / Product R&D Core",
           company: "Shanghai Hekuo Info Tech",
           period: "2016.04 - 2018 (Founding Core Member)",
-          description: "As a core founding technical member, led the 0-to-1 full-stack construction of the catering SaaS cloud platform. Directed underlying architecture design, core module development, and deployment systems, laying the technical foundation for scalable expansion.",
+          description: "Core founding technical and product architecture member. Participated in BOH underlying framework and product philosophy, leading the design and implementation of OMS order management, dynamic BOM recipe engine, and omni-channel reporting.",
           achievements: [
-            "0-to-1 SaaS Platform Architecture: Led the design and implementation of a custom microservices framework based on Python, integrating OAuth unified authentication for secure multi-tenancy and high-concurrency handling.",
-            "Core Business Module Development: Focused on OMS development, designing standardized data processing for omnichannel orders and optimizing performance via database partitioning and asynchronous messaging to support 100k+ daily orders.",
-            "Ops & Technical Excellence: Managed troubleshooting for high-frequency issues (e.g., inventory overselling, latency) and established SaaS development/Ops documentation standards to facilitate rapid team scale-up and client boarding."
+            "OMS Unified Transaction & Fulfillment Modeling: Led data modeling and state machine design (OPEN -> CHECKOUT -> WAITING -> PAYING -> SALE -> TICKET snapshot) for the Omnichannel Order Center (OMS), establishing idempotency, exception compensation, and store dispatch mechanisms as the single source of truth for inventory, BOM, reports, and financial reconciliation.",
+            "Dynamic BOM Recipe Engine Design: Shattered legacy ERP static BOM constraints by designing a dynamic recipe breakdown engine ('Base BOM + Attribute Rules: Size scaling, Sugar reduction, Milk substitution, Topping addition, Temperature override'), translating sales items into exact raw ingredient and packaging depletion (patented invention).",
+            "Microservices Domain Decoupling & Platform Infrastructure: Co-architected BOH cloud-native services, decomposing Product (SPU), Menu (ODM), Order (OMS), Recipe (BOM), Inventory (INV), and Reports into independent domains, leveraging Python, OAuth multi-tenancy, and K8s to support 100k+ daily active orders."
           ],
-          tags: ["Python Framework", "OAuth/Auth", "OMS Core", "Custom Microservices"],
+          tags: ["OMS State Machine", "Patented BOM", "Microservices Domains", "0-to-1 Product Design", "Python/OAuth"],
           color: "border-yellow-500 dark:border-yellow-400",
           isPromoted: false
         },

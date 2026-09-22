@@ -8,13 +8,13 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ language }) => {
   const content = {
     zh: {
-      tagline: 'AI 数字化解决方案｜KA 大客户成功｜SaaS 售前咨询｜连锁零售餐饮数字化',
+      tagline: '产品设计与方案架构｜KA 大客户成功｜SaaS 售前咨询｜连锁零售餐饮数字化',
       tagline2: '求职意向',
       name: '陈子卓野',
-      role1: '技术架构',
-      role2: '项目交付',
-      role3: '客户增长',
-      role4: 'AI 自媒体创作',
+      role1: '产品设计',
+      role2: '方案架构',
+      role3: '项目交付',
+      role4: 'AI 智能应用',
       info1Title: '基本信息',
       info1Val: '1986年10月 | 汉族',
       info2Title: '现居 / 政治面貌',
@@ -26,10 +26,10 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       desc: (
         <div className="space-y-4 my-2">
           <p className="border-l-4 border-indigo-600 dark:border-indigo-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3 print:mb-2 print:text-[9.5pt]">
-            拥有 10 年餐饮连锁 SaaS 全链路实战经验，覆盖底层平台建设、千万级 KA 客户项目交付。熟知门店运营、总部内系统运营流程，擅长梳理企业内部多系统、多部门协同等连锁餐饮企业经营问题并分析企业数字化共性痛点以及改进方式；
+            拥有 10 年餐饮连锁 SaaS 全链路实战经验，覆盖底层平台产品构建、复杂方案架构设计与千万级 KA 客户项目交付与运营。深度精通供应链、销售端的实际业务与行业痛点，擅长跨越业务、技术与资金边界梳理连锁企业数字化共性痛点；
           </p>
           <p className="border-l-4 border-purple-600 dark:border-purple-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3 print:mb-2 print:text-[9.5pt]">
-            同时熟悉 LLM 智能体工程与 AIGC AI视频创作等相关技能，能够熟练运用 Claude Code、Codex等多款主流大模型工具搭建自动化分析、内容生产工作流，擅长融合底层技术理解、项目全周期交付、售前方案咨询三重能力，能够独立完成客户需求诊断、数字化方案设计、MVP 试点规划直至全域规模化落地。
+            同时熟练运用 Claude Code、Codex 等 AI 智能体工具搭建自动化分析与多模态内容管线。擅长融合产品设计、解决方案架构与项目交付三重能力，独立完成客户需求诊断、千店级中台蓝图规划、MVP 试点直至全域规模化落地。
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4 print:mt-2">
@@ -49,7 +49,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                 <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">AI 智能与实战应用能力</h4>
               </div>
               <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[9pt] print:text-slate-600">
-                熟练调优主流大模型，运用 Claude Code,Codex等AI智能编程工具 搭建 LLM 自动化数据处理工作流；落地 AIGC 多模态内容生产全链路，具备用户分层、多渠道触达实践，可协助连锁客户落地轻量化 AI 运营试点方案。
+                熟练调优主流大模型，运用 Claude Code、Codex 等 AI 智能编程工具搭建 LLM 自动化数据处理工作流；落地 AIGC 多模态内容生产全链路，具备用户分层、多渠道触达实践，可协助连锁客户落地轻量化 AI 运营试点方案。
               </p>
             </div>
 
@@ -70,13 +70,13 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       btnExport: '导出 PDF 简历'
     },
     en: {
-      tagline: 'AIGC New Media / Key Account Success (Pre- & Post-Sales) / Project Management (Catering O2O SaaS)',
+      tagline: 'Product Design & Solution Architecture / KA Customer Success / SaaS Pre-sales Consulting / Catering Digitalization',
       tagline2: 'Job Intention',
       name: 'Joe.Chen',
-      role1: 'Tech Arch',
-      role2: 'Delivery',
-      role3: 'Growth',
-      role4: 'AI Social Media',
+      role1: 'Product Design',
+      role2: 'Solution Arch',
+      role3: 'Delivery',
+      role4: 'AI Application',
       info1Title: 'Basic Info',
       info1Val: 'Oct 1986 | Han',
       info2Title: 'Location / Status',
@@ -88,10 +88,10 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       desc: (
         <div className="space-y-4 my-2">
           <p className="border-l-4 border-indigo-600 dark:border-indigo-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3 print:mb-2 print:text-[9.5pt]">
-            10 years of full-stack practical experience in catering chain SaaS, covering underlying platform R&D and multi-million KA project delivery. Well-versed in store operations and HQ system workflows; skilled at addressing catering chain operational issues such as multi-system and multi-department collaboration, while analyzing common enterprise digitalization pain points and improvement paths.
+            10 years of full-stack practical experience in catering chain SaaS, covering foundational product R&D, solution architecture, and multi-million KA project delivery and operation. Deeply proficient in frontline supply chain & sales business workflows and core industry pain points, with proven expertise in bridging business, technical, and financial boundaries.
           </p>
           <p className="border-l-4 border-purple-600 dark:border-purple-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3 print:mb-2 print:text-[9.5pt]">
-            Deeply engaged in LLM agent engineering and AIGC AI video marketing implementation. Proficient in leveraging leading LLMs and AI coding agents (Claude Code, Codex) to build automated analysis and content production workflows. Blends technical understanding, end-to-end project delivery, and pre-sales consulting capabilities to independently conduct client requirement diagnostics, solution architecture design, MVP pilot planning, and full-scale rollout—adapting to a phased implementation framework powered by messaging foundations and AI digital tools.
+            Proficient in leveraging Claude Code, Codex, and leading LLMs to build automated data and content production pipelines. Seamlessly blends product design, solution architecture, and project delivery to drive requirement diagnostics, enterprise blueprinting, and scaled rollout across 5000+ stores.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4 print:mt-2">
@@ -111,7 +111,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                 <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">AI Intelligence & Cross-domain</h4>
               </div>
               <p className="text-[12px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[8.5pt] print:text-slate-600">
-                Actively embracing AI. Proficient in applying global & domestic LLMs (Gemini, GPT, DeepSeek, Kimi, Qwen), leveraging Claude Code & Codex AI Coding Agents to build AI investment platforms, WorldCup 2026 Predictions, and Velina Pet Desktop Mascot. Grew cross-platform AIGC channels to 10,000+ total followers across Xiaohongshu (7,000+) and Douyin (3,000+).
+                Actively embracing AI. Proficient in applying global & domestic LLMs, leveraging Claude Code & Codex AI Coding Agents to build automated research workflows and cross-platform AIGC content pipelines.
               </p>
             </div>
 
