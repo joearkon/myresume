@@ -188,7 +188,7 @@ const outlineTree: OutlineNode[] = [
 
 const OutlineIndex: React.FC<OutlineIndexProps> = ({ language }) => {
   const [activeId, setActiveId] = useState<string>('home');
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
 
   // Smooth scroll helper
   const scrollTo = (id: string) => {

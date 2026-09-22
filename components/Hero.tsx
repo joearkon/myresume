@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Language } from '../App';
 
 interface HeroProps {
@@ -67,7 +67,11 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       ),
       btnResume: '查看完整履历',
       btnContact: '联系方式',
-      btnExport: '导出 PDF 简历'
+      btnExport: '导出简历',
+      exportPdf: '导出为 PDF 格式',
+      exportHtml: '下载为 HTML 网页',
+      pdfTip: '支持浏览器直接打印/保存为 PDF',
+      htmlTip: '单文件完整离线网页，双击即开'
     },
     en: {
       tagline: 'Product Design & Solution Architecture / KA Customer Success / SaaS Pre-sales Consulting / Catering Digitalization',
@@ -129,20 +133,79 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       ),
       btnResume: 'View Experience',
       btnContact: 'Contact Me',
-      btnExport: 'Export to PDF'
+      btnExport: 'Export Resume',
+      exportPdf: 'Export as PDF',
+      exportHtml: 'Download as HTML',
+      pdfTip: 'Print or save as PDF directly',
+      htmlTip: 'Standalone offline web page'
     }
   };
 
   const t = content[language];
+  const [showExportMenu, setShowExportMenu] = useState(false);
 
-  // Function to trigger browser print dialog
+  // Function to trigger browser print dialog for PDF
   const handlePrint = (e: React.MouseEvent) => {
     e.preventDefault();
+    setShowExportMenu(false);
     window.print();
   };
 
+  // Function to export standalone single-file HTML resume
+  const handleExportHtml = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setShowExportMenu(false);
+
+    try {
+      // Clone the entire document HTML
+      const docClone = document.documentElement.cloneNode(true) as HTMLElement;
+
+      // Clean up interactive widgets that aren't needed in offline view (chat, buttons menu)
+      const chatWidget = docClone.querySelector('#chat-widget');
+      if (chatWidget) chatWidget.remove();
+      
+      const scrollToTop = docClone.querySelector('#scroll-to-top');
+      if (scrollToTop) scrollToTop.remove();
+
+      // Collect all active stylesheets so the exported HTML is visually self-contained
+      let inlineStyles = '';
+      Array.from(document.styleSheets).forEach((sheet) => {
+        try {
+          if (sheet.cssRules) {
+            Array.from(sheet.cssRules).forEach((rule) => {
+              inlineStyles += rule.cssText + '\n';
+            });
+          }
+        } catch (e) {
+          // Ignore potential CORS cross-origin rules
+        }
+      });
+
+      const styleEl = document.createElement('style');
+      styleEl.innerHTML = inlineStyles;
+      docClone.querySelector('head')?.appendChild(styleEl);
+
+      const htmlContent = '<!DOCTYPE html>\n' + docClone.outerHTML;
+      const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      const filename = language === 'zh'
+        ? '陈子卓野_JoeChen_个人简历.html'
+        : 'JoeChen_Resume.html';
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error('Failed to export HTML:', err);
+      window.print();
+    }
+  };
+
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center items-start relative overflow-hidden px-4 pt-20 pb-8 md:pt-16 transition-colors duration-500 print:min-h-0 print:py-4 print:block">
+    <section id="home" className="min-h-screen flex flex-col justify-center items-start relative px-4 pt-20 pb-16 md:pt-16 transition-colors duration-500 print:min-h-0 print:py-4 print:block">
       <div className="z-10 max-w-5xl w-full mx-auto">
         
         {/* Unified Header for Web and Print */}
@@ -207,19 +270,79 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           {t.desc}
         </div>
         
-        <div className="flex flex-wrap gap-3 justify-center md:justify-start items-center print:hidden">
+        <div className="flex flex-wrap gap-3 justify-center md:justify-start items-center print:hidden relative z-30">
           <a href="#experience" className="px-5 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-medium rounded-md hover:bg-slate-800 dark:hover:bg-slate-100 transition-all shadow-sm">
             {t.btnResume}
           </a>
 
-          {/* Export PDF Button - Triggers Print */}
-          <button 
-            onClick={handlePrint}
-            className="px-5 py-2 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm font-medium rounded-md border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all flex items-center gap-2 shadow-sm cursor-pointer"
-          >
-             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-             {t.btnExport}
-          </button>
+          {/* Dual Export Dropdown (PDF and HTML) */}
+          <div className="relative">
+            <button 
+              onClick={() => setShowExportMenu(!showExportMenu)}
+              className="px-5 py-2 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm font-medium rounded-md border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all flex items-center gap-2 shadow-sm cursor-pointer"
+            >
+               <svg className="w-4 h-4 text-blue-700 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+               </svg>
+               <span>{t.btnExport}</span>
+               <svg className={`w-3.5 h-3.5 text-slate-400 ml-0.5 transition-transform duration-200 ${showExportMenu ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+               </svg>
+            </button>
+
+            {/* Dropdown Menu */}
+            {showExportMenu && (
+              <>
+                <div 
+                  className="fixed inset-0 z-40" 
+                  onClick={() => setShowExportMenu(false)}
+                />
+                <div className="absolute left-0 mt-2 w-64 bg-white dark:bg-slate-800 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 py-1.5 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+                  {/* PDF Option */}
+                  <button
+                    onClick={handlePrint}
+                    className="w-full px-4 py-2.5 text-left flex items-start gap-3 hover:bg-slate-50 dark:hover:bg-slate-700/70 transition-colors cursor-pointer group"
+                  >
+                    <div className="p-1.5 rounded-lg bg-red-50 dark:bg-red-950/60 text-red-600 dark:text-red-400 mt-0.5">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-slate-800 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400">
+                        {t.exportPdf}
+                      </div>
+                      <div className="text-[11px] text-slate-400 dark:text-slate-400">
+                        {t.pdfTip}
+                      </div>
+                    </div>
+                  </button>
+
+                  <div className="h-px bg-slate-100 dark:bg-slate-700/60 my-1" />
+
+                  {/* HTML Option */}
+                  <button
+                    onClick={handleExportHtml}
+                    className="w-full px-4 py-2.5 text-left flex items-start gap-3 hover:bg-slate-50 dark:hover:bg-slate-700/70 transition-colors cursor-pointer group"
+                  >
+                    <div className="p-1.5 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 mt-0.5">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="text-xs font-bold text-slate-800 dark:text-white group-hover:text-blue-700 dark:group-hover:text-blue-400">
+                        {t.exportHtml}
+                      </div>
+                      <div className="text-[11px] text-slate-400 dark:text-slate-400">
+                        {t.htmlTip}
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
 
           <a href="#contact" className="px-5 py-2 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm font-medium rounded-md border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all shadow-sm">
             {t.btnContact}

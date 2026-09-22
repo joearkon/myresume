@@ -36,6 +36,14 @@ const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    if (language === 'zh') {
+      document.title = '陈子卓野 (Joe.Chen) - 产品设计与方案架构 | KA大客户成功 | 连锁餐饮SaaS交付';
+    } else {
+      document.title = 'Joe Chen (陈子卓野) - Product Architecture | Key Account Success | Chain SaaS Rollout';
+    }
+  }, [language]);
+
+  useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
