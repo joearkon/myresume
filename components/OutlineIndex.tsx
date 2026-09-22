@@ -259,8 +259,12 @@ const OutlineIndex: React.FC<OutlineIndexProps> = ({ language }) => {
 
     return (
       <div key={node.id} className="group">
-        <button
-          onClick={() => scrollTo(node.id)}
+        <a
+          href={`#${node.id}`}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollTo(node.id);
+          }}
           className={`w-full text-left flex items-center justify-between gap-1.5 cursor-pointer ${levelStyles} ${activeStyles}`}
         >
           <span className="truncate">{title}</span>
@@ -275,7 +279,7 @@ const OutlineIndex: React.FC<OutlineIndexProps> = ({ language }) => {
               {badge}
             </span>
           )}
-        </button>
+        </a>
 
         {node.children && node.children.length > 0 && (
           <div className="space-y-0.5 my-0.5">
@@ -290,6 +294,7 @@ const OutlineIndex: React.FC<OutlineIndexProps> = ({ language }) => {
     <>
       {/* 1. Desktop / Tablet Floating Outline Sidebar (lg:block) */}
       <aside
+        id="outline-aside"
         className={`hidden lg:block fixed right-3 xl:right-4 top-24 z-40 transition-all duration-300 print:hidden ${
           isCollapsed ? 'w-10' : 'w-56 xl:w-60 2xl:w-64'
         }`}
@@ -297,56 +302,57 @@ const OutlineIndex: React.FC<OutlineIndexProps> = ({ language }) => {
         <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border border-slate-200/90 dark:border-slate-800/90 shadow-xl rounded-2xl p-3 text-slate-800 dark:text-slate-200 max-h-[calc(100vh-8rem)] flex flex-col">
           
           {/* Header Bar */}
-          <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-100 dark:border-slate-800 shrink-0">
-            {!isCollapsed && (
-              <div className="flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-blue-700 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h10M4 18h7" />
-                </svg>
-                <span className="text-[12px] font-bold text-slate-900 dark:text-white tracking-tight">
-                  {language === 'zh' ? '大纲索引' : 'Outline Index'}
-                </span>
-              </div>
-            )}
+          <div id="outline-header" className={`flex items-center justify-between pb-2 mb-2 border-b border-slate-100 dark:border-slate-800 shrink-0 ${isCollapsed ? 'hidden' : ''}`}>
+            <div className="flex items-center gap-1.5">
+              <svg className="w-4 h-4 text-blue-700 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h10M4 18h7" />
+              </svg>
+              <span className="text-[12px] font-bold text-slate-900 dark:text-white tracking-tight">
+                {language === 'zh' ? '大纲索引' : 'Outline Index'}
+              </span>
+            </div>
 
             <button
-              onClick={() => setIsCollapsed(!isCollapsed)}
-              title={isCollapsed ? (language === 'zh' ? '展开索引' : 'Expand') : (language === 'zh' ? '收起索引' : 'Collapse')}
-              className="p-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors mx-auto cursor-pointer"
+              id="outline-toggle-btn"
+              onClick={() => setIsCollapsed(true)}
+              title={language === 'zh' ? '收起大纲' : 'Collapse'}
+              className="p-1 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
             >
-              {isCollapsed ? (
-                <svg className="w-4 h-4 text-blue-700 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
-                </svg>
-              ) : (
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
-                </svg>
-              )}
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+              </svg>
             </button>
           </div>
 
-          {/* Tree Content (Collapsed or Full) */}
-          {!isCollapsed && (
-            <div className="overflow-y-auto pr-1 space-y-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
-              {outlineTree.map((node) => renderItem(node))}
-            </div>
-          )}
+          {/* Tree Content (Always in DOM, toggled via class) */}
+          <div
+            id="outline-expanded-content"
+            className={`overflow-y-auto pr-1 space-y-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden ${
+              isCollapsed ? 'hidden' : ''
+            }`}
+          >
+            {outlineTree.map((node) => renderItem(node))}
+          </div>
 
           {/* Collapsed Icon Pill */}
-          {isCollapsed && (
-            <button
-              onClick={() => setIsCollapsed(false)}
-              className="flex flex-col items-center gap-1 py-2 text-blue-700 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-xl transition-colors cursor-pointer"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h10M4 18h7" />
-              </svg>
-              <span className="text-[10px] font-bold tracking-tighter writing-vertical">
-                {language === 'zh' ? '大纲' : 'Index'}
-              </span>
-            </button>
-          )}
+          <button
+            id="outline-collapsed-pill"
+            onClick={() => setIsCollapsed(false)}
+            title={language === 'zh' ? '展开大纲目录' : 'Expand Outline'}
+            className={`flex flex-col items-center gap-1.5 py-2 text-blue-700 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 rounded-xl transition-colors cursor-pointer ${
+              isCollapsed ? '' : 'hidden'
+            }`}
+          >
+            <svg className="w-4 h-4 text-slate-400 hover:text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+            </svg>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h10M4 18h7" />
+            </svg>
+            <span className="text-[10px] font-bold tracking-tighter writing-vertical">
+              {language === 'zh' ? '大纲' : 'Index'}
+            </span>
+          </button>
         </div>
       </aside>
     </>
