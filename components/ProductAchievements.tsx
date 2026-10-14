@@ -402,41 +402,41 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
   const t = content[language];
 
   return (
-    <section id="product-achievements" className="py-12 bg-slate-50/60 dark:bg-slate-900/40 relative transition-colors duration-500 border-t border-slate-200/80 dark:border-slate-800/80 print:py-2 print:border-none print:bg-transparent">
+    <section id="product-achievements" className="py-12 bg-slate-50/60 dark:bg-slate-900/40 relative transition-colors duration-500 border-t border-slate-200/80 dark:border-slate-800/80 print:py-2 print:border-none print:bg-transparent print:break-before-page">
       <div className="max-w-4xl mx-auto px-4 print:px-0">
         
         {/* Section Header */}
-        <div className="text-center mb-10 print:mb-3 print:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-0.5 print:tracking-tight">
+        <div className="text-center mb-10 print:mb-2.5 print:text-left print:break-after-avoid print:break-inside-avoid">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-slate-900 dark:text-white transition-colors duration-300 print:text-lg print:mb-0.5 print:tracking-tight print:break-after-avoid">
             {t.titlePrefix} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
-          <p className="text-slate-600 dark:text-gray-400 tracking-tight print:text-[9.5pt] print:text-slate-500 print:tracking-tight">
+          <p className="text-slate-600 dark:text-gray-400 tracking-tight print:text-[8.5pt] print:text-slate-500 print:tracking-tight print:mb-0">
             {t.subtitle}
           </p>
         </div>
 
         {/* Product Achievement Cards */}
-        <div className="space-y-8 print:space-y-3">
+        <div className="space-y-8 print:space-y-2">
           {t.cards.map((prod) => (
             <div 
               key={prod.id} 
               id={prod.id} 
-              className="group border border-slate-200/90 dark:border-slate-800/90 bg-white dark:bg-slate-900 rounded-xl p-5 sm:p-6 transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-md dark:hover:shadow-slate-950/40 print:p-2.5 print:mb-2 print:border-slate-300 print:rounded-none print:shadow-none print:break-inside-avoid"
+              className="group border border-slate-200/90 dark:border-slate-800/90 bg-white dark:bg-slate-900 rounded-xl p-5 sm:p-6 transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-md dark:hover:shadow-slate-950/40 print:p-2 print:mb-2 print:border-slate-300 print:rounded-md print:shadow-none print:break-inside-auto"
             >
               {/* Card Header */}
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-2 print:mb-1">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-2 print:mb-0.5 print:break-inside-avoid">
                 <div>
-                  <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <h3 className="text-lg sm:text-xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:tracking-tight">
+                  <div className="flex flex-wrap items-center gap-2 mb-1 print:mb-0.5">
+                    <h3 className="text-lg sm:text-xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-[10pt] print:tracking-tight">
                       {prod.name}
                     </h3>
                     {prod.badge && (
-                      <span className="text-[10px] font-semibold text-blue-800 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 rounded border border-blue-200 dark:border-blue-800 print:text-[8pt] print:px-1 print:py-0 print:border-slate-300">
+                      <span className="text-[10px] font-semibold text-blue-800 dark:text-blue-300 bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 rounded border border-blue-200 dark:border-blue-800 print:text-[7pt] print:px-1 print:py-0 print:border-slate-300">
                         {prod.badge}
                       </span>
                     )}
                   </div>
-                  <div className="flex flex-wrap items-center gap-2 text-[12px] print:text-[8.5pt]">
+                  <div className="flex flex-wrap items-center gap-2 text-[12px] print:text-[8pt] print:gap-1.5">
                     <span className="font-semibold text-slate-700 dark:text-slate-300">
                       {language === 'zh' ? `职责：${prod.role.replace(/^职责[：:]\s*/, '')}` : `Role: ${prod.role.replace(/^Role:\s*/, '')}`}
                     </span>
@@ -447,8 +447,8 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:items-end gap-1.5 shrink-0">
-                  <div className="text-xs sm:text-right font-medium text-blue-800 dark:text-blue-400 bg-slate-50 dark:bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-200/80 dark:border-slate-700/80 print:text-[8pt] print:bg-transparent print:border-none print:p-0">
+                <div className="flex flex-col sm:items-end gap-1.5 shrink-0 print:gap-0">
+                  <div className="text-xs sm:text-right font-medium text-blue-800 dark:text-blue-400 bg-slate-50 dark:bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-200/80 dark:border-slate-700/80 print:text-[7.5pt] print:bg-transparent print:border-none print:p-0">
                     {prod.scale}
                   </div>
                   {prod.links && prod.links.length > 0 && (
@@ -485,23 +485,23 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
               </div>
 
               {/* 1. Positioning & Problem Context */}
-              <div className="mb-2.5 pt-2 border-t border-slate-100/90 dark:border-slate-800/80 print:pt-1 print:mb-1">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1 print:text-[8pt] print:mb-0">
+              <div className="mb-2.5 pt-2 border-t border-slate-100/90 dark:border-slate-800/80 print:pt-0.5 print:mb-0.5">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1 print:text-[7pt] print:mb-0">
                   {language === 'zh' ? '【产品定位与核心场景】' : '[Product Positioning & Mission]'}
                 </div>
-                <p className="text-[13px] text-slate-600 dark:text-gray-300 leading-snug text-justify print:text-[9pt] print:leading-snug">
+                <p className="text-[13px] text-slate-600 dark:text-gray-300 leading-snug text-justify print:text-[7.5pt] print:leading-tight">
                   {prod.positioning}
                 </p>
               </div>
 
               {/* 2. Architecture & Design */}
-              <div className="mb-2.5 print:mb-1">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1 print:text-[8pt] print:mb-0">
+              <div className="mb-2.5 print:mb-0.5">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1 print:text-[7pt] print:mb-0">
                   {language === 'zh' ? '【核心产品设计与架构演进】' : '[Core Architecture & Design]'}
                 </div>
-                <ul className="space-y-1 list-disc list-inside text-[13px] text-slate-600 dark:text-gray-400 marker:text-blue-800 dark:marker:text-blue-400 print:space-y-0.5 print:text-[9pt] print:leading-snug">
+                <ul className="space-y-1 list-disc list-inside text-[13px] text-slate-600 dark:text-gray-400 marker:text-blue-800 dark:marker:text-blue-400 print:space-y-0 print:text-[7.5pt] print:leading-tight">
                   {prod.architecture.map((item, aIdx) => (
-                    <li key={aIdx} className="leading-snug print:leading-normal">
+                    <li key={aIdx} className="leading-snug print:leading-tight">
                       <span className="-ml-1.5">{item}</span>
                     </li>
                   ))}
@@ -509,13 +509,13 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
               </div>
 
               {/* 3. Achievements & Impact */}
-              <div className="mb-2.5 print:mb-1.5 bg-blue-50/40 dark:bg-slate-800/40 p-3 rounded-lg border border-blue-100/60 dark:border-slate-800 print:bg-transparent print:p-0 print:border-none">
-                <div className="text-[11px] font-bold uppercase tracking-wider text-blue-900 dark:text-blue-300 mb-1 print:text-[8.5pt] print:mb-0">
+              <div className="mb-2.5 print:mb-0.5 bg-blue-50/40 dark:bg-slate-800/40 p-3 rounded-lg border border-blue-100/60 dark:border-slate-800 print:bg-transparent print:p-0 print:border-none">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-blue-900 dark:text-blue-300 mb-1 print:text-[7.5pt] print:mb-0">
                   {language === 'zh' ? '【量化产品成就与业务价值】' : '[Quantified Achievements & Business Impact]'}
                 </div>
-                <ul className="space-y-1 list-disc list-inside text-[13px] text-slate-700 dark:text-gray-300 marker:text-blue-800 dark:marker:text-blue-400 print:space-y-0.5 print:text-[9pt] print:leading-snug font-medium">
+                <ul className="space-y-1 list-disc list-inside text-[13px] text-slate-700 dark:text-gray-300 marker:text-blue-800 dark:marker:text-blue-400 print:space-y-0 print:text-[7.5pt] print:leading-tight font-medium">
                   {prod.achievements.map((ach, acIdx) => (
-                    <li key={acIdx} className="leading-snug print:leading-normal">
+                    <li key={acIdx} className="leading-snug print:leading-tight">
                       <span className="-ml-1.5">{ach}</span>
                     </li>
                   ))}
@@ -527,7 +527,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
                 {prod.tags.map((tag, tIdx) => (
                   <span 
                     key={tIdx} 
-                    className="text-[10.5px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-gray-400 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-700 print:px-1 print:py-0 print:text-[8pt] print:bg-transparent print:border-slate-300"
+                    className="text-[10.5px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-gray-400 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-700 print:px-1 print:py-0 print:text-[7pt] print:bg-transparent print:border-slate-300"
                   >
                     {tag}
                   </span>

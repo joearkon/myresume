@@ -1061,7 +1061,7 @@ const MihoyoProjects: React.FC<MihoyoProjectsProps> = ({ language }) => {
                   <div
                     key={proj.id}
                     id={proj.id}
-                    className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm hover:shadow-md hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between print:p-3 print:border-slate-300 print:shadow-none print:break-inside-avoid"
+                    className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm hover:shadow-md hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between print:p-2.5 print:border-slate-300 print:shadow-none print:break-inside-auto print:mb-2"
                   >
                     <div>
                       {/* Badges & Category Header */}

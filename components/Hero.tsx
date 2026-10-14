@@ -275,7 +275,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex flex-col justify-center items-start relative px-4 pt-20 pb-16 md:pt-16 transition-colors duration-500 print:min-h-0 print:py-4 print:block">
+    <section id="home" className="min-h-screen flex flex-col justify-center items-start relative px-4 pt-20 pb-16 md:pt-16 transition-colors duration-500 print:min-h-0 print:py-3 print:block print:break-after-page">
       <div className="z-10 max-w-5xl w-full mx-auto">
         
         {/* Unified Header for Web and Print */}

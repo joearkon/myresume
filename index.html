@@ -264,6 +264,11 @@
         }
 
         .print\:break-inside-avoid {
+          page-break-inside: auto !important;
+          break-inside: auto !important;
+        }
+
+        .print-avoid-break, h3, h4, li {
           page-break-inside: avoid !important;
           break-inside: avoid !important;
         }
@@ -281,19 +286,30 @@
           page-break-after: always !important;
         }
 
-        /* 分页控制：保持自然流畅分页，避免突兀空白截断 */
-        #experience {
-          break-before: auto !important;
-          page-break-before: auto !important;
-        }
-
-        /* 9. Component Specific overrides */
-        #home {
+        /* 首页 Hero 独立完整呈现于第一页，底端干净分页，杜绝标题孤悬与大面积空白 */
+        #home,
+        #mihoyo-home {
           min-height: auto !important;
           padding-top: 0 !important;
           border-bottom: 1px solid #cbd5e1;
           page-break-inside: avoid !important;
           break-inside: avoid !important;
+          break-after: page !important;
+          page-break-after: always !important;
+        }
+
+        /* 核心成果专区从第二页顶端开始，标题与卡片自然紧随 */
+        #product-achievements,
+        #mihoyo-projects {
+          break-before: page !important;
+          page-break-before: always !important;
+        }
+
+        /* 分页控制：工作经历模块保持自然紧凑流排版 */
+        #experience,
+        #mihoyo-experience {
+          break-before: auto !important;
+          page-break-before: auto !important;
         }
 
         /* 技能标签紧凑化 */

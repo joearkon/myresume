@@ -400,7 +400,7 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
 const ProjectCardItem: React.FC<{ item: ProjectCaseItem; language: Language }> = ({ item, language }) => (
   <div 
     id={item.id}
-    className="group border border-slate-200/90 dark:border-slate-800/90 bg-white dark:bg-slate-900 rounded-xl p-5 sm:p-6 transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-md dark:hover:shadow-slate-950/40 print:p-2.5 print:mb-2 print:border-slate-300 print:rounded-none print:shadow-none print:break-inside-avoid"
+    className="group border border-slate-200/90 dark:border-slate-800/90 bg-white dark:bg-slate-900 rounded-xl p-5 sm:p-6 transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-md dark:hover:shadow-slate-950/40 print:p-2 print:mb-2 print:border-slate-300 print:rounded-md print:shadow-none print:break-inside-auto"
   >
     {/* Card Header */}
     <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-2 print:mb-1">

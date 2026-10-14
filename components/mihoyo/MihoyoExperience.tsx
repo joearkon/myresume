@@ -144,7 +144,7 @@ const MihoyoExperience: React.FC<MihoyoExperienceProps> = ({ language }) => {
           {t.experiences.map((exp, idx) => (
             <div
               key={idx}
-              className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm print:p-3 print:border-slate-300 print:shadow-none print:break-inside-avoid"
+              className="p-6 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm print:p-2.5 print:border-slate-300 print:shadow-none print:break-inside-auto print:mb-2"
             >
               <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                 <div className="flex items-center gap-2.5">
