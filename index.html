@@ -281,10 +281,10 @@
           page-break-after: always !important;
         }
 
-        /* 职业生涯模块默认强制从新一页开始，消除第一页底部挤压与不自然留白 */
+        /* 分页控制：保持自然流畅分页，避免突兀空白截断 */
         #experience {
-          break-before: page !important;
-          page-break-before: always !important;
+          break-before: auto !important;
+          page-break-before: auto !important;
         }
 
         /* 9. Component Specific overrides */

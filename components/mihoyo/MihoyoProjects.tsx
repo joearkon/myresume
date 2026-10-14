@@ -1079,13 +1079,13 @@ const MihoyoProjects: React.FC<MihoyoProjectsProps> = ({ language }) => {
                         <span>{proj.name}</span>
                       </h4>
 
-                      <p className="text-xs text-blue-600 dark:text-blue-400 font-semibold mb-3">
+                      <p className="text-xs text-blue-600 dark:text-blue-400 font-semibold mb-2.5">
                         {proj.category}
                       </p>
 
                       {/* Screenshot Visual Card (if available) */}
                       {proj.imageSrc && (
-                        <div className="mb-4 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800/80 bg-slate-950 group/img relative shadow-sm print:hidden">
+                        <div className="mb-3.5 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800/80 bg-slate-950 group/img relative shadow-sm print:hidden">
                           <div
                             className="relative aspect-video overflow-hidden cursor-pointer"
                             onClick={() => setSelectedPreviewImage({ src: proj.imageSrc!, alt: proj.imageAlt || proj.name, title: proj.name })}
@@ -1118,7 +1118,7 @@ const MihoyoProjects: React.FC<MihoyoProjectsProps> = ({ language }) => {
                       )}
 
                       {/* Overview */}
-                      <div className="mb-3.5 bg-slate-50 dark:bg-slate-800/60 p-3 rounded-lg border border-slate-100 dark:border-slate-800 print:p-1.5">
+                      <div className="mb-2.5 bg-slate-50 dark:bg-slate-800/60 p-3 rounded-lg border border-slate-100 dark:border-slate-800 print:p-1.5">
                         <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1 print:text-[7.5pt]">
                           {language === 'zh' ? '【产品定位与核心场景】' : '[Product Positioning & Context]'}
                         </div>
@@ -1129,7 +1129,7 @@ const MihoyoProjects: React.FC<MihoyoProjectsProps> = ({ language }) => {
 
                       {/* 1. Responsibilities (我的职责) */}
                       {proj.responsibilities && proj.responsibilities.length > 0 && (
-                        <div className="mb-3.5 p-3 rounded-xl bg-slate-50/90 dark:bg-slate-800/50 border border-slate-200/90 dark:border-slate-700/80 print:p-1.5 print:border-slate-300">
+                        <div className="mb-2.5 p-3 rounded-xl bg-slate-50/90 dark:bg-slate-800/50 border border-slate-200/90 dark:border-slate-700/80 print:p-1.5 print:border-slate-300">
                           <div className="flex items-center gap-1.5 text-xs font-bold text-slate-900 dark:text-white mb-2 print:text-slate-900">
                             <span className="w-1.5 h-3.5 bg-indigo-600 rounded-sm"></span>
                             <span className="tracking-tight">{proj.responsibilitiesTitle || (language === 'zh' ? '我的职责' : 'My Responsibilities')}</span>
@@ -1149,7 +1149,7 @@ const MihoyoProjects: React.FC<MihoyoProjectsProps> = ({ language }) => {
 
                       {/* 2. My Work (核心工作与架构演进) */}
                       {proj.myWork && proj.myWork.length > 0 && (
-                        <div className="space-y-1.5 mb-3.5">
+                        <div className="space-y-1.5 mb-2.5">
                           <h5 className="text-[11px] font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
                             <span className="w-1.5 h-3.5 bg-blue-600 rounded-sm"></span>
                             <span>{proj.myWorkTitle || (language === 'zh' ? '核心工作与架构演进' : 'Core Architecture & Key Work')}</span>
@@ -1166,7 +1166,7 @@ const MihoyoProjects: React.FC<MihoyoProjectsProps> = ({ language }) => {
 
                       {/* 3. Achievements (我的产品项目成果) */}
                       {proj.achievements && proj.achievements.length > 0 && (
-                        <div className="p-3.5 rounded-xl bg-blue-50/80 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900/50 mb-3.5 print:p-2 print:border-slate-300 print:bg-transparent">
+                        <div className="p-3.5 rounded-xl bg-blue-50/80 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-900/50 mb-2.5 print:p-2 print:border-slate-300 print:bg-transparent">
                           <div className="flex items-center gap-1.5 text-xs font-bold text-blue-900 dark:text-blue-300 mb-2 print:text-slate-900">
                             <span className="text-sm">🏆</span>
                             <span className="tracking-tight font-extrabold">{proj.achievementsTitle || (language === 'zh' ? '我的产品项目成果' : 'Product & Project Achievements')}</span>
@@ -1184,7 +1184,7 @@ const MihoyoProjects: React.FC<MihoyoProjectsProps> = ({ language }) => {
 
                       {/* 4. Output (项目产出 / 沉淀) */}
                       {proj.output && (
-                        <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-800 mb-3.5 print:p-1.5">
+                        <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-800 mb-2.5 print:p-1.5">
                           <div className="flex items-center gap-1.5 text-xs font-bold text-slate-700 dark:text-slate-300 mb-1">
                             <span>📌</span>
                             <span>{proj.outputTitle || (language === 'zh' ? '项目经验与产出' : 'Project Output & Insights')}</span>

@@ -485,7 +485,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
               </div>
 
               {/* 1. Positioning & Problem Context */}
-              <div className="mt-3 mb-3 print:mt-1 print:mb-1">
+              <div className="mb-2.5 pt-2 border-t border-slate-100/90 dark:border-slate-800/80 print:pt-1 print:mb-1">
                 <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1 print:text-[8pt] print:mb-0">
                   {language === 'zh' ? '【产品定位与核心场景】' : '[Product Positioning & Mission]'}
                 </div>
@@ -495,7 +495,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
               </div>
 
               {/* 2. Architecture & Design */}
-              <div className="mb-3 print:mb-1">
+              <div className="mb-2.5 print:mb-1">
                 <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1 print:text-[8pt] print:mb-0">
                   {language === 'zh' ? '【核心产品设计与架构演进】' : '[Core Architecture & Design]'}
                 </div>
@@ -509,7 +509,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
               </div>
 
               {/* 3. Achievements & Impact */}
-              <div className="mb-3.5 print:mb-1.5 bg-blue-50/40 dark:bg-slate-800/40 p-3 rounded-lg border border-blue-100/60 dark:border-slate-800 print:bg-transparent print:p-0 print:border-none">
+              <div className="mb-2.5 print:mb-1.5 bg-blue-50/40 dark:bg-slate-800/40 p-3 rounded-lg border border-blue-100/60 dark:border-slate-800 print:bg-transparent print:p-0 print:border-none">
                 <div className="text-[11px] font-bold uppercase tracking-wider text-blue-900 dark:text-blue-300 mb-1 print:text-[8.5pt] print:mb-0">
                   {language === 'zh' ? '【量化产品成就与业务价值】' : '[Quantified Achievements & Business Impact]'}
                 </div>

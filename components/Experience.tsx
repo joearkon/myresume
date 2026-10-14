@@ -360,22 +360,22 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
   const experiences = getExperiences(language);
 
   return (
-    <section id="experience" className="py-12 bg-white dark:bg-slate-900/50 relative transition-colors duration-500 print:py-2 print:break-before-page">
+    <section id="experience" className="py-10 bg-white dark:bg-slate-900/50 relative transition-colors duration-500 print:py-2">
       <div className="max-w-4xl mx-auto px-4 print:px-0">
-        <div className="mb-10 text-center print:mb-3 print:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-0.5 print:tracking-tight">
+        <div className="mb-6 text-center print:mb-2.5 print:text-left">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 tracking-tight text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-0.5 print:tracking-tight">
             <span className="text-blue-800 dark:text-blue-400">{language === 'zh' ? '职业' : 'Work'}</span> {language === 'zh' ? '生涯' : 'Experience'}
           </h2>
-          <p className="mt-2 text-slate-600 dark:text-gray-400 tracking-tight transition-colors duration-300 print:mt-0 print:text-[9.5pt] print:text-slate-500 print:tracking-tight">
+          <p className="mt-1.5 text-slate-600 dark:text-gray-400 tracking-tight transition-colors duration-300 print:mt-0 print:text-[9.5pt] print:text-slate-500 print:tracking-tight">
             {language === 'zh' 
               ? '八年磨一剑 • 从技术底层到商业顶层的全链路进阶'
               : '8+ Years • From Technical Foundation to Business Leadership'}
           </p>
         </div>
 
-        <div className="space-y-8 print:space-y-3">
+        <div className="space-y-6 print:space-y-2.5">
           {experiences.map((exp) => (
-            <div key={exp.id} id={`exp-${exp.id}`} className="group relative border-b border-slate-200 dark:border-slate-800 pb-8 last:border-0 last:pb-0 print:pb-3 print:last:pb-0 print:mb-2">
+            <div key={exp.id} id={`exp-${exp.id}`} className="group relative border-b border-slate-200 dark:border-slate-800 pb-6 last:border-0 last:pb-0 print:pb-2.5 print:last:pb-0 print:mb-2">
               
               <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1.5 gap-2 print:mb-0.5 print:break-inside-avoid">
                 <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:tracking-tight">
@@ -386,7 +386,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
                 </span>
               </div>
               
-              <div className="text-base font-medium text-slate-700 dark:text-slate-300 mb-2.5 print:text-[9.5pt] print:mb-0.5">
+              <div className="text-base font-medium text-slate-700 dark:text-slate-300 mb-2 print:text-[9.5pt] print:mb-0.5">
                 {exp.company}
                 {exp.isPromoted && (
                   <span className="ml-2 text-[10px] font-normal bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-gray-400 px-1.5 py-0.5 rounded print:px-1 print:py-0 print:text-[7.5pt]">
@@ -395,12 +395,12 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
                 )}
               </div>
               
-              <p className="text-[13px] text-slate-600 dark:text-gray-300 mb-3 leading-snug text-justify print:text-[9.5pt] print:mb-1.5 print:leading-snug">
+              <p className="text-[13px] text-slate-600 dark:text-gray-300 mb-2.5 leading-snug text-justify print:text-[9.5pt] print:mb-1 print:leading-snug">
                 {exp.description}
               </p>
 
               {exp.achievements && (
-                <ul className="mb-4 space-y-1.5 list-disc list-inside text-[13px] text-slate-600 dark:text-gray-400 marker:text-blue-800 dark:marker:text-blue-400 print:mb-2 print:space-y-0.5 print:text-[9pt] print:leading-snug">
+                <ul className="mb-3 space-y-1.5 list-disc list-inside text-[13px] text-slate-600 dark:text-gray-400 marker:text-blue-800 dark:marker:text-blue-400 print:mb-1.5 print:space-y-0.5 print:text-[9pt] print:leading-snug">
                   {exp.achievements.map((ach, i) => (
                     <li key={i} className="leading-snug print:leading-normal">
                       <span className="-ml-2">{ach}</span>
@@ -411,7 +411,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
 
               {/* Brands Section */}
               {exp.brands && (
-                <div className="mb-4 print:mb-2">
+                <div className="mb-3 print:mb-1.5">
                   <ul className="space-y-1.5 list-disc list-inside text-[13px] text-slate-600 dark:text-gray-400 marker:text-blue-800 dark:marker:text-blue-400 print:space-y-0.5 print:text-[9pt] print:leading-snug">
                     <li className="leading-snug print:leading-normal">
                       <span className="-ml-2">{language === 'zh' ? '曾经合作品牌：' : 'Brands Worked With: '}</span>
@@ -423,7 +423,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
 
               {/* AI Projects & Git Works Section */}
               {exp.aiProjects && (
-                <div className="mb-4 print:mb-2 bg-slate-50/80 dark:bg-slate-800/40 rounded-xl p-3 border border-slate-200/70 dark:border-slate-800 print:bg-transparent print:p-0 print:border-none">
+                <div className="mb-3 print:mb-1.5 bg-slate-50/80 dark:bg-slate-800/40 rounded-xl p-3 border border-slate-200/70 dark:border-slate-800 print:bg-transparent print:p-0 print:border-none">
                   <div className="text-[11.5px] font-bold text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-1.5 print:mb-1 print:text-[9pt]">
                     <svg className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0 print:hidden" viewBox="0 0 24 24" fill="currentColor">
                       <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
