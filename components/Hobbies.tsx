@@ -8,89 +8,110 @@ interface HobbiesProps {
 const Hobbies: React.FC<HobbiesProps> = ({ language }) => {
   const content = {
     zh: {
-      title: '个人',
-      titleHighlight: '兴趣',
-      subtitle: '工作之外的热爱，为创造力供能',
-      gunplaTitle: '高达模型 (Gunpla)',
-      gunplaDesc: '精密工程的艺术。拼装复杂的机械结构需要极大的耐心和专注，看着数百个零件最终组合成一个整体，能极大锻炼我的细节把控能力。',
-      footballTitle: '足球',
-      footballDesc: '动态的战略博弈。无论是在球场上还是项目管理中，理解团队协作、即时调整战术以及为了共同目标冲刺，都是胜利的关键。',
-      videoTitle: '短视频制作',
-      videoDesc: '视觉化的叙事艺术。捕捉瞬间并将其剪辑成引人入胜的故事，这保持了我的创造力，也锻炼了我用最简练的语言传达核心信息的能力。'
+      title: '游戏',
+      titleHighlight: '经历',
+      subtitle: '玩家视角与深度体验，为游戏交互与 AI 伴侣产品注入真实同理心',
+      items: [
+        {
+          title: '《绝区零》',
+          category: '米哈游动作游戏 · 深度玩家',
+          icon: '🎮',
+          desc: '资深玩家，尤其喜爱动作设计与三人队伍搭配。除了实际游玩，也将自身需求延伸为桌宠、游戏信息查询与提醒功能，探索角色陪伴和低打扰交互。',
+          tags: ['三人队伍搭配', '动作设计', '维琳娜桌宠研发', '低打扰交互']
+        },
+        {
+          title: '主机动作游戏',
+          category: 'PS4 / PS5 白金探索 · 动作手感',
+          icon: '🏆',
+          desc: '拥有 PS4、PS5《战神》作品白金经历，同时深入体验《怪物猎人》《鬼泣》等动作游戏。长期偏好动作游戏，关注操作反馈、学习过程与战斗体验。',
+          tags: ['战神双白金', '怪物猎人', '鬼泣', '操作反馈与心流']
+        },
+        {
+          title: 'JRPG',
+          category: '经典叙事 · 队伍搭配与养成',
+          icon: '⚔️',
+          desc: '长期喜爱 JRPG 类型，关注角色、队伍搭配、养成与叙事体验。深刻理解玩家与虚拟角色之间的情感羁绊与世界观沉浸感。',
+          tags: ['角色沉浸感', '队伍搭配', '养成系统', '情感羁绊']
+        }
+      ]
     },
     en: {
-      title: 'My',
-      titleHighlight: 'Hobbies',
-      subtitle: 'Passions outside of work that fuel creativity',
-      gunplaTitle: 'Gunpla Model',
-      gunplaDesc: 'The art of precision engineering. Assembling complex mechanical structures requires immense patience and focus. It hones my attention to detail and systemic thinking.',
-      footballTitle: 'Football',
-      footballDesc: 'Strategic teamwork in motion. Whether on the pitch or in project management, understanding collaboration, tactical adjustments, and sprinting for a common goal is key to victory.',
-      videoTitle: 'Short Video Creation',
-      videoDesc: 'Visual storytelling. Capturing moments and editing them into compelling stories keeps my creativity sharp and trains me to convey core messages concisely.'
+      title: 'Gaming',
+      titleHighlight: 'Experience',
+      subtitle: 'Deep gamer perspective infusing empathy and domain intuition into companion agents',
+      items: [
+        {
+          title: 'Zenless Zone Zero (ZZZ)',
+          category: 'miHoYo Action Title · Dedicated Player',
+          icon: '🎮',
+          desc: 'Experienced player especially fond of action combat mechanics and 3-agent team synergy. Translated personal player needs into the Verina desktop companion, in-game stats queries, and low-distraction HUD widgets.',
+          tags: ['Team Synergy', 'Combat Dynamics', 'Verina Pet', 'Low-distraction UX']
+        },
+        {
+          title: 'Console Action Games',
+          category: 'PS4 / PS5 Platinum Trophy Hunter',
+          icon: '🏆',
+          desc: 'Earned Platinum trophies for God of War on PS4 & PS5, alongside extensive experience in Monster Hunter and Devil May Cry. Focused on tactile feedback, learning curves, and combat mastery.',
+          tags: ['God of War Platinum', 'Monster Hunter', 'Devil May Cry', 'Tactile Feedback']
+        },
+        {
+          title: 'JRPG',
+          category: 'Narrative, Team Builds & Progression',
+          icon: '⚔️',
+          desc: 'Longtime aficionado of JRPG titles, paying close attention to character personalities, party builds, progression systems, and storytelling immersion.',
+          tags: ['Character Bonding', 'Party Builds', 'Progression Loop', 'Narrative Immersion']
+        }
+      ]
     }
   };
 
   const t = content[language];
 
   return (
-    <section id="hobbies" className="py-12 px-4 relative overflow-hidden transition-colors duration-500 print:py-2 print:bg-white">
+    <section id="hobbies" className="py-14 px-4 bg-slate-50/70 dark:bg-slate-900/40 relative overflow-hidden transition-colors duration-500 print:py-2 print:bg-white">
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-10 print:mb-4 print:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-0.5">
-            {t.title} <span className="text-yellow-600 dark:text-yellow-500">{t.titleHighlight}</span>
+          <div className="inline-block px-3.5 py-1 rounded-full text-xs font-bold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 mb-2 font-mono">
+            GAMER PROFILE
+          </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold mb-3 text-slate-900 dark:text-white transition-colors duration-300 print:text-xl print:mb-0.5">
+            {t.title} <span className="text-blue-600 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
-          <p className="text-slate-600 dark:text-gray-400 transition-colors duration-300 print:text-[9.5pt] print:text-slate-500">{t.subtitle}</p>
+          <p className="text-sm text-slate-600 dark:text-gray-400 transition-colors duration-300 print:text-[9.5pt] print:text-slate-500">{t.subtitle}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 print:grid-cols-3 print:gap-3">
-          
-          {/* Hobby 1: Gundam */}
-          <div className="group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:border-blue-800 dark:hover:border-blue-400 transition-all duration-500 print:border-0 print:bg-transparent print:shadow-none">
-            <div className="h-40 bg-slate-50 dark:bg-slate-800 flex items-center justify-center transition-colors relative overflow-hidden print:hidden">
-               {/* Placeholder for Gunpla Image or Icon */}
-               <div className="text-blue-800 dark:text-blue-400 transform group-hover:scale-110 transition-transform duration-500">
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg>
-               </div>
+          {t.items.map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 hover:border-blue-600 dark:hover:border-blue-400 shadow-sm transition-all duration-300 flex flex-col justify-between print:p-2 print:border-slate-300"
+            >
+              <div>
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="text-2xl p-2.5 rounded-xl bg-blue-50 dark:bg-slate-800 shrink-0">{item.icon}</span>
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white print:text-base">{item.title}</h3>
+                    <span className="text-xs text-blue-600 dark:text-blue-400 font-medium">{item.category}</span>
+                  </div>
+                </div>
+
+                <p className="text-xs text-slate-600 dark:text-gray-300 leading-relaxed mb-4 print:text-[8.5pt]">
+                  {item.desc}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100 dark:border-slate-800 print:pt-1">
+                {item.tags.map((tag, i) => (
+                  <span
+                    key={i}
+                    className="px-2 py-0.5 text-[10px] rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-mono"
+                  >
+                    #{tag}
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className="p-4 print:p-0">
-              <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-1.5 group-hover:text-blue-800 dark:group-hover:text-blue-400 transition-colors print:text-base print:mb-0.5">{t.gunplaTitle}</h3>
-              <p className="text-[13px] text-slate-600 dark:text-gray-400 mb-3 leading-relaxed transition-colors print:text-[9.5pt] print:leading-tight">
-                {t.gunplaDesc}
-              </p>
-            </div>
-          </div>
-
-          {/* Hobby 2: Football */}
-          <div className="group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:border-green-500 transition-all duration-500 print:border-0 print:bg-transparent print:shadow-none">
-             <div className="h-40 bg-slate-50 dark:bg-slate-800 flex items-center justify-center transition-colors relative overflow-hidden print:hidden">
-               <div className="text-green-500 transform group-hover:scale-110 transition-transform duration-500">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/><circle cx="12" cy="12" r="2"/></svg>
-               </div>
-             </div>
-             <div className="p-4 print:p-0">
-               <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-1.5 group-hover:text-green-500 transition-colors print:text-base print:mb-0.5">{t.footballTitle}</h3>
-               <p className="text-[13px] text-slate-600 dark:text-gray-400 mb-3 leading-relaxed transition-colors print:text-[9.5pt] print:leading-tight">
-                 {t.footballDesc}
-               </p>
-             </div>
-           </div>
-
-          {/* Hobby 3: Short Video */}
-          <div className="group relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden hover:border-pink-500 transition-all duration-500 print:border-0 print:bg-transparent print:shadow-none">
-             <div className="h-40 bg-slate-50 dark:bg-slate-800 flex items-center justify-center transition-colors relative overflow-hidden print:hidden">
-               <div className="text-pink-500 transform group-hover:scale-110 transition-transform duration-500">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8a2 2 0 0 0-2-2h-4v13h4a2 2 0 0 0 2-2z"/><polygon points="8 22 8 5 12 5 12 22 8 22"/><polygon points="16 5 16 22 20 22 20 8 18 8"/><circle cx="4" cy="13" r="2"/></svg>
-               </div>
-             </div>
-             <div className="p-4 print:p-0">
-               <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-1.5 group-hover:text-pink-500 transition-colors print:text-base print:mb-0.5">{t.videoTitle}</h3>
-               <p className="text-[13px] text-slate-600 dark:text-gray-400 mb-3 leading-relaxed transition-colors print:text-[9.5pt] print:leading-tight">
-                 {t.videoDesc}
-               </p>
-             </div>
-           </div>
-
+          ))}
         </div>
       </div>
     </section>

@@ -8,13 +8,13 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ language }) => {
   const content = {
     zh: {
-      tagline: '产品设计与方案架构｜KA 大客户成功｜SaaS 售前咨询｜连锁零售餐饮数字化',
+      tagline: 'AI 产品经理｜垂类大模型与智能体方案架构｜10年连锁餐饮数字化｜KA 客户成功',
       tagline2: '求职意向',
       name: '陈子卓野',
-      role1: '产品设计',
+      role1: 'AI 产品经理',
       role2: '方案架构',
       role3: '项目交付',
-      role4: 'AI 智能应用',
+      role4: '智能体落地',
       info1Title: '基本信息',
       info1Val: '1986年10月 | 汉族',
       info2Title: '现居 / 政治面貌',
@@ -26,40 +26,40 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       desc: (
         <div className="space-y-4 my-2">
           <p className="border-l-4 border-indigo-600 dark:border-indigo-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3 print:mb-2 print:text-[9.5pt]">
-            拥有 10 年餐饮连锁 SaaS 全链路实战经验，覆盖底层平台产品构建、复杂方案架构设计与千万级 KA 客户项目交付与运营。深度精通供应链、销售端的实际业务与行业痛点，擅长跨越业务、技术与资金边界梳理连锁企业数字化共性痛点；
+            拥有 10 年实体消费与连锁供应链核心业务沉淀，曾主导千万级 KA 平台规划与千店级系统落地。精通供应链精细化运营、门店履约与销售全链路痛点，擅长将复杂的线下业务场景抽象为高商业价值的数字化与智能化落地方案；
           </p>
           <p className="border-l-4 border-purple-600 dark:border-purple-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3 print:mb-2 print:text-[9.5pt]">
-            同时熟练运用 Claude Code、Codex 等 AI 智能体工具搭建自动化分析与多模态内容管线。擅长融合产品设计、解决方案架构与项目交付三重能力，独立完成客户需求诊断、千店级中台蓝图规划、MVP 试点直至全域规模化落地。
+            聚焦生成式 AI、多模态视觉大模型与 Agent 智能体在企业复杂场景下的商业化落地。主导设计并上线过「连锁门店 AI 视觉巡检整改平台」与「AI 智能库存研判决策系统」；深度掌握多模态推理架构、端云协同低成本部署、确定性规则兜底防幻觉及人机协作闭环，具备从 0-1 场景定义、模型评测、MVP 验证到千店规模化推广的完整 AI 产品操盘能力。
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4 print:mt-2">
             <div className="group print:break-inside-avoid">
               <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500 print:bg-blue-600"></span>
-                <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">专业沉淀</h4>
+                <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">行业深度与专业沉淀</h4>
               </div>
               <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[9pt] print:text-slate-600">
-                深耕连锁消费 SaaS 行业 10 年 +，掌握数字化项目全流程闭环：需求调研、方案设计、实施交付、培训直至验收回款；可面向连锁品牌输出一体化数字化方案，精通门店管理与运营。
+                深耕连锁消费 SaaS 与实体产业 10 年 +，掌握数字化全流程闭环：需求调研、方案设计、实施交付、培训直至验收回款；具备千店级中台蓝图规划与全域规模化交付能力。
               </p>
             </div>
 
             <div className="group print:break-inside-avoid">
               <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 print:bg-emerald-600"></span>
-                <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">AI 智能与实战应用能力</h4>
+                <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">AI 产品与落地架构</h4>
               </div>
               <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[9pt] print:text-slate-600">
-                熟练调优主流大模型，运用 Claude Code、Codex 等 AI 智能编程工具搭建 LLM 自动化数据处理工作流；落地 AIGC 多模态内容生产全链路，具备用户分层、多渠道触达实践，可协助连锁客户落地轻量化 AI 运营试点方案。
+                精通垂直场景 Agent 规划、多模态视觉大模型与业务流融合；熟练设计多模态端云双层推理、自适应抽帧降本 70%+ 与确定性规则防幻觉引擎，搭建从算法到业务闭环的人机工单系统。
               </p>
             </div>
 
             <div className="group print:break-inside-avoid">
               <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-500 print:bg-amber-600"></span>
-                <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">核心价值与标签</h4>
+                <h4 className="text-sm font-bold uppercase tracking-wider print:text-[10pt]">核心价值与复合标签</h4>
               </div>
               <p className="text-[13px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[9pt] print:text-slate-600">
-                融合行业经验、技术认知与 AI 落地实操能力，擅长锚定客户业务痛点，设计分阶段数字化实施路径，依托产品与 AI 工具创造可量化运营价值。
+                融合行业厚度、产品架构与 AI 落地实操三重能力，擅长锚定企业高价值业务痛点，以低成本、高稳定性的 Agent 和 AI 视觉方案创造可量化商业 ROI。
               </p>
             </div>
           </div>
@@ -73,10 +73,10 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       htmlTip: '导出为单文件离线网页，双击即可直接浏览'
     },
     en: {
-      tagline: 'Product Design & Solution Architecture / KA Customer Success / SaaS Pre-sales Consulting / Catering Digitalization',
+      tagline: 'AI Product Manager / Vertical LLM & Agent Architecture / 10+ Yrs Retail & Catering / KA Success',
       tagline2: 'Job Intention',
       name: 'Joe.Chen',
-      role1: 'Product Design',
+      role1: 'AI Product Manager',
       role2: 'Solution Arch',
       role3: 'Delivery',
       role4: 'AI Application',
@@ -91,40 +91,40 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       desc: (
         <div className="space-y-4 my-2">
           <p className="border-l-4 border-indigo-600 dark:border-indigo-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3 print:mb-2 print:text-[9.5pt]">
-            10 years of full-stack practical experience in catering chain SaaS, covering foundational product R&D, solution architecture, and multi-million KA project delivery and operation. Deeply proficient in frontline supply chain & sales business workflows and core industry pain points, with proven expertise in bridging business, technical, and financial boundaries.
+            10 years of deep domain experience in enterprise catering SaaS and supply chains, leading multi-million KA platform planning and multi-thousand-store rollouts. Highly proficient in frontline supply chain operations, store fulfillment, and sales workflows, with proven mastery in transforming complex offline scenarios into high-value digital and intelligent solutions.
           </p>
           <p className="border-l-4 border-purple-600 dark:border-purple-400 pl-4 text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-3 print:mb-2 print:text-[9.5pt]">
-            Proficient in leveraging Claude Code, Codex, and leading LLMs to build automated data and content production pipelines. Seamlessly blends product design, solution architecture, and project delivery to drive requirement diagnostics, enterprise blueprinting, and scaled rollout across 5000+ stores.
+            Dedicated to commercializing Generative AI, Multimodal Vision Models, and Agentic Workflows in complex enterprise environments. Spearheaded the design and deployment of the "Store AI Vision Compliance & Inspection Platform" and the "AI Intelligent Inventory Decision System". Deeply versed in multimodal inference architecture, edge-cloud low-cost deployment, deterministic rule fallbacks to eliminate hallucination, and human-in-the-loop workflows, demonstrating full-cycle AI product ownership from 0-to-1 scenario definition and benchmark evaluation to scaled rollout across thousands of stores.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2 print:grid-cols-3 print:gap-4 print:mt-2">
             <div className="group print:break-inside-avoid">
               <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-500 print:bg-blue-600"></span>
-                <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">Professional Expertise</h4>
+                <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">Industry Depth & Expertise</h4>
               </div>
               <p className="text-[12px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[8.5pt] print:text-slate-600">
-                Dedicated to catering SaaS for over 10 years. Expert in the full-cycle closed loop from requirement survey to project acceptance. Specialized in customized solutions that drive efficiency.
+                10+ years dedicated to retail & catering SaaS. Master of full-lifecycle delivery: discovery, blueprinting, implementation, training, and acceptance across 5000+ stores.
               </p>
             </div>
 
             <div className="group print:break-inside-avoid">
               <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 print:bg-emerald-600"></span>
-                <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">AI Intelligence & Cross-domain</h4>
+                <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">AI Product & Architecture</h4>
               </div>
               <p className="text-[12px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[8.5pt] print:text-slate-600">
-                Actively embracing AI. Proficient in applying global & domestic LLMs, leveraging Claude Code & Codex AI Coding Agents to build automated research workflows and cross-platform AIGC content pipelines.
+                Specialized in vertical Agent orchestration, multimodal CV models, edge-cloud dual-tier inference, adaptive frame sampling (70%+ cost reduction), and deterministic anti-hallucination engines.
               </p>
             </div>
 
             <div className="group print:break-inside-avoid">
               <div className="flex items-center gap-2 mb-2 text-slate-900 dark:text-white print:text-slate-900">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-500 print:bg-amber-600"></span>
-                <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">Core Value & Brand</h4>
+                <h4 className="text-[11px] font-bold uppercase tracking-widest print:text-[9pt]">Core Value & ROI</h4>
               </div>
               <p className="text-[12px] leading-relaxed text-slate-600 dark:text-slate-400 group-hover:text-slate-900 dark:group-hover:text-slate-200 transition-colors print:text-[8.5pt] print:text-slate-600">
-                Combining technical depth with catering industry expertise and AI-era agility. Result-oriented and specialized in aligning tech with customer needs to create measurable commercial value.
+                Combining industry depth, solution architecture, and hands-on AI execution to target high-impact business pain points, delivering cost-effective and resilient AI solutions with measurable ROI.
               </p>
             </div>
           </div>
@@ -155,12 +155,26 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       // Clone the entire document HTML
       const docClone = document.documentElement.cloneNode(true) as HTMLElement;
 
-      // Clean up interactive widgets that aren't needed in offline view (chat, scroll-to-top)
+      // Clean up top navigation bar, version switchers, and non-printable widgets from exported HTML
+      const navElements = docClone.querySelectorAll('nav, #navbar, [data-navbar="true"]');
+      navElements.forEach((el) => el.remove());
+
       const chatWidget = docClone.querySelector('#chat-widget');
       if (chatWidget) chatWidget.remove();
       
       const scrollToTop = docClone.querySelector('#scroll-to-top');
       if (scrollToTop) scrollToTop.remove();
+
+      // Clean up web-only export buttons from the downloaded document
+      const exportBtns = docClone.querySelectorAll('#btn-download-html, #btn-export-pdf');
+      exportBtns.forEach((el) => el.remove());
+
+      // Adjust top padding of the first section since the fixed navbar is removed
+      const homeSection = docClone.querySelector('#home');
+      if (homeSection) {
+        homeSection.classList.remove('pt-20', 'md:pt-16', 'min-h-screen');
+        homeSection.classList.add('pt-8', 'md:pt-10');
+      }
 
       // Collect all active stylesheets so the exported HTML is visually self-contained
       let inlineStyles = '';
@@ -175,6 +189,18 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
           // Ignore potential CORS cross-origin rules
         }
       });
+
+      // Inject explicit print and navbar suppression rules into offline document
+      inlineStyles += `
+        nav, #navbar, [data-navbar="true"] { display: none !important; }
+        @media print {
+          nav, #navbar, [data-navbar="true"], #outline-aside, .print\\:hidden, button {
+            display: none !important;
+            height: 0 !important;
+            visibility: hidden !important;
+          }
+        }
+      `;
 
       const styleEl = document.createElement('style');
       styleEl.innerHTML = inlineStyles;
@@ -321,6 +347,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
 
           {/* Export PDF Button */}
           <button 
+            id="btn-export-pdf"
             onClick={handlePrint}
             title={t.pdfTip}
             className="px-4 py-2 bg-white dark:bg-slate-800 text-slate-800 dark:text-white text-sm font-medium rounded-md border border-slate-300 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all flex items-center gap-2 shadow-sm cursor-pointer"

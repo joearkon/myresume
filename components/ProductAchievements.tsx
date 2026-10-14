@@ -15,6 +15,7 @@ interface ProductItem {
   positioning: string;
   architecture: string[];
   achievements: string[];
+  links?: { label: string; url: string; type?: 'demo' | 'github' }[];
   tags: string[];
 }
 
@@ -29,27 +30,55 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
           id: 'prod-ai-inventory',
           name: 'AI 智能库存研判、自适应订货与门店闭环助手系统',
           category: 'AI Agent + 确定性规则引擎 + 门店现场执行',
-          role: '自研业务架构师 / AI 解决方案总设计师 (2026)',
+          role: '自研独立开发者',
           scale: '贯穿「研判-建单-智能盘点-降级订货」全链路 | Design System v2',
           badge: '最新自研 AI 成果',
-          positioning: '直面连锁门店“理论库存与实物脱节、盲目订货造成高报损、异常研判流于纸面而无法在现场闭环”的深水区痛点。创新融合确定性规则引擎与 AI 深度研判，将库存研判、跟进工单、现场智能盘点、库存可信度与自适应订货串联为闭环飞轮。',
+          links: [
+            { label: 'GitHub 源码仓库', url: 'https://github.com/joearkon/inventory-count-closure', type: 'github' }
+          ],
+          positioning: '直面连锁门店“理论库存与实物脱节、盲目订货造成高报损、异常研判流于纸面而无法在现场闭环”的深水区痛点。深度沉淀 10 年连锁餐饮数字化经验，利用行业 Know-how 构建底层业务主体库与三层知识研判体系，将库存研判、跟进工单、现场智能盘点、库存可信度与自适应订货串联为闭环飞轮。',
           architecture: [
-            '架构“三层智能体系”：确定性规则引擎负责判定 D1/D2 异常与可信度基线；预测优化模型计算多级订货量；AI Agent 负责生成竞争假设、归纳根因、证据追问并起草处置方案（坚守“AI 只给建议、不越权改库存”安全红线）。',
+            '沉淀行业 Know-how 构建垂直业务主体库：将原料 BOM、批次保质期、门店仓位、人员班次与 20+ 类典型物耗异常抽象为标准化实体拓扑，为大模型注入可解释的业务事实依据。',
+            '架构“三层知识研判体系”：确定性规则引擎负责判定 D1/D2 异常与可信度基线；预测优化模型计算多级订货量；AI Agent 负责生成竞争假设、归纳根因、证据追问并起草处置方案（坚守“AI 只给建议、不越权改库存”安全红线）。',
             '首创「库存可信度分级（高/中/低）与自适应订货机制」：当实盘缺失或数据不可信时，自动启动保守日均消耗与 1.3 倍安全库存的“降级推荐订货”，并定向触发物料行智能插入盘点计划。',
             '设计门店移动端一体化现场盘点流：集成货架拍照 OCR 置信度纠错、语音交互换算与断点续盘，以「事实包 -> V2 研判 -> 人工采纳 -> 工单部分完成 -> 提交后自动 V2 重算闭环」彻底消除信息孤岛。'
           ],
           achievements: [
             '完成总部 PC 端（统一深蓝视觉规范）与门店移动端一体化架构设计与交互原型闭环，输出 17 节高标准业务方案冻结文档；',
             '将传统割裂的“盘点一张表”升级为“由异常驱动、现场 2 分钟极速定向盘点、盘完即触发重算与订货校准”的全新作业范式；',
-            '开创连锁餐饮供应链「可解释、防失控、强审计」的企业级 Agentic 工作流标杆，具备极高商业化推展与技术复用价值。'
+            '开创连锁餐饮供应链「利用行业主体库构建可解释、防失控、强审计」的企业级 Agentic 工作流标杆，具备极高商业化推展与技术复用价值。'
           ],
-          tags: ['AI Agent 闭环', '确定性规则引擎 V2/V3', '库存可信度分级', '降级推荐订货', 'OCR/语音移动盘点', '工单部分完成']
+          tags: ['行业 Know-how', '主体库与知识研判', 'AI Agent 闭环', '确定性规则引擎 V2/V3', '库存可信度分级', '降级推荐订货', 'OCR/语音移动盘点', 'GitHub 开源']
+        },
+        {
+          id: 'prod-ai-vision',
+          name: '连锁门店 AI 视觉巡检、违规判定与整改闭环平台',
+          category: '多模态视觉大模型 + 边缘/云端两级分析架构 + 现场整改闭环',
+          role: '自研独立开发者',
+          scale: '94.2% 高置信度检出 | 秒级事件聚合派发 | 70%+ Token 降本',
+          badge: '自研多模态视觉',
+          links: [
+            { label: '在线体验', url: 'https://store-vision-inspection-static.pages.dev/#/agent', type: 'demo' },
+            { label: 'GitHub 源码仓库', url: 'https://github.com/joearkon/store-vision-inspection', type: 'github' }
+          ],
+          positioning: '直面连锁餐饮/零售门店“人工巡店成本高、抽检覆盖率不足 5%、违规证据难追溯、督导与店端整改相互推诿”等管理痛点。结合连锁 SOP 规章构建视觉违规主体库与巡检知识体系，打造贯穿「监控抽帧 -> 双层多模态判定 -> 证据链聚合 -> 飞书分级预警 -> 门店整改工单闭环」的工业级智能巡检中枢。',
+          architecture: [
+            '基于连锁 SOP 构建“视觉违规主体库”：涵盖物料陈列丰满度、工服穿戴合规、后厨开门超时、消防通道阻塞与烟雾明火等高频风险场景，建立正反标准化证据基准。',
+            '首创「逐帧初筛 + 多模态双层分析架构」：前置轻量规则或轻量模型过滤静态冗余帧，后置大模型对异常候选帧开展深度链式推理（CoT）与缺陷标注，在保证 94.2% 极高置信度的同时，将多模态 Token 调用成本大幅削减 70% 以上。',
+            '构建多帧事件时间窗口聚合与工单闭环：将连续多帧异常聚合为唯一事件事实包，自动提取前后关键帧作为证据链，对接门店 SOP 知识库生成整改建议，打通飞书/企业微信分级告警与现场整改复核工单。'
+          ],
+          achievements: [
+            '独立交付具备商业落地验证价值的 Web 交互展示与本地高可用多模态实时分析管线，全流程贯通缺陷标注、推理思考链与事件派发；',
+            '首创的双层分析架构有效破解了行业“高频视频分析 Token 成本失控”的商业化落地死穴，兼顾超低延迟、极高召回与经济可用性；',
+            '沉淀涵盖持续开门、工装违规、危险异物等数十种典型连锁餐饮场景的正反样本基准集，为连锁门店智慧视觉巡检提供了轻量化落地方案。'
+          ],
+          tags: ['视觉违规主体库', '多模态视觉大模型', '双层分析架构', 'Token 经济性优化 (降本70%)', '视频自适应抽帧', '证据链与工单闭环', 'GitHub 开源']
         },
         {
           id: 'prod-hipos',
           name: '喜茶 HiPOS 全渠道履约收银与门店协同系统',
           category: '门店交易与全渠道履约中枢',
-          role: '产品规划&交付落地负责人',
+          role: '产品规划人',
           scale: '全国 800+ 直营门店 | 日峰值 10万+ 订单',
           badge: '标杆核心产品',
           positioning: '直面新茶饮高峰期海量并发排队、外卖与小程序多渠道挤占、高峰容易卡单与出单错漏等严苛挑战，打造高并发、高可用、全渠道一体化的门店收银与履约协同中枢。',
@@ -68,7 +97,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
           id: 'prod-mrp',
           name: '喜茶建议订货 (MRP) 智能补货与物耗闭环引擎',
           category: '供应链智能预测与损耗闭环',
-          role: '产品方案规划&业务飞轮设计',
+          role: '产品规划人',
           scale: '全国门店全量覆盖 | 年化降本超千万元',
           badge: '核心创新引擎',
           positioning: '针对鲜果、优质乳品、定制耗材等极短保质期原料，解决传统门店完全依赖店长主观经验订货导致的高报损与断货频发痛点，打通从销售预测到智能补货的全链路闭环。',
@@ -87,7 +116,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
           id: 'prod-jiujiuya',
           name: '久久丫 · 顶誉集团 3000+ 门店数字化业务中台',
           category: '千店级全域数字化业务中台',
-          role: '业务中台顶层方案架构师 / 调研交付总负责人',
+          role: '项目总负责人',
           scale: '全国 3000+ 门店 | 59 个异构系统无缝打通',
           badge: '千店中台标杆',
           positioning: '针对顶誉集团旗下久久丫、留夫鸭等全国 3000+ 门店直营与加盟并存、多套存量孤岛系统割裂、价格促销不统一、加盟对账周期长达数周等系统性难题，规划打造统一业务中台底座。',
@@ -106,7 +135,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
           id: 'prod-bom-oms',
           name: '餐饮统一交易 OMS 与动态配方 BOM 拆解引擎',
           category: '云原生底层核心引擎与数据基座',
-          role: '初创核心产品架构师 / 核心研发 / 专利发明人',
+          role: '产品规划人',
           scale: '国家发明专利授权 | 支撑合阔 SaaS 全系产品',
           badge: '★ 国家发明专利',
           positioning: '传统 ERP 静态物料清单无法满足现制餐饮丰富的客制化选配需求（如糖度、加料、冰度、换燕麦奶），导致实际原料消耗与账面完全脱节、交易事实多端冲突。',
@@ -125,7 +154,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
           id: 'prod-b2b-pay',
           name: '喜茶加盟商 B2B 支付中台与大额资金对账系统',
           category: '资金中台与多方对账结算',
-          role: '方案评审与集成架构设计师',
+          role: '产品规划人',
           scale: '数千万级流水资金闭环 | 0 资金差异',
           badge: '资金中台典范',
           positioning: '喜茶开放特许加盟事业后，加盟商原物料订货、差异退补单笔资金高达数万至数十万元，原有供应链与支付强耦合极易引发重复扣款、退款混乱与财务对账失真。',
@@ -144,7 +173,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
           id: 'prod-tamjai-zendesk',
           name: '谭仔国际 (TamJai) 全球化智能客服与工单协同平台',
           category: '跨国连锁数字化运维与客户服务',
-          role: '跨国数字化运营总监 / 解决方案架构负责人',
+          role: '项目总负责人',
           scale: '覆盖香港、新加坡、日本、澳洲、马来西亚、菲律宾',
           badge: '跨国全域运营',
           positioning: '谭仔国际全球多国连锁扩张过程中，面临跨时区时差、多语言沟通壁垒、跨国门店报修排障响应迟缓、以及现场 Issue 难以实时跟踪归档的运维痛点。',
@@ -163,7 +192,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
           id: 'prod-ai-matrix',
           name: 'AI 投资决策研判系统与开源智能体矩阵',
           category: 'AI Agent 与自动化工程实践',
-          role: 'AIGC 独立开发者 / 开源作者',
+          role: '自研独立开发者',
           scale: '101 场赛事胜负预测 79.2% 命中率 | 20+ 企业级 Prompt 库',
           badge: 'AIGC 工程前沿',
           positioning: '探索 AI 时代 Agentic 研发与工程化落地，解决海量多源非结构化行业研报萃取耗时、产业链信息传导滞后、以及个人全栈敏捷开发工作流整合等前沿场景。',
@@ -189,12 +218,16 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
           id: 'prod-ai-inventory',
           name: 'AI Smart Inventory Diagnosis & Closed-Loop Store Assistant',
           category: 'AI Agent + Deterministic Rule Engine + Storefield Execution',
-          role: 'Independent Solution Architect / AI Systems Designer (2026)',
+          role: 'Independent Developer',
           scale: 'End-to-End Loop from Diagnosis to Replenishment | Design System v2',
           badge: 'Latest In-House AI',
-          positioning: 'Directly tackled catering retail bottlenecks where theoretical stock decoupled from actual inventory, guesswork replenishment led to heavy waste, and exception diagnosis stayed on paper. Fused deterministic rules with generative AI to unite diagnosis, work orders, on-site counts, stock trustworthiness, and adaptive replenishment.',
+          links: [
+            { label: 'GitHub Repository', url: 'https://github.com/joearkon/inventory-count-closure', type: 'github' }
+          ],
+          positioning: 'Directly tackled catering retail bottlenecks where theoretical stock decoupled from actual inventory, guesswork replenishment led to heavy waste, and exception diagnosis stayed on paper. Capitalizing on 10+ years of domain know-how, built enterprise entity libraries and a three-tier knowledge diagnosis framework to unite diagnosis, work orders, on-site counts, stock trustworthiness, and adaptive replenishment.',
           architecture: [
-            'Architected a 3-tier intelligence stack: Deterministic rules govern D1/D2 anomaly triggers and confidence baselines; predictive models calculate tiered replenishment; AI Agents draft competitive hypotheses, root causes, evidence queries, and action items (adhering strictly to "AI recommends, never arbitrarily alters stock").',
+            'Architected Vertical Entity Libraries: Modeled raw materials BOM, shelf-life batches, store bins, staff shifts, and 20+ loss exception topologies into auditable factual knowledge graphs.',
+            'Engineered a 3-Tier Knowledge Diagnosis Stack: Deterministic rules govern D1/D2 anomaly baselines; predictive models calculate replenishment; AI Agents draft competing hypotheses, root causes, evidence queries, and action items (adhering strictly to "AI recommends, never alters stock without authorization").',
             'Pioneered "Stock Trustworthiness (High/Mid/Low) & Fallback Replenishment": Automatically activates a conservative consumption formula with 1.3x safety buffer when stock integrity degrades, while intelligently slotting material lines into store count plans.',
             'Engineered an integrated mobile store count flow: Unified camera OCR confidence correction, voice-input package conversions, and breakpoint draft saves to achieve automated closed-loop recalculation upon submission.'
           ],
@@ -203,13 +236,37 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
             'Transformed disconnected annual/monthly spreadsheets into an anomaly-driven, 2-minute spot check workflow that immediately recalculates replenishment;',
             'Established an auditable, enterprise-grade Agentic benchmark for food & beverage supply chains with high commercial and technological reusability.'
           ],
-          tags: ['AI Agentic Loop', 'Deterministic Engine V2/V3', 'Stock Trustworthiness', 'Fallback Replenishment', 'Mobile OCR/Voice Count', 'Work Order Engine']
+          tags: ['Domain Know-How', 'Entity Libraries', 'Knowledge Diagnosis', 'AI Agentic Loop', 'Deterministic Engine V2/V3', 'Stock Trustworthiness', 'GitHub Open Source']
+        },
+        {
+          id: 'prod-ai-vision',
+          name: 'AI Store Vision Inspection & Compliance Work-Order Closed Loop',
+          category: 'Multimodal Vision LLM + Two-Tier Edge-Cloud Architecture + Remediation Loop',
+          role: 'Independent Developer',
+          scale: '94.2% High-Confidence Detection | Sub-second Event Dispatch | 70%+ Token Savings',
+          badge: 'Multimodal AI Vision',
+          links: [
+            { label: 'Live System', url: 'https://store-vision-inspection-static.pages.dev/#/agent', type: 'demo' },
+            { label: 'GitHub Repository', url: 'https://github.com/joearkon/store-vision-inspection', type: 'github' }
+          ],
+          positioning: 'Directly tackled operational bottlenecks in catering & retail chains where manual audits were costly, coverage was below 5%, violation evidence was fragmented, and rectifications lacked accountability. Derived a visual violation entity library and SOP knowledge base to build an industrial-grade inspection hub spanning video frame extraction, multimodal inference, temporal event aggregation, and work-order resolution.',
+          architecture: [
+            'Built a "Visual Violation Entity Library" grounded in store SOPs: Covers shelf merchandising fullness, uniform hygiene compliance, kitchen door violations, and hazardous smoke/fire alerts.',
+            'Pioneered a "Two-Tier Hierarchical Inference Architecture": Frontloaded lightweight deterministic filtering for static frames, passing only anomaly candidate sequences to multimodal LLMs for Chain-of-Thought (CoT) reasoning. Retained 94.2% high confidence while reducing API token expenses by over 70%.',
+            'Engineered multi-frame temporal event aggregation & ticketing loop: Aggregates contiguous anomaly frames into a singular factual incident package with keyframe visual evidence, generating auto-remediation tickets dispatched directly to Feishu/WeCom.'
+          ],
+          achievements: [
+            'Delivered a commercial-ready interactive web platform and local multimodal execution engine featuring bounding-box heatmaps, CoT rationale inspection, and sample audit trails;',
+            'Solved the core commercial barrier of runaway video token costs via the two-tier architecture, balancing near-real-time responsiveness with economic viability;',
+            'Constructed benchmark datasets across dozens of realistic retail anomalies (e.g. unclosed doors, hygiene non-compliance, fire/smoke), setting an auditable industry standard.'
+          ],
+          tags: ['Violation Entity Library', 'Multimodal Vision LLM', 'Two-Tier Architecture (-70% Tokens)', 'Video Keyframing', 'Visual Evidence Chain', 'GitHub Open Source']
         },
         {
           id: 'prod-hipos',
           name: 'HEYTEA HiPOS Omnichannel POS & Store Execution System',
           category: 'Store POS & Omnichannel Execution Hub',
-          role: 'Product Planning & Delivery Lead',
+          role: 'Product Planner',
           scale: '800+ Direct-operated Stores | 100k+ Daily Peak Orders',
           badge: 'Flagship Product',
           positioning: 'Tackled severe peak-hour bottlenecks in new tea-drinks retail—including high concurrency order queues, channel contention from mini-programs and delivery aggregators, and printer dropouts—to build a resilient store transaction and fulfillment hub.',
@@ -228,7 +285,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
           id: 'prod-mrp',
           name: 'HEYTEA Suggested Ordering (MRP) & Replenishment Engine',
           category: 'Supply Chain MRP & Closed-Loop Waste Reduction',
-          role: 'Product Solution Planning & Business Flywheel Design',
+          role: 'Product Planner',
           scale: 'Nationwide Chain Coverage | Millions in Annual Cost Savings',
           badge: 'Core Innovation',
           positioning: 'Addressed severe inventory write-offs and stockouts caused by store managers relying purely on subjective intuition when ordering ultra-short-shelf-life fresh fruits, dairy, and customized packaging.',
@@ -247,7 +304,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
           id: 'prod-jiujiuya',
           name: 'Jiujiuya · Dingyu Group 3000+ Stores Business Middle-Platform',
           category: 'Enterprise-grade 3000+ Store Business Middle-Platform',
-          role: 'Chief Solution Architect / Head of Assessment & Delivery',
+          role: 'Overall Project Lead',
           scale: '3000+ Stores Nationwide | 59 Heterogeneous Systems Integrated',
           badge: 'Middle-Platform Benchmark',
           positioning: 'Overcame structural fragmentation across 3000+ stores (Jiujiuya, Liufu Duck) characterized by coexisting franchise/direct models, 59 siloed legacy systems, inconsistent promotional pricing, and multi-week reconciliation delays.',
@@ -266,7 +323,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
           id: 'prod-bom-oms',
           name: 'Unified Transaction OMS & Dynamic Recipe BOM Engine',
           category: 'Cloud-Native Foundation & Data Backbone',
-          role: 'Founding Core Product Architect / Core R&D / Patent Inventor',
+          role: 'Product Planner',
           scale: 'Authorized National Invention Patent | Powers Entire SaaS Suite',
           badge: '★ National Invention Patent',
           positioning: 'Traditional ERP static Bills of Materials failed to handle dynamic bespoke customizations (sweetness, ice level, oat milk swap, toppings), disconnecting actual kitchen depletion from theoretical accounts.',
@@ -285,7 +342,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
           id: 'prod-b2b-pay',
           name: 'HEYTEA Franchisee B2B Payment & Capital Clearing Platform',
           category: 'Capital Middle-Platform & Multi-Party Clearing',
-          role: 'Solution Review & Integration Architecture Designer',
+          role: 'Product Planner',
           scale: 'Tens of Millions in Capital Flow | Zero Reconciliation Variance',
           badge: 'Capital Clearing Model',
           positioning: 'Following HEYTEA’s expansion into franchise partnerships, B2B procurement and credit adjustments involved large transactions (tens of thousands to hundreds of thousands RMB), where tight coupling led to duplicate deductions and audit chaos.',
@@ -304,7 +361,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
           id: 'prod-tamjai-zendesk',
           name: 'TamJai Global Intelligent Service & Work Order Platform',
           category: 'Global Chain Digital Operations & Support',
-          role: 'Global Operations Director / Solution Architecture Lead',
+          role: 'Overall Project Lead',
           scale: 'Covering HK, Singapore, Japan, Australia, Malaysia, Philippines',
           badge: 'Global Digital Operations',
           positioning: 'During TamJai International’s multi-region chain rollout, operations faced cross-time-zone communication barriers, fragmented localized ticketing, and lack of unified SLA tracking for store equipment breakdowns.',
@@ -323,7 +380,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
           id: 'prod-ai-matrix',
           name: 'AI Investment Analysis & Open-Source Agent Matrix',
           category: 'AI Agents & Automated Quantitative Workflows',
-          role: 'AIGC Independent Developer / Open Source Creator',
+          role: 'Independent Developer',
           scale: '79.2% Prediction Accuracy over 101 Matches | 20+ Enterprise Prompts',
           badge: 'AIGC Engineering',
           positioning: 'Explored frontier Agentic workflows and solo agile engineering to overcome high manual reading overheads in broker research, delayed industrial insights, and fragmented cross-platform automation.',
@@ -381,7 +438,7 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
                   </div>
                   <div className="flex flex-wrap items-center gap-2 text-[12px] print:text-[8.5pt]">
                     <span className="font-semibold text-slate-700 dark:text-slate-300">
-                      {prod.role}
+                      {language === 'zh' ? `职责：${prod.role.replace(/^职责[：:]\s*/, '')}` : `Role: ${prod.role.replace(/^Role:\s*/, '')}`}
                     </span>
                     <span className="text-slate-300 dark:text-slate-700 hidden sm:inline">|</span>
                     <span className="text-slate-500 dark:text-gray-400 font-medium">
@@ -390,8 +447,40 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
                   </div>
                 </div>
 
-                <div className="text-xs sm:text-right font-medium text-blue-800 dark:text-blue-400 shrink-0 bg-slate-50 dark:bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-200/80 dark:border-slate-700/80 print:text-[8pt] print:bg-transparent print:border-none print:p-0">
-                  {prod.scale}
+                <div className="flex flex-col sm:items-end gap-1.5 shrink-0">
+                  <div className="text-xs sm:text-right font-medium text-blue-800 dark:text-blue-400 bg-slate-50 dark:bg-slate-800/80 px-2.5 py-1 rounded-md border border-slate-200/80 dark:border-slate-700/80 print:text-[8pt] print:bg-transparent print:border-none print:p-0">
+                    {prod.scale}
+                  </div>
+                  {prod.links && prod.links.length > 0 && (
+                    <div className="flex flex-wrap items-center gap-1.5 print:hidden">
+                      {prod.links.map((link, lIdx) => (
+                        <a
+                          key={lIdx}
+                          href={link.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className={`inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded border transition-colors shadow-2xs ${
+                            link.type === 'github'
+                              ? 'text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 hover:border-blue-500 hover:text-blue-600'
+                              : 'text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-900/40 border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900/60'
+                          }`}
+                          title={link.label}
+                        >
+                          {link.type === 'github' ? (
+                            <svg className="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                              <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                            </svg>
+                          ) : (
+                            <svg className="w-3 h-3 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                              <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                          )}
+                          <span>{link.label}</span>
+                          <span className="text-[9px] opacity-70">↗</span>
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
 

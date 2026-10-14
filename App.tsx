@@ -7,41 +7,62 @@ import Experience from './components/Experience';
 import Education from './components/Education';
 import Skills from './components/Skills';
 import Hobbies from './components/Hobbies';
-import ChatWidget from './components/ChatWidget';
 import Contact from './components/Contact';
 import ScrollToTop from './components/ScrollToTop';
 import OutlineIndex from './components/OutlineIndex';
 
+// miHoYo Edition Components
+import MihoyoHero from './components/mihoyo/MihoyoHero';
+import MihoyoProjects from './components/mihoyo/MihoyoProjects';
+import MihoyoExperience from './components/mihoyo/MihoyoExperience';
+import MihoyoSkills from './components/mihoyo/MihoyoSkills';
+
 export type Language = 'zh' | 'en';
+export type ResumeVersion = 'general' | 'mihoyo';
 
 const App: React.FC = () => {
-  // Initialize with false (Light Mode) by default for a clean traditional look
+  // Initialize with Light Mode by default
   const [darkMode, setDarkMode] = useState(false);
   // Initialize Language state
   const [language, setLanguage] = useState<Language>('zh');
+  // Initialize Resume Version state (Defaults to 'mihoyo' for the user's requested review)
+  const [resumeVersion, setResumeVersion] = useState<ResumeVersion>('mihoyo');
 
   useEffect(() => {
-    // Check local storage or system preference on mount
+    // Check saved theme
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       setDarkMode(savedTheme === 'dark');
     }
-    // Removed the prefers-color-scheme check to enforce light mode by default unless explicitly saved as dark
 
     // Check saved language
     const savedLang = localStorage.getItem('language') as Language;
     if (savedLang) {
       setLanguage(savedLang);
     }
+
+    // Check saved resume version
+    const savedVer = localStorage.getItem('resume_version') as ResumeVersion;
+    if (savedVer) {
+      setResumeVersion(savedVer);
+    }
   }, []);
 
   useEffect(() => {
-    if (language === 'zh') {
-      document.title = '陈子卓野 (Joe.Chen) - 产品设计与方案架构 | KA大客户成功 | 连锁餐饮SaaS交付';
+    if (resumeVersion === 'mihoyo') {
+      if (language === 'zh') {
+        document.title = '陈子卓野 (Joe.Chen) - AI 产品经理 / 工业化 Agent 架构师 (米哈游专项)';
+      } else {
+        document.title = 'Joe Chen (陈子卓野) - AI Product Manager / Industrial Agent Architect (miHoYo Special)';
+      }
     } else {
-      document.title = 'Joe Chen (陈子卓野) - Product Architecture | Key Account Success | Chain SaaS Rollout';
+      if (language === 'zh') {
+        document.title = '陈子卓野 (Joe.Chen) - 产品设计与方案架构 | KA大客户成功 | 连锁餐饮SaaS交付';
+      } else {
+        document.title = 'Joe Chen (陈子卓野) - Product Architecture | Key Account Success | Chain SaaS Rollout';
+      }
     }
-  }, [language]);
+  }, [language, resumeVersion]);
 
   useEffect(() => {
     if (darkMode) {
@@ -63,6 +84,11 @@ const App: React.FC = () => {
     localStorage.setItem('language', newLang);
   };
 
+  const handleSetResumeVersion = (version: ResumeVersion) => {
+    setResumeVersion(version);
+    localStorage.setItem('resume_version', version);
+  };
+
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-800 dark:text-gray-100 transition-colors duration-500 selection:bg-blue-900 selection:text-white relative overflow-hidden">
       
@@ -71,19 +97,38 @@ const App: React.FC = () => {
           darkMode={darkMode} 
           toggleTheme={toggleTheme} 
           language={language} 
-          toggleLanguage={toggleLanguage} 
+          toggleLanguage={toggleLanguage}
+          resumeVersion={resumeVersion}
+          setResumeVersion={handleSetResumeVersion}
         />
+
         <main>
-          <Hero language={language} />
-          <ProductAchievements language={language} />
-          <Projects language={language} />
-          <Experience language={language} />
-          <Skills language={language} />
-          <Education language={language} />
-          <Hobbies language={language} />
+          {resumeVersion === 'mihoyo' ? (
+            /* miHoYo AI Product Manager Special Edition */
+            <>
+              <MihoyoHero language={language} />
+              <MihoyoProjects language={language} />
+              <MihoyoExperience language={language} />
+              <Skills language={language} />
+              <Hobbies language={language} />
+              <Education language={language} />
+            </>
+          ) : (
+            /* General Digital Architecture & Delivery Edition */
+            <>
+              <Hero language={language} />
+              <ProductAchievements language={language} />
+              <Projects language={language} />
+              <Experience language={language} />
+              <Skills language={language} />
+              <Education language={language} />
+              <Hobbies language={language} />
+            </>
+          )}
         </main>
+
         <Contact language={language} />
-        <OutlineIndex language={language} />
+        <OutlineIndex language={language} resumeVersion={resumeVersion} />
         <ScrollToTop />
       </div>
     </div>

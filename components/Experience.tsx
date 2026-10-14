@@ -15,8 +15,10 @@ interface ExperienceItem {
   brands?: string[];
   aiProjects?: {
     name: string;
+    category?: string;
     desc: string;
-    link: string;
+    link?: string;
+    github?: string;
     tags: string[];
   }[];
   tags: string[];
@@ -31,17 +33,61 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
       return [
         {
           id: 0,
-          role: "AIGC 独立开发者 / 运营者",
-          company: "独立项目｜自由职业",
+          role: "AI 产品经理 / 独立开发者",
+          company: "AI 原生应用与数字化智能体研发",
           period: "2025.08 - 至今",
-          description: "围绕AI应用，AI视频，AI业务的崛起，结合自身的想法探索AIGC工程化思维和落地；熟练运用 Gemini、GPT-4o、DeepSeek、Kimi、Qwen 等主流大模型，依托 Claude Code、Codex AI 编程 Agent 搭建单人闭环智能化工作流，根据业务场景完成模型选型与流程封装，沉淀可迁移至企业服务的 AI 落地方法论。",
+          description: "融合 10 年连锁 SaaS 架构底蕴与 AI 原生思维，熟练运用 Claude Code、Codex 等 AI 智能体工具搭建自动化工程与多模态管线。在 B 端深度结合行业 Know-how 抽象垂直业务主体库与三层知识研判体系，赋能视觉防损与库存异常闭环；在 C 端敏锐捕捉用户心智与高频交互，敏捷落地桌面智能伴侣、赛事推演及万级 AIGC 内容矩阵，实现 B 端深水区赋能与 C 端高触达的双轮驱动。",
           achievements: [
-            "大模型数据处理与智能分析工作流搭建：依托 AI 编程 Agent 开发多源文本萃取、研报清洗、景气度量化分析流水线，搭建多模型融合研判系统，实现产业链信息自动解析与传导建模，验证 LLM 调度、自动化数据处理方案。",
-            "面向连锁 SaaS 场景的企业级 Prompt 工程沉淀：深耕大模型提示词调优，沉淀 20 余套标准化 Prompt 模板库，覆盖餐饮 / 连锁 SaaS 方案撰写、选址测算、竞品追踪、行业标书自动化生成，搭建轻量化 AI 业务提效流水线，赋能客户方案交付效率提升。",
-            "AIGC 标准化内容生产与用户运营链路实践：搭建「选题规划 - 多帧一致性图像生成 - 文案重构 - AI 剪辑」自动化短视频生产链路，落地跨平台内容运营，积累用户分层、私域社群运营与流量闭环搭建经验，可迁移用于连锁品牌用户运营场景。",
-            "开源原型项目技术验证：落地多项开源验证项目（赛事预测系统、AI 桌面助手/Velina Pet），完成第三方接口联动、消息自动化推送等技术原型验证，持续打磨系统集成、自动化触发等工程实践能力。"
+            "B 端企业级智能体（行业 Know-how + 主体库 + 知识研判）：基于 10 年餐饮连锁数字化经验，构建垂直业务主体库（商品/原料/仓位/批次/20+类异常事件）与‘确定性规则引擎 + LLM 竞争假设’知识研判体系，独立落地门店 AI 视觉巡检（Token 降本 70%+）与库存智能研判盘点闭环系统，坚守‘AI 辅助建议、规则严格兜底’的工业级安全红线。",
+            "C 端创新应用与开源生态（高频互动 + 多模型推演）：开源发布《维琳娜》游戏桌面智能伴侣（打通游戏 API、流式 TTS 与本地记忆）与 2026 世界杯预测系统（多模型融合推演，101 场实战 79.2% 胜率）；上线 Stock-Mind 投研研报萃取流水线，敏捷完成从需求挖掘到交付上线。",
+            "企业级 Prompt 资产库与 AIGC 工业化管线：沉淀 20+ 套连锁 SaaS 场景标准化 Prompt 模板；依托 Liblib、Seedance 跑通动漫游戏原创/二创剧情、分镜与剪辑全流程，跨平台沉淀 10,000+ 真实粉丝（小红书 7000+ / 抖音 3000+）。"
           ],
-          tags: ["AIGC", "Claude Code", "Codex Agent", "Prompt工程", "LLM 自动化工作流"],
+          aiProjects: [
+            {
+              name: "连锁门店 AI 视觉巡检与整改闭环系统",
+              category: "B端智能体 · 多模态 CV",
+              desc: "结合连锁门店 SOP 运营规程建立视觉违规主体库（涵盖工服合规、通道堵塞、开门超时、明火烟雾），首创逐帧初筛+多模态双层分析架构（Token 降本 70%+，检出率 94.2%），秒级生成缺陷标注、CoT 思考链与工单派发闭环。",
+              github: "https://github.com/joearkon/store-vision-inspection",
+              link: "https://store-vision-inspection-static.pages.dev/#/agent",
+              tags: ["B端智能体", "多模态 CV", "双层架构(降本70%)", "违规主体库", "GitHub 开源"]
+            },
+            {
+              name: "AI 智能盘点与库存异常闭环研判系统",
+              category: "B端智能体 · 知识研判体系",
+              desc: "沉淀 10 年餐饮连锁数字化 Know-how 抽象损耗与库存异常主体库，打造确定性规则与 LLM 竞争假设结合的三层知识研判体系；首创库存可信度分级、自适应推荐订货降级与移动端拍照 OCR / 语音 2 分钟极速盘点闭环。",
+              github: "https://github.com/joearkon/inventory-count-closure",
+              tags: ["B端智能体", "行业 Know-how", "主体库构建", "知识研判体系", "可信度分级", "GitHub 开源"]
+            },
+            {
+              name: "2026 世界杯赛事预测系统 (WorldCup Predictions)",
+              category: "C端数据产品 · 多模型融合",
+              desc: "多模型融合（DeepSeek/Qwen/GPT）自动化推演，实操 101 场实战预测，取得 79.2% 方向胜率与 29.7% 精准比分命中率，沉淀动态赔率特征与自动化预测分析流。",
+              github: "https://github.com/joearkon/worldcup2026-predictions",
+              link: "https://worldcup2026.kunkun1023.xyz/",
+              tags: ["C端产品", "多模型融合", "79.2%胜率", "GitHub 开源"]
+            },
+            {
+              name: "Velina Pet 游戏桌面智能伴侣",
+              category: "C端智能体 · 拟人陪伴",
+              desc: "GitHub 开源 AI 桌面助手，打通游戏官方 API 自动签到与状态提醒，支持拟人情绪状态机、流式 TTS 毫秒级语音合成与本地隐私长短时记忆。",
+              github: "https://github.com/joearkon/velina-pet",
+              tags: ["C端智能体", "游戏 API 联动", "桌宠伴侣", "TTS 语音", "GitHub 开源"]
+            },
+            {
+              name: "AI 证券投研与行业分析系统 (Stock-Mind)",
+              category: "投研智能体 · 产业链图谱",
+              desc: "运用 Claude Code / Codex 构建券商研报自动萃取与产业链传导分析流水线，实现产业链趋势多维度量化解析。",
+              link: "https://stock-mind.kunkun1023.xyz/",
+              tags: ["Claude Code / Codex", "研报萃取", "量化分析", "在线系统"]
+            },
+            {
+              name: "AIGC 跨平台多模态内容工业化运营",
+              category: "AIGC 内容工业化 · 跨平台获客",
+              desc: "依托 Liblib、Seedance 独立完成动漫游戏原创/二创剧情、分镜与剪辑全流程，跨平台沉淀 10,000+ 粉丝（小红书 7,000+ / 抖音 3,000+）。",
+              tags: ["多模态 AIGC", "内容工业化", "跨平台万粉"]
+            }
+          ],
+          tags: ["AI 产品经理", "行业 Know-how", "主体库与研判", "Claude Code", "多模态 CV", "GitHub 开源"],
           color: "border-purple-500 dark:border-purple-400",
           isPromoted: false
         },
@@ -150,42 +196,61 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
       return [
         {
           id: 0,
-          role: "AIGC Independent Developer / Operator",
-          company: "Independent Project / Freelance",
+          role: "AI Product Manager / Independent Developer",
+          company: "AI Native Applications & Digital Agents",
           period: "2025.08 - Present",
-          description: "Fully embraced the AI era, deeply exploring the engineering convergence of AIGC core technologies with content creation and investment decision-making. Proficient in applying global & domestic LLMs (Gemini, GPT-4o, DeepSeek, Kimi, Qwen), utilizing advanced AI Coding Agents (Claude Code, Codex) into efficient solo workflows, matching the right model & tool to each scenario.",
+          description: "Combining 10+ years of F&B SaaS architecture with an AI-native mindset, proficiently leveraging AI Coding Agents (Claude Code, Codex) to build automated engineering and multimodal pipelines. On B2B: leveraged deep domain know-how to architect vertical business entity libraries and a three-tier knowledge diagnosis framework, enabling visual loss-prevention and inventory variance resolution. On B2C: captured consumer engagement and gaming affinity, rapidly shipping desktop companions, sports predictive analytics, and a 10k+ follower AIGC content matrix—driving both enterprise depth and consumer agility.",
           achievements: [
-            "AI Coding Agents & Open Source Projects: Built an AI Investment Analysis System using Claude Code & Codex Agents. Open-sourced WorldCup 2026 Predictions (Finals record: 101 matches predicted, 79.2% direction accuracy, 29.7% scoreline accuracy) and Velina Pet Desktop Mascot (integrating HoYoverse APIs for daily game check-ins and social media distribution).",
-            "AIGC Cross-Platform Media (10,000+ Total Followers): Strategically leveraged Gemini, DeepSeek, GPT, and Claude to build a quality-first short-video pipeline, reaching 10,000+ total followers to date across Xiaohongshu (7,000+) and Douyin (3,000+).",
-            "Enterprise Prompt Engineering & Workflow Automation: Mastered multi-model prompt tuning to craft 20+ specialized standard prompt sets (for SaaS site routing and corporate bidding) to multiply execution metrics."
+            "B2B Enterprise Agents (Domain Know-How + Entity Libraries + Knowledge Diagnosis): Drawing on 10 years of catering digitization, built domain entity models (materials/BOM/batches/violations) and a deterministic-rule-coupled LLM diagnostic workflow. Shipped Store AI Vision Inspection (70%+ token cost cut) and Inventory Anomaly Diagnosis & Count Closure systems, safeguarding enterprise guardrails where AI assists while rules strictly verify.",
+            "B2C AI-Native Apps & Open-Source Ecosystem: Released Velina Pet desktop companion (integrating official game APIs, streaming TTS, and local memory) and WorldCup 2026 Predictions System (multi-LLM ensemble with 79.2% win rate across 101 matches); deployed Stock-Mind equity research pipeline with rapid 0-to-1 agile delivery.",
+            "Enterprise Prompt Assets & Industrialized AIGC Pipelines: Formulated 20+ standardized prompt templates for chain SaaS workflows; orchestrated an end-to-end AIGC content pipeline via Liblib & Seedance for original anime scripts, storyboards, and AI editing, garnering 10,000+ authentic followers across Xiaohongshu (7,000+) and Douyin (3,000+)."
           ],
           aiProjects: [
             {
-              name: 'AI Investment Analysis & Decision System',
-              desc: 'Built with Claude Code & Codex Agents to feature-extract broker reports with Gemini & DeepSeek, tracking capacity shifts for real-market decisions.',
-              link: 'https://stock-mind.kunkun1023.xyz/',
-              tags: ['Claude Code / Codex', 'Gemini / DeepSeek', 'AI Quant', 'Data Synthesis']
+              name: "Store AI Vision Inspection & Remediation Closed Loop",
+              category: "B2B Agent · Multimodal CV",
+              desc: "Engineered a visual violation entity library (uniform compliance, blocked passages, open door alerts) based on SOPs. Pioneered a two-tier hierarchical inference architecture (70%+ token savings, 94.2% accuracy) linking visual bounding boxes, CoT reasoning, and ticketing resolution.",
+              github: "https://github.com/joearkon/store-vision-inspection",
+              link: "https://store-vision-inspection-static.pages.dev/#/agent",
+              tags: ["B2B Agent", "Multimodal CV", "Two-Tier Arch (-70% Tokens)", "GitHub Open Source"]
             },
             {
-              name: 'WorldCup 2026 Predictions System',
-              desc: 'Open-source match prediction system leveraging multi-LLM (GPT/DeepSeek/Qwen) data processing on GitHub. Achieved 79.2% match direction accuracy and 29.7% scoreline accuracy across 101 predicted matches.',
-              link: 'https://github.com/joearkon/worldcup2026-predictions',
-              tags: ['Multi-LLM', '79.2% Win Rate', 'WorldCup 2026', 'Open Source']
+              name: "AI Inventory Anomaly Diagnosis & Mobile Stocktake Closure",
+              category: "B2B Agent · Knowledge Diagnosis",
+              desc: "Condensed 10 years of SaaS know-how into inventory variance entity models and a three-tier diagnostic framework; engineered stock trustworthiness scoring, adaptive fallback replenishment, and a 2-minute mobile OCR/voice count closure loop.",
+              github: "https://github.com/joearkon/inventory-count-closure",
+              tags: ["B2B Agent", "Domain Know-How", "Entity Libraries", "Knowledge Diagnosis", "GitHub Open Source"]
             },
             {
-              name: 'Velina Pet Desktop Mascot',
-              desc: 'Open-source AI desktop companion on GitHub. Integrated game APIs for auto check-ins and daily alerts, distributed to social media fans for community engagement.',
-              link: 'https://github.com/joearkon/velina-pet',
-              tags: ['AI Agent', 'HoYoverse API', 'Desktop Alerts', 'Fan Engagement']
+              name: "WorldCup 2026 Predictions System",
+              category: "B2C Analytics · Multi-LLM Ensemble",
+              desc: "Open-source match prediction system leveraging multi-LLM (GPT/DeepSeek/Qwen) data processing. Achieved 79.2% match direction accuracy and 29.7% scoreline accuracy across 101 predicted matches.",
+              github: "https://github.com/joearkon/worldcup2026-predictions",
+              link: "https://worldcup2026.kunkun1023.xyz/",
+              tags: ["B2C Product", "Multi-LLM", "79.2% Win Rate", "WorldCup 2026", "GitHub Open Source"]
             },
             {
-              name: 'AIGC Cross-Platform Media',
-              desc: 'Quality-centric social growth engine with Seedance and Claude/Kimi across Xiaohongshu (7,000+) and Douyin (3,000+), reaching 10,000+ followers.',
-              link: '',
-              tags: ['AIGC Media', 'Xiaohongshu 7000+', 'Douyin 3000+', '10k+ Followers']
+              name: "Velina Pet Desktop Mascot",
+              category: "B2C Agent · Emotional Companion",
+              desc: "Open-source AI desktop companion on GitHub. Integrated game APIs for auto check-ins and daily alerts with emotional dialogues, streaming TTS voice synthesis, and local privacy memory.",
+              github: "https://github.com/joearkon/velina-pet",
+              tags: ["B2C Agent", "Game API Integration", "Desktop Mascot", "Streaming TTS", "GitHub Open Source"]
+            },
+            {
+              name: "AI Investment Analysis & Decision System (Stock-Mind)",
+              category: "Research Agent · Value Chain Graph",
+              desc: "Built with Claude Code & Codex Agents to feature-extract broker reports with Gemini & DeepSeek, modeling capacity shifts for quantitative insights.",
+              link: "https://stock-mind.kunkun1023.xyz/",
+              tags: ["Claude Code / Codex", "Gemini / DeepSeek", "AI Quant", "Live Portal"]
+            },
+            {
+              name: "AIGC Cross-Platform Media",
+              category: "AIGC Industrialization · User Growth",
+              desc: "Full-pipeline creative engine using Liblib & Seedance across Xiaohongshu (7,000+) and Douyin (3,000+), reaching 10,000+ followers with original and derivative scripts.",
+              tags: ["AIGC Media", "Xiaohongshu 7000+", "Douyin 3000+", "10k+ Followers"]
             }
           ],
-          tags: ["AIGC", "Claude Code", "Codex Agent", "DeepSeek / Gemini / GPT", "LLM Decision"],
+          tags: ["AI Product Manager", "Domain Know-How", "Entity Libraries", "Claude Code", "Multimodal CV", "GitHub Open Source"],
           color: "border-purple-500 dark:border-purple-400",
           isPromoted: false
         },
@@ -197,7 +262,7 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
           description: "Promoted from core project lead to Head of Customer Success (CSM Director & Solution Architecture). Responsible for full lifecycle retention, upsell renewal, and complex solution governance. Spearheaded HEYTEA franchisee B2B payment platform evolution (decoupling business facts from financial facts), Huifu PayFac large-amount capital reconciliation, and TamJai global digital operations.",
           achievements: [
             "HEYTEA Franchisee B2B Payment & Settlement Architecture: Led the solution review and decoupling design between BOH supply chain and HEYTEA payment middle-platform—BOH owns ordering, fulfillment differences, and return facts, while the payment platform owns actual deduction, fee/subsidy distribution, and refund facts; designed store-level canary routing, dynamic hiding of legacy payment buttons, and Huifu PayFac wire transfer reconciliation, ensuring complete alignment with JDE ledger.",
-            "Pre-sales Solution Consulting & Architecture: Directed full-cycle pre-sales for top-tier catering chains, independently producing requirement surveys, business blueprints, system architecture, and technical/commercial bidding documents; delivered live defense and high-impact demos for multi-million projects with a top-tier success rate.",
+            "Pre-sales Solution Consulting & Architecture: Directed full-cycle pre-sales for top-tier catering chains, independently producing requirement surveys, business blueprints, system architecture, and technical/commercial bidding documents; delivered live defense and high-impact product presentations for multi-million projects with a top-tier success rate.",
             "KA Custom Operations & Continuous Evolution: Established bespoke operational mechanisms for brands like HEYTEA, Starbucks, DQ, and Jiujiuya. Deployed agile 'R&D + Business' squads to feed frontline customer feedback back into universal SaaS capabilities (e.g. dynamic inventory check, emergency ordering, variance review).",
             "Global Omni-channel Support (TamJai International): Orchestrated cross-border digital operations across HK, Singapore, Japan, Australia, Malaysia, and the Philippines; built Zendesk+WhatsApp multi-lingual ticketing with cross-time-zone smart routing and tiered SLAs from scratch."
           ],
@@ -356,18 +421,63 @@ const Experience: React.FC<ExperienceProps> = ({ language }) => {
                 </div>
               )}
 
-              {/* AI Projects Section */}
+              {/* AI Projects & Git Works Section */}
               {exp.aiProjects && (
-                <div className="mb-4 print:mb-2">
-                  <ul className="space-y-1.5 list-disc list-inside text-[13px] text-slate-600 dark:text-gray-400 marker:text-blue-800 dark:marker:text-blue-400 print:space-y-0.5 print:text-[9pt] print:leading-snug">
+                <div className="mb-4 print:mb-2 bg-slate-50/80 dark:bg-slate-800/40 rounded-xl p-3 border border-slate-200/70 dark:border-slate-800 print:bg-transparent print:p-0 print:border-none">
+                  <div className="text-[11.5px] font-bold text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-1.5 print:mb-1 print:text-[9pt]">
+                    <svg className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400 shrink-0 print:hidden" viewBox="0 0 24 24" fill="currentColor">
+                      <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                    </svg>
+                    <span>{language === 'zh' ? '代表性 AI 项目与开源作品 (Git)' : 'Key AI Projects & Open Source Works (Git)'}</span>
+                  </div>
+                  <div className="space-y-2.5 print:space-y-1">
                     {exp.aiProjects.map((proj, idx) => (
-                      <li key={idx} className="leading-snug print:leading-normal">
-                        <span className="-ml-2">{proj.name}：</span>
-                        <span className="-ml-2">{proj.desc}</span>
-                        {proj.link && <a href={proj.link} target="_blank" className="ml-2 text-blue-800 dark:text-blue-400 hover:underline print:hidden text-[10px]">Visit →</a>}
-                      </li>
+                      <div key={idx} className="text-[12.5px] print:text-[9pt] leading-snug">
+                        <div className="flex flex-wrap items-center gap-2 mb-0.5">
+                          <span className="font-semibold text-slate-800 dark:text-slate-100">{proj.name}</span>
+                          {proj.category && (
+                            <span className={`text-[10.5px] font-semibold px-2 py-0.5 rounded border ${
+                              proj.category.includes('B端') || proj.category.includes('B2B')
+                                ? 'bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300 border-blue-200 dark:border-blue-800'
+                                : 'bg-purple-50 text-purple-700 dark:bg-purple-950/60 dark:text-purple-300 border-purple-200 dark:border-purple-800'
+                            } print:text-[8pt] print:bg-transparent print:border-slate-300`}>
+                              {proj.category}
+                            </span>
+                          )}
+                          <div className="flex items-center gap-1.5 print:hidden">
+                            {proj.github && (
+                              <a
+                                href={proj.github}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-1 text-[10.5px] font-medium text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-700 px-2 py-0.5 rounded border border-slate-200 dark:border-slate-600 hover:border-blue-500 hover:text-blue-600 transition-colors shadow-2xs"
+                                title="View on GitHub"
+                              >
+                                <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
+                                  <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                                </svg>
+                                <span>Git</span>
+                                <span className="text-[9px] text-slate-400">↗</span>
+                              </a>
+                            )}
+                            {proj.link && (
+                              <a
+                                href={proj.link}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-1 text-[10.5px] font-medium text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-900/40 px-2 py-0.5 rounded border border-blue-200 dark:border-blue-800 hover:bg-blue-100 dark:hover:bg-blue-900/60 transition-colors shadow-2xs"
+                                title="Open Live"
+                              >
+                                <span>{language === 'zh' ? '在线体验' : 'Live'}</span>
+                                <span className="text-[9px] text-blue-500">↗</span>
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                        <p className="text-[12px] text-slate-600 dark:text-slate-400 leading-snug">{proj.desc}</p>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               )}
 

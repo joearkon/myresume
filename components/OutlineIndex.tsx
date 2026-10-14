@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Language } from '../App';
+import { Language, ResumeVersion } from '../App';
 
 interface OutlineIndexProps {
   language: Language;
+  resumeVersion: ResumeVersion;
 }
 
 interface OutlineNode {
@@ -15,7 +16,7 @@ interface OutlineNode {
   children?: OutlineNode[];
 }
 
-const outlineTree: OutlineNode[] = [
+const generalOutlineTree: OutlineNode[] = [
   {
     id: 'home',
     titleZh: '个人优势与定位',
@@ -34,6 +35,14 @@ const outlineTree: OutlineNode[] = [
         titleEn: 'AI Inventory & Store Loop',
         badgeZh: '最新自研',
         badgeEn: 'New Agent',
+        level: 2,
+      },
+      {
+        id: 'prod-ai-vision',
+        titleZh: '门店 AI 视觉巡检与整改闭环',
+        titleEn: 'Store AI Vision Inspection',
+        badgeZh: '多模态AI',
+        badgeEn: 'Vision AI',
         level: 2,
       },
       {
@@ -128,8 +137,8 @@ const outlineTree: OutlineNode[] = [
     children: [
       {
         id: 'exp-0',
-        titleZh: 'AI 编程 Agent / 开源工程',
-        titleEn: 'AI Coding Agent & Open Source',
+        titleZh: 'AI 产品经理 / 开源作品',
+        titleEn: 'AI PM / Agent & Open Source',
         badgeZh: '2025.08-',
         badgeEn: '2025.08-',
         level: 2,
@@ -174,8 +183,8 @@ const outlineTree: OutlineNode[] = [
   },
   {
     id: 'hobbies',
-    titleZh: '个人探索',
-    titleEn: 'Interests',
+    titleZh: '个人兴趣',
+    titleEn: 'Hobbies',
     level: 1,
   },
   {
@@ -186,9 +195,76 @@ const outlineTree: OutlineNode[] = [
   },
 ];
 
-const OutlineIndex: React.FC<OutlineIndexProps> = ({ language }) => {
-  const [activeId, setActiveId] = useState<string>('home');
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
+const mihoyoOutlineTree: OutlineNode[] = [
+  {
+    id: 'mihoyo-home',
+    titleZh: '米哈游定位与核心主张',
+    titleEn: 'miHoYo Alignment & Overview',
+    level: 1,
+  },
+  {
+    id: 'mihoyo-projects',
+    titleZh: '主要产品设计与项目落地介绍',
+    titleEn: 'Product Design & Delivery',
+    level: 1,
+    children: [
+      {
+        id: 'proj-group-personal',
+        titleZh: '1. 个人项目 (维琳娜/视觉/SaaS助手/预测/A股)',
+        titleEn: '1. Personal Projects',
+        badgeZh: '个人项目',
+        badgeEn: 'Personal',
+        level: 2,
+      },
+      {
+        id: 'proj-group-enterprise',
+        titleZh: '2. 企业项目 (喜茶/久久丫/HiPOS/MRP等产品成就)',
+        titleEn: '2. Enterprise Projects',
+        badgeZh: '企业项目',
+        badgeEn: 'Enterprise',
+        level: 2,
+      },
+      {
+        id: 'proj-group-media',
+        titleZh: '3. 个人自媒体 (小红书&抖音)',
+        titleEn: '3. Social Media (AIGC)',
+        badgeZh: 'AIGC二创',
+        badgeEn: 'Creator',
+        level: 2,
+      },
+    ],
+  },
+  {
+    id: 'mihoyo-experience',
+    titleZh: '职业经历与工业化底座',
+    titleEn: 'Career & Industrial Engine',
+    level: 1,
+  },
+  {
+    id: 'skills',
+    titleZh: '专业技能',
+    titleEn: 'Skills',
+    level: 1,
+  },
+  {
+    id: 'education',
+    titleZh: '教育背景',
+    titleEn: 'Education',
+    level: 1,
+  },
+  {
+    id: 'contact',
+    titleZh: '联系方式',
+    titleEn: 'Contact',
+    level: 1,
+  },
+];
+
+const OutlineIndex: React.FC<OutlineIndexProps> = ({ language, resumeVersion }) => {
+  const currentTree = resumeVersion === 'mihoyo' ? mihoyoOutlineTree : generalOutlineTree;
+  const defaultHomeId = resumeVersion === 'mihoyo' ? 'mihoyo-home' : 'home';
+  const [activeId, setActiveId] = useState<string>(defaultHomeId);
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
   // Smooth scroll helper
   const scrollTo = (id: string) => {
@@ -210,11 +286,11 @@ const OutlineIndex: React.FC<OutlineIndexProps> = ({ language }) => {
         if (n.children) flattenIds(n.children);
       });
     };
-    flattenIds(outlineTree);
+    flattenIds(currentTree);
 
     const handleScroll = () => {
       const scrollPos = window.scrollY + 120;
-      let current = 'home';
+      let current = defaultHomeId;
 
       for (const id of allIds) {
         const el = document.getElementById(id);
@@ -230,7 +306,7 @@ const OutlineIndex: React.FC<OutlineIndexProps> = ({ language }) => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [currentTree, defaultHomeId]);
 
   const renderItem = (node: OutlineNode) => {
     const title = language === 'zh' ? node.titleZh : node.titleEn;
@@ -308,7 +384,9 @@ const OutlineIndex: React.FC<OutlineIndexProps> = ({ language }) => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h10M4 18h7" />
               </svg>
               <span className="text-[12px] font-bold text-slate-900 dark:text-white tracking-tight">
-                {language === 'zh' ? '大纲索引' : 'Outline Index'}
+                {language === 'zh' 
+                  ? (resumeVersion === 'mihoyo' ? '米哈游专项大纲' : '通用简历大纲') 
+                  : (resumeVersion === 'mihoyo' ? 'miHoYo Index' : 'General Index')}
               </span>
             </div>
 
@@ -331,7 +409,7 @@ const OutlineIndex: React.FC<OutlineIndexProps> = ({ language }) => {
               isCollapsed ? 'hidden' : ''
             }`}
           >
-            {outlineTree.map((node) => renderItem(node))}
+            {currentTree.map((node) => renderItem(node))}
           </div>
 
           {/* Collapsed Icon Pill */}

@@ -13,6 +13,14 @@ export default defineConfig(({ mode }) => {
       outDir: 'dist', // Explicitly set output directory
       emptyOutDir: true,
     },
+    server: {
+      port: 3000,
+      host: '0.0.0.0',
+    },
+    preview: {
+      port: 3000,
+      host: '0.0.0.0',
+    },
     define: {
       // This allows the app to access process.env.API_KEY in the client-side code
       // It replaces the string 'process.env.API_KEY' with the actual value during build
