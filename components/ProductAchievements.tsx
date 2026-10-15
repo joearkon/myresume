@@ -402,26 +402,26 @@ const ProductAchievements: React.FC<ProductAchievementsProps> = ({ language }) =
   const t = content[language];
 
   return (
-    <section id="product-achievements" className="py-12 bg-slate-50/60 dark:bg-slate-900/40 relative transition-colors duration-500 border-t border-slate-200/80 dark:border-slate-800/80 print:py-2 print:border-none print:bg-transparent print:break-before-page">
+    <section id="product-achievements" className="py-12 bg-slate-50/60 dark:bg-slate-900/40 relative transition-colors duration-500 border-t border-slate-200/80 dark:border-slate-800/80 print:py-1 print:border-none print:bg-transparent print:break-before-auto">
       <div className="max-w-4xl mx-auto px-4 print:px-0">
         
         {/* Section Header */}
-        <div className="text-center mb-10 print:mb-2.5 print:text-left print:break-after-avoid print:break-inside-avoid">
-          <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-slate-900 dark:text-white transition-colors duration-300 print:text-lg print:mb-0.5 print:tracking-tight print:break-after-avoid">
+        <div className="text-center mb-10 print:mb-1.5 print:text-left print:break-after-avoid print:break-inside-avoid">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 tracking-tight text-slate-900 dark:text-white transition-colors duration-300 print:text-sm print:mb-0.5 print:tracking-tight print:break-after-avoid">
             {t.titlePrefix} <span className="text-blue-800 dark:text-blue-400">{t.titleHighlight}</span>
           </h2>
-          <p className="text-slate-600 dark:text-gray-400 tracking-tight print:text-[8.5pt] print:text-slate-500 print:tracking-tight print:mb-0">
+          <p className="text-slate-600 dark:text-gray-400 tracking-tight print:text-[8pt] print:text-slate-500 print:tracking-tight print:mb-1">
             {t.subtitle}
           </p>
         </div>
 
         {/* Product Achievement Cards */}
-        <div className="space-y-8 print:space-y-2">
+        <div className="space-y-8 print:space-y-1.5">
           {t.cards.map((prod) => (
             <div 
               key={prod.id} 
               id={prod.id} 
-              className="group border border-slate-200/90 dark:border-slate-800/90 bg-white dark:bg-slate-900 rounded-xl p-5 sm:p-6 transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-md dark:hover:shadow-slate-950/40 print:p-2 print:mb-2 print:border-slate-300 print:rounded-md print:shadow-none print:break-inside-auto"
+              className="group border border-slate-200/90 dark:border-slate-800/90 bg-white dark:bg-slate-900 rounded-xl p-5 sm:p-6 transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-md dark:hover:shadow-slate-950/40 print:p-2 print:mb-1.5 print:border-slate-300 print:rounded-md print:shadow-none print:break-inside-avoid"
             >
               {/* Card Header */}
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 mb-2 print:mb-0.5 print:break-inside-avoid">

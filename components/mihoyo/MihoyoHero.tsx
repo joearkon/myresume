@@ -182,7 +182,7 @@ const MihoyoHero: React.FC<MihoyoHeroProps> = ({ language }) => {
   };
 
   return (
-    <section id="mihoyo-home" className="min-h-screen flex flex-col justify-center items-start relative px-4 pt-24 pb-16 md:pt-20 transition-colors duration-500 print:min-h-0 print:py-3 print:block print:break-after-page">
+    <section id="mihoyo-home" className="min-h-screen flex flex-col justify-center items-start relative px-4 pt-24 pb-16 md:pt-20 transition-colors duration-500 print:min-h-0 print:pt-0 print:pb-2 print:block print:break-after-auto print:mb-2">
       {/* Background Decorative Grid */}
       <div className="absolute inset-0 bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:24px_24px] opacity-15 pointer-events-none print:hidden"></div>
 

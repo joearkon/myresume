@@ -1020,7 +1020,7 @@ const MihoyoProjects: React.FC<MihoyoProjectsProps> = ({ language }) => {
   const t = content[language];
 
   return (
-    <section id="mihoyo-projects" className="py-14 bg-slate-50/70 dark:bg-slate-900/40 relative transition-colors duration-500 print:py-3 print:bg-white">
+    <section id="mihoyo-projects" className="py-14 bg-slate-50/70 dark:bg-slate-900/40 relative transition-colors duration-500 print:py-1 print:bg-white print:break-before-auto">
       <div className="max-w-6xl mx-auto px-4 print:px-0">
         {/* Section Header */}
         <div className="mb-10 text-center print:mb-3 print:text-left">

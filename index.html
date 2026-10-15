@@ -286,23 +286,34 @@
           page-break-after: always !important;
         }
 
-        /* 首页 Hero 独立完整呈现于第一页，底端干净分页，杜绝标题孤悬与大面积空白 */
+        /* 首页 Hero 紧凑布局，与核心产品成就自然衔接，消除第一页大面积空白 */
         #home,
         #mihoyo-home {
           min-height: auto !important;
           padding-top: 0 !important;
-          border-bottom: 1px solid #cbd5e1;
+          padding-bottom: 6px !important;
+          margin-bottom: 8px !important;
+          border-bottom: 1px solid #cbd5e1 !important;
           page-break-inside: avoid !important;
           break-inside: avoid !important;
-          break-after: page !important;
-          page-break-after: always !important;
+          break-after: auto !important;
+          page-break-after: auto !important;
         }
 
-        /* 核心成果专区从第二页顶端开始，标题与卡片自然紧随 */
+        /* 核心成果专区顶上去自然衔接在第一页下方，充分利用版面 */
         #product-achievements,
         #mihoyo-projects {
-          break-before: page !important;
-          page-break-before: always !important;
+          break-before: auto !important;
+          page-break-before: auto !important;
+          padding-top: 2px !important;
+          margin-top: 0 !important;
+        }
+
+        /* 核心产品成就卡片按卡片级别避免撕裂 */
+        #product-achievements .group,
+        #mihoyo-projects article {
+          page-break-inside: avoid !important;
+          break-inside: avoid !important;
         }
 
         /* 分页控制：工作经历模块保持自然紧凑流排版 */
